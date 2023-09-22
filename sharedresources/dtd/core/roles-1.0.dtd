@@ -1,0 +1,5 @@
+<!ELEMENT roles (role*)>
+
+<!ELEMENT role (#PCDATA)>
+
+<!ATTLIST role level CDATA #REQUIRED>

@@ -1,0 +1,3524 @@
+
+<!-- DTD: OSR-VERSIONS-METADATALOAD -->
+<!-- DATE: Oct 25 2005 -->
+<!-- VERSION: v1.5 -->
+<!-- DTD Comments:  -->
+
+
+<!-- Revision notes
+
+Revision notes
+
+Date	          Initials	     Ver.   	Description
+11 Nov	KG	     (1.0)	          Created.
+25 Mar	KG		(1.3)		    Brought in versionsmetadata.v1.0 model which has the jurisdiciton before the cite.query which is the way Bermuda needs it.
+25 May 2004      KG        1.4     Brought in versionsmetadata v1.1 which had md.publicationgroup added to it to support the needi to identifiy a document at a lower level than just the publication.
+20 Oct 2005    KG        1.5  Pulled in updated versionsmetadata v1.2 to accommodate requirements from the Graphical Keycite for Statutes Versioning.
+-->
+
+
+<!--
+        ELEMENT: metadata.block
+        DESCRIPTION: The "metadata.block" element is a container for "metadata" elements.  By "metadata" 
+   we mean data about the data, or in other words properties of documents.  The content model for 
+   the metadata.block element is inspired by the "Prism" and "Dublin Core" metadata standards.  We
+   have grouped the various specific metadata fields into categories, including "identifiers", 
+   "descriptions", "dates", "references", "history", "subject", and "contributors".
+        COMMENTS: 
+ -->
+
+<!ELEMENT metadata.block (md.jurisdictions?, md.identifiers, md.infotype?, md.sortkeys?, md.hierarchies?, md.descriptions?, md.dates?, md.references?, md.history?, md.subjects?, md.contributors?, md.publications?, md.royalty?)>
+
+
+<!--
+        ELEMENT: md.identifiers
+        DESCRIPTION: A wrapper element for identifier(s) for the resource.  Identifiers tend to be unique 
+   to each document and include Case Serial Numbers, DMS Serial Numbers, content management system object 
+   identifiers, universally unique IDs, primary and secondary cites, etc..
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.identifiers (md.cites?, md.cmsids?, md.westlawids?, md.uuid?, md.legacy.id?, md.wip.version.num?, md.legacy.heading.id?)>
+
+<!ELEMENT md.wip.version.num (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.legacy.heading.id
+        DESCRIPTION: In Codes data there is an HID (heading id) for each hierarchy level, including
+   the section.  This metadata element preserves the legacy heading identifier of the document
+   (section) heading.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.legacy.heading.id (#PCDATA)>
+<!ELEMENT md.cites (md.primarycite?, md.parallelcite*, md.first.line.cite?, md.second.line.cite?, md.normalizedcite*)>
+
+
+<!--
+        ELEMENT: md.legacy.id
+        DESCRIPTION: Unique identifier for the document (relative to the product or information type of the document).  Used to match updated versions of the document with the appropriate UUID for the Novus document.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.legacy.id (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.primarycite
+        DESCRIPTION: The "primarycite" metadata property is an element that contains the normalized cite for 
+    the document as one might reference it in whatever publication is considered its "primary" or "official" 
+    publication.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.primarycite (#PCDATA | md.primarycite.info)*>
+
+
+<!--
+        ELEMENT: md.primarycite.info
+        DESCRIPTION: Container for information about the "primarycite" metadata property.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.primarycite.info (md.display.primarycite, md.adj.display.primarycite?, md.cite.caveat*, md.west.published.date?, md.pubid?)>
+
+
+<!--
+        ELEMENT: md.display.primarycite
+        DESCRIPTION: Contains the normalized cite for the document as one might reference it in
+   whatever publication is considered its "primary" or "official" publication.  Use this element
+   when additional metadata needs to be included to differentiate between types of citations (e.g.
+   official court vs. unofficial) or properties for the "Cite as:" line.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.display.primarycite (#PCDATA)>
+
+<!ATTLIST md.display.primarycite
+	ID ID #IMPLIED
+	type (official_court | official_nonwest | official_reporter | West_special | West_court_special | West_regional | West_court_regional | unofficial | Westlaw) #IMPLIED
+	display (Y | N) #IMPLIED
+	depub (Y | N) #IMPLIED
+	status (dash | slip | nr) #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.adj.display.primarycite
+        DESCRIPTION: An adjusted version of the display primary citation.  This is for
+   the "To Be Reported" and Not Reported In" type of citations for caselaw.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.adj.display.primarycite (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.cite.caveat
+        DESCRIPTION: A caveat message associated with a specific citation.
+        COMMENTS: Added for WLNV Caselaw.
+ -->
+
+<!ELEMENT md.cite.caveat (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.west.published.date
+        DESCRIPTION: Date when the document was first published by West.
+        COMMENTS: Added for WLNV Caselaw.  NOTE: May not be needed, based on review
+   of requirements for collection router.  This element is not being populated and may
+   be removed in a future version.
+ -->
+
+<!ELEMENT md.west.published.date (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.parallelcite
+        DESCRIPTION: The "parallelcite" metadata property is an element that contains a cite for the document 
+    as one might reference it within a "non-standard" or "secondary" publication.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.parallelcite (#PCDATA | md.parallelcite.info)*>
+
+
+<!--
+        ELEMENT: md.parallelcite.info
+        DESCRIPTION: Container for information about the "primarycite" metadata property.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.parallelcite.info (md.display.parallelcite, md.cite.caveat*, md.west.published.date?, md.pubid?)>
+
+
+<!--
+        ELEMENT: md.display.parallelcite
+        DESCRIPTION: Contains the normalized cite for the document as one might reference it in
+   whatever publication is considered its "primary" or "official" publication.  Use this element
+   when additional metadata needs to be included to differentiate between types of citations (e.g.
+   official court vs. unofficial) or properties for the "Cite as:" line.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.display.parallelcite (#PCDATA)>
+
+<!ATTLIST md.display.parallelcite
+	ID ID #IMPLIED
+	type (official_court | official_nonwest | official_reporter | West_special | West_court_special | West_regional | West_court_regional | unofficial | Westlaw) #IMPLIED
+	display (Y | N) #IMPLIED
+	depub (Y | N) #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.first.line.cite
+        DESCRIPTION: The first line citation for electronic products
+        COMMENTS: cite1 (MET-5.4-2)
+ -->
+
+<!ELEMENT md.first.line.cite (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.second.line.cite
+        DESCRIPTION: The second line citation for electronic products
+        COMMENTS: cite2 (MET-5.4-3)
+ -->
+
+<!ELEMENT md.second.line.cite (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.normalizedcite
+        DESCRIPTION: A formatted version of the primary, parallel, first-line, or second-line
+   citation for FIND operations.
+        COMMENTS: Requested by App Tech September 9, 2003.
+ -->
+
+<!ELEMENT md.normalizedcite (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.cmsids
+        DESCRIPTION: Container for elements that store IDs assigned by originating 
+   content management systems.  The md.cmsids element is optional and contains 
+   one or more "md.cmsid" elements.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.cmsids (md.cmsid+)>
+
+
+<!--
+        ELEMENT: md.cmsid
+        DESCRIPTION: Identifier unique to the originating content management system.  Each business
+   unit is likely to have commercial or proprietary content systems that assign identifying 
+   numbers or strings to documents.  For example, Document is a commercial content management 
+   system used by several TLR business units.  Documentum assigns "Object ID" (oid) values to 
+   each document/object stored in the system.  The "md.cmsid" is intended to be used to store 
+   these types of IDs.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.cmsid (#PCDATA)>
+
+<!ATTLIST md.cmsid
+	cmsid.type CDATA #REQUIRED
+>
+
+
+<!--
+        ELEMENT: md.westlawids
+        DESCRIPTION: A wrapper for identifier(s) related to westlaw.  Identifiers tend to be unique to each
+   document and for Westlaw include Case Serial Numbers, DMS Serial Numbers, replacing serial numbers and 
+   docket numbers.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.westlawids (md.ccserial?, md.replserial?, md.docketnum*, md.dmsserial?, md.case.slug?, md.link.serial.number?, md.wl.batch.id?, md.wl.database.identifier?, md.wl.document.number?, md.wl.new.batch.id?, md.wl.reload.batch.id?, md.wl.print.format?)+>
+
+
+<!--
+        ELEMENT: md.ccserial
+        DESCRIPTION: The "ccserial" metadata property is an element that contains the "Case Control Serial 
+   Number" for a cases document.  At the time of writing, the Case Control Serial Number is a critical, 
+   proprietary identifier for cases assigned by West's "Case Control" system.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.ccserial (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.replserial
+        DESCRIPTION: The "replserial" metadata property was added in the context of the UK Migration to
+   Novus project.  This element is used by the UK to indicate which case (if any) is being replaced by 
+   the current case.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.replserial (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.docketnum
+        DESCRIPTION: The "docketnum" metadata property is an element that contains the unique identifier 
+   assigned to the document by an individual "court".  Generally speaking, docket numbers are only unique
+   within the context of a specific court and cannot be used to reliably ID the document in the context of 
+   products that span multiple courts.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.docketnum (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.dmsserial
+        DESCRIPTION: The "dmsserial" metadata property is an element that contains the "DMS Serial Number" 
+   for a non-caselaw documents on WESTLAW.  At the time of writing, the DMS Serial Number is a critical, 
+   proprietary identifier for legislative and other non-caselaw documents published by West.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.dmsserial (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.case.slug
+        DESCRIPTION: The case slug is the identifier for a westlaw document
+        COMMENTS: Today this indicates document breaks on Westlaw. It may not be needed
+       for this purpose in Novus (MET-5.4-6).
+ -->
+
+<!ELEMENT md.case.slug (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.link.serial.number
+        DESCRIPTION: An identifier that is used by Westlaw to read the ON-WESTLAW-FLAG in
+       the DMS-SEARCH table.  If the ON-WESTLAW-FLAG is set to Y for this identifier, based on other DMS system 
+       parameters, specific messages are inserted into the document.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.link.serial.number (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.wl.batch.id
+        DESCRIPTION: Westlaw batch identifier for corresponding document on Westlaw.  From <bid> record
+   in Ampex data.
+        COMMENTS: Added for WLNV Caselaw.
+ -->
+
+<!ELEMENT md.wl.batch.id (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.wl.database.identifier
+        DESCRIPTION: Westlaw database identifier (e.g. "AWCAL").  From the <dbid> record
+   in Ampex source.
+        COMMENTS: Added for WLNV Caselaw.
+ -->
+
+<!ELEMENT md.wl.database.identifier (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.wl.document.number
+        DESCRIPTION: Westlaw document number.  From the <dd> record in Ampex source.
+        COMMENTS: Added for WLNV Caselaw.
+ -->
+
+<!ELEMENT md.wl.document.number (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.wl.new.batch.id
+        DESCRIPTION: Westlaw new batch identifier for corresponding document on Westlaw.  From <nbid> record
+   in Ampex data.
+        COMMENTS: Added for WLNV Caselaw.
+ -->
+
+<!ELEMENT md.wl.new.batch.id (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.wl.reload.batch.id
+        DESCRIPTION: Westlaw reload batch identifier for corresponding document on Westlaw.  From <rbid> record
+   in Ampex data.
+        COMMENTS: Added for WLNV Caselaw.
+ -->
+
+<!ELEMENT md.wl.reload.batch.id (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.wl.print.format
+        DESCRIPTION: Specifies whether the document can be printed in dual column format.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.wl.print.format (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.uuid
+        DESCRIPTION: The "uuid" metadata property is an element that contains the universally unique identifier
+   for the document.  The value for this element should be set using an algorithm that complies with the 
+   Distributed Computing Environment's (DCE) algorithm for generating unique IDs.  Basically, the DCE algorithm 
+   generates IDs based on a combination of knowing where you are in "space" (e.g., network ID), where you are 
+   in time (e.g., the CPU time to the nearest millisecond), and a random component.  The format of the UUID 
+   should be a 33 character value that begins with an uppercase "I" followed by the 32 character UUID.  Each 
+   character within the UUID should be a HEX value between 0 and F.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.uuid (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.infotype
+        DESCRIPTION: The "infotype" metadata property identifies the basic type of document.  In the 
+   context of TLR's XML standardization process, an "infotype" corresponds to a data model (i.e., a DTD or 
+   Schema).  Examples of infotype include "cases", "legis", "news", etc..
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.infotype (#PCDATA)>
+
+<!ATTLIST md.infotype
+	typecode CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.sortkeys
+        DESCRIPTION: The "sortkeys" metadata property is a compound element containing elements whos values 
+   may be used to sort documents in the context of displaying search results or displaying documents categorized
+   to a given subject.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.sortkeys (md.volsequence?, md.ordersequence?, md.court.rank?)>
+
+
+<!--
+        ELEMENT: md.volsequence
+        DESCRIPTION: The "volsequence" metadata property was introduced in the context of the UK Migration 
+   to Novus project.  The volsequence element contains the sort key for a given legislative document within 
+   the context of its "volume".
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.volsequence (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.ordersequence
+        DESCRIPTION: The "ordersequence" metadata property was introduced in the context of the UK Migration
+   to Novus project.  The ordersequence element contains the sort key for a given legislative document within 
+   the context of all other legislative documents - - it's more unique and complete than the "volsequence".
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.ordersequence (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.court.rank
+        DESCRIPTION: A number value of the court to support proper sorting of cases in
+   cite list (both Federal and nonFederal).  Source: docaction table.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.court.rank (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.hierarchies
+        DESCRIPTION: The "hierarchies" metadata property is a container for "hierarchy" elements. This 
+   hierarchy information may be used to support Table of Content features such as "Search With Hits" and
+   "Search Within TOC".
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.hierarchies ((md.hierarchy+, md.outline.block?) | (md.outline.block))>
+
+
+<!--
+        ELEMENT: md.hierarchy
+        DESCRIPTION: Hierarchy elements are wrapper elements that contain the "ancestors" of the current document 
+   within whatever hierarchy (or hierarchies) the document resides.  This hierarchy information may be used
+   to support Table of Content features such as "Search With Hits" and "Search Within TOC".
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.hierarchy (md.ancestor+)>
+
+
+<!--
+        ELEMENT: md.ancestor
+        DESCRIPTION: The "ancestor" metadata property is an element that references a given node in a 
+   hierarchy within which the current document resides.  This hierarchy information may be used to 
+   support Table of Contents features such as "TOC With Hits" and "Search Within TOC".
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.ancestor EMPTY>
+
+<!ATTLIST md.ancestor
+	href CDATA #IMPLIED
+	href.format CDATA #IMPLIED
+	targettype CDATA #IMPLIED
+	pubid CDATA #IMPLIED
+	anchorref CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.outline.block
+        DESCRIPTION: A container for a document "outline" (like a "table of contents").
+        COMMENTS: Added for WLNV Caselaw.
+ -->
+
+<!ELEMENT md.outline.block (md.entry+)>
+
+
+<!--
+        ELEMENT: md.entry
+        DESCRIPTION: A single level of the hierarchy being listed in the "outline".
+        COMMENTS: Added for WLNV Caselaw.
+ -->
+
+<!ELEMENT md.entry (md.head, md.entry*)>
+
+<!ATTLIST md.entry
+	refid IDREF #REQUIRED
+>
+
+
+<!--
+        ELEMENT: md.head
+        DESCRIPTION: The displayable heading to be associated with the level of
+   hierarchy in the "outline".
+        COMMENTS: Added for WLNV Caselaw.
+ -->
+
+<!ELEMENT md.head (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.descriptions
+        DESCRIPTION: The "md.descriptions" element is a container for other metadata elements that contain 
+   descriptions of a resource.  These descriptions are of the variety that tend not to be unique to the 
+   document, such as the title, short title, and synopsis.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.descriptions (md.title?, md.shorttitle?, md.longtitle?, md.westlawdescrip?, md.elevated.note*)>
+
+<!ELEMENT md.elevated.note (#PCDATA)>
+<!--
+        ELEMENT: md.title
+        DESCRIPTION: The "title" metadata property is an element containing a title by which a given document 
+   might be referenced within a local context.  A title is generally not unique to a given document, or
+   at least not unique within a broad context.  However, titles can be very descriptive of a document and 
+   are generally more "user friendly" - - easier to say, easier to remember, etc..
+        COMMENTS: 
+ -->
+
+<!-- BEGIN: JRO 11/22/05 - change from standard dtd, since this is validated prior to bermuda -->
+<!--<!ELEMENT md.title (cite.query+)>-->
+<!ELEMENT md.title (#PCDATA)>
+<!-- END: JRO 11/22/05 - change from standard dtd, since this is validated prior to bermuda -->
+
+
+<!--
+        ELEMENT: md.shorttitle
+        DESCRIPTION: The "shorttitle" metadata property is an element containing an abbreviated version of
+   the "title" for the document.  A title is a name/phrase by which a document might be referenced in a
+   local context.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.shorttitle (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.longtitle
+        DESCRIPTION: The "longtitle" metadata property is an element containing a complete, verbose version
+   of the "title" for the document.  A title is a name/phrase by which a document might be referenced in 
+   a local context.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.longtitle (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.westlawdescrip
+        DESCRIPTION: A container for elements of data that are descriptors on Westlaw.
+        COMMENTS: Added for WLNV Caselaw.
+ -->
+
+<!ELEMENT md.westlawdescrip (md.doc.caveat?, md.case.notes?, md.status.notes?, md.wl.memtab?, md.wl.message.num?)>
+
+
+<!--
+        ELEMENT: md.doc.caveat
+        DESCRIPTION: A caveat message associated with the entire document.
+        COMMENTS: Added for WLNV Caselaw.
+ -->
+
+<!ELEMENT md.doc.caveat (md.caveat.line+)>
+
+
+<!--
+        ELEMENT: md.caveat.line
+        DESCRIPTION: Single line of the caveat.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.caveat.line (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.case.notes
+        DESCRIPTION: NOTE: May not be needed, based on review of requirements for
+   handling caveat messages.  This element is not being populated and may be
+   removed in a future version.
+        COMMENTS: Added for WLNV Caselaw.
+ -->
+
+<!ELEMENT md.case.notes (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.status.notes
+        DESCRIPTION: NOTE: May not be needed, based on review of requirements for
+   handling caveat messages.  This element is not being populated and may be
+   removed in a future version.
+        COMMENTS: Added for WLNV Caselaw.
+ -->
+
+<!ELEMENT md.status.notes (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.wl.memtab
+        DESCRIPTION: Westlaw "memtab" value for the type of document.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.wl.memtab (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.wl.message.num
+        DESCRIPTION: Contains the number associated with a specific message to be displayed on Westlaw.  This is used so that the message can be somewhat dynamic and documents will not have to be reloaded if the message changes.  This element contains only a number.  The text of the message will be put in by a stylesheet.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.wl.message.num (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.dates
+        DESCRIPTION: This element is a container for dates that mark the major milestones in the life 
+   of a resource:  The time the document is published, the time it may be released (if not 
+   immediately), the time that it expires (if any), the time it last changed, etc..
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.dates (md.starteffective?, md.display.starteffective?, md.endeffective?, md.display.endeffective?, md.filedate?, md.decideddate?, md.hearingdate?, md.issuedate?, md.expiredate?, md.publisheddate?, md.publisheddatetime?, md.revisiondate?, md.currency.default?, md.vol.currency?, md.pubyear?, md.vol.year?, md.rankdate?, md.century?, md.wl.loadtime?, md.extractdate?)>
+
+<!ELEMENT md.display.starteffective (#PCDATA)>
+<!ELEMENT md.display.endeffective (#PCDATA)>
+<!ELEMENT md.extractdate (#PCDATA)>
+<!--
+        ELEMENT: md.starteffective
+        DESCRIPTION: This element is a container for a string representing the date that this
+   document is to be considered "effective."  This field is used to support features common to 
+   legislative products (or any other products where the source or the publisher wishes to make 
+   the content available even before it is considered "official."
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.starteffective (#PCDATA)>
+
+<!ATTLIST md.starteffective
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.endeffective
+        DESCRIPTION: This element is a container for a string representing the date that this
+   document is to be considered "non-effective" or "obsolete" or "outdated."
+   This field is used to support features common to legislative products 
+   (or any other products where the source or the publisher wishes to make 
+   the content available even after it is superseeded by new content or when
+   they want the system to automatically disable (i.e., remove from service)
+   content once it is no longer "effective."
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.endeffective (#PCDATA)>
+
+<!ATTLIST md.endeffective
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.filedate
+        DESCRIPTION: This element is a container for a string representing the date that this
+   document was originally "filed."  Generally speaking, this date is
+   appropriate for caselaw content and/or any legal documents that are
+   "filed" with a central authority and where the date that the document
+   is placed on file is considered significant in SEARCH and/or FIND
+   scenarios.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.filedate (#PCDATA)>
+
+<!ATTLIST md.filedate
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.decideddate
+        DESCRIPTION: Date of Decision.  When decision was rendered by the Judge.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.decideddate (#PCDATA)>
+
+<!ATTLIST md.decideddate
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.hearingdate
+        DESCRIPTION: Date when the court heard the case.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.hearingdate (#PCDATA)>
+
+<!ATTLIST md.hearingdate
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.issuedate
+        DESCRIPTION: This element is a container for a string representing the date that
+   the professional license was issued ore will be issued.  This field is used to support
+   features common to public records (or any other products where the source or the publisher
+   wishes to release the information before or after the license is valid).
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.issuedate (#PCDATA)>
+
+<!ATTLIST md.issuedate
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.expiredate
+        DESCRIPTION: This element is a container for a string representing the date
+   that the professional license expired or will expire.  This field is used to support
+   features common to public records (or any other products where the source or the
+   publisher wishes to release the information before or after the license is valid).
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.expiredate (#PCDATA)>
+
+<!ATTLIST md.expiredate
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.publisheddate
+        DESCRIPTION: This element is a container for a string representing the date that this
+   document was originally "published."  This date is appropriate for any 
+   content where the date that the document is published is considered 
+   significant in SEARCH and/or FIND scenarios.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.publisheddate (#PCDATA)>
+
+<!ATTLIST md.publisheddate
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.publisheddatetime
+        DESCRIPTION: This element is a container for a string representing the date and time that
+   this document was originally "published." It is used as a means to support queries restricted
+   by the date a document was first loaded to Westlaw.  The intended use by external users is to
+   limit query results to documents that were loaded to the system since the last time they ran
+   a query.  (It is a substitute for prism-clipdate if prism-clipdate fails.)  The primary uses
+   by internal users are for competitive analysis comparisons and locating documents for content
+   extracts.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.publisheddatetime (#PCDATA)>
+
+<!ATTLIST md.publisheddatetime
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.revisiondate
+        DESCRIPTION: This element is a container for a string representing the date that
+   a revised version of this document was last published.  In general, the date the document 
+   is loaded to an electronic delivery system is used as the "revision date", but publishers 
+   may wish to specify revision dates that differ from the date the document
+   is loaded.  This date is used to support "clipping" features in which subscribers are 
+   notified of new or updated content within a given collection of data. This field is also 
+   appropriate where the date the revision is published is considered significant in SEARCH 
+   and/or FIND scenarios.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.revisiondate (#PCDATA)>
+
+<!ATTLIST md.revisiondate
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.currency.default
+        DESCRIPTION: default year for currency- Currently MO/YR when data was loaded. 
+    Future plans to use this as default only.
+        COMMENTS: (MET-5.4-12)
+ -->
+
+<!ELEMENT md.currency.default (#PCDATA)>
+
+<!ATTLIST md.currency.default
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.vol.currency
+        DESCRIPTION: Optional date that a specific volume is current through.
+        COMMENTS: (MET-5.4-30)
+ -->
+
+<!ELEMENT md.vol.currency (#PCDATA)>
+
+<!ATTLIST md.vol.currency
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.pubyear
+        DESCRIPTION: Original publication year, used as default if specific year is not known. 
+    Used in second line cite (md.cite2) and DLH date line hidden record in AMPEX. (optional, 
+    may only be Cleveland).
+        COMMENTS: pubyear (MET-5.4-4)
+ -->
+
+<!ELEMENT md.pubyear (#PCDATA)>
+
+<!ATTLIST md.pubyear
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.vol.year
+        DESCRIPTION: Year of publication that a specific volume is current through.
+        COMMENTS: If this not populated the base publication year is used MET-5.4-29
+ -->
+
+<!ELEMENT md.vol.year (#PCDATA)>
+
+<!ATTLIST md.vol.year
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.rankdate
+        DESCRIPTION: Westlaw rank date (ISO date format: YYYYMMDD).  This is to support
+   proper sorting of cases in cite list (both Federal and nonFederal).
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.rankdate (#PCDATA)>
+
+<!ATTLIST md.rankdate
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.century
+        DESCRIPTION: Century value (first two digits of YYYY) of the case serial number value.
+   Source: From the "CaseControlSerialCentury" field in Mach V.  Example: "19" for serial
+   number "1973107514".
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.century (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.wl.loadtime
+        DESCRIPTION: Time the document was loaded to Westlaw.  Used by reference attorneys.
+        COMMENTS: Added during News project.
+ -->
+
+<!ELEMENT md.wl.loadtime (#PCDATA)>
+
+<!ATTLIST md.wl.loadtime
+	iso.d CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.references
+        DESCRIPTION: Published content has a wide variety of references to other content items. There are 
+   containment relations such as article containing a photo, story text and caption. There are version 
+   relations such as a resource being a corrected version of another resource.  There are alternative 
+   formats such as a Word document also existing in HTML, XML and PDF.  There are alternatives such as
+   an image that cannot be reused having alternatives that can.  Many other types of relations exist and 
+   the "md.references" is intended to be used as a container for all such relationship information in 
+   which elements in the current document initiate relationships. (i.e., it is the resource referencing 
+   another resource).
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.references (md.locatordoc | md.fulltext | md.print.rendition.id | md.display.cite | md.credit)+>
+<!ELEMENT md.display.cite (cite.query)>
+<!-- BEGIN: NJB 3/26/04 - change from standard dtd, since this is validated prior to bermuda -->
+<!--<!ELEMENT md.credit (cite.query+)>-->
+<!ELEMENT md.credit (#PCDATA)>
+<!-- END: NJB 3/26/04 - change from standard dtd, since this is validated prior to bermuda -->
+
+
+<!--
+        ELEMENT: md.print.rendition.id
+        DESCRIPTION: GUID value of the Novus document containing the PDF rendition of the
+   caselaw document.  Also called the "guid-38" value.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.print.rendition.id (#PCDATA)>
+
+<!ATTLIST md.print.rendition.id
+	target CDATA #IMPLIED
+	anchor CDATA #IMPLIED
+	logical CDATA #IMPLIED
+	ttype CDATA #IMPLIED
+	vrule CDATA #IMPLIED
+	ID ID #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.locatordoc
+        DESCRIPTION: This element is an empty element used to "point to" the Sweet & Maxwell
+   "Locator Document" that corresponds to this case or statute document.  Locator Documents 
+    are a UK specific feature that is similar in concept to West Group's "KeyCite History" feature.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.locatordoc EMPTY>
+
+<!ATTLIST md.locatordoc
+	href CDATA #IMPLIED
+	href.format CDATA #IMPLIED
+	targettype CDATA #IMPLIED
+	pubid CDATA #IMPLIED
+	anchorref CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.fulltext
+        DESCRIPTION: This element is an empty element used to "point to" the Sweet & Maxwell
+   "Fulltext Document" that corresponds to this "Locator" document.
+   Locator Documents are a UK specific feature that is similar in
+   concept to West Group's "KeyCite History" feature.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.fulltext EMPTY>
+
+<!ATTLIST md.fulltext
+	href CDATA #IMPLIED
+	href.format CDATA #IMPLIED
+	targettype CDATA #IMPLIED
+	pubid CDATA #IMPLIED
+	anchorref CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.history
+        DESCRIPTION: The "md.history" element is a container for other metadata elements that contain content 
+   and relationship information regarding the impact forces outside the resource have had on the quality/value/
+   reliability/usefulness of the resource.  For example, when one document from a higher authority makes mute the 
+   content of a document, that's negative history.  When a document from a higher authority upholds the points 
+   of a given document, that is positive history.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.history (md.keycite, md.events)>
+
+
+<!--
+        ELEMENT: md.keycite
+        DESCRIPTION: This element is a container element used to hold metadata specific to West Group's
+   "KeyCite" feature.  At the time of writing, the only metadata specific to KeyCite 
+   is a "flag color".  KeyCite is essentially the "Citator" feature as described in
+   the "Fundemental Ops" or "PEGR" requirements documents, with the added concept of
+   a flag/icon indicating whether or not the document is improved or deminished by
+   the citator relationship(s).
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.keycite (md.flag.color.code)>
+
+
+<!--
+        ELEMENT: md.flag.color.code
+        DESCRIPTION: This element is a container element used to hold a string representing the
+   color that should be displayed for the "flag" within West Group's KeyCite feature.
+   on WESTLAW. KeyCite is essentially the "Citator" feature as described in
+   the "Fundemental Ops" or "PEGR" requirements documents.  The "KeyCite Flag Color"
+   indicates whether or not the document is improved or deminished by the citator
+   relationship(s).  Ideally, the value of the KeyCite flag color codes should be
+   defined and controlled in this DTD.  Until vocabulary control is established
+   over this field, it is recommended that publishers collaborate with TLR-OS
+   Publishing Development and/or West Group Information Architecture group when
+   assigning KeyCite flag color values.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.flag.color.code (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.events
+        DESCRIPTION: This element is a container for elements that record "history events".  History
+   events are relationships established from one or more documents which improve or 
+   diminish the value/validity of another document.  For example, if Document A
+   is from a higher level court and it references Document B, that reference is
+   likely to impact the value/validity of Document B.  If A overturns B, then 
+   B is no longer as valuable to the reader as it once was.  If A upholds B,
+   then B's value may in fact increase to the reader.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.events (md.event+)>
+
+
+<!--
+        ELEMENT: md.event
+        DESCRIPTION: This element is a container for elements that record relationship details
+   pertinent to "history events".  The details essential to supporting the
+   "Citator" feature as defined in the "Fundemental Ops" and "PEGR" requirements
+   are the IDs of the citing and cited documents as well as a code indicating
+   the impact of the relationship on the cited document.  The "citing doc"
+   in this DTD is the document that is associated with this metadata block.
+   The "cited doc" is whatever document is being referenced.  The "history code"
+   is a string indicating the impact of the citing/cited relationship on the cited document.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.event (md.identifier.of.citing.doc, md.identifier.of.cited.doc, md.history.code)>
+
+
+<!--
+        ELEMENT: md.identifier.of.citing.doc
+        DESCRIPTION: This element is a container for an identifier of the document that is 
+   associated with this instance of the metadata block.   Said another way, this is the unique 
+   ID of the document that initiated the history event - - the document doing the citing.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.identifier.of.citing.doc (#PCDATA)>
+
+<!ATTLIST md.identifier.of.citing.doc
+	id.type (ccserial | dmsserial | uuid) #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.identifier.of.cited.doc
+        DESCRIPTION: This element is a container for an identifier of the document that is 
+   referenced.  Said another way, this is the unique ID of the document 
+   that is impacted by the relationship (e.g., the document being upheld,
+   overturned, or cited in a neutral fashion).
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.identifier.of.cited.doc (#PCDATA)>
+
+<!ATTLIST md.identifier.of.cited.doc
+	id.type (ccserial | dmsserial | uuid) #IMPLIED
+>
+
+
+<!--
+        ELEMENT: md.history.code
+        DESCRIPTION: Currently a numeric representation of history phrase.  The set of codes is being
+   maintained by Thomson West.  There are over 2000 history codes.
+    History codes support KeyCite flag valuation.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.history.code (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.subjects
+        DESCRIPTION: These elements describe the subject matter of a resource. Experience has shown that there 
+   are many different kinds of subjects, such as a keyword, a key phrase, or codes representing categories within a 
+   specialized classification system such as the West Topic and Key Number System.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.subjects (md.subject+)>
+
+
+<!--
+        ELEMENT: md.subject
+        DESCRIPTION: This element is a container for element(s) which define relationships to
+   subjects.  Subjects can be referenced by keyword, keyphrase, topic codes, and other criteria.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.subject (md.keywords?, md.keyphrases?, md.topiccodes?, md.pubtype.name?, md.doctype.name?, (md.view.incl* | md.view.excl* | md.view*))>
+
+
+<!--
+        ELEMENT: md.keywords
+        DESCRIPTION: This element is a container for element(s) which define relationships to
+                     individual words/terms.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.keywords (md.keyword+)>
+
+
+<!--
+        ELEMENT: md.keyword
+        DESCRIPTION: This element is a container for individual words/terms.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.keyword (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.keyphrases
+        DESCRIPTION: This element is a container for phrases (i.e., multiple words
+   that can and should be searched as a single concept rather than as individual words).
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.keyphrases (md.keyphrase+)>
+
+
+<!--
+        ELEMENT: md.keyphrase
+        DESCRIPTION: This element is a container a string of multiple words
+   that can and should be searched as a single concept rather than as individual words.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.keyphrase (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.topiccodes
+        DESCRIPTION: This element is a container for codes that represent topics.
+   Some publishers create topical classification schemes in which
+   each node in the topical hierarchy is assigned a code.  For example, West Group's Topic and 
+   Number System uses topic and key codes.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.topiccodes (md.topiccode+)>
+
+
+<!--
+        ELEMENT: md.topiccode
+        DESCRIPTION: This element is a container a string representing the "code"
+   associated with a given topic.  For example, West Group's Topic and Key Number System uses 
+   topic and key codes.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.topiccode (#PCDATA)>
+
+<!ATTLIST md.topiccode
+	taxonomy (Australian_Digest | Canadian_Abridgment | Canadian_Reporter | West_topic_key | unclassified) #REQUIRED
+>
+
+
+<!--
+        ELEMENT: md.pubtype.name
+        DESCRIPTION: DOMES system information used to generate the publication type icon.
+        COMMENTS: This displays on the right side of the document.
+ -->
+
+<!ELEMENT md.pubtype.name (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.doctype.name
+        DESCRIPTION: DOMES system information used to generate the document type icon.
+        COMMENTS: This displays on the left side of the document..
+ -->
+
+<!ELEMENT md.doctype.name (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.view.incl
+        DESCRIPTION: This element contains a value that is used in a Subjective or Dynamic views for Westlaw 
+    content.  This value in document content would allow a document that might NOT otherwise be included as part
+    of a Subjective or Dynamic view to be specifically included.  This value would be included as part of the
+    view query.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.view.incl (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.view.excl
+        DESCRIPTION: This element contains a value that is used in a Subjective or Dynamic views for Westlaw 
+    content.  This value in document content would allow a document that might otherwise be included as part
+    of a Subjective or Dynamic view to be specifically excluded.  This value would be included as part of the
+    view query.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.view.excl (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.view
+        DESCRIPTION: This element contains a value that is used to define an Objective view for Westlaw content.  
+    This value is created in the Editorial system and allows documents that may not otherwise be related to be 
+    combined into a single product or view.  The content of this element is copied to the Novus n-view element.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.view (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.contributors
+        DESCRIPTION: The "md.contributors" element is a metadata container for elements that specify the names
+   of individuals who contributed to the document. In caselaw, the contributors might be the judges (and attorneys) 
+   who participated in the case.  In analytical documents, the contributors are likely to be authors of the 
+   content.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.contributors ((md.judge*, md.attorney*) | (md.author*))>
+
+
+<!--
+        ELEMENT: md.judge
+        DESCRIPTION: The "judge" metadata property is a special class of "contributor".  Generally
+    speaking, a judge is a contributor to a cases document.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.judge (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.attorney
+        DESCRIPTION: The "attorney" metadata property is a special class of "contributor".  Generally
+    speaking, an attorney is a contributor to a cases document.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.attorney (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.author
+        DESCRIPTION: The "author" metadata property is a special class of "contributor".  Generally
+    speaking, an author is a contributor to non-caselaw, non-statutes documents.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.author (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.jurisdictions
+        DESCRIPTION: The "jurisdictions" metadata property is a compound element that contains one or more 
+   "jurisdiction" elements.  Each jurisdiction corresponds to the geographic or logical origination of the
+   document.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.jurisdictions (md.jurisdiction+)>
+
+
+<!--
+        ELEMENT: md.jurisdiction
+        DESCRIPTION: The "jurisdiction" metadata property is a compound element that contains other elements that 
+    identify a jurisdiction in which the document originated (e.g., which country?, which region?, which state?, 
+    which county?, etc.).
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.jurisdiction (md.jurisnum?, md.juriscountry?, md.jurisdistrict?, md.juriscourt?, md.jurisstate?, md.territorialextent?, md.jurisabbrev?, md.westlawjuris?, tndx.md.ranking.jurisstate?)>
+
+
+<!--
+        ELEMENT: md.jurisnum
+        DESCRIPTION: A code or number unique to the jurisdiction.  Ideally, there should be a well defined
+   vocabulary of all possible values for "md.jurisnum".  Until such a vocabulary is well
+   defined and centrally recorded, publishers are advised to coordinate with TLR-OS
+   Publishing Development and/or West Group's Information Architecture when setting values of "md.jurisnum".
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.jurisnum (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.juriscountry
+        DESCRIPTION: The "juriscountry" metadata property is an element that contains the country name that 
+    corresponds to the geographic origination of the content.  Examples of "juriscountry" include "USA", 
+    "United Kingdom", "Australia", etc..
+        COMMENTS: Is this the same as md.courts.table.info or md.courtline.code?
+ -->
+
+<!ELEMENT md.juriscountry (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.jurisdistrict
+        DESCRIPTION: A name unique to the "district" of the jurisdiction.  For example, in the United
+   States, the Federal Court System is divided into several geographic boundaries
+   which group multiple states.  The "md.district" element is a way of recording
+   the names of such geographic boundaries.  Ideally, there should be a 
+   well defined vocabulary of all possible values for "md.district".  Until such a 
+   vocabulary is well defined and centrally recorded, publishers are advised to 
+   coordinate with TLR-OS Publishing Development and/or West Group's Information 
+   Architecture when setting values of "md.district".
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.jurisdistrict (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.juriscourt
+        DESCRIPTION: A name unique to the "court" of the jurisdiction.  This field is generally
+    applicable only to caselaw.  The "md.court" element is a way of recording
+    the names of court which decided a case.  Ideally, there should be a 
+    well defined vocabulary of all possible values for "md.court".  Until such a 
+    vocabulary is well defined and centrally recorded, publishers are advised to 
+    coordinate with TLR-OS Publishing Development and/or West Group's Information 
+    Architecture when setting values of "md.court".
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.juriscourt (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.jurisstate
+        DESCRIPTION: A name unique to the "state" of the jurisdiction.  Ideally, there should be a 
+   well defined vocabulary of all possible values for "md.state".  Until such a 
+   vocabulary is well defined and centrally recorded, publishers are advised to 
+   coordinate with TLR-OS Publishing Development and/or West Group's Information 
+   Architecture when setting values of "md.court".
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.jurisstate (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.territorialextent
+        DESCRIPTION: A name unique to the "territory" of the jurisdiction.  Ideally, there should be a 
+   well defined vocabulary of all possible values for "md.territorialextent".  Until 
+   such a vocabulary is well defined and centrally recorded, publishers are advised to 
+   coordinate with TLR-OS Publishing Development and/or West Group's Information 
+   Architecture when setting values of "md.territorialextent".
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.territorialextent (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.jurisabbrev
+        DESCRIPTION: Abbreviated name of court hearing the case.  This is the "normalized"
+   name of the court.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.jurisabbrev (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.westlawjuris
+        DESCRIPTION: Container for metadata about court information used on Westlaw.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.westlawjuris (md.courts.table.info?, md.courtline.code?)>
+
+
+<!--
+        ELEMENT: tndx.md.ranking.jurisstate
+        DESCRIPTION: This is the value from the TNDX that is used to rank states in the order in which they should appear.  Example:  New York is NW.
+        COMMENTS: 
+ -->
+
+<!ELEMENT tndx.md.ranking.jurisstate (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.courts.table.info
+        DESCRIPTION: Contains abbreviated court information.  This is formatted from the CX.GEN
+   record in caselaw Ampex data.  Example: "002055 ST HIGH PAC 9 CA"
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.courts.table.info (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.courtline.code
+        DESCRIPTION: Standardized number of the court, taken from the "court-line" field in Mach V.
+   Example: "5928".
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.courtline.code (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.publications
+        DESCRIPTION: A container for "publication" elements.  Each "publication" element defines a
+   publication in which the given document is published.  Generally speaking,
+   the publications listed within the "publications" section of the metadata block
+   are print publications. Such publication information is useful in supporting
+   FIND and SEARCH features as described in the "Fundemental Ops" and "PEGR" requirements documents.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.publications (md.publication*, md.publicationgroup*)>
+
+
+<!--
+        ELEMENT: md.publication
+        DESCRIPTION: A container for elements which define the context of the given document
+   with respect to a "publication" (by publication we generally mean
+   a printed product).  Each publication is likely to have a unique ID or number,
+   a name, a volume number, a page number where the given document begins,
+   and perhaps a sequence number indicating where on that page the given
+   document appears (i.e., the order of the document relative to the other
+   documents printed on that page).
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.publication (md.pubid?, md.pubname?, md.pubvolume?, md.pubpage?, md.citesequence?)>
+
+
+<!--
+        ELEMENT: md.pubid
+        DESCRIPTION: A unique ID or number associated with the publication.  Ideally, the value
+   of this field should be controlled within this DTD.  Until a controlled
+   vocabulary exists, publishers are advised to coordinate with TLR-OS
+   Publishing Development and/or West Group's Information Architecture
+   group when assigning values to this field.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.pubid (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.pubname
+        DESCRIPTION: A unique name associated with the publication.  Ideally, the value
+   of this field should be controlled within this DTD.  Until a controlled
+   vocabulary exists, publishers are advised to coordinate with TLR-OS
+   Publishing Development and/or West Group's Information Architecture group when assigning 
+   values to this field.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.pubname (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.pubvolume
+        DESCRIPTION: If the publication consists of multiple volumes, this field should
+   be used to indicate the specific volume that includes the document in question.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.pubvolume (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.pubpage
+        DESCRIPTION: If the publication consists of multiple pages, this field should
+   be used to indicate the specific page that includes the document in question.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.pubpage (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.citesequence
+        DESCRIPTION: If the page holds multiple documents, this field should
+    be used to indicate the sequence of the document in question relative to the other documents
+    published on the same page.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.citesequence (#PCDATA)>
+<!--
+        ELEMENT: md.publicationgroup
+        DESCRIPTION: This element is used to further qualify or group together documents within the larger publication grouping.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.publicationgroup (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.royalty
+        DESCRIPTION: A container element for details regarding royalty information.
+        COMMENTS: 
+ -->
+
+<!ELEMENT md.royalty (md.royalty.code?, md.copyright*)>
+
+
+<!--
+        ELEMENT: md.royalty.code
+        DESCRIPTION: A 3 character code that is converted to another value (currently).
+        COMMENTS: royalty (MET-5.4-8)
+ -->
+
+<!ELEMENT md.royalty.code (#PCDATA)>
+
+
+<!--
+        ELEMENT: md.copyright
+        DESCRIPTION: Copyright of publication- Either the standard or a custom copyright 
+    message for a document.
+        COMMENTS: copyright (MET-5.4-11)
+ -->
+
+<!ELEMENT md.copyright (#PCDATA)>
+
+
+<!--
+        ELEMENT: n-load
+        DESCRIPTION: The root element for the file being loaded to Novus
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-load (n-document+ | n-node+ | n-vnode+ |n-relationship+ | n-view-set+)>
+
+<!ATTLIST n-load dataid           CDATA #IMPLIED>
+
+<!ATTLIST n-load verifycollection CDATA #IMPLIED>
+
+<!ATTLIST n-load notify           CDATA #IMPLIED>
+
+<!ATTLIST n-load lang             CDATA #IMPLIED>
+
+<!ATTLIST n-load country             CDATA #IMPLIED>
+
+
+<!--
+        ELEMENT: n-document
+        DESCRIPTION: The n-document element must be used to signify the start of each input document.
+        COMMENTS: Document containing metadata, text, blob, an include fragment, or one or more partial updates.
+ -->
+
+<!ELEMENT n-document (((n-metadata?, (n-docbody | n-blobref | n-mmfile)) | n-include | n-update+)?)>
+
+<!ATTLIST n-document guid    CDATA       #REQUIRED	
+                     control (ADD|DEL|REINDEX|PARTIAL)   "ADD">
+
+
+<!--
+        ELEMENT: n-node
+        DESCRIPTION: Table of contents data
+        COMMENTS: Table of contents data
+ -->
+
+<!ELEMENT n-node (n-parent-guid?, n-doc-guid?, n-anchor-guid?, n-label?, n-rank?, n-name?, n-value?, n-toc-metadata?)>
+
+<!ATTLIST n-node	guid    CDATA                 #REQUIRED
+			control (ADD|DEL|DELBRANCH)   "ADD">
+
+
+<!--
+        ELEMENT: n-vnode
+        DESCRIPTION: A versioned node within the TOC. The n-vnode element replaces the n-node element in versioned TOC
+       collection load files.
+        COMMENTS: An n-vnode can be defined once per load, you cannot add a node twice or delete and then add a node within
+         the same load file.
+ -->
+
+<!ELEMENT n-vnode (n-parent-guid*, n-start-date, n-end-date, n-doc-guid?, n-anchor-guid?, n-label?, n-rank?,
+                   n-name?, n-value?, n-toc-metadata?)>
+
+<!ATTLIST n-vnode	guid    CDATA                 #REQUIRED
+			control (ADD|DEL|DELBRANCH|CLONE)   "ADD">
+
+
+<!--
+        ELEMENT: n-label
+        DESCRIPTION: The n-label element provides a description of the Toc node and has a size limit of 598 bytes.  The contents of n-label can contain embedded XML data
+        COMMENTS: Define what can represent the contents of a label
+ -->
+
+<!ELEMENT n-label		(#PCDATA)>
+<!--
+        ELEMENT: n-parent-guid
+        DESCRIPTION: The n-parent-guid element identifies this nodes immediate parent
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-parent-guid	        (#PCDATA)>
+
+<!ATTLIST n-parent-guid	start    CDATA                 #IMPLIED
+			end      CDATA                 #IMPLIED
+                        rank     CDATA                 #IMPLIED >
+<!--
+        ELEMENT: n-start-date
+        DESCRIPTION: The start date specification for TOC node versioning, YYYYMMDDHHMMSS format.
+        COMMENTS: The timestamp ranges given by the n-start-date and n-end-date elements of a n-vnode must not go
+         outside of the boundaries of its parent(s) min-max timestamp range (given in the n-parent-guid element(s)
+         'start' and 'end' attributes.
+ -->
+
+<!ELEMENT n-start-date	        (#PCDATA)>
+
+
+<!--
+        ELEMENT: n-end-date
+        DESCRIPTION: The end date specification for TOC node versioning, YYYYMMDDHHMMSS format.
+        COMMENTS: The start date specification for TOC node versioning, YYYYMMDDHHMMSS format.</dd_description>
+   <dd_comments>The timestamp ranges given by the n-start-date and n-end-date elements of a n-vnode must not go
+         outside of the boundaries of its parent(s) min-max timestamp range (given in the n-parent-guid element(s)
+         'start' and 'end' attributes.
+ -->
+
+<!ELEMENT n-end-date	        (#PCDATA)>
+<!--
+        ELEMENT: n-doc-guid
+        DESCRIPTION: The n-doc-guid value of a Toc node should match the guid of some n-document in a doc only collection
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-doc-guid		(#PCDATA)>
+<!--
+        ELEMENT: n-anchor-guid
+        DESCRIPTION: An anchor node is used to give structure to a document (i.e. identifies sections 
+   within a document).  It is possible to define multiple levels of anchors for a document 
+   (i.e. identifies sections of a document, paragraphs of a section,...)
+        COMMENTS: Only Toc nodes that have a valid n-doc-guid can contain an n-anchor-guid.
+ -->
+
+<!ELEMENT n-anchor-guid	        (#PCDATA)>
+<!--
+        ELEMENT: n-rank
+        DESCRIPTION: The n-rank element provides order to Toc nodes of a common parent.
+        COMMENTS: The GetChildrenNodes request returns nodes in order of their rank value.  The TOC rank is a real number value
+ -->
+
+<!ELEMENT n-rank		(#PCDATA)>
+<!--
+        ELEMENT: n-name
+        DESCRIPTION: The n-name and n-value elements can be used to store additional information 
+    in a Toc node, which can be retrieved by a user when the Toc nodes are returned to them.  
+    In addition, clients have the ability to search the entire Toc, via the FindNodes request, 
+    to retrieve a list of Toc nodes with a specific n-name value or optionally the n-value 
+    value, (see Toc API Documentation for details on FindNodes).  The maximum size of an n-name 
+    value is 20 bytes, and the n-value value may be up to 200 bytes
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-name		(#PCDATA)>
+<!--
+        ELEMENT: n-value
+        DESCRIPTION: The n-name and n-value elements can be used to store additional information 
+    in a Toc node, which can be retrieved by a user when the Toc nodes are returned to them.  
+    In addition, clients have the ability to search the entire Toc, via the FindNodes request, 
+    to retrieve a list of Toc nodes with a specific n-name value or optionally the n-value 
+    value, (see Toc API Documentation for details on FindNodes).  The maximum size of an n-name 
+    value is 20 bytes, and the n-value value may be up to 200 bytes
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-value		(#PCDATA)>
+<!--
+        ELEMENT: n-toc-metadata
+        DESCRIPTION: The n-toc-metadata element of a node contains metadata information about the 
+    TOC and has a maximum size limit of 200 bytes.  The contents of n-toc-metadata can contain 
+    embedded XML data
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-toc-metadata	(#PCDATA)>
+
+
+<!--
+        ELEMENT: n-relationship
+        DESCRIPTION: This element is used to load relationship data and signifies a new 
+        relationship.
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-relationship (n-relbase?, n-reltarget?, n-reltype?, n-relpayload?)>
+
+<!ATTLIST n-relationship	guid    CDATA       #REQUIRED
+				control (ADD|DEL)   "ADD">
+
+
+<!--
+        ELEMENT: n-relbase
+        DESCRIPTION: This element represents an identifier for the source of the relationship.
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-relbase (#PCDATA)>
+
+
+<!--
+        ELEMENT: n-reltarget
+        DESCRIPTION: This element represents an identifier for the target of the relationship.
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-reltarget (#PCDATA)>
+
+
+<!--
+        ELEMENT: n-reltype
+        DESCRIPTION: This element represents an optional classifier of the relationship.
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-reltype (#PCDATA)>
+
+
+<!--
+        ELEMENT: n-relpayload
+        DESCRIPTION: This element contains xml that defines data that further helps define 
+          the relationship.  In the content, the valid xml must be wrapped in CDATA brackets
+          within this element to ensure that the parser does not try to validate the xml.
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-relpayload (#PCDATA)>
+
+
+<!--
+        ELEMENT: n-metadata
+        DESCRIPTION: metadata for a document
+        COMMENTS: A n-metadata tag can be defined once per document
+    There has to be a n-docbody, n-blobref, or n-mmfile tag present before a n-metadata tag can 
+    be present.  The contents of n-metadata can contain embedded XML data
+ -->
+
+<!ELEMENT n-metadata (metadata.block, n-tocview*, n-view*, prism-stylesheet?, prism-clipdate?)>
+
+
+<!--
+        ELEMENT: prism-stylesheet
+        DESCRIPTION: The style sheet to use with the document
+        COMMENTS: If the guid is not mapped to a style sheet, the rendering component retrieves 
+   the style sheet developed by the publishing system from Novus
+ -->
+
+<!ELEMENT prism-stylesheet EMPTY>
+
+<!ATTLIST prism-stylesheet guid CDATA #REQUIRED>
+
+
+<!--
+        ELEMENT: prism-clipdate
+        DESCRIPTION: The prism-clipdate element is the timestamp used for a clipping date
+        COMMENTS: The numerical date text for this element should be in the yyyymmddhhmmss format.
+   It must be the same for all documents occurring within the same load and must be increasing 
+   on subsequent loads.  The date and time does not necessarily have to match exactly any current
+   machine time stamp, but must remain close to the customer's initial date restriction.  
+   This element is required if the publisher would like to run clips/alerts against their 
+   content.  The prismclipdate indicates to the Prism clip/alert service whether the clip/alert 
+   should be run
+ -->
+
+<!ELEMENT prism-clipdate (#PCDATA)>
+
+
+<!--
+        ELEMENT: n-view
+        DESCRIPTION: used when it is necessary to search a portion of a collection.  In other 
+   words, a query can be limited to search documents that have been assigned a particular view
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-view (#PCDATA)>
+
+
+<!--
+        ELEMENT: n-tocview
+        DESCRIPTION: contain the Toc guids that a client wishes to associate with a document, and 
+   are used to support query view restrictions for Toc guids
+        COMMENTS: More than one n-tocview can be specified within a n-metadata, since a document 
+   may reside in multiple place within the Toc
+ -->
+
+<!ELEMENT n-tocview (#PCDATA)>
+
+
+<!--
+        ELEMENT: n-docbody
+        DESCRIPTION: The n-docbody tag signifies the start of the DOC data for the document
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-docbody (content.block) >
+
+
+<!--
+        ELEMENT: n-mmfile
+        DESCRIPTION: A link to the mm file to be loaded. A n-mmfile element contains information 
+   about a multimedia file to be loaded to a web/media server
+        COMMENTS: The n-mmfile element must contain filename, type and extension attributes
+ -->
+
+<!ELEMENT n-mmfile EMPTY>
+
+<!ATTLIST n-mmfile filename  CDATA #REQUIRED
+                   extension CDATA #REQUIRED
+                   type      CDATA #REQUIRED>
+
+
+<!--
+        ELEMENT: n-blobref
+        DESCRIPTION: A n-blobref element contains information about a multimedia to load as a blob
+    within Novus
+        COMMENTS: This is used for multimedia such as images, pdf, excel worksheets, zips, etc.. 
+   where the multimedia is stored in a database in Novus and the bytes/multimedia data retrieved
+   upon a  request to Novus
+ -->
+
+<!ELEMENT n-blobref EMPTY>
+
+<!ATTLIST n-blobref type     CDATA #REQUIRED
+                    filename CDATA #REQUIRED>
+
+
+<!--
+        ELEMENT: n-include
+        DESCRIPTION: A wrapper for an XML fragment, or plain text, to be treated as a Novus document
+   accessible by an "include" reference within another Novus document.
+        COMMENTS: The Novus document containing the n-include instance cannot have any other
+   parts, e.g. no n-metadata, n-docbody, n-blobref, or n-mmfile instances.  It can be referenced
+   within another Novus document from an element with the n-include_collection and 
+   n-include_guid attributes.  Use the n-includecontent parameter entity within the driver
+   DTD to set the allowable content of the "include" document.
+ -->
+
+<!ELEMENT n-include (#PCDATA)>
+
+
+<!--
+        ELEMENT: n-update
+        DESCRIPTION: A wrapper for an XML fragment to be updated by a partial update.  It can be
+   used multiple times per document if multiple fragments are being updated.  The parameter
+   entity n-partialupdatecontent must be declared by the calling DTD.
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-update (#PCDATA)>
+
+<!ATTLIST n-update path CDATA #REQUIRED >
+
+
+<!--
+        ELEMENT: n-view-set
+        DESCRIPTION: The n-view-set element is used to add, update, or delete subjective views.
+        COMMENTS: The n-view-set element must contain a view-name attribute, a control attribute, and may contain a collection-set-name attribute.
+ -->
+
+<!ELEMENT n-view-set (n-view-query)?>
+
+<!ATTLIST n-view-set view-name CDATA #REQUIRED
+                     control (ADD | DEL) #REQUIRED
+                     collection-set-name CDATA #IMPLIED>
+
+
+<!--
+        ELEMENT: n-view-query
+        DESCRIPTION: The n-view-query element is a container for the search query
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-view-query (#PCDATA)>
+
+<!ENTITY aacute "&#225;">  
+<!ENTITY Aacute "&#193;">  
+<!ENTITY acirc "&#226;">  
+<!ENTITY Acirc "&#194;">  
+<!ENTITY agrave "&#224;">  
+<!ENTITY Agrave "&#192;">  
+<!ENTITY aring "&#229;">  
+<!ENTITY Aring "&#197;">  
+<!ENTITY atilde "&#227;">  
+<!ENTITY Atilde "&#195;">  
+<!ENTITY auml "&#228;">  
+<!ENTITY Auml "&#196;">  
+<!ENTITY aelig "&#230;">  
+<!ENTITY AElig "&#198;">  
+<!ENTITY ccedil "&#231;">  
+<!ENTITY Ccedil "&#199;">  
+<!ENTITY eth "&#240;">  
+<!ENTITY ETH "&#208;">  
+<!ENTITY eacute "&#233;">  
+<!ENTITY Eacute "&#201;">  
+<!ENTITY ecirc "&#234;">  
+<!ENTITY Ecirc "&#202;">  
+<!ENTITY egrave "&#232;">  
+<!ENTITY Egrave "&#200;">  
+<!ENTITY euml "&#235;">  
+<!ENTITY Euml "&#203;">  
+<!ENTITY iacute "&#237;">  
+<!ENTITY Iacute "&#205;">  
+<!ENTITY icirc "&#238;">  
+<!ENTITY Icirc "&#206;">  
+<!ENTITY igrave "&#236;">  
+<!ENTITY Igrave "&#204;">  
+<!ENTITY iuml "&#239;">  
+<!ENTITY Iuml "&#207;">  
+<!ENTITY ntilde "&#241;">  
+<!ENTITY Ntilde "&#209;">  
+<!ENTITY oacute "&#243;">  
+<!ENTITY Oacute "&#211;">  
+<!ENTITY ocirc "&#244;">  
+<!ENTITY Ocirc "&#212;">  
+<!ENTITY ograve "&#242;">  
+<!ENTITY Ograve "&#210;">  
+<!ENTITY oslash "&#248;">  
+<!ENTITY Oslash "&#216;">  
+<!ENTITY otilde "&#245;">  
+<!ENTITY Otilde "&#213;">  
+<!ENTITY ouml "&#246;">  
+<!ENTITY Ouml "&#214;">  
+<!ENTITY szlig "&#223;">  
+<!ENTITY thorn "&#254;">  
+<!ENTITY THORN "&#222;">  
+<!ENTITY uacute "&#250;">  
+<!ENTITY Uacute "&#218;">  
+<!ENTITY ucirc "&#251;">  
+<!ENTITY Ucirc "&#219;">  
+<!ENTITY ugrave "&#249;">  
+<!ENTITY Ugrave "&#217;">  
+<!ENTITY uuml "&#252;">  
+<!ENTITY Uuml "&#220;">  
+<!ENTITY yacute "&#253;">  
+<!ENTITY Yacute "&#221;">  
+<!ENTITY yuml "&#255;">  
+
+<!ENTITY cularr "&#8630;">  
+<!ENTITY curarr "&#8631;">  
+<!ENTITY dArr "&#8659;">  
+<!ENTITY darr2 "&#8650;">  
+<!ENTITY dharl "&#8643;">  
+<!ENTITY dharr "&#8642;">  
+<!ENTITY lAarr "&#8666;">  
+<!ENTITY Larr "&#8606;">  
+<!ENTITY larr2 "&#8647;">  
+<!ENTITY larrhk "&#8617;">  
+<!ENTITY larrlp "&#8619;">  
+<!ENTITY larrtl "&#8610;">  
+<!ENTITY lhard "&#8637;">  
+<!ENTITY lharu "&#8636;">  
+<!ENTITY hArr "&#8660;">  
+<!ENTITY harr "&#8596;">  
+<!ENTITY lrarr2 "&#8646;">  
+<!ENTITY rlarr2 "&#8644;">  
+<!ENTITY harrw "&#8621;">  
+<!ENTITY rlhar2 "&#8652;">  
+<!ENTITY lrhar2 "&#8651;">  
+<!ENTITY lsh "&#8624;">  
+<!ENTITY map "&#8614;">  
+<!ENTITY mumap "&#8888;">  
+<!ENTITY nearr "&#8599;">  
+<!ENTITY nlArr "&#8653;">  
+<!ENTITY nlarr "&#8602;">  
+<!ENTITY nhArr "&#8654;">  
+<!ENTITY nharr "&#8622;">  
+<!ENTITY nrarr "&#8603;">  
+<!ENTITY nrArr "&#8655;">  
+<!ENTITY nwarr "&#8598;">  
+<!ENTITY olarr "&#8634;">  
+<!ENTITY orarr "&#8635;">  
+<!ENTITY rAarr "&#8667;">  
+<!ENTITY Rarr "&#8608;">  
+<!ENTITY rarr2 "&#8649;">  
+<!ENTITY rarrhk "&#8618;">  
+<!ENTITY rarrlp "&#8620;">  
+<!ENTITY rarrtl "&#8611;">  
+<!ENTITY rarrw "&#8669;">  
+<!ENTITY rhard "&#8641;">  
+<!ENTITY rharu "&#8640;">  
+<!ENTITY rsh "&#8625;">  
+<!ENTITY drarr "&#8600;">  
+<!ENTITY dlarr "&#8601;">  
+<!ENTITY uArr "&#8657;">  
+<!ENTITY uarr2 "&#8648;">  
+<!ENTITY vArr "&#8661;">  
+<!ENTITY varr "&#8597;">  
+<!ENTITY uharl "&#8639;">  
+<!ENTITY uharr "&#8638;">  
+<!ENTITY xlArr "&#8656;">  
+<!ENTITY xhArr "&#8596;">  
+<!ENTITY xharr "&#8596;">  
+<!ENTITY xrArr "&#8658;">  
+
+<!ENTITY abreve "&#259;">  
+<!ENTITY Abreve "&#258;">  
+<!ENTITY amacr "&#257;">  
+<!ENTITY Amacr "&#256;">  
+<!ENTITY aogon "&#261;">  
+<!ENTITY Aogon "&#260;">  
+<!ENTITY cacute "&#263;">  
+<!ENTITY Cacute "&#262;">  
+<!ENTITY ccaron "&#269;">  
+<!ENTITY Ccaron "&#268;">  
+<!ENTITY ccirc "&#265;">  
+<!ENTITY Ccirc "&#264;">  
+<!ENTITY cdot "&#267;">  
+<!ENTITY Cdot "&#266;">  
+<!ENTITY dcaron "&#271;">  
+<!ENTITY Dcaron "&#270;">  
+<!ENTITY dstrok "&#273;">  
+<!ENTITY Dstrok "&#272;">  
+<!ENTITY ecaron "&#283;">  
+<!ENTITY Ecaron "&#282;">  
+<!ENTITY edot "&#279;">  
+<!ENTITY Edot "&#278;">  
+<!ENTITY emacr "&#275;">  
+<!ENTITY Emacr "&#274;">  
+<!ENTITY eogon "&#281;">  
+<!ENTITY Eogon "&#280;">  
+<!ENTITY gacute "&#501;">  
+<!ENTITY gbreve "&#287;">  
+<!ENTITY Gbreve "&#286;">  
+<!ENTITY Gcedil "&#290;">  
+<!ENTITY gcirc "&#285;">  
+<!ENTITY Gcirc "&#284;">  
+<!ENTITY gdot "&#289;">  
+<!ENTITY Gdot "&#288;">  
+<!ENTITY hcirc "&#293;">  
+<!ENTITY Hcirc "&#292;">  
+<!ENTITY hstrok "&#295;">  
+<!ENTITY Hstrok "&#294;">  
+<!ENTITY Idot "&#304;">  
+<!ENTITY Imacr "&#298;">  
+<!ENTITY imacr "&#299;">  
+<!ENTITY ijlig "&#307;">  
+<!ENTITY IJlig "&#306;">  
+<!ENTITY inodot "&#305;">  
+<!ENTITY iogon "&#303;">  
+<!ENTITY Iogon "&#302;">  
+<!ENTITY itilde "&#297;">  
+<!ENTITY Itilde "&#296;">  
+<!ENTITY jcirc "&#309;">  
+<!ENTITY Jcirc "&#308;">  
+<!ENTITY kcedil "&#311;">  
+<!ENTITY Kcedil "&#310;">  
+<!ENTITY kgreen "&#312;">  
+<!ENTITY lacute "&#314;">  
+<!ENTITY Lacute "&#313;">  
+<!ENTITY lcaron "&#318;">  
+<!ENTITY Lcaron "&#317;">  
+<!ENTITY lcedil "&#316;">  
+<!ENTITY Lcedil "&#315;">  
+<!ENTITY lmidot "&#320;">  
+<!ENTITY Lmidot "&#319;">  
+<!ENTITY lstrok "&#322;">  
+<!ENTITY Lstrok "&#321;">  
+<!ENTITY nacute "&#324;">  
+<!ENTITY Nacute "&#323;">  
+<!ENTITY eng "&#331;">  
+<!ENTITY ENG "&#330;">  
+<!ENTITY napos "&#329;">  
+<!ENTITY ncaron "&#328;">  
+<!ENTITY Ncaron "&#327;">  
+<!ENTITY ncedil "&#326;">  
+<!ENTITY Ncedil "&#325;">  
+<!ENTITY odblac "&#337;">  
+<!ENTITY Odblac "&#336;">  
+<!ENTITY Omacr "&#332;">  
+<!ENTITY omacr "&#333;">  
+<!ENTITY oelig "&#339;">  
+<!ENTITY OElig "&#338;">  
+<!ENTITY racute "&#341;">  
+<!ENTITY Racute "&#340;">  
+<!ENTITY rcaron "&#345;">  
+<!ENTITY Rcaron "&#344;">  
+<!ENTITY rcedil "&#343;">  
+<!ENTITY Rcedil "&#342;">  
+<!ENTITY sacute "&#347;">  
+<!ENTITY Sacute "&#346;">  
+<!ENTITY scaron "&#353;">  
+<!ENTITY Scaron "&#352;">  
+<!ENTITY scedil "&#351;">  
+<!ENTITY Scedil "&#350;">  
+<!ENTITY scirc "&#349;">  
+<!ENTITY Scirc "&#348;">  
+<!ENTITY tcaron "&#357;">  
+<!ENTITY Tcaron "&#356;">  
+<!ENTITY tcedil "&#355;">  
+<!ENTITY Tcedil "&#354;">  
+<!ENTITY tstrok "&#359;">  
+<!ENTITY Tstrok "&#358;">  
+<!ENTITY ubreve "&#365;">  
+<!ENTITY Ubreve "&#364;">  
+<!ENTITY udblac "&#369;">  
+<!ENTITY Udblac "&#368;">  
+<!ENTITY umacr "&#363;">  
+<!ENTITY Umacr "&#362;">  
+<!ENTITY uogon "&#371;">  
+<!ENTITY Uogon "&#370;">  
+<!ENTITY uring "&#367;">  
+<!ENTITY Uring "&#366;">  
+<!ENTITY utilde "&#361;">  
+<!ENTITY Utilde "&#360;">  
+<!ENTITY wcirc "&#373;">  
+<!ENTITY Wcirc "&#372;">  
+<!ENTITY ycirc "&#375;">  
+<!ENTITY Ycirc "&#374;">  
+<!ENTITY Yuml "&#376;">  
+<!ENTITY zacute "&#378;">  
+<!ENTITY Zacute "&#377;">  
+<!ENTITY zcaron "&#382;">  
+<!ENTITY Zcaron "&#381;">  
+<!ENTITY zdot "&#380;">  
+<!ENTITY Zdot "&#379;">  
+
+<!ENTITY boxh "&#9472;">  
+<!ENTITY boxv "&#9474;">  
+<!ENTITY boxur "&#9492;">  
+<!ENTITY boxul "&#9496;">  
+<!ENTITY boxdl "&#9488;">  
+<!ENTITY boxdr "&#9484;">  
+<!ENTITY boxvr "&#9500;">  
+<!ENTITY boxhu "&#9524;">  
+<!ENTITY boxvl "&#9508;">  
+<!ENTITY boxhd "&#9516;">  
+<!ENTITY boxvh "&#9532;">  
+<!ENTITY boxvR "&#9566;">  
+<!ENTITY boxhU "&#9576;">  
+<!ENTITY boxvL "&#9569;">  
+<!ENTITY boxhD "&#9573;">  
+<!ENTITY boxvH "&#9578;">  
+<!ENTITY boxH "&#9552;">  
+<!ENTITY boxV "&#9553;">  
+<!ENTITY boxUR "&#9562;">  
+<!ENTITY boxUL "&#9565;">  
+<!ENTITY boxDL "&#9559;">  
+<!ENTITY boxDR "&#9556;">  
+<!ENTITY boxVR "&#9568;">  
+<!ENTITY boxHU "&#9577;">  
+<!ENTITY boxVL "&#9571;">  
+<!ENTITY boxHD "&#9574;">  
+<!ENTITY boxVH "&#9580;">  
+<!ENTITY boxVr "&#9567;">  
+<!ENTITY boxHu "&#9575;">  
+<!ENTITY boxVl "&#9570;">  
+<!ENTITY boxHd "&#9572;">  
+<!ENTITY boxVh "&#9579;">  
+<!ENTITY boxuR "&#9560;">  
+<!ENTITY boxUl "&#9564;">  
+<!ENTITY boxdL "&#9557;">  
+<!ENTITY boxDr "&#9555;">  
+<!ENTITY boxUr "&#9561;">  
+<!ENTITY boxuL "&#9563;">  
+<!ENTITY boxDl "&#9558;">  
+<!ENTITY boxdR "&#9554;">  
+
+<!ENTITY half "&#189;">  
+<!ENTITY frac12 "&#189;">  
+<!ENTITY frac14 "&#188;">  
+<!ENTITY frac34 "&#190;">  
+<!ENTITY frac18 "&#8539;">  
+<!ENTITY frac38 "&#8540;">  
+<!ENTITY frac58 "&#8541;">  
+<!ENTITY frac78 "&#8542;">  
+<!ENTITY sup1 "&#185;">  
+<!ENTITY sup2 "&#178;">  
+<!ENTITY sup3 "&#179;">  
+<!ENTITY plus "&#43;">  
+<!ENTITY plusmn "&#177;">  
+<!ENTITY lt "&#38;#60;">  
+<!ENTITY equals "&#61;">  
+<!ENTITY gt "&#62;">  
+<!ENTITY divide "&#247;">  
+<!ENTITY times "&#215;">  
+<!ENTITY curren "&#164;">  
+<!ENTITY pound "&#163;">  
+<!ENTITY dollar "&#36;">  
+<!ENTITY cent "&#162;">  
+<!ENTITY yen "&#165;">  
+<!ENTITY num "&#35;">  
+<!ENTITY percnt "&#37;">  
+<!ENTITY amp "&#38;#38;">  
+<!ENTITY ast "&#42;">  
+<!ENTITY commat "&#64;">  
+<!ENTITY lsqb "&#91;">  
+<!ENTITY bsol "&#92;">  
+<!ENTITY rsqb "&#93;">  
+<!ENTITY lcub "&#123;">  
+<!ENTITY horbar "&#8213;">  
+<!ENTITY verbar "&#124;">  
+<!ENTITY rcub "&#125;">  
+<!ENTITY micro "&#181;">  
+<!ENTITY ohm "&#8486;">  
+<!ENTITY deg "&#176;">  
+<!ENTITY ordm "&#186;">  
+<!ENTITY ordf "&#170;">  
+<!ENTITY sect "&#167;">  
+<!ENTITY para "&#182;">  
+<!ENTITY middot "&#183;">  
+<!ENTITY larr "&#8592;">  
+<!ENTITY rarr "&#8594;">  
+<!ENTITY uarr "&#8593;">  
+<!ENTITY darr "&#8595;">  
+<!ENTITY copy "&#169;">  
+<!ENTITY reg "&#174;">  
+<!ENTITY trade "&#8482;">  
+<!ENTITY brvbar "&#166;">  
+<!ENTITY not "&#172;">  
+<!ENTITY sung "&#65533;">  
+<!ENTITY excl "&#33;">  
+<!ENTITY iexcl "&#161;">  
+<!ENTITY quot "&#34;">  
+<!ENTITY apos "&#39;">  
+<!ENTITY lpar "&#40;">  
+<!ENTITY rpar "&#41;">  
+<!ENTITY comma "&#44;">  
+<!ENTITY lowbar "&#95;">  
+<!ENTITY hyphen "&#45;">  
+<!ENTITY period "&#46;">  
+<!ENTITY sol "&#47;">  
+<!ENTITY colon "&#58;">  
+<!ENTITY semi "&#59;">  
+<!ENTITY quest "&#63;">  
+<!ENTITY iquest "&#191;">  
+<!ENTITY laquo "&#171;">  
+<!ENTITY raquo "&#187;">  
+<!ENTITY lsquo "&#8216;">  
+<!ENTITY rsquo "&#8217;">  
+<!ENTITY ldquo "&#8220;">  
+<!ENTITY rdquo "&#8221;">  
+<!ENTITY nbsp "&#160;">  
+<!ENTITY shy "&#173;">  
+
+<!ENTITY agr "&#945;">  
+<!ENTITY Agr "&#913;">  
+<!ENTITY bgr "&#946;">  
+<!ENTITY Bgr "&#914;">  
+<!ENTITY ggr "&#947;">  
+<!ENTITY Ggr "&#915;">  
+<!ENTITY dgr "&#948;">  
+<!ENTITY Dgr "&#916;">  
+<!ENTITY egr "&#949;">  
+<!ENTITY Egr "&#917;">  
+<!ENTITY zgr "&#950;">  
+<!ENTITY Zgr "&#918;">  
+<!ENTITY eegr "&#951;">  
+<!ENTITY EEgr "&#919;">  
+<!ENTITY thgr "&#952;">  
+<!ENTITY THgr "&#920;">  
+<!ENTITY igr "&#953;">  
+<!ENTITY Igr "&#921;">  
+<!ENTITY kgr "&#954;">  
+<!ENTITY Kgr "&#922;">  
+<!ENTITY lgr "&#955;">  
+<!ENTITY Lgr "&#923;">  
+<!ENTITY mgr "&#956;">  
+<!ENTITY Mgr "&#924;">  
+<!ENTITY ngr "&#957;">  
+<!ENTITY Ngr "&#925;">  
+<!ENTITY xgr "&#958;">  
+<!ENTITY Xgr "&#926;">  
+<!ENTITY ogr "&#959;">  
+<!ENTITY Ogr "&#927;">  
+<!ENTITY pgr "&#960;">  
+<!ENTITY Pgr "&#928;">  
+<!ENTITY rgr "&#961;">  
+<!ENTITY Rgr "&#929;">  
+<!ENTITY sgr "&#963;">  
+<!ENTITY Sgr "&#931;">  
+<!ENTITY sfgr "&#962;">  
+<!ENTITY tgr "&#964;">  
+<!ENTITY Tgr "&#932;">  
+<!ENTITY ugr "&#965;">  
+<!ENTITY Ugr "&#933;">  
+<!ENTITY phgr "&#966;">  
+<!ENTITY PHgr "&#934;">  
+<!ENTITY khgr "&#967;">  
+<!ENTITY KHgr "&#935;">  
+<!ENTITY psgr "&#968;">  
+<!ENTITY PSgr "&#936;">  
+<!ENTITY ohgr "&#969;">  
+<!ENTITY OHgr "&#937;">  
+
+<!ENTITY euro "&#8364;">  
+<!ENTITY Ebreve "&#276;">  
+<!ENTITY ebreve "&#277;">  
+<!ENTITY Ibreve "&#300;">  
+<!ENTITY ibreve "&#301;">  
+<!ENTITY Obreve "&#334;">  
+<!ENTITY obreve "&#335;">  
+<!ENTITY Ymacr "&#562;">  
+<!ENTITY ymacr "&#563;">  
+<!ENTITY TLR2ast "&#8273;">  
+<!ENTITY TLRAEligscs "&#59022;">  
+<!ENTITY TLRAEligscss "&#59028;">  
+<!ENTITY TLRAEligss "&#59012;">  
+<!ENTITY TLRaeligss "&#59014;">  
+<!ENTITY TLRairpl "&#9992;">  
+<!ENTITY TLRand "&#57371;">  
+<!ENTITY TLRballot "&#9744;">  
+<!ENTITY TLRbkter "&#61000;">  
+<!ENTITY TLRblbar "&#59102;">  
+<!ENTITY TLRboxx "&#9746;">  
+<!ENTITY TLRbrc "&#9130;">  
+<!ENTITY TLRbrowse "&#61010;">  
+<!ENTITY TLRbull1 "&#58500;">  
+<!ENTITY TLRbull2 "&#9679;">  
+<!ENTITY TLRbull3 "&#58502;">  
+<!ENTITY TLRbull4 "&#58503;">  
+<!ENTITY TLRbull7 "&#58506;">  
+<!ENTITY TLRbxsur "&#10064;">  
+<!ENTITY TLRcb "&#596;">  
+<!ENTITY TLRcents "&#59313;">  
+<!ENTITY TLRcentsb "&#59301;">  
+<!ENTITY TLRcentss "&#59300;">  
+<!ENTITY TLRcentssb "&#59302;">  
+<!ENTITY TLRcentssbR "&#59304;">  
+<!ENTITY TLRckbox "&#9745;">  
+<!ENTITY TLRcntrl "&#8452;">  
+<!ENTITY TLRcopys "&#59004;">  
+<!ENTITY TLRcopysrr "&#59075;">  
+<!ENTITY TLRcopysw "&#9410;">  
+<!ENTITY TLRcopyswr "&#59073;">  
+<!ENTITY TLRdarr "&#58009;">  
+<!ENTITY TLRdarr1 "&#58005;">  
+<!ENTITY TLRdarr1f "&#58001;">  
+<!ENTITY TLRdash "&#59021;">  
+<!ENTITY TLRdashb "&#59011;">  
+<!ENTITY TLRdashl "&#59101;">  
+<!ENTITY TLRdeg "&#57378;">  
+<!ENTITY TLRdiameb "&#57370;">  
+<!ENTITY TLRdiamet "&#8960;">  
+<!ENTITY TLRdiamo "&#9826;">  
+<!ENTITY TLRdisk "&#61002;">  
+<!ENTITY TLRdivide "&#57376;">  
+<!ENTITY TLRdivsl "&#8725;">  
+<!ENTITY TLRdollarssR "&#59303;">  
+<!ENTITY TLRdotl "&#8228;">  
+<!ENTITY TLRdotR "&#57345;">  
+<!ENTITY TLRdram "&#436;">  
+<!ENTITY TLRegrL "&#1013;">  
+<!ENTITY TLRemp1c "&#57360;">  
+<!ENTITY TLRemp1l "&#57361;">  
+<!ENTITY TLRemp2c "&#57362;">  
+<!ENTITY TLRemp2l "&#57363;">  
+<!ENTITY TLRemp3c "&#57364;">  
+<!ENTITY TLRemp3l "&#57365;">  
+<!ENTITY TLRemptyb "&#57369;">  
+<!ENTITY TLRenv1 "&#9993;">  
+<!ENTITY TLRequals "&#57377;">  
+<!ENTITY TLRflorin "&#59078;">  
+<!ENTITY TLRflr0 "&#58700;">  
+<!ENTITY TLRflr2 "&#58701;">  
+<!ENTITY TLRflr3 "&#58702;">  
+<!ENTITY TLRflr4 "&#58703;">  
+<!ENTITY TLRflr5 "&#58704;">  
+<!ENTITY TLRflr6 "&#58705;">  
+<!ENTITY TLRflr7 "&#58706;">  
+<!ENTITY TLRfrslab "&#57374;">  
+<!ENTITY TLRgev "&#10906;">  
+<!ENTITY TLRgreaG "&#10913;">  
+<!ENTITY TLRgt "&#57368;">  
+<!ENTITY TLRgtl "&#57356;">  
+<!ENTITY TLRhandv "&#9996;">  
+<!ENTITY TLRhandw "&#9997;">  
+<!ENTITY TLRheartf "&#9829;">  
+<!ENTITY TLRhouse "&#8962;">  
+<!ENTITY TLRincare "&#59306;">  
+<!ENTITY TLRintb "&#8253;">  
+<!ENTITY TLRintbS "&#59076;">  
+<!ENTITY TLRinvbreve "&#785;">  
+<!ENTITY TLRinvT "&#58720;">  
+<!ENTITY TLRKey "&#62001;">  
+<!ENTITY TLRkey "&#62000;">  
+<!ENTITY TLRkeydecimal "&#57381;">  
+<!ENTITY TLRslaquo "&#8249;">  
+<!ENTITY TLRlarr1 "&#58006;">  
+<!ENTITY TLRlarr1f "&#58002;">  
+<!ENTITY TLRlarrL "&#58010;">  
+<!ENTITY TLRlcbp1 "&#9127;">  
+<!ENTITY TLRlcbp3 "&#9128;">  
+<!ENTITY TLRlcbp4 "&#9129;">  
+<!ENTITY TLRlcub "&#59010;">  
+<!ENTITY TLRlessL "&#10914;">  
+<!ENTITY TLRletXb "&#10006;">  
+<!ENTITY TLRlev "&#10905;">  
+<!ENTITY TLRlhand "&#9756;">  
+<!ENTITY TLRlomacr "&#817;">  
+<!ENTITY TLRloring "&#805;">  
+<!ENTITY TLRloz "&#8977;">  
+<!ENTITY TLRlparL "&#8333;">  
+<!ENTITY TLRlparR "&#8317;">  
+<!ENTITY TLRlsesh "&#643;">  
+<!ENTITY TLRlt "&#57367;">  
+<!ENTITY TLRltl "&#57357;">  
+<!ENTITY TLRltri "&#58543;">  
+<!ENTITY TLRminus "&#57380;">  
+<!ENTITY TLRnbemsp "&#8193;">  
+<!ENTITY TLRnbensp "&#8192;">  
+<!ENTITY TLRnbthsp "&#8197;">  
+<!ENTITY TLRncss1 "&#10122;">  
+<!ENTITY TLRncss10 "&#10131;">  
+<!ENTITY TLRncss2 "&#10123;">  
+<!ENTITY TLRncss3 "&#10124;">  
+<!ENTITY TLRncss4 "&#10125;">  
+<!ENTITY TLRncss5 "&#10126;">  
+<!ENTITY TLRncss6 "&#10127;">  
+<!ENTITY TLRncss7 "&#10128;">  
+<!ENTITY TLRncss8 "&#10129;">  
+<!ENTITY TLRncss9 "&#10130;">  
+<!ENTITY TLRnev "&#57352;">  
+<!ENTITY TLRngtV "&#57347;">  
+<!ENTITY TLRnumero "&#8470;">  
+<!ENTITY TLROEligscs "&#59023;">  
+<!ENTITY TLROEligscss "&#59029;">  
+<!ENTITY TLROEligss "&#59013;">  
+<!ENTITY TLRoeligss "&#59015;">  
+<!ENTITY TLRoptlb "&#8203;">  
+<!ENTITY TLRor "&#57372;">  
+<!ENTITY TLRosqtp "&#9671;">  
+<!ENTITY TLRosqu5 "&#58521;">  
+<!ENTITY TLRpenc1 "&#9998;">  
+<!ENTITY TLRpesos "&#8369;">  
+<!ENTITY TLRpesoss "&#59312;">  
+<!ENTITY TLRplus "&#57379;">  
+<!ENTITY TLRplusmn "&#57366;">  
+<!ENTITY TLRpoundssm "&#59305;">  
+<!ENTITY TLRproprt "&#8759;">  
+<!ENTITY TLRrarr1 "&#58004;">  
+<!ENTITY TLRrarr1f "&#10151;">  
+<!ENTITY TLRrarrL "&#58011;">  
+<!ENTITY TLRratio "&#8750;">  
+<!ENTITY TLRrcbp1 "&#9131;">  
+<!ENTITY TLRrcbp3 "&#9132;">  
+<!ENTITY TLRrcbp4 "&#9133;">  
+<!ENTITY TLRrcub "&#59009;">  
+<!ENTITY TLRregs "&#59005;">  
+<!ENTITY TLRrhand "&#9758;">  
+<!ENTITY TLRrhndf "&#9755;">  
+<!ENTITY TLRrparrL "&#8334;">  
+<!ENTITY TLRrparrR "&#8318;">  
+<!ENTITY TLRrtri "&#58541;">  
+<!ENTITY TLRschwa "&#601;">  
+<!ENTITY TLRschwab "&#59026;">  
+<!ENTITY TLRschwabi "&#59027;">  
+<!ENTITY TLRschwai "&#59025;">  
+<!ENTITY TLRschwar "&#59024;">  
+<!ENTITY TLRscisl "&#58730;">  
+<!ENTITY TLRscisr "&#9986;">  
+<!ENTITY TLRservice "&#8480;">  
+<!ENTITY TLRService "&#59072;">  
+<!ENTITY TLRsetmn "&#57373;">  
+<!ENTITY TLRsimev "&#57353;">  
+<!ENTITY TLRsimv "&#8766;">  
+<!ENTITY TLRsqtp "&#9671;">  
+<!ENTITY TLRsqu3 "&#9724;">  
+<!ENTITY TLRsquf "&#9632;">  
+<!ENTITY TLRsraquo "&#8250;">  
+<!ENTITY TLRstarfb "&#58536;">  
+<!ENTITY TLRstaro "&#9734;">  
+<!ENTITY TLRstarod "&#10017;">  
+<!ENTITY TLRszlig "&#59016;">  
+<!ENTITY TLRtcirc "&#94;">  
+<!ENTITY TLRtdquo "&#34;">  
+<!ENTITY TLRtsquo "&#39;">  
+<!ENTITY TLRter "&#61001;">  
+<!ENTITY TLRTHgr "&#1012;">  
+<!ENTITY TLRtimes "&#57375;">  
+<!ENTITY TLRtrade "&#59200;">  
+<!ENTITY TLRtradesc "&#59006;">  
+<!ENTITY TLRtrlfb "&#9664;">  
+<!ENTITY TLRtrrfb "&#9654;">  
+<!ENTITY TLRttilde "&#126;">  
+<!ENTITY TLRturnv "&#652;">  
+<!ENTITY TLRuarr "&#58008;">  
+<!ENTITY TLRuarr1 "&#58007;">  
+<!ENTITY TLRuarr1f "&#58003;">  
+<!ENTITY TLRutrif "&#9650;">  
+<!ENTITY TLRvirgul "&#8260;">  
+<!ENTITY TLRWP1 "&#62009;">  
+<!ENTITY TLRWP2 "&#62010;">  
+<!ENTITY TLRWP2tm "&#62011;">  
+
+<!ENTITY ape "&#8778;">  
+<!ENTITY asymp "&#8781;">  
+<!ENTITY bcong "&#8780;">  
+<!ENTITY bepsi "&#8717;">  
+<!ENTITY bowtie "&#8904;">  
+<!ENTITY bsim "&#8765;">  
+<!ENTITY bsime "&#8909;">  
+<!ENTITY bump "&#8782;">  
+<!ENTITY bumpe "&#8783;">  
+<!ENTITY cire "&#8791;">  
+<!ENTITY colone "&#8788;">  
+<!ENTITY cuepr "&#8926;">  
+<!ENTITY cuesc "&#8927;">  
+<!ENTITY cupre "&#8828;">  
+<!ENTITY dashv "&#8867;">  
+<!ENTITY ecir "&#8790;">  
+<!ENTITY ecolon "&#8798;">  
+<!ENTITY eDot "&#8785;">  
+<!ENTITY esdot "&#8784;">  
+<!ENTITY efDot "&#8786;">  
+<!ENTITY egs "&#8925;">  
+<!ENTITY els "&#8924;">  
+<!ENTITY erDot "&#8787;">  
+<!ENTITY fork "&#8916;">  
+<!ENTITY frown "&#8994;">  
+<!ENTITY gap "&#8819;">  
+<!ENTITY gsdot "&#8919;">  
+<!ENTITY gE "&#8807;">  
+<!ENTITY gel "&#8923;">  
+<!ENTITY gEl "&#8923;">  
+<!ENTITY ges "&#8805;">  
+<!ENTITY Gg "&#8921;">  
+<!ENTITY gl "&#8823;">  
+<!ENTITY gsim "&#8819;">  
+<!ENTITY Gt "&#8811;">  
+<!ENTITY lap "&#8818;">  
+<!ENTITY ldot "&#8918;">  
+<!ENTITY lE "&#8806;">  
+<!ENTITY lEg "&#8922;">  
+<!ENTITY leg "&#8922;">  
+<!ENTITY les "&#8804;">  
+<!ENTITY lg "&#8822;">  
+<!ENTITY Ll "&#8920;">  
+<!ENTITY lsim "&#8818;">  
+<!ENTITY Lt "&#8810;">  
+<!ENTITY ltrie "&#8884;">  
+<!ENTITY mid "&#8739;">  
+<!ENTITY models "&#8871;">  
+<!ENTITY pr "&#8826;">  
+<!ENTITY prap "&#8830;">  
+<!ENTITY pre "&#8828;">  
+<!ENTITY prsim "&#8830;">  
+<!ENTITY rtrie "&#8885;">  
+<!ENTITY samalg "&#8720;">  
+<!ENTITY sc "&#8827;">  
+<!ENTITY scap "&#8831;">  
+<!ENTITY sccue "&#8829;">  
+<!ENTITY sce "&#8829;">  
+<!ENTITY scsim "&#8831;">  
+<!ENTITY sfrown "&#8994;">  
+<!ENTITY smid "&#65533;">  
+<!ENTITY smile "&#8995;">  
+<!ENTITY spar "&#8741;">  
+<!ENTITY sqsub "&#8847;">  
+<!ENTITY sqsube "&#8849;">  
+<!ENTITY sqsup "&#8848;">  
+<!ENTITY sqsupe "&#8850;">  
+<!ENTITY ssmile "&#8995;">  
+<!ENTITY Sub "&#8912;">  
+<!ENTITY subE "&#8838;">  
+<!ENTITY Sup "&#8913;">  
+<!ENTITY supE "&#8839;">  
+<!ENTITY thkap "&#8776;">  
+<!ENTITY thksim "&#8764;">  
+<!ENTITY trie "&#8796;">  
+<!ENTITY twixt "&#8812;">  
+<!ENTITY vdash "&#8866;">  
+<!ENTITY Vdash "&#8873;">  
+<!ENTITY vDash "&#8872;">  
+<!ENTITY veebar "&#8891;">  
+<!ENTITY vltri "&#8882;">  
+<!ENTITY vprop "&#8733;">  
+<!ENTITY vrtri "&#8883;">  
+<!ENTITY Vvdash "&#8874;">  
+
+<!ENTITY emsp "&#8195;">  
+<!ENTITY ensp "&#8194;">  
+<!ENTITY emsp13 "&#8196;">  
+<!ENTITY emsp14 "&#8197;">  
+<!ENTITY numsp "&#8199;">  
+<!ENTITY puncsp "&#8200;">  
+<!ENTITY thinsp "&#8201;">  
+<!ENTITY hairsp "&#8202;">  
+<!ENTITY mdash "&#8212;">  
+<!ENTITY ndash "&#8211;">  
+<!ENTITY dash "&#8208;">  
+<!ENTITY blank "&#9251;">  
+<!ENTITY hellip "&#8230;">  
+<!ENTITY nldr "&#8229;">  
+<!ENTITY frac13 "&#8531;">  
+<!ENTITY frac23 "&#8532;">  
+<!ENTITY frac15 "&#8533;">  
+<!ENTITY frac25 "&#8534;">  
+<!ENTITY frac35 "&#8535;">  
+<!ENTITY frac45 "&#8536;">  
+<!ENTITY frac16 "&#8537;">  
+<!ENTITY frac56 "&#8537;">  
+<!ENTITY incare "&#8453;">  
+<!ENTITY block "&#9608;">  
+<!ENTITY uhblk "&#9600;">  
+<!ENTITY lhblk "&#9604;">  
+<!ENTITY blk14 "&#9617;">  
+<!ENTITY blk12 "&#9618;">  
+<!ENTITY blk34 "&#9619;">  
+<!ENTITY marker "&#9646;">  
+<!ENTITY cir "&#9675;">  
+<!ENTITY squ "&#9633;">  
+<!ENTITY rect "&#9645;">  
+<!ENTITY utri "&#9653;">  
+<!ENTITY dtri "&#9663;">  
+<!ENTITY star "&#8902;">  
+<!ENTITY bull "&#8226;">  
+<!ENTITY squf "&#9642;">  
+<!ENTITY utrif "&#9652;">  
+<!ENTITY dtrif "&#9662;">  
+<!ENTITY ltrif "&#9666;">  
+<!ENTITY rtrif "&#9656;">  
+<!ENTITY clubs "&#9827;">  
+<!ENTITY diams "&#9830;">  
+<!ENTITY hearts "&#9825;">  
+<!ENTITY spades "&#9824;">  
+<!ENTITY malt "&#10016;">  
+<!ENTITY dagger "&#8224;">  
+<!ENTITY Dagger "&#8225;">  
+<!ENTITY check "&#10003;">  
+<!ENTITY cross "&#10007;">  
+<!ENTITY sharp "&#9839;">  
+<!ENTITY flat "&#9837;">  
+<!ENTITY male "&#9794;">  
+<!ENTITY female "&#9792;">  
+<!ENTITY phone "&#9742;">  
+<!ENTITY telrec "&#8981;">  
+<!ENTITY copysr "&#8471;">  
+<!ENTITY caret "&#8257;">  
+<!ENTITY lsquor "&#8218;">  
+<!ENTITY ldquor "&#8222;">  
+<!ENTITY fflig "&#64256;">  
+<!ENTITY filig "&#64257;">  
+<!ENTITY fjlig "&#65533;">  
+<!ENTITY ffilig "&#64259;">  
+<!ENTITY ffllig "&#64260;">  
+<!ENTITY fllig "&#64258;">  
+<!ENTITY mldr "&#8230;">  
+<!ENTITY rdquor "&#8221;">  
+<!ENTITY rsquor "&#8217;">  
+<!ENTITY vellip "&#8942;">  
+<!ENTITY hybull "&#8259;">  
+<!ENTITY loz "&#9674;">  
+<!ENTITY lozf "&#10022;">  
+<!ENTITY ltri "&#9667;">  
+<!ENTITY rtri "&#9657;">  
+<!ENTITY starf "&#9733;">  
+<!ENTITY natur "&#9838;">  
+<!ENTITY rx "&#8478;">  
+<!ENTITY sext "&#10038;">  
+<!ENTITY target "&#8982;">  
+<!ENTITY dlcrop "&#8973;">  
+<!ENTITY drcrop "&#8972;">  
+<!ENTITY ulcrop "&#8975;">  
+<!ENTITY urcrop "&#8974;">  
+
+<!ENTITY amalg "&#8705;">  
+<!ENTITY Barwed "&#8892;">  
+<!ENTITY barwed "&#8892;">  
+<!ENTITY Cap "&#8914;">  
+<!ENTITY Cup "&#8915;">  
+<!ENTITY cuvee "&#8910;">  
+<!ENTITY cuwed "&#8911;">  
+<!ENTITY diam "&#8900;">  
+<!ENTITY divonx "&#8903;">  
+<!ENTITY intcal "&#8890;">  
+<!ENTITY lthree "&#8907;">  
+<!ENTITY ltimes "&#8905;">  
+<!ENTITY minusb "&#8863;">  
+<!ENTITY oast "&#8859;">  
+<!ENTITY ocir "&#8858;">  
+<!ENTITY odash "&#8861;">  
+<!ENTITY odot "&#8857;">  
+<!ENTITY ominus "&#8854;">  
+<!ENTITY oplus "&#8853;">  
+<!ENTITY osol "&#8856;">  
+<!ENTITY otimes "&#8855;">  
+<!ENTITY plusb "&#8862;">  
+<!ENTITY plusdo "&#8724;">  
+<!ENTITY rthree "&#8908;">  
+<!ENTITY rtimes "&#8906;">  
+<!ENTITY sdot "&#8901;">  
+<!ENTITY sdotb "&#8865;">  
+<!ENTITY setmn "&#8726;">  
+<!ENTITY sqcap "&#8851;">  
+<!ENTITY sqcup "&#8852;">  
+<!ENTITY ssetmn "&#8726;">  
+<!ENTITY sstarf "&#8902;">  
+<!ENTITY timesb "&#8864;">  
+<!ENTITY top "&#8868;">  
+<!ENTITY uplus "&#8846;">  
+<!ENTITY wreath "&#8768;">  
+<!ENTITY xcirc "&#9711;">  
+<!ENTITY xdtri "&#9661;">  
+<!ENTITY xutri "&#9651;">  
+<!ENTITY coprod "&#8720;">  
+<!ENTITY prod "&#8719;">  
+<!ENTITY sum "&#8721;">  
+
+<!ENTITY rceil "&#8969;">  
+<!ENTITY rfloor "&#8971;">  
+<!ENTITY rpargt "&#65533;">  
+<!ENTITY urcorn "&#8989;">  
+<!ENTITY drcorn "&#8991;">  
+<!ENTITY lceil "&#8968;">  
+<!ENTITY lfloor "&#8970;">  
+<!ENTITY lpargt "&#65533;">  
+<!ENTITY ulcorn "&#8988;">  
+<!ENTITY dlcorn "&#8990;">  
+
+<!ENTITY gnap "&#65533;">  
+<!ENTITY gne "&#8809;">  
+<!ENTITY gnE "&#8809;">  
+<!ENTITY gnsim "&#8935;">  
+<!ENTITY gvnE "&#8809;">  
+<!ENTITY lnap "&#65533;">  
+<!ENTITY lnE "&#8808;">  
+<!ENTITY lne "&#8808;">  
+<!ENTITY lnsim "&#8934;">  
+<!ENTITY lvnE "&#8808;">  
+<!ENTITY nap "&#8777;">  
+<!ENTITY ncong "&#8775;">  
+<!ENTITY nequiv "&#8802;">  
+<!ENTITY ngE "&#8817;">  
+<!ENTITY nge "&#8817;">  
+<!ENTITY nges "&#8817;">  
+<!ENTITY ngt "&#8815;">  
+<!ENTITY nle "&#8816;">  
+<!ENTITY nlE "&#8816;">  
+<!ENTITY nles "&#8816;">  
+<!ENTITY nlt "&#8814;">  
+<!ENTITY nltri "&#8938;">  
+<!ENTITY nltrie "&#8940;">  
+<!ENTITY nmid "&#8740;">  
+<!ENTITY npar "&#8742;">  
+<!ENTITY npr "&#8832;">  
+<!ENTITY npre "&#8928;">  
+<!ENTITY nrtri "&#8939;">  
+<!ENTITY nrtrie "&#8941;">  
+<!ENTITY nsc "&#8833;">  
+<!ENTITY nsce "&#8929;">  
+<!ENTITY nsim "&#8769;">  
+<!ENTITY nsime "&#8772;">  
+<!ENTITY nsmid "&#65533;">  
+<!ENTITY nspar "&#8742;">  
+<!ENTITY nsub "&#8836;">  
+<!ENTITY nsube "&#8840;">  
+<!ENTITY nsubE "&#8840;">  
+<!ENTITY nsup "&#8837;">  
+<!ENTITY nsupe "&#8841;">  
+<!ENTITY nsupE "&#8841;">  
+<!ENTITY nvdash "&#8876;">  
+<!ENTITY nvDash "&#8877;">  
+<!ENTITY nVDash "&#8879;">  
+<!ENTITY nVdash "&#8878;">  
+<!ENTITY prnap "&#8936;">  
+<!ENTITY prnE "&#65533;">  
+<!ENTITY prnsim "&#8936;">  
+<!ENTITY scnap "&#8937;">  
+<!ENTITY scnE "&#65533;">  
+<!ENTITY scnsim "&#8937;">  
+<!ENTITY subne "&#8842;">  
+<!ENTITY subnE "&#8842;">  
+<!ENTITY supne "&#8843;">  
+<!ENTITY supnE "&#8843;">  
+<!ENTITY vsubne "&#8842;">  
+<!ENTITY vsubnE "&#65533;">  
+<!ENTITY vsupne "&#8843;">  
+<!ENTITY vsupnE "&#8843;">  
+
+<!ENTITY pi0080 "&#8644;">  
+<!ENTITY pi0081 "&#58008;">  
+<!ENTITY pi0082 "&#58009;">  
+<!ENTITY pi0083 "&#8593;">  
+<!ENTITY pi0084 "&#8595;">  
+<!ENTITY pi0085 "&#8592;">  
+<!ENTITY pi0086 "&#8594;">  
+<!ENTITY pi0087 "&#10151;">  
+<!ENTITY pi0088 "&#58002;">  
+<!ENTITY pi0089 "&#58001;">  
+<!ENTITY pi008a "&#9986;">  
+<!ENTITY pi008b "&#58730;">  
+<!ENTITY pi008c "&#8600;">  
+<!ENTITY pi008d "&#8598;">  
+<!ENTITY pi008e "&#58010;">  
+<!ENTITY pi008f "&#58011;">  
+<!ENTITY pi0090 "&#8601;">  
+<!ENTITY pi0091 "&#9745;">  
+<!ENTITY pi0092 "&#10003;">  
+<!ENTITY pi0093 "&#8453;">  
+<!ENTITY pi0094 "&#9756;">  
+<!ENTITY pi0095 "&#9758;">  
+<!ENTITY pi0096 "&#59004;">  
+<!ENTITY pi0097 "&#59005;">  
+<!ENTITY pi0098 "&#169;">  
+<!ENTITY pi0099 "&#174;">  
+<!ENTITY pi009a "&#9755;">  
+<!ENTITY pi009b "&#9746;">  
+<!ENTITY pi009c "&#58007;">  
+<!ENTITY pi009d "&#58005;">  
+<!ENTITY pi009e "&#58006;">  
+<!ENTITY pi009f "&#58004;">  
+<!ENTITY pi00a0 "&#9826;">  
+<!ENTITY pi00a1 "&#59006;">  
+<!ENTITY pi00a2 "&#59200;">  
+<!ENTITY pi00a3 "&#8482;">  
+<!ENTITY pi00a4 "&#9744;">  
+<!ENTITY pi00a5 "&#9671;">  
+<!ENTITY pi00a6 "&#9670;">  
+<!ENTITY pi00a7 "&#9733;">  
+<!ENTITY pi00a8 "&#9734;">  
+<!ENTITY pi00a9 "&#9661;">  
+<!ENTITY pi00aa "&#9651;">  
+<!ENTITY pi00ab "&#58536;">  
+<!ENTITY pi00ac "&#9664;">  
+<!ENTITY pi00ad "&#9654;">  
+<!ENTITY pi00ae "&#58543;">  
+<!ENTITY pi00af "&#58541;">  
+<!ENTITY pi00b0 "&#9724;">  
+<!ENTITY pi00b1 "&#9675;">  
+<!ENTITY pi00b2 "&#9650;">  
+<!ENTITY pi00b3 "&#9651;">  
+<!ENTITY pi00b4 "&#9679;">  
+<!ENTITY pi00b5 "&#9660;">  
+<!ENTITY pi00b6 "&#9633;">  
+<!ENTITY pi00b7 "&#9711;">  
+<!ENTITY pi00b8 "&#8226;">  
+<!ENTITY pi00b9 "&#9650;">  
+<!ENTITY pi00ba "&#9632;">  
+<!ENTITY pi00bb "&#8478;">  
+<!ENTITY pi00c0 "&#57360;">  
+<!ENTITY pi00c1 "&#57361;">  
+<!ENTITY pi00c2 "&#57362;">  
+<!ENTITY pi00c3 "&#57363;">  
+<!ENTITY pi00c4 "&#57364;">  
+<!ENTITY pi00c5 "&#57365;">  
+<!ENTITY pi00c6 "&#8709;">  
+<!ENTITY pi00c7 "&#8960;">  
+<!ENTITY pi00c8 "&#57369;">  
+<!ENTITY pi00c9 "&#57370;">  
+<!ENTITY pi00ca "&#58506;">  
+<!ENTITY pi00ce "&#171;">  
+<!ENTITY pi00cf "&#187;">  
+<!ENTITY pi00e0 "&#10016;">  
+<!ENTITY pi00e1 "&#59300;">  
+<!ENTITY pi00e2 "&#59313;">  
+<!ENTITY pi00e3 "&#59304;">  
+<!ENTITY pi00e4 "&#59305;">  
+<!ENTITY pi00e5 "&#163;">  
+<!ENTITY pi00e6 "&#59306;">  
+<!ENTITY pi00e7 "&#9679;">  
+<!ENTITY pi00e8 "&#58003;">  
+<!ENTITY pi00e9 "&#8599;">  
+<!ENTITY pi00ea "&#59301;">  
+<!ENTITY pi00ef "&#59302;">  
+<!ENTITY pi00f0 "&#59303;">  
+<!ENTITY pi00f1 "&#8630;">  
+<!ENTITY pi00f2 "&#8631;">  
+<!ENTITY pi00f3 "&#8853;">  
+<!ENTITY pi00f4 "&#58521;">  
+<!ENTITY pi00f5 "&#9711;">  
+<!ENTITY pi00f6 "&#8857;">  
+<!ENTITY pi00f7 "&#58500;">  
+<!ENTITY pi0181 "&#8317;">  
+<!ENTITY pi0182 "&#8333;">  
+<!ENTITY pi0183 "&#8318;">  
+<!ENTITY pi0184 "&#8334;">  
+<!ENTITY pi0185 "&#123;">  
+<!ENTITY pi0186 "&#125;">  
+<!ENTITY pi0187 "&#9131;">  
+<!ENTITY pi0188 "&#9132;">  
+<!ENTITY pi0189 "&#9133;">  
+<!ENTITY pi018a "&#59009;">  
+<!ENTITY pi018b "&#59010;">  
+<!ENTITY pi018c "&#9128;">  
+<!ENTITY pi018d "&#9129;">  
+<!ENTITY pi0190 "&#12296;">  
+<!ENTITY pi0191 "&#12297;">  
+<!ENTITY pi0192 "&#57366;">  
+<!ENTITY pi0194 "&#8800;">  
+<!ENTITY pi0195 "&#57352;">  
+<!ENTITY pi0196 "&#8766;">  
+<!ENTITY pi0197 "&#57353;">  
+<!ENTITY pi0198 "&#8776;">  
+<!ENTITY pi0199 "&#8747;">  
+<!ENTITY pi019a "&#643;">  
+<!ENTITY pi01a0 "&#60;">  
+<!ENTITY pi01a1 "&#57367;">  
+<!ENTITY pi01a2 "&#8758;">  
+<!ENTITY pi01a3 "&#8759;">  
+<!ENTITY pi01a4 "&#62;">  
+<!ENTITY pi01a5 "&#57368;">  
+<!ENTITY pi01a6 "&#8819;">  
+<!ENTITY pi01a7 "&#8818;">  
+<!ENTITY pi01a8 "&#10914;">  
+<!ENTITY pi01a9 "&#10913;">  
+<!ENTITY pi01aa "&#8743;">  
+<!ENTITY pi01ab "&#8744;">  
+<!ENTITY pi01ac "&#57371;">  
+<!ENTITY pi01ad "&#57372;">  
+<!ENTITY pi01b0 "&#57347;">  
+<!ENTITY pi01b1 "&#8782;">  
+<!ENTITY pi01b2 "&#8734;">  
+<!ENTITY pi01b3 "&#8733;">  
+<!ENTITY pi01b4 "&#8736;">  
+<!ENTITY pi01b5 "&#8730;">  
+<!ENTITY pi01b6 "&#8756;">  
+<!ENTITY pi01b7 "&#8757;">  
+<!ENTITY pi01b8 "&#57345;">  
+<!ENTITY pi01c0 "&#8801;">  
+<!ENTITY pi01c1 "&#8773;">  
+<!ENTITY pi01c2 "&#8771;">  
+<!ENTITY pi01c3 "&#8764;">  
+<!ENTITY pi01c4 "&#57356;">  
+<!ENTITY pi01c5 "&#57357;">  
+<!ENTITY pi01c6 "&#8805;">  
+<!ENTITY pi01c7 "&#8804;">  
+<!ENTITY pi01c8 "&#8806;">  
+<!ENTITY pi01c9 "&#8807;">  
+<!ENTITY pi01ca "&#10906;">  
+<!ENTITY pi01cb "&#10905;">  
+<!ENTITY pi01cc "&#9130;">  
+<!ENTITY pi01cd "&#9127;">  
+<!ENTITY pi01d0 "&#57373;">  
+<!ENTITY pi01d1 "&#57374;">  
+<!ENTITY pi01d2 "&#8260;">  
+<!ENTITY pi01d5 "&#59021;">  
+<!ENTITY pi01d8 "&#8243;">  
+<!ENTITY pi01d9 "&#8242;">  
+<!ENTITY pi01e2 "&#215;">  
+<!ENTITY pi01e3 "&#57375;">  
+<!ENTITY pi01e4 "&#247;">  
+<!ENTITY pi01e5 "&#57376;">  
+<!ENTITY pi01e6 "&#61;">  
+<!ENTITY pi01e7 "&#57377;">  
+<!ENTITY pi01e8 "&#176;">  
+<!ENTITY pi01e9 "&#57378;">  
+<!ENTITY pi01f0 "&#9837;">  
+<!ENTITY pi01f1 "&#8994;">  
+<!ENTITY pi01f3 "&#8725;">  
+<!ENTITY pi01f4 "&#59011;">  
+<!ENTITY pi01f6 "&#43;">  
+<!ENTITY pi01f7 "&#57379;">  
+<!ENTITY pi01f8 "&#8722;">  
+<!ENTITY pi01f9 "&#57380;">  
+<!ENTITY pi0284 "&#8273;">  
+<!ENTITY pi02b0 "&#177;">  
+<!ENTITY pi02c0 "&#8470;">  
+<!ENTITY pi02e1 "&#8977;">  
+<!ENTITY pi02eb "&#10122;">  
+<!ENTITY pi02ec "&#10123;">  
+<!ENTITY pi02ed "&#10124;">  
+<!ENTITY pi02ee "&#10125;">  
+<!ENTITY pi02ef "&#10126;">  
+<!ENTITY pi02fb "&#10127;">  
+<!ENTITY pi02fc "&#10128;">  
+<!ENTITY pi02fd "&#10129;">  
+<!ENTITY pi02fe "&#10130;">  
+<!ENTITY pi02ff "&#10131;">  
+<!ENTITY pi0382 "&#58702;">  
+<!ENTITY pi0383 "&#58703;">  
+<!ENTITY pi0384 "&#58700;">  
+<!ENTITY pi0385 "&#58701;">  
+<!ENTITY pi0387 "&#58704;">  
+<!ENTITY pi0388 "&#58706;">  
+<!ENTITY pi0389 "&#58705;">  
+<!ENTITY pi0880 "&#198;">  
+<!ENTITY pi0881 "&#338;">  
+<!ENTITY pi0882 "&#230;">  
+<!ENTITY pi0883 "&#339;">  
+<!ENTITY pi0887 "&#59022;">  
+<!ENTITY pi0888 "&#59023;">  
+<!ENTITY pi0889 "&#601;">  
+<!ENTITY pi088a "&#652;">  
+<!ENTITY pi088b "&#331;">  
+<!ENTITY pi088c "&#436;">  
+<!ENTITY pi0890 "&#596;">  
+<!ENTITY pi0891 "&#240;">  
+<!ENTITY pi0892 "&#953;">  
+<!ENTITY pi0893 "&#949;">  
+<!ENTITY pi0894 "&#59012;">  
+<!ENTITY pi0895 "&#59013;">  
+<!ENTITY pi0896 "&#59014;">  
+<!ENTITY pi0897 "&#59015;">  
+<!ENTITY pi0898 "&#59028;">  
+<!ENTITY pi0899 "&#59029;">  
+<!ENTITY pi089a "&#59024;">  
+<!ENTITY pi089b "&#59025;">  
+<!ENTITY pi089c "&#59026;">  
+<!ENTITY pi089d "&#59027;">  
+<!ENTITY pi08a2 "&#59016;">  
+<!ENTITY pi08a4 "&#9653;">  
+<!ENTITY pi08a5 "&#913;">  
+<!ENTITY pi08a6 "&#914;">  
+<!ENTITY pi08a7 "&#915;">  
+<!ENTITY pi08a8 "&#916;">  
+<!ENTITY pi08a9 "&#917;">  
+<!ENTITY pi08b0 "&#918;">  
+<!ENTITY pi08b1 "&#919;">  
+<!ENTITY pi08b2 "&#920;">  
+<!ENTITY pi08b3 "&#1012;">  
+<!ENTITY pi08b4 "&#921;">  
+<!ENTITY pi08b5 "&#922;">  
+<!ENTITY pi08b6 "&#923;">  
+<!ENTITY pi08b7 "&#924;">  
+<!ENTITY pi08b8 "&#925;">  
+<!ENTITY pi08b9 "&#926;">  
+<!ENTITY pi08c1 "&#927;">  
+<!ENTITY pi08c2 "&#928;">  
+<!ENTITY pi08c3 "&#929;">  
+<!ENTITY pi08c4 "&#931;">  
+<!ENTITY pi08c5 "&#932;">  
+<!ENTITY pi08c6 "&#933;">  
+<!ENTITY pi08c7 "&#934;">  
+<!ENTITY pi08c8 "&#935;">  
+<!ENTITY pi08c9 "&#936;">  
+<!ENTITY pi08cc "&#937;">  
+<!ENTITY pi08cd "&#945;">  
+<!ENTITY pi08d1 "&#946;">  
+<!ENTITY pi08d2 "&#947;">  
+<!ENTITY pi08d3 "&#948;">  
+<!ENTITY pi08d4 "&#1013;">  
+<!ENTITY pi08d5 "&#950;">  
+<!ENTITY pi08d6 "&#951;">  
+<!ENTITY pi08d7 "&#952;">  
+<!ENTITY pi08d8 "&#953;">  
+<!ENTITY pi08d9 "&#954;">  
+<!ENTITY pi08e1 "&#955;">  
+<!ENTITY pi08e2 "&#956;">  
+<!ENTITY pi08e3 "&#957;">  
+<!ENTITY pi08e4 "&#958;">  
+<!ENTITY pi08e5 "&#959;">  
+<!ENTITY pi08e6 "&#960;">  
+<!ENTITY pi08e7 "&#961;">  
+<!ENTITY pi08e8 "&#963;">  
+<!ENTITY pi08e9 "&#962;">  
+<!ENTITY pi08f0 "&#964;">  
+<!ENTITY pi08f1 "&#965;">  
+<!ENTITY pi08f2 "&#981;">  
+<!ENTITY pi08f3 "&#967;">  
+<!ENTITY pi08f4 "&#968;">  
+<!ENTITY pi08f6 "&#969;">  
+<!ENTITY pi08f7 "&#977;">  
+
+<!ENTITY pi10a2 "&#62009;">  
+<!ENTITY pi10b6 "&#62001;">  
+<!ENTITY pi10bb "&#61000;">  
+<!ENTITY pi10c7 "&#62010;">  
+<!ENTITY pi10c8 "&#61001;">  
+<!ENTITY pi10c9 "&#61002;">  
+<!ENTITY pi10ca "&#62011;">  
+<!ENTITY pi10d1 "&#9992;">  
+<!ENTITY pi10d2 "&#9993;">  
+<!ENTITY pi10d3 "&#9996;">  
+<!ENTITY pi10d4 "&#9997;">  
+<!ENTITY pi10d5 "&#9998;">  
+<!ENTITY pi10d6 "&#10006;">  
+<!ENTITY pi10d7 "&#10007;">  
+<!ENTITY pi10d8 "&#10064;">  
+<!ENTITY pi10d9 "&#10017;">  
+<!ENTITY pi10da "&#2665;">  
+
+<!ENTITY pi10dc "&#9824;">  
+<!ENTITY pi10dd "&#9827;">  
+
+<!ENTITY ang "&#8736;">  
+<!ENTITY angmsd "&#8737;">  
+<!ENTITY beth "&#8502;">  
+<!ENTITY bprime "&#8245;">  
+<!ENTITY comp "&#8705;">  
+<!ENTITY daleth "&#8504;">  
+<!ENTITY ell "&#8467;">  
+<!ENTITY empty "&#8709;">  
+<!ENTITY gimel "&#8503;">  
+<!ENTITY image "&#8465;">  
+<!ENTITY inodot "&#305;">  
+<!ENTITY jnodot "&#65533;">  
+<!ENTITY nexist "&#8708;">  
+<!ENTITY oS "&#9416;">  
+<!ENTITY planck "&#295;">  
+<!ENTITY real "&#8476;">  
+<!ENTITY sbsol "&#65128;">  
+<!ENTITY vprime "&#8242;">  
+<!ENTITY weierp "&#8472;">  
+
+<!ENTITY acy "&#1072;">  
+<!ENTITY Acy "&#1041;">  
+<!ENTITY bcy "&#1073;">  
+<!ENTITY Bcy "&#1041;">  
+<!ENTITY vcy "&#1074;">  
+<!ENTITY Vcy "&#1042;">  
+<!ENTITY gcy "&#1075;">  
+<!ENTITY Gcy "&#1043;">  
+<!ENTITY dcy "&#1076;">  
+<!ENTITY Dcy "&#1044;">  
+<!ENTITY iecy "&#1077;">  
+<!ENTITY IEcy "&#1045;">  
+<!ENTITY iocy "&#1105;">  
+<!ENTITY IOcy "&#1025;">  
+<!ENTITY zhcy "&#1078;">  
+<!ENTITY ZHcy "&#1046;">  
+<!ENTITY zcy "&#1079;">  
+<!ENTITY Zcy "&#1047;">  
+<!ENTITY icy "&#1080;">  
+<!ENTITY Icy "&#1048;">  
+<!ENTITY jcy "&#1081;">  
+<!ENTITY Jcy "&#1049;">  
+<!ENTITY kcy "&#1082;">  
+<!ENTITY Kcy "&#1050;">  
+<!ENTITY lcy "&#1083;">  
+<!ENTITY Lcy "&#1051;">  
+<!ENTITY mcy "&#1084;">  
+<!ENTITY Mcy "&#1052;">  
+<!ENTITY ncy "&#1085;">  
+<!ENTITY Ncy "&#1053;">  
+<!ENTITY ocy "&#1086;">  
+<!ENTITY Ocy "&#1054;">  
+<!ENTITY pcy "&#1087;">  
+<!ENTITY Pcy "&#1055;">  
+<!ENTITY rcy "&#1088;">  
+<!ENTITY Rcy "&#1056;">  
+<!ENTITY scy "&#1089;">  
+<!ENTITY Scy "&#1057;">  
+<!ENTITY tcy "&#1090;">  
+<!ENTITY Tcy "&#1058;">  
+<!ENTITY ucy "&#1091;">  
+<!ENTITY Ucy "&#1059;">  
+<!ENTITY fcy "&#1092;">  
+<!ENTITY Fcy "&#1060;">  
+<!ENTITY khcy "&#1093;">  
+<!ENTITY KHcy "&#1061;">  
+<!ENTITY tscy "&#1094;">  
+<!ENTITY TScy "&#1062;">  
+<!ENTITY chcy "&#1095;">  
+<!ENTITY CHcy "&#1063;">  
+<!ENTITY shcy "&#1096;">  
+<!ENTITY SHcy "&#1064;">  
+<!ENTITY shchcy "&#1097;">  
+<!ENTITY SHCHcy "&#1065;">  
+<!ENTITY hardcy "&#1098;">  
+<!ENTITY HARDcy "&#1066;">  
+<!ENTITY ycy "&#1099;">  
+<!ENTITY Ycy "&#1067;">  
+<!ENTITY softcy "&#1100;">  
+<!ENTITY SOFTcy "&#1068;">  
+<!ENTITY ecy "&#1101;">  
+<!ENTITY Ecy "&#1069;">  
+<!ENTITY yucy "&#1102;">  
+<!ENTITY YUcy "&#1070;">  
+<!ENTITY yacy "&#1103;">  
+<!ENTITY YAcy "&#1071;">  
+<!ENTITY numero "&#8470;">  
+
+<!ENTITY djcy "&#1106;">  
+<!ENTITY DJcy "&#1026;">  
+<!ENTITY gjcy "&#1107;">  
+<!ENTITY GJcy "&#1027;">  
+<!ENTITY jukcy "&#1108;">  
+<!ENTITY Jukcy "&#1028;">  
+<!ENTITY dscy "&#1109;">  
+<!ENTITY DScy "&#1029;">  
+<!ENTITY iukcy "&#1110;">  
+<!ENTITY Iukcy "&#1030;">  
+<!ENTITY yicy "&#1111;">  
+<!ENTITY YIcy "&#1031;">  
+<!ENTITY jsercy "&#1112;">  
+<!ENTITY Jsercy "&#1032;">  
+<!ENTITY ljcy "&#1113;">  
+<!ENTITY LJcy "&#1033;">  
+<!ENTITY njcy "&#1114;">  
+<!ENTITY NJcy "&#1034;">  
+<!ENTITY tshcy "&#1115;">  
+<!ENTITY TSHcy "&#1035;">  
+<!ENTITY kjcy "&#1116;">  
+<!ENTITY KJcy "&#1036;">  
+<!ENTITY ubrcy "&#1118;">  
+<!ENTITY Ubrcy "&#1038;">  
+<!ENTITY dzcy "&#1119;">  
+<!ENTITY DZcy "&#1039;">  
+
+<!ENTITY aacgr "&#940;">  
+<!ENTITY Aacgr "&#902;">  
+<!ENTITY eacgr "&#941;">  
+<!ENTITY Eacgr "&#904;">  
+<!ENTITY eeacgr "&#942;">  
+<!ENTITY EEacgr "&#905;">  
+<!ENTITY idigr "&#970;">  
+<!ENTITY Idigr "&#938;">  
+<!ENTITY iacgr "&#943;">  
+<!ENTITY Iacgr "&#906;">  
+<!ENTITY idiagr "&#912;">  
+<!ENTITY oacgr "&#972;">  
+<!ENTITY Oacgr "&#908;">  
+<!ENTITY udigr "&#971;">  
+<!ENTITY Udigr "&#939;">  
+<!ENTITY uacgr "&#973;">  
+<!ENTITY Uacgr "&#910;">  
+<!ENTITY udiagr "&#944;">  
+<!ENTITY ohacgr "&#974;">  
+<!ENTITY OHacgr "&#911;">  
+
+<!ENTITY alpha "&#945;">  
+<!ENTITY beta "&#946;">  
+<!ENTITY gamma "&#947;">  
+<!ENTITY Gamma "&#915;">  
+<!ENTITY gammad "&#988;">  
+<!ENTITY delta "&#948;">  
+<!ENTITY Delta "&#916;">  
+<!ENTITY epsi "&#949;">  
+<!ENTITY epsiv "&#603;">  
+<!ENTITY epsis "&#949;">  
+<!ENTITY zeta "&#950;">  
+<!ENTITY eta "&#951;">  
+<!ENTITY thetas "&#952;">  
+<!ENTITY Theta "&#920;">  
+<!ENTITY thetav "&#977;">  
+<!ENTITY iota "&#953;">  
+<!ENTITY kappa "&#954;">  
+<!ENTITY kappav "&#1008;">  
+<!ENTITY lambda "&#955;">  
+<!ENTITY Lambda "&#923;">  
+<!ENTITY mu "&#956;">  
+<!ENTITY nu "&#957;">  
+<!ENTITY xi "&#958;">  
+<!ENTITY Xi "&#926;">  
+<!ENTITY pi "&#960;">  
+<!ENTITY piv "&#982;">  
+<!ENTITY Pi "&#928;">  
+<!ENTITY rho "&#961;">  
+<!ENTITY rhov "&#1009;">  
+<!ENTITY sigma "&#963;">  
+<!ENTITY Sigma "&#931;">  
+<!ENTITY sigmav "&#962;">  
+<!ENTITY tau "&#964;">  
+<!ENTITY upsi "&#965;">  
+<!ENTITY Upsi "&#978;">  
+<!ENTITY phis "&#966;">  
+<!ENTITY Phi "&#934;">  
+<!ENTITY phiv "&#981;">  
+<!ENTITY chi "&#967;">  
+<!ENTITY psi "&#968;">  
+<!ENTITY Psi "&#936;">  
+<!ENTITY omega "&#969;">  
+<!ENTITY Omega "&#937;">  
+
+<!ENTITY b.alpha "&#945;">  
+<!ENTITY b.beta "&#946;">  
+<!ENTITY b.gamma "&#947;">  
+<!ENTITY b.Gamma "&#915;">  
+<!ENTITY b.gammad "&#988;">  
+<!ENTITY b.delta "&#948;">  
+<!ENTITY b.Delta "&#916;">  
+<!ENTITY b.epsi "&#949;">  
+<!ENTITY b.epsiv "&#603;">  
+<!ENTITY b.epsis "&#949;">  
+<!ENTITY b.zeta "&#950;">  
+<!ENTITY b.eta "&#951;">  
+<!ENTITY b.thetas "&#952;">  
+<!ENTITY b.Theta "&#920;">  
+<!ENTITY b.thetav "&#977;">  
+<!ENTITY b.iota "&#953;">  
+<!ENTITY b.kappa "&#954;">  
+<!ENTITY b.kappav "&#1008;">  
+<!ENTITY b.lambda "&#955;">  
+<!ENTITY b.Lambda "&#923;">  
+<!ENTITY b.mu "&#956;">  
+<!ENTITY b.nu "&#957;">  
+<!ENTITY b.xi "&#958;">  
+<!ENTITY b.Xi "&#926;">  
+<!ENTITY b.pi "&#960;">  
+<!ENTITY b.Pi "&#928;">  
+<!ENTITY b.piv "&#982;">  
+<!ENTITY b.rho "&#961;">  
+<!ENTITY b.rhov "&#1009;">  
+<!ENTITY b.sigma "&#963;">  
+<!ENTITY b.Sigma "&#931;">  
+<!ENTITY b.sigmav "&#962;">  
+<!ENTITY b.tau "&#964;">  
+<!ENTITY b.upsi "&#965;">  
+<!ENTITY b.Upsi "&#978;">  
+<!ENTITY b.phis "&#966;">  
+<!ENTITY b.Phi "&#934;">  
+<!ENTITY b.phiv "&#981;">  
+<!ENTITY b.chi "&#967;">  
+<!ENTITY b.psi "&#968;">  
+<!ENTITY b.Psi "&#936;">  
+<!ENTITY b.omega "&#969;">  
+<!ENTITY b.Omega "&#937;">  
+
+<!ENTITY acute "&#180;">  
+<!ENTITY breve "&#728;">  
+<!ENTITY caron "&#711;">  
+<!ENTITY cedil "&#184;">  
+<!ENTITY circ "&#710;">  
+<!ENTITY dblac "&#733;">  
+<!ENTITY die "&#168;">  
+<!ENTITY dot "&#729;">  
+<!ENTITY grave "&#96;">  
+<!ENTITY macr "&#175;">  
+<!ENTITY ogon "&#808;">  
+<!ENTITY ring "&#730;">  
+<!ENTITY tilde "&#732;">  
+<!ENTITY uml "&#168;">  
+
+<!ENTITY aleph "&#8501;">  
+<!ENTITY and "&#8743;">  
+<!ENTITY ang90 "&#8735;">  
+<!ENTITY angsph "&#8738;">  
+<!ENTITY ap "&#8776;">  
+<!ENTITY becaus "&#8757;">  
+<!ENTITY bottom "&#8869;">  
+<!ENTITY cap "&#8745;">  
+<!ENTITY cong "&#8773;">  
+<!ENTITY conint "&#8750;">  
+<!ENTITY cup "&#8746;">  
+<!ENTITY equiv "&#8801;">  
+<!ENTITY exist "&#8707;">  
+<!ENTITY forall "&#8704;">  
+<!ENTITY fnof "&#402;">  
+<!ENTITY ge "&#8805;">  
+<!ENTITY iff "&#8660;">  
+<!ENTITY infin "&#8734;">  
+<!ENTITY int "&#8747;">  
+<!ENTITY isin "&#8712;">  
+<!ENTITY lang "&#12296;">  
+<!ENTITY lArr "&#8656;">  
+<!ENTITY le "&#8804;">  
+<!ENTITY minus "&#8722;">  
+<!ENTITY mnplus "&#8723;">  
+<!ENTITY nabla "&#8711;">  
+<!ENTITY ne "&#8800;">  
+<!ENTITY ni "&#8715;">  
+<!ENTITY or "&#8744;">  
+<!ENTITY par "&#8741;">  
+<!ENTITY part "&#8706;">  
+<!ENTITY permil "&#8240;">  
+<!ENTITY perp "&#8869;">  
+<!ENTITY prime "&#8242;">  
+<!ENTITY Prime "&#8243;">  
+<!ENTITY prop "&#8733;">  
+<!ENTITY radic "&#8730;">  
+<!ENTITY rang "&#12297;">  
+<!ENTITY rArr "&#8658;">  
+<!ENTITY sim "&#8764;">  
+<!ENTITY sime "&#8771;">  
+<!ENTITY square "&#9633;">  
+<!ENTITY sub "&#8834;">  
+<!ENTITY sube "&#8838;">  
+<!ENTITY sup "&#8835;">  
+<!ENTITY supe "&#8839;">  
+<!ENTITY there4 "&#8756;">  
+<!ENTITY Verbar "&#8214;">  
+<!ENTITY angst "&#8491;">  
+<!ENTITY bernou "&#8492;">  
+<!ENTITY compfn "&#8728;">  
+<!ENTITY Dot "&#168;">  
+<!ENTITY DotDot "&#8412;">  
+<!ENTITY hamilt "&#8459;">  
+<!ENTITY lagran "&#8466;">  
+<!ENTITY lowast "&#8727;">  
+<!ENTITY notin "&#8713;">  
+<!ENTITY order "&#8500;">  
+<!ENTITY phmmat "&#8499;">  
+<!ENTITY tdot "&#8411;">  
+<!ENTITY tprime "&#8244;">  
+<!ENTITY wedgeq "&#8793;">  
+
+<!ENTITY WLX0a "">
+<!ENTITY WLX0b "">
+<!ENTITY WLX0c "">
+<!ENTITY WLX10 "">
+<!ENTITY WLX11 "">
+<!ENTITY WLX12 "">
+<!ENTITY WLX13 "">
+
+<!ENTITY acutecmb "&#769;">  
+<!ENTITY brevecmb "&#774;">  
+<!ENTITY caroncmb "&#780;">  
+<!ENTITY cedilcmb "&#807;">  
+<!ENTITY circcmb "&#770;">   
+<!ENTITY diecmb "&#776;">    
+<!ENTITY gravecmb "&#768;">  
+<!ENTITY macrcmb "&#772;">   
+<!ENTITY ringcmb "&#778;">   
+<!ENTITY tildecmb "&#771;">  
+
+<!ENTITY kacute "&#7729;">  
+<!ENTITY macute "&#7743;">  
+<!ENTITY pacute "&#7765;">  
+<!ENTITY wacute "&#7811;">  
+<!ENTITY Gacute "&#500;">   
+<!ENTITY Kacute "&#7728;">  
+<!ENTITY Macute "&#7742;">  
+<!ENTITY Pacute "&#7764;">  
+<!ENTITY Wacute "&#7810;">  
+
+<!ENTITY acaron "&#462;">  
+<!ENTITY gcaron "&#487;">  
+<!ENTITY hcaron "&#543;">  
+<!ENTITY icaron "&#464;">  
+<!ENTITY jcaron "&#496;">  
+<!ENTITY kcaron "&#489;">  
+<!ENTITY ocaron "&#466;">  
+<!ENTITY ucaron "&#468;">  
+<!ENTITY Acaron "&#461;">  
+<!ENTITY Gcaron "&#486;">  
+<!ENTITY Hcaron "&#542;">  
+<!ENTITY Icaron "&#463;">  
+<!ENTITY Kcaron "&#488;">  
+<!ENTITY Ocaron "&#465;">  
+<!ENTITY Ucaron "&#467;">  
+
+<!ENTITY dcedil "&#7697;">  
+<!ENTITY ecedil "&#553;">  
+<!ENTITY gcedil "&#291;">  
+<!ENTITY hcedil "&#7721;">  
+<!ENTITY Dcedil "&#7696;">  
+<!ENTITY Ecedil "&#552;">  
+<!ENTITY Hcedil "&#7720;">  
+
+<!ENTITY zcirc "&#7825;">  
+<!ENTITY Zcirc "&#7824;">  
+
+<!ENTITY ngrave "&#505;">  
+<!ENTITY wgrave "&#7809;">  
+<!ENTITY ygrave "&#7923;">  
+<!ENTITY Ngrave "&#504;">  
+<!ENTITY Wgrave "&#7808;">  
+<!ENTITY Ygrave "&#7922;">  
+
+<!ENTITY gmacr "&#7713;">  
+<!ENTITY Gmacr "&#7712;">  
+
+<!ENTITY wring "&#7832;">  
+<!ENTITY yring "&#7833;">  
+
+<!ENTITY etilde "&#7869;">  
+<!ENTITY ytilde "&#7929;">  
+<!ENTITY Etilde "&#7868;">  
+<!ENTITY Ytilde "&#7928;">  
+
+<!ENTITY huml "&#7719;"> 
+<!ENTITY tuml "&#7831;"> 
+<!ENTITY wuml "&#7813;"> 
+<!ENTITY xuml "&#7821;"> 
+<!ENTITY Huml "&#7718;"> 
+<!ENTITY Wuml "&#7812;"> 
+<!ENTITY Xuml "&#7820;"> 
+
+<!ENTITY ctilde "c&#771;">  
+
+<!ENTITY suml "s&#776;">  
+<!ENTITY Vuml "V&#776;">  
+
+<!--
+        ELEMENT: cite.query
+        DESCRIPTION: A resolved form of a cite instance, using attributes to pass
+   to the Westlaw FIND process for link resolution.
+        COMMENTS: 
+ -->
+
+<!ELEMENT cite.query (#PCDATA | bold|cite.title)* >
+
+<!ATTLIST cite.query w-src-number        CDATA     #IMPLIED
+                     w-seq-number        CDATA     #IMPLIED
+                     w-serial-number     CDATA     #IMPLIED
+                     w-ref-type          CDATA     #IMPLIED
+                     w-normalized-cite   CDATA     #IMPLIED
+                     w-pub-number        CDATA     #IMPLIED
+                     w-pinpoint-page     CDATA     #IMPLIED
+                     format              (cent_r)  #IMPLIED
+                     ID                  ID        #IMPLIED >
+
+
+<!--
+        ELEMENT: bold
+        DESCRIPTION: General typographic markup indicating bold style.
+        COMMENTS: 
+ -->
+
+<!ELEMENT bold (#PCDATA)>
+
+
+<!--
+        ELEMENT: cite.title
+        DESCRIPTION: A required element for the Novus links model.
+        COMMENTS: 
+ -->
+
+<!ELEMENT cite.title (#PCDATA | bold)*>
+
+
+<!--
+        ELEMENT: content.block
+        DESCRIPTION: Wrapper to contain the content of a document.
+        COMMENTS: 
+ -->
+
+<!ELEMENT content.block (#PCDATA)>
+

@@ -1,0 +1,1701 @@
+<!-- parsed entities for West Group -->
+
+<!-- system identifier: "allchars.ent" -->
+
+<!-- VERSION:  v1.01        -->
+<!-- DATE:     15 Mar 2000  -->
+
+<!-- Revision notes
+
+Date          Initials    Description
+15 Mar 2000   drd         (v1.01) Changes from LHS for box entities.
+                          Removed EOF at end.
+-->
+
+
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Added Latin 1//EN
+-->
+
+
+<!ENTITY aacute "&#38;#38;aacute;"> <!-- small a, acute accent -->
+<!ENTITY Aacute "&#38;#38;Aacute;"> <!-- capital A, acute accent -->
+<!ENTITY acirc  "&#38;#38;acirc;">  <!-- small a, circumflex accent -->
+<!ENTITY Acirc  "&#38;#38;Acirc;">  <!-- capital A, circumflex accent -->
+<!ENTITY agrave "&#38;#38;agrave;"> <!-- small a, grave accent -->
+<!ENTITY Agrave "&#38;#38;Agrave;"> <!-- capital A, grave accent -->
+<!ENTITY aring  "&#38;#38;aring;">  <!-- small a, ring -->
+<!ENTITY Aring  "&#38;#38;Aring;">  <!-- capital A, ring -->
+<!ENTITY atilde "&#38;#38;atilde;"> <!-- small a, tilde -->
+<!ENTITY Atilde "&#38;#38;Atilde;"> <!-- capital A, tilde -->
+<!ENTITY auml   "&#38;#38;auml;">   <!-- small a, dieresis or umlaut mark -->
+<!ENTITY Auml   "&#38;#38;Auml;">   <!-- capital A, dieresis or umlaut mark -->
+<!ENTITY aelig  "&#38;#38;aelig;">  <!-- small ae diphthong (ligature) -->
+<!ENTITY AElig  "&#38;#38;AElig;">  <!-- capital AE diphthong (ligature) -->
+<!ENTITY ccedil "&#38;#38;ccedil;"> <!-- small c, cedilla -->
+<!ENTITY Ccedil "&#38;#38;Ccedil;"> <!-- capital C, cedilla -->
+<!ENTITY eth    "&#38;#38;eth;">    <!-- small eth, Icelandic -->
+<!ENTITY ETH    "&#38;#38;ETH;">    <!-- capital Eth, Icelandic -->
+<!ENTITY eacute "&#38;#38;eacute;"> <!-- small e, acute accent -->
+<!ENTITY Eacute "&#38;#38;Eacute;"> <!-- capital E, acute accent -->
+<!ENTITY ecirc  "&#38;#38;ecirc;">  <!-- small e, circumflex accent -->
+<!ENTITY Ecirc  "&#38;#38;Ecirc;">  <!-- capital E, circumflex accent -->
+<!ENTITY egrave "&#38;#38;egrave;"> <!-- small e, grave accent -->
+<!ENTITY Egrave "&#38;#38;Egrave;"> <!-- capital E, grave accent -->
+<!ENTITY euml   "&#38;#38;euml;">   <!-- small e, dieresis or umlaut mark -->
+<!ENTITY Euml   "&#38;#38;Euml;">   <!-- capital E, dieresis or umlaut mark -->
+<!ENTITY iacute "&#38;#38;iacute;"> <!-- small i, acute accent -->
+<!ENTITY Iacute "&#38;#38;Iacute;"> <!-- capital I, acute accent -->
+<!ENTITY icirc  "&#38;#38;icirc;">  <!-- small i, circumflex accent -->
+<!ENTITY Icirc  "&#38;#38;Icirc;">  <!-- capital I, circumflex accent -->
+<!ENTITY igrave "&#38;#38;igrave;"> <!-- small i, grave accent -->
+<!ENTITY Igrave "&#38;#38;Igrave;"> <!-- capital I, grave accent -->
+<!ENTITY iuml   "&#38;#38;iuml;">   <!-- small i, dieresis or umlaut mark -->
+<!ENTITY Iuml   "&#38;#38;Iuml;">   <!-- capital I, dieresis or umlaut mark -->
+<!ENTITY ntilde "&#38;#38;ntilde;"> <!-- small n, tilde -->
+<!ENTITY Ntilde "&#38;#38;Ntilde;"> <!-- capital N, tilde -->
+<!ENTITY oacute "&#38;#38;oacute;"> <!-- small o, acute accent -->
+<!ENTITY Oacute "&#38;#38;Oacute;"> <!-- capital O, acute accent -->
+<!ENTITY ocirc  "&#38;#38;ocirc;">  <!-- small o, circumflex accent -->
+<!ENTITY Ocirc  "&#38;#38;Ocirc;">  <!-- capital O, circumflex accent -->
+<!ENTITY ograve "&#38;#38;ograve;"> <!-- small o, grave accent -->
+<!ENTITY Ograve "&#38;#38;Ograve;"> <!-- capital O, grave accent -->
+<!ENTITY oslash "&#38;#38;oslash;"> <!-- small o, slash -->
+<!ENTITY Oslash "&#38;#38;Oslash;"> <!-- capital O, slash -->
+<!ENTITY otilde "&#38;#38;otilde;"> <!-- small o, tilde -->
+<!ENTITY Otilde "&#38;#38;Otilde;"> <!-- capital O, tilde -->
+<!ENTITY ouml   "&#38;#38;ouml;">   <!-- small o, dieresis or umlaut mark -->
+<!ENTITY Ouml   "&#38;#38;Ouml;">   <!-- capital O, dieresis or umlaut mark -->
+<!ENTITY szlig  "&#38;#38;szlig;">  <!-- small sharp s, German (sz ligature) -->
+<!ENTITY thorn  "&#38;#38;thorn;">  <!-- small thorn, Icelandic -->
+<!ENTITY THORN  "&#38;#38;THORN;">  <!-- capital THORN, Icelandic -->
+<!ENTITY uacute "&#38;#38;uacute;"> <!-- small u, acute accent -->
+<!ENTITY Uacute "&#38;#38;Uacute;"> <!-- capital U, acute accent -->
+<!ENTITY ucirc  "&#38;#38;ucirc;">  <!-- small u, circumflex accent -->
+<!ENTITY Ucirc  "&#38;#38;Ucirc;">  <!-- capital U, circumflex accent -->
+<!ENTITY ugrave "&#38;#38;ugrave;"> <!-- small u, grave accent -->
+<!ENTITY Ugrave "&#38;#38;Ugrave;"> <!-- capital U, grave accent -->
+<!ENTITY uuml   "&#38;#38;uuml;">   <!-- small u, dieresis or umlaut mark -->
+<!ENTITY Uuml   "&#38;#38;Uuml;">   <!-- capital U, dieresis or umlaut mark -->
+<!ENTITY yacute "&#38;#38;yacute;"> <!-- small y, acute accent -->
+<!ENTITY Yacute "&#38;#38;Yacute;"> <!-- capital Y, acute accent -->
+<!ENTITY yuml   "&#38;#38;yuml;">   <!-- small y, dieresis or umlaut mark -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Added Math Symbols: Arrow Relations//EN
+-->
+
+
+<!ENTITY cularr "&#38;#38;cularr;"> <!-- left curved arrow -->
+<!ENTITY curarr "&#38;#38;curarr;"> <!-- right curved arrow -->
+<!ENTITY dArr   "&#38;#38;dArr;">   <!-- down double arrow -->
+<!ENTITY darr2  "&#38;#38;darr2;">  <!-- two down arrows -->
+<!ENTITY dharl  "&#38;#38;dharl;">  <!-- down harpoon-left -->
+<!ENTITY dharr  "&#38;#38;dharr;">  <!-- down harpoon-right -->
+<!ENTITY lAarr  "&#38;#38;lAarr;">  <!-- left triple arrow -->
+<!ENTITY Larr   "&#38;#38;Larr;">   <!-- two-head left arrow -->
+<!ENTITY larr2  "&#38;#38;larr2;">  <!-- two left arrows -->
+<!ENTITY larrhk "&#38;#38;larrhk;"> <!-- left arrow, hooked -->
+<!ENTITY larrlp "&#38;#38;larrlp;"> <!-- left arrow, looped -->
+<!ENTITY larrtl "&#38;#38;larrtl;"> <!-- left arrow, tailed -->
+<!ENTITY lhard  "&#38;#38;lhard;">  <!-- left harpoon-down -->
+<!ENTITY lharu  "&#38;#38;lharu;">  <!-- left harpoon-up -->
+<!ENTITY hArr   "&#38;#38;hArr;">   <!-- left and right double arrow -->
+<!ENTITY harr   "&#38;#38;harr;">   <!-- left and right arrow -->
+<!ENTITY lrarr2 "&#38;#38;lrarr2;"> <!-- left arrow over right arrow -->
+<!ENTITY rlarr2 "&#38;#38;rlarr2;"> <!-- right arrow over left arrow -->
+<!ENTITY harrw  "&#38;#38;harrw;">  <!-- left and right wavy arrow -->
+<!ENTITY rlhar2 "&#38;#38;rlhar2;"> <!-- right harpoon over left -->
+<!ENTITY lrhar2 "&#38;#38;lrhar2;"> <!-- left harpoon over right -->
+<!ENTITY lsh    "&#38;#38;lsh;">    <!-- left shift -->
+<!ENTITY map    "&#38;#38;map;">    <!-- maps to -->
+<!ENTITY mumap  "&#38;#38;mumap;">  <!-- multimap -->
+<!ENTITY nearr  "&#38;#38;nearr;">  <!-- upward right-pointing arrow (NE) -->
+<!ENTITY nlArr  "&#38;#38;nlArr;">  <!-- not implied by -->
+<!ENTITY nlarr  "&#38;#38;nlarr;">  <!-- not left arrow -->
+<!ENTITY nhArr  "&#38;#38;nhArr;">  <!-- not left and right double arrow -->
+<!ENTITY nharr  "&#38;#38;nharr;">  <!-- not left and right arrow -->
+<!ENTITY nrarr  "&#38;#38;nrarr;">  <!-- not right arrow -->
+<!ENTITY nrArr  "&#38;#38;nrArr;">  <!-- not implies -->
+<!ENTITY nwarr  "&#38;#38;nwarr;">  <!-- upward left-pointing arrow (NW) -->
+<!ENTITY olarr  "&#38;#38;olarr;">  <!-- left arrow in circle -->
+<!ENTITY orarr  "&#38;#38;orarr;">  <!-- right arrow in circle -->
+<!ENTITY rAarr  "&#38;#38;rAarr;">  <!-- right triple arrow -->
+<!ENTITY Rarr   "&#38;#38;Rarr;">   <!-- two-head right arrow -->
+<!ENTITY rarr2  "&#38;#38;rarr2;">  <!-- two right arrows -->
+<!ENTITY rarrhk "&#38;#38;rarrhk;"> <!-- right arrow, hooked -->
+<!ENTITY rarrlp "&#38;#38;rarrlp;"> <!-- right arrow, looped -->
+<!ENTITY rarrtl "&#38;#38;rarrtl;"> <!-- right arrow, tailed -->
+<!ENTITY rarrw  "&#38;#38;rarrw;">  <!-- right arrow, wavy -->
+<!ENTITY rhard  "&#38;#38;rhard;">  <!-- right harpoon-down -->
+<!ENTITY rharu  "&#38;#38;rharu;">  <!-- right harpoon-up -->
+<!ENTITY rsh    "&#38;#38;rsh;">    <!-- right shift -->
+<!ENTITY drarr  "&#38;#38;drarr;">  <!-- downward right-pointing arrow (SE) -->
+<!ENTITY dlarr  "&#38;#38;dlarr;">  <!-- downward left-pointing arrow (SW) -->
+<!ENTITY uArr   "&#38;#38;uArr;">   <!-- up double arrow -->
+<!ENTITY uarr2  "&#38;#38;uarr2;">  <!-- two up arrows -->
+<!ENTITY vArr   "&#38;#38;vArr;">   <!-- up down double arrow -->
+<!ENTITY varr   "&#38;#38;varr;">   <!-- up and down arrow -->
+<!ENTITY uharl  "&#38;#38;uharl;">  <!-- up harpoon-left -->
+<!ENTITY uharr  "&#38;#38;uharr;">  <!-- up harpoon-right -->
+<!ENTITY xlArr  "&#38;#38;xlArr;">  <!-- long left double arrow -->
+<!ENTITY xhArr  "&#38;#38;xhArr;">  <!-- long left and right double arrow -->
+<!ENTITY xharr  "&#38;#38;xharr;">  <!-- long left and right arrow -->
+<!ENTITY xrArr  "&#38;#38;xrArr;">  <!-- long right double arrow -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Added Latin 2//EN
+-->
+
+
+<!ENTITY abreve "&#38;#38;abreve;"> <!-- small a, breve -->
+<!ENTITY Abreve "&#38;#38;Abreve;"> <!-- capital A, breve -->
+<!ENTITY amacr  "&#38;#38;amacr;">  <!-- small a, macron -->
+<!ENTITY Amacr  "&#38;#38;Amacr;">  <!-- capital A, macron -->
+<!ENTITY aogon  "&#38;#38;aogon;">  <!-- small a, ogonek -->
+<!ENTITY Aogon  "&#38;#38;Aogon;">  <!-- capital A, ogonek -->
+<!ENTITY cacute "&#38;#38;cacute;"> <!-- small c, acute accent -->
+<!ENTITY Cacute "&#38;#38;Cacute;"> <!-- capital C, acute accent -->
+<!ENTITY ccaron "&#38;#38;ccaron;"> <!-- small c, caron -->
+<!ENTITY Ccaron "&#38;#38;Ccaron;"> <!-- capital C, caron -->
+<!ENTITY ccirc  "&#38;#38;ccirc;">  <!-- small c, circumflex accent -->
+<!ENTITY Ccirc  "&#38;#38;Ccirc;">  <!-- capital C, circumflex accent -->
+<!ENTITY cdot   "&#38;#38;cdot;">   <!-- small c, dot above -->
+<!ENTITY Cdot   "&#38;#38;Cdot;">   <!-- capital C, dot above -->
+<!ENTITY dcaron "&#38;#38;dcaron;"> <!-- small d, caron -->
+<!ENTITY Dcaron "&#38;#38;Dcaron;"> <!-- capital D, caron -->
+<!ENTITY dstrok "&#38;#38;dstrok;"> <!-- small d, stroke -->
+<!ENTITY Dstrok "&#38;#38;Dstrok;"> <!-- capital D, stroke -->
+<!ENTITY ecaron "&#38;#38;ecaron;"> <!-- small e, caron -->
+<!ENTITY Ecaron "&#38;#38;Ecaron;"> <!-- capital E, caron -->
+<!ENTITY edot   "&#38;#38;edot;">   <!-- small e, dot above -->
+<!ENTITY Edot   "&#38;#38;Edot;">   <!-- capital E, dot above -->
+<!ENTITY emacr  "&#38;#38;emacr;">  <!-- small e, macron -->
+<!ENTITY Emacr  "&#38;#38;Emacr;">  <!-- capital E, macron -->
+<!ENTITY eogon  "&#38;#38;eogon;">  <!-- small e, ogonek -->
+<!ENTITY Eogon  "&#38;#38;Eogon;">  <!-- capital E, ogonek -->
+<!ENTITY gacute "&#38;#38;gacute;"> <!-- small g, acute accent -->
+<!ENTITY gbreve "&#38;#38;gbreve;"> <!-- small g, breve -->
+<!ENTITY Gbreve "&#38;#38;Gbreve;"> <!-- capital G, breve -->
+<!ENTITY Gcedil "&#38;#38;Gcedil;"> <!-- capital G, cedilla -->
+<!ENTITY gcirc  "&#38;#38;gcirc;">  <!-- small g, circumflex accent -->
+<!ENTITY Gcirc  "&#38;#38;Gcirc;">  <!-- capital G, circumflex accent -->
+<!ENTITY gdot   "&#38;#38;gdot;">   <!-- small g, dot above -->
+<!ENTITY Gdot   "&#38;#38;Gdot;">   <!-- capital G, dot above -->
+<!ENTITY hcirc  "&#38;#38;hcirc;">  <!-- small h, circumflex accent -->
+<!ENTITY Hcirc  "&#38;#38;Hcirc;">  <!-- capital H, circumflex accent -->
+<!ENTITY hstrok "&#38;#38;hstrok;"> <!-- small h, stroke -->
+<!ENTITY Hstrok "&#38;#38;Hstrok;"> <!-- capital H, stroke -->
+<!ENTITY Idot   "&#38;#38;Idot;">   <!-- capital I, dot above -->
+<!ENTITY Imacr  "&#38;#38;Imacr;">  <!-- capital I, macron -->
+<!ENTITY imacr  "&#38;#38;imacr;">  <!-- small i, macron -->
+<!ENTITY ijlig  "&#38;#38;ijlig;">  <!-- small ij ligature -->
+<!ENTITY IJlig  "&#38;#38;IJlig;">  <!-- capital IJ ligature -->
+<!ENTITY inodot "&#38;#38;inodot;"> <!-- small i without dot -->
+<!ENTITY iogon  "&#38;#38;iogon;">  <!-- small i, ogonek -->
+<!ENTITY Iogon  "&#38;#38;Iogon;">  <!-- capital I, ogonek -->
+<!ENTITY itilde "&#38;#38;itilde;"> <!-- small i, tilde -->
+<!ENTITY Itilde "&#38;#38;Itilde;"> <!-- capital I, tilde -->
+<!ENTITY jcirc  "&#38;#38;jcirc;">  <!-- small j, circumflex accent -->
+<!ENTITY Jcirc  "&#38;#38;Jcirc;">  <!-- capital J, circumflex accent -->
+<!ENTITY kcedil "&#38;#38;kcedil;"> <!-- small k, cedilla -->
+<!ENTITY Kcedil "&#38;#38;Kcedil;"> <!-- capital K, cedilla -->
+<!ENTITY kgreen "&#38;#38;kgreen;"> <!-- small k, Greenlandic -->
+<!ENTITY lacute "&#38;#38;lacute;"> <!-- small l, acute accent -->
+<!ENTITY Lacute "&#38;#38;Lacute;"> <!-- capital L, acute accent -->
+<!ENTITY lcaron "&#38;#38;lcaron;"> <!-- small l, caron -->
+<!ENTITY Lcaron "&#38;#38;Lcaron;"> <!-- capital L, caron -->
+<!ENTITY lcedil "&#38;#38;lcedil;"> <!-- small l, cedilla -->
+<!ENTITY Lcedil "&#38;#38;Lcedil;"> <!-- capital L, cedilla -->
+<!ENTITY lmidot "&#38;#38;lmidot;"> <!-- small l, middle dot -->
+<!ENTITY Lmidot "&#38;#38;Lmidot;"> <!-- capital L, middle dot -->
+<!ENTITY lstrok "&#38;#38;lstrok;"> <!-- small l, stroke -->
+<!ENTITY Lstrok "&#38;#38;Lstrok;"> <!-- capital L, stroke -->
+<!ENTITY nacute "&#38;#38;nacute;"> <!-- small n, acute accent -->
+<!ENTITY Nacute "&#38;#38;Nacute;"> <!-- capital N, acute accent -->
+<!ENTITY eng    "&#38;#38;eng;">    <!-- small eng, Lapp -->
+<!ENTITY ENG    "&#38;#38;ENG;">    <!-- capital ENG, Lapp -->
+<!ENTITY napos  "&#38;#38;napos;">  <!-- small n, apostrophe -->
+<!ENTITY ncaron "&#38;#38;ncaron;"> <!-- small n, caron -->
+<!ENTITY Ncaron "&#38;#38;Ncaron;"> <!-- capital N, caron -->
+<!ENTITY ncedil "&#38;#38;ncedil;"> <!-- small n, cedilla -->
+<!ENTITY Ncedil "&#38;#38;Ncedil;"> <!-- capital N, cedilla -->
+<!ENTITY odblac "&#38;#38;odblac;"> <!-- small o, double acute accent -->
+<!ENTITY Odblac "&#38;#38;Odblac;"> <!-- capital O, double acute accent -->
+<!ENTITY Omacr  "&#38;#38;Omacr;">  <!-- capital O, macron -->
+<!ENTITY omacr  "&#38;#38;omacr;">  <!-- small o, macron -->
+<!ENTITY oelig  "&#38;#38;oelig;">  <!-- small oe ligature -->
+<!ENTITY OElig  "&#38;#38;OElig;">  <!-- capital OE ligature -->
+<!ENTITY racute "&#38;#38;racute;"> <!-- small r, acute accent -->
+<!ENTITY Racute "&#38;#38;Racute;"> <!-- capital R, acute accent -->
+<!ENTITY rcaron "&#38;#38;rcaron;"> <!-- small r, caron -->
+<!ENTITY Rcaron "&#38;#38;Rcaron;"> <!-- capital R, caron -->
+<!ENTITY rcedil "&#38;#38;rcedil;"> <!-- small r, cedilla -->
+<!ENTITY Rcedil "&#38;#38;Rcedil;"> <!-- capital R, cedilla -->
+<!ENTITY sacute "&#38;#38;sacute;"> <!-- small s, acute accent -->
+<!ENTITY Sacute "&#38;#38;Sacute;"> <!-- capital S, acute accent -->
+<!ENTITY scaron "&#38;#38;scaron;"> <!-- small s, caron -->
+<!ENTITY Scaron "&#38;#38;Scaron;"> <!-- capital S, caron -->
+<!ENTITY scedil "&#38;#38;scedil;"> <!-- small s, cedilla -->
+<!ENTITY Scedil "&#38;#38;Scedil;"> <!-- capital S, cedilla -->
+<!ENTITY scirc  "&#38;#38;scirc;">  <!-- small s, circumflex accent -->
+<!ENTITY Scirc  "&#38;#38;Scirc;">  <!-- capital S, circumflex accent -->
+<!ENTITY tcaron "&#38;#38;tcaron;"> <!-- small t, caron -->
+<!ENTITY Tcaron "&#38;#38;Tcaron;"> <!-- capital T, caron -->
+<!ENTITY tcedil "&#38;#38;tcedil;"> <!-- small t, cedilla -->
+<!ENTITY Tcedil "&#38;#38;Tcedil;"> <!-- capital T, cedilla -->
+<!ENTITY tstrok "&#38;#38;tstrok;"> <!-- small t, stroke -->
+<!ENTITY Tstrok "&#38;#38;Tstrok;"> <!-- capital T, stroke -->
+<!ENTITY ubreve "&#38;#38;ubreve;"> <!-- small u, breve -->
+<!ENTITY Ubreve "&#38;#38;Ubreve;"> <!-- capital U, breve -->
+<!ENTITY udblac "&#38;#38;udblac;"> <!-- small u, double acute accent -->
+<!ENTITY Udblac "&#38;#38;Udblac;"> <!-- capital U, double acute accent -->
+<!ENTITY umacr  "&#38;#38;umacr;">  <!-- small u, macron -->
+<!ENTITY Umacr  "&#38;#38;Umacr;">  <!-- capital U, macron -->
+<!ENTITY uogon  "&#38;#38;uogon;">  <!-- small u, ogonek -->
+<!ENTITY Uogon  "&#38;#38;Uogon;">  <!-- capital U, ogonek -->
+<!ENTITY uring  "&#38;#38;uring;">  <!-- small u, ring -->
+<!ENTITY Uring  "&#38;#38;Uring;">  <!-- capital U, ring -->
+<!ENTITY utilde "&#38;#38;utilde;"> <!-- small u, tilde -->
+<!ENTITY Utilde "&#38;#38;Utilde;"> <!-- capital U, tilde -->
+<!ENTITY wcirc  "&#38;#38;wcirc;">  <!-- small w, circumflex accent -->
+<!ENTITY Wcirc  "&#38;#38;Wcirc;">  <!-- capital W, circumflex accent -->
+<!ENTITY ycirc  "&#38;#38;ycirc;">  <!-- small y, circumflex accent -->
+<!ENTITY Ycirc  "&#38;#38;Ycirc;">  <!-- capital Y, circumflex accent -->
+<!ENTITY Yuml   "&#38;#38;Yuml;">   <!-- capital Y, dieresis or umlaut mark -->
+<!ENTITY zacute "&#38;#38;zacute;"> <!-- small z, acute accent -->
+<!ENTITY Zacute "&#38;#38;Zacute;"> <!-- capital Z, acute accent -->
+<!ENTITY zcaron "&#38;#38;zcaron;"> <!-- small z, caron -->
+<!ENTITY Zcaron "&#38;#38;Zcaron;"> <!-- capital Z, caron -->
+<!ENTITY zdot   "&#38;#38;zdot;">   <!-- small z, dot above -->
+<!ENTITY Zdot   "&#38;#38;Zdot;">   <!-- capital Z, dot above -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Box and Line Drawing//EN
+-->
+
+
+<!-- All names are in the form: box1234, where:
+    box = constants that identify a box drawing entity.
+    1&2 = v, V, u, U, d, D, Ud, or uD, as follows:
+      v = vertical line for full height.
+      u = upper half of vertical line.
+      d = downward (lower) half of vertical line.
+    3&4 = h, H, l, L, r, R, Lr, or lR, as follows:
+      h = horizontal line for full width.
+      l = left half of horizontal line.
+      r = right half of horizontal line.
+    In all cases, an upper-case letter means a double or heavy line.
+-->
+
+
+<!ENTITY boxh   "&#38;#38;boxh;">   <!-- horizontal line -->
+<!ENTITY boxv   "&#38;#38;boxv;">   <!-- vertical line -->
+<!ENTITY boxur  "&#38;#38;boxur;">  <!-- upper right quadrant -->
+<!ENTITY boxul  "&#38;#38;boxul;">  <!-- upper left quadrant -->
+<!ENTITY boxdl  "&#38;#38;boxdl;">  <!-- lower left quadrant -->
+<!ENTITY boxdr  "&#38;#38;boxdr;">  <!-- lower right quadrant -->
+<!ENTITY boxvr  "&#38;#38;boxvr;">  <!-- upper and lower right quadrants -->
+<!ENTITY boxhu  "&#38;#38;boxhu;">  <!-- upper left and right quadrants -->
+<!ENTITY boxvl  "&#38;#38;boxvl;">  <!-- upper and lower left quadrants -->
+<!ENTITY boxhd  "&#38;#38;boxhd;">  <!-- lower left and right quadrants -->
+<!ENTITY boxvh  "&#38;#38;boxvh;">  <!-- all four quadrants -->
+<!ENTITY boxvR  "&#38;#38;boxvR;">  <!-- upper and lower right quadrants -->
+<!ENTITY boxhU  "&#38;#38;boxhU;">  <!-- upper left and right quadrants -->
+<!ENTITY boxvL  "&#38;#38;boxvL;">  <!-- upper and lower left quadrants -->
+<!ENTITY boxhD  "&#38;#38;boxhD;">  <!-- lower left and right quadrants -->
+<!ENTITY boxvH  "&#38;#38;boxvH;">  <!-- all four quadrants -->
+<!ENTITY boxH   "&#38;#38;boxH;">   <!-- horizontal line -->
+<!ENTITY boxV   "&#38;#38;boxV;">   <!-- vertical line -->
+<!ENTITY boxUR  "&#38;#38;boxUR;">  <!-- upper right quadrant -->
+<!ENTITY boxUL  "&#38;#38;boxUL;">  <!-- upper left quadrant -->
+<!ENTITY boxDL  "&#38;#38;boxDL;">  <!-- lower left quadrant -->
+<!ENTITY boxDR  "&#38;#38;boxDR;">  <!-- lower right quadrant -->
+<!ENTITY boxVR  "&#38;#38;boxVR;">  <!-- upper and lower right quadrants -->
+<!ENTITY boxHU  "&#38;#38;boxHU;">  <!-- upper left and right quadrants -->
+<!ENTITY boxVL  "&#38;#38;boxVL;">  <!-- upper and lower left quadrants -->
+<!ENTITY boxHD  "&#38;#38;boxHD;">  <!-- lower left and right quadrants -->
+<!ENTITY boxVH  "&#38;#38;boxVH;">  <!-- all four quadrants -->
+<!ENTITY boxVr  "&#38;#38;boxVr;">  <!-- upper and lower right quadrants -->
+<!ENTITY boxHu  "&#38;#38;boxHu;">  <!-- upper left and right quadrants -->
+<!ENTITY boxVl  "&#38;#38;boxVl;">  <!-- upper and lower left quadrants -->
+<!ENTITY boxHd  "&#38;#38;boxHd;">  <!-- lower left and right quadrants -->
+<!ENTITY boxVh  "&#38;#38;boxVh;">  <!-- all four quadrants -->
+<!ENTITY boxuR  "&#38;#38;boxuR;">  <!-- upper right quadrant -->
+<!ENTITY boxUl  "&#38;#38;boxUl;">  <!-- upper left quadrant -->
+<!ENTITY boxdL  "&#38;#38;boxdL;">  <!-- lower left quadrant -->
+<!ENTITY boxDr  "&#38;#38;boxDr;">  <!-- lower right quadrant -->
+<!ENTITY boxUr  "&#38;#38;boxUr;">  <!-- upper right quadrant -->
+<!ENTITY boxuL  "&#38;#38;boxuL;">  <!-- upper left quadrant -->
+<!ENTITY boxDl  "&#38;#38;boxDl;">  <!-- lower left quadrant -->
+<!ENTITY boxdR  "&#38;#38;boxdR;">  <!-- lower right quadrant -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN
+-->
+
+
+<!ENTITY half   "&#38;#38;half;">   <!-- fraction one-half -->
+<!ENTITY frac12 "&#38;#38;frac12;"> <!-- fraction one-half -->
+<!ENTITY frac14 "&#38;#38;frac14;"> <!-- fraction one-quarter -->
+<!ENTITY frac34 "&#38;#38;frac34;"> <!-- fraction three-quarters -->
+<!ENTITY frac18 "&#38;#38;frac18;"> <!-- fraction one-eighth -->
+<!ENTITY frac38 "&#38;#38;frac38;"> <!-- fraction three-eighths -->
+<!ENTITY frac58 "&#38;#38;frac58;"> <!-- fraction five-eighths -->
+<!ENTITY frac78 "&#38;#38;frac78;"> <!-- fraction seven-eighths -->
+
+<!ENTITY sup1   "&#38;#38;sup1;">   <!-- superscript one -->
+<!ENTITY sup2   "&#38;#38;sup2;">   <!-- superscript two -->
+<!ENTITY sup3   "&#38;#38;sup3;">   <!-- superscript three -->
+
+<!ENTITY plus   "&#38;#38;plus;">   <!-- plus sign -->
+<!ENTITY plusmn "&#38;#38;plusmn;"> <!-- plus-or-minus sign -->
+<!ENTITY lt     "&#38;#38;lt;">     <!-- less-than sign -->
+<!ENTITY equals "&#38;#38;equals;"> <!-- equals sign -->
+<!ENTITY gt     "&#38;#38;gt;">     <!-- greater-than sign -->
+<!ENTITY divide "&#38;#38;divide;"> <!-- divide sign -->
+<!ENTITY times  "&#38;#38;times;">  <!-- multiply sign -->
+
+<!ENTITY curren "&#38;#38;curren;"> <!-- general currency sign -->
+<!ENTITY pound  "&#38;#38;pound;">  <!-- pound sign -->
+<!ENTITY dollar "&#38;#38;dollar;"> <!-- dollar sign -->
+<!ENTITY cent   "&#38;#38;cent;">   <!-- cent sign -->
+<!ENTITY yen    "&#38;#38;yen;">    <!-- yen sign -->
+
+<!ENTITY num    "&#38;#38;num;">    <!-- number sign -->
+<!ENTITY percnt "&#38;#38;percnt;"> <!-- percent sign -->
+<!ENTITY amp    "&#38;#38;amp;">    <!-- ampersand -->
+<!ENTITY ast    "&#38;#38;ast;">    <!-- asterisk -->
+<!ENTITY commat "&#38;#38;commat;"> <!-- commercial at -->
+<!ENTITY lsqb   "&#38;#38;lsqb;">   <!-- left square bracket -->
+<!ENTITY bsol   "&#38;#38;bsol;">   <!-- reverse solidus -->
+<!ENTITY rsqb   "&#38;#38;rsqb;">   <!-- right square bracket -->
+<!ENTITY lcub   "&#38;#38;lcub;">   <!-- left curly bracket -->
+<!ENTITY horbar "&#38;#38;horbar;"> <!-- horizontal bar -->
+<!ENTITY verbar "&#38;#38;verbar;"> <!-- vertical bar -->
+<!ENTITY rcub   "&#38;#38;rcub;">   <!-- right curly bracket -->
+<!ENTITY micro  "&#38;#38;micro;">  <!-- micro sign -->
+<!ENTITY ohm    "&#38;#38;ohm;">    <!-- ohm sign -->
+<!ENTITY deg    "&#38;#38;deg;">    <!-- degree sign -->
+<!ENTITY ordm   "&#38;#38;ordm;">   <!-- ordinal indicator, masculine -->
+<!ENTITY ordf   "&#38;#38;ordf;">   <!-- ordinal indicator, feminine -->
+<!ENTITY sect   "&#38;#38;sect;">   <!-- section sign -->
+<!ENTITY para   "&#38;#38;para;">   <!-- pilcrow (paragraph sign) -->
+<!ENTITY middot "&#38;#38;middot;"> <!-- middle dot -->
+<!ENTITY larr   "&#38;#38;larr;">   <!-- leftward arrow -->
+<!ENTITY rarr   "&#38;#38;rarr;">   <!-- rightward arrow -->
+<!ENTITY uarr   "&#38;#38;uarr;">   <!-- upward arrow -->
+<!ENTITY darr   "&#38;#38;darr;">   <!-- downward arrow -->
+<!ENTITY copy   "&#38;#38;copy;">   <!-- copyright sign -->
+<!ENTITY reg    "&#38;#38;reg;">    <!-- registered sign -->
+<!ENTITY trade  "&#38;#38;trade;">  <!-- trade mark sign -->
+<!ENTITY brvbar "&#38;#38;brvbar;"> <!-- broken (vertical) bar -->
+<!ENTITY not    "&#38;#38;not;">    <!-- not sign -->
+<!ENTITY sung   "&#38;#38;sung;">   <!-- music note (sung text sign) -->
+
+<!ENTITY excl   "&#38;#38;excl;">   <!-- exclamation mark -->
+<!ENTITY iexcl  "&#38;#38;iexcl;">  <!-- inverted exclamation mark -->
+<!ENTITY quot   "&#38;#38;quot;">   <!-- quotation mark -->
+<!ENTITY apos   "&#38;#38;apos;">   <!-- apostrophe -->
+<!ENTITY lpar   "&#38;#38;lpar;">   <!-- left parenthesis -->
+<!ENTITY rpar   "&#38;#38;rpar;">   <!-- right parenthesis -->
+<!ENTITY comma  "&#38;#38;comma;">  <!-- comma -->
+<!ENTITY lowbar "&#38;#38;lowbar;"> <!-- low line -->
+<!ENTITY hyphen "&#38;#38;hyphen;"> <!-- hyphen -->
+<!ENTITY period "&#38;#38;period;"> <!-- full stop, period -->
+<!ENTITY sol    "&#38;#38;sol;">    <!-- solidus -->
+<!ENTITY colon  "&#38;#38;colon;">  <!-- colon -->
+<!ENTITY semi   "&#38;#38;semi;">   <!-- semicolon -->
+<!ENTITY quest  "&#38;#38;quest;">  <!-- question mark -->
+<!ENTITY iquest "&#38;#38;iquest;"> <!-- inverted question mark -->
+<!ENTITY laquo  "&#38;#38;laquo;">  <!-- angle quotation mark, left -->
+<!ENTITY raquo  "&#38;#38;raquo;">  <!-- angle quotation mark, right -->
+<!ENTITY lsquo  "&#38;#38;lsquo;">  <!-- single quotation mark, left -->
+<!ENTITY rsquo  "&#38;#38;rsquo;">  <!-- single quotation mark, right -->
+<!ENTITY ldquo  "&#38;#38;ldquo;">  <!-- double quotation mark, left -->
+<!ENTITY rdquo  "&#38;#38;rdquo;">  <!-- double quotation mark, right -->
+<!ENTITY nbsp   "&#38;#38;nbsp;">   <!-- no break (required) space -->
+<!ENTITY shy    "&#38;#38;shy;">    <!-- soft hyphen -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Greek Letters//EN
+-->
+
+
+<!ENTITY agr    "&#38;#38;agr;">    <!-- small alpha, Greek -->
+<!ENTITY Agr    "&#38;#38;Agr;">    <!-- capital Alpha, Greek -->
+<!ENTITY bgr    "&#38;#38;bgr;">    <!-- small beta, Greek -->
+<!ENTITY Bgr    "&#38;#38;Bgr;">    <!-- capital Beta, Greek -->
+<!ENTITY ggr    "&#38;#38;ggr;">    <!-- small gamma, Greek -->
+<!ENTITY Ggr    "&#38;#38;Ggr;">    <!-- capital Gamma, Greek -->
+<!ENTITY dgr    "&#38;#38;dgr;">    <!-- small delta, Greek -->
+<!ENTITY Dgr    "&#38;#38;Dgr;">    <!-- capital Delta, Greek -->
+<!ENTITY egr    "&#38;#38;egr;">    <!-- small epsilon, Greek -->
+<!ENTITY Egr    "&#38;#38;Egr;">    <!-- capital Epsilon, Greek -->
+<!ENTITY zgr    "&#38;#38;zgr;">    <!-- small zeta, Greek -->
+<!ENTITY Zgr    "&#38;#38;Zgr;">    <!-- capital Zeta, Greek -->
+<!ENTITY eegr   "&#38;#38;eegr;">   <!-- small eta, Greek -->
+<!ENTITY EEgr   "&#38;#38;EEgr;">   <!-- capital Eta, Greek -->
+<!ENTITY thgr   "&#38;#38;thgr;">   <!-- small theta, Greek -->
+<!ENTITY THgr   "&#38;#38;THgr;">   <!-- capital Theta, Greek -->
+<!ENTITY igr    "&#38;#38;igr;">    <!-- small iota, Greek -->
+<!ENTITY Igr    "&#38;#38;Igr;">    <!-- capital Iota, Greek -->
+<!ENTITY kgr    "&#38;#38;kgr;">    <!-- small kappa, Greek -->
+<!ENTITY Kgr    "&#38;#38;Kgr;">    <!-- capital Kappa, Greek -->
+<!ENTITY lgr    "&#38;#38;lgr;">    <!-- small lambda, Greek -->
+<!ENTITY Lgr    "&#38;#38;Lgr;">    <!-- capital Lambda, Greek -->
+<!ENTITY mgr    "&#38;#38;mgr;">    <!-- small mu, Greek -->
+<!ENTITY Mgr    "&#38;#38;Mgr;">    <!-- capital Mu, Greek -->
+<!ENTITY ngr    "&#38;#38;ngr;">    <!-- small nu, Greek -->
+<!ENTITY Ngr    "&#38;#38;Ngr;">    <!-- capital Nu, Greek -->
+<!ENTITY xgr    "&#38;#38;xgr;">    <!-- small xi, Greek -->
+<!ENTITY Xgr    "&#38;#38;Xgr;">    <!-- capital Xi, Greek -->
+<!ENTITY ogr    "&#38;#38;ogr;">    <!-- small omicron, Greek -->
+<!ENTITY Ogr    "&#38;#38;Ogr;">    <!-- capital Omicron, Greek -->
+<!ENTITY pgr    "&#38;#38;pgr;">    <!-- small pi, Greek -->
+<!ENTITY Pgr    "&#38;#38;Pgr;">    <!-- capital Pi, Greek -->
+<!ENTITY rgr    "&#38;#38;rgr;">    <!-- small rho, Greek -->
+<!ENTITY Rgr    "&#38;#38;Rgr;">    <!-- capital Rho, Greek -->
+<!ENTITY sgr    "&#38;#38;sgr;">    <!-- small sigma, Greek -->
+<!ENTITY Sgr    "&#38;#38;Sgr;">    <!-- capital Sigma, Greek -->
+<!ENTITY sfgr   "&#38;#38;sfgr;">   <!-- final small sigma, Greek -->
+<!ENTITY tgr    "&#38;#38;tgr;">    <!-- small tau, Greek -->
+<!ENTITY Tgr    "&#38;#38;Tgr;">    <!-- capital Tau, Greek -->
+<!ENTITY ugr    "&#38;#38;ugr;">    <!-- small upsilon, Greek -->
+<!ENTITY Ugr    "&#38;#38;Ugr;">    <!-- capital Upsilon, Greek -->
+<!ENTITY phgr   "&#38;#38;phgr;">   <!-- small phi, Greek -->
+<!ENTITY PHgr   "&#38;#38;PHgr;">   <!-- capital Phi, Greek -->
+<!ENTITY khgr   "&#38;#38;khgr;">   <!-- small chi, Greek -->
+<!ENTITY KHgr   "&#38;#38;KHgr;">   <!-- capital Chi, Greek -->
+<!ENTITY psgr   "&#38;#38;psgr;">   <!-- small psi, Greek -->
+<!ENTITY PSgr   "&#38;#38;PSgr;">   <!-- capital Psi, Greek -->
+<!ENTITY ohgr   "&#38;#38;ohgr;">   <!-- small omega, Greek -->
+<!ENTITY OHgr   "&#38;#38;OHgr;">   <!-- capital Omega, Greek -->
+<!-- West Publishing Special Characters -->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//West Group//ENTITIES Special Characters:v1.00//EN
+
+    Current version:  1.00
+-->
+
+
+<!-- Revision history:  Created 12 August 1997 (LHS)
+
+                        Version 1.00 released 30 September 1999.
+-->
+
+
+<!ENTITY acrule "&#38;#38;acrule;"> <!-- ascender rule -->
+<!ENTITY aellip "&#38;#38;aellip;"> <!-- asterisk ellipses -->
+<!ENTITY blbar  "&#38;#38;blbar;">  <!-- baseline en dash -->
+<!ENTITY blrule "&#38;#38;blrule;"> <!-- baseline rule -->
+<!ENTITY bull2  "&#38;#38;bull2;">  <!-- bullet #2 -->
+<!ENTITY bull3  "&#38;#38;bull3;">  <!-- bullet #3 -->
+<!ENTITY bull4  "&#38;#38;bull4;">  <!-- bullet #4 -->
+<!ENTITY ckbox  "&#38;#38;ckbox;">  <!-- check in box -->
+<!ENTITY dashl  "&#38;#38;dashl;">  <!-- dash leader (baseline dash) -->
+<!ENTITY dcrule "&#38;#38;dcrule;"> <!-- descender rule -->
+<!ENTITY dotl   "&#38;#38;dotl;">   <!-- leader dot -->
+<!ENTITY florin "&#38;#38;florin;"> <!-- florin symbol -->
+<!ENTITY key    "&#38;#38;key;">    <!-- key symbol -->
+<!ENTITY Key    "&#38;#38;Key;">    <!-- key logo -->
+<!ENTITY lomacr "&#38;#38;lomacr;"> <!-- macron below accent -->
+<!ENTITY loring "&#38;#38;loring;"> <!-- ring below accent -->
+<!ENTITY m3dash "&#38;#38;m3dash;"> <!-- 3-em dash -->
+<!ENTITY mlrule "&#38;#38;mlrule;"> <!-- midline rule -->
+<!ENTITY nbemsp "&#38;#38;nbemsp;"> <!-- em space, nonbreaking -->
+<!ENTITY nbensp "&#38;#38;nbensp;"> <!-- en space, nonbreaking -->
+<!ENTITY nbthsp "&#38;#38;nbthsp;"> <!-- thin space, nonbreaking -->
+<!ENTITY schwa  "&#38;#38;schwa;">  <!-- schwa -->
+<!ENTITY slaquo "&#38;#38;slaquo;"> <!-- guillemot, single, open -->
+<!ENTITY sraquo "&#38;#38;sraquo;"> <!-- guillemot, single, close -->
+<!ENTITY tcirc  "&#38;#38;tcirc;">  <!-- text circumflex -->
+<!ENTITY tdquo  "&#38;#38;tdquo;">  <!-- quote, double, typewriter -->
+<!ENTITY tgrave "&#38;#38;tgrave;"> <!-- text grave -->
+<!ENTITY ttilde "&#38;#38;ttilde;"> <!-- text tilde -->
+<!ENTITY tsquo  "&#38;#38;tsquo;">  <!-- quote, single, typewriter -->
+<!ENTITY virgul "&#38;#38;virgul;"> <!-- virgule (fraction slash) -->
+
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Added Math Symbols: Relations//EN
+-->
+
+
+<!ENTITY ape    "&#38;#38;ape;">    <!-- approximate, equals -->
+<!ENTITY asymp  "&#38;#38;asymp;">  <!-- asymptotically equal to -->
+<!ENTITY bcong  "&#38;#38;bcong;">  <!-- reverse congruent -->
+<!ENTITY bepsi  "&#38;#38;bepsi;">  <!-- such that -->
+<!ENTITY bowtie "&#38;#38;bowtie;"> <!-- bowtie -->
+<!ENTITY bsim   "&#38;#38;bsim;">   <!-- reverse similar -->
+<!ENTITY bsime  "&#38;#38;bsime;">  <!-- reverse similar, equals -->
+<!ENTITY bump   "&#38;#38;bump;">   <!-- bumpy equals -->
+<!ENTITY bumpe  "&#38;#38;bumpe;">  <!-- bumpy equals, equals -->
+<!ENTITY cire   "&#38;#38;cire;">   <!-- circle, equals -->
+<!ENTITY colone "&#38;#38;colone;"> <!-- colon, equals -->
+<!ENTITY cuepr  "&#38;#38;cuepr;">  <!-- curly equals, precedes -->
+<!ENTITY cuesc  "&#38;#38;cuesc;">  <!-- curly equals, succeeds -->
+<!ENTITY cupre  "&#38;#38;cupre;">  <!-- precedes, curly equals -->
+<!ENTITY dashv  "&#38;#38;dashv;">  <!-- dash, vertical -->
+<!ENTITY ecir   "&#38;#38;ecir;">   <!-- circle on equals sign -->
+<!ENTITY ecolon "&#38;#38;ecolon;"> <!-- equals, colon -->
+<!ENTITY eDot   "&#38;#38;eDot;">   <!-- equals, even dots -->
+<!ENTITY esdot  "&#38;#38;esdot;">  <!-- equals, single dot above -->
+<!ENTITY efDot  "&#38;#38;efDot;">  <!-- equals, falling dots -->
+<!ENTITY egs    "&#38;#38;egs;">    <!-- equal-or-greater-than, slanted -->
+<!ENTITY els    "&#38;#38;els;">    <!-- equal-or-less-than, slanted -->
+<!ENTITY erDot  "&#38;#38;erDot;">  <!-- equals, rising dots -->
+<!ENTITY fork   "&#38;#38;fork;">   <!-- pitchfork -->
+<!ENTITY frown  "&#38;#38;frown;">  <!-- down curve -->
+<!ENTITY gap    "&#38;#38;gap;">    <!-- greater-than, approximate -->
+<!ENTITY gsdot  "&#38;#38;gsdot;">  <!-- greater-than, single dot -->
+<!ENTITY gE     "&#38;#38;gE;">     <!-- greater-than, double equals -->
+<!ENTITY gel    "&#38;#38;gel;">    <!-- greater-than, equals, less-than -->
+<!ENTITY gEl    "&#38;#38;gEl;">    <!-- greater-than, dbl equals, less-than -->
+<!ENTITY ges    "&#38;#38;ges;">    <!-- greater-than-or-equal, slanted -->
+<!ENTITY Gg     "&#38;#38;Gg;">     <!-- triple greater-than -->
+<!ENTITY gl     "&#38;#38;gl;">     <!-- greater-than, less-than -->
+<!ENTITY gsim   "&#38;#38;gsim;">   <!-- greater-than, similar -->
+<!ENTITY Gt     "&#38;#38;Gt;">     <!-- double greater-than sign -->
+<!ENTITY lap    "&#38;#38;lap;">    <!-- less-than, approximate -->
+<!ENTITY ldot   "&#38;#38;ldot;">   <!-- less-than, with dot -->
+<!ENTITY lE     "&#38;#38;lE;">     <!-- less-than, double equals -->
+<!ENTITY lEg    "&#38;#38;lEg;">    <!-- less-than, dbl equals, greater-than -->
+<!ENTITY leg    "&#38;#38;leg;">    <!-- less-than, equals, greater-than -->
+<!ENTITY les    "&#38;#38;les;">    <!-- less-than-or-equal, slanted -->
+<!ENTITY lg     "&#38;#38;lg;">     <!-- less-than, greater-than -->
+<!ENTITY Ll     "&#38;#38;Ll;">     <!-- triple less-than -->
+<!ENTITY lsim   "&#38;#38;lsim;">   <!-- less-than, similar -->
+<!ENTITY Lt     "&#38;#38;Lt;">     <!-- double less-than sign -->
+<!ENTITY ltrie  "&#38;#38;ltrie;">  <!-- left triangle, equals -->
+<!ENTITY mid    "&#38;#38;mid;">    <!-- vertical line as a relation -->
+<!ENTITY models "&#38;#38;models;"> <!-- models -->
+<!ENTITY pr     "&#38;#38;pr;">     <!-- precedes -->
+<!ENTITY prap   "&#38;#38;prap;">   <!-- precedes, approximate -->
+<!ENTITY pre    "&#38;#38;pre;">    <!-- precedes, equals -->
+<!ENTITY prsim  "&#38;#38;prsim;">  <!-- precedes, similar -->
+<!ENTITY rtrie  "&#38;#38;rtrie;">  <!-- right triangle, equals -->
+<!ENTITY samalg "&#38;#38;samalg;"> <!-- small amalgamation -->
+<!ENTITY sc     "&#38;#38;sc;">     <!-- succeeds -->
+<!ENTITY scap   "&#38;#38;scap;">   <!-- succeeds, approximate -->
+<!ENTITY sccue  "&#38;#38;sccue;">  <!-- succeeds, curly equals -->
+<!ENTITY sce    "&#38;#38;sce;">    <!-- succeeds, equals -->
+<!ENTITY scsim  "&#38;#38;scsim;">  <!-- succeeds, similar -->
+<!ENTITY sfrown "&#38;#38;sfrown;"> <!-- small down curve -->
+<!ENTITY smid   "&#38;#38;smid;">   <!-- short vertical line relation -->
+<!ENTITY smile  "&#38;#38;smile;">  <!-- up curve -->
+<!ENTITY spar   "&#38;#38;spar;">   <!-- short parallel -->
+<!ENTITY sqsub  "&#38;#38;sqsub;">  <!-- square subset -->
+<!ENTITY sqsube "&#38;#38;sqsube;"> <!-- square subset, equals -->
+<!ENTITY sqsup  "&#38;#38;sqsup;">  <!-- square superset -->
+<!ENTITY sqsupe "&#38;#38;sqsupe;"> <!-- square superset, equals -->
+<!ENTITY ssmile "&#38;#38;ssmile;"> <!-- small up curve -->
+<!ENTITY Sub    "&#38;#38;Sub;">    <!-- double subset -->
+<!ENTITY subE   "&#38;#38;subE;">   <!-- subset, double equals -->
+<!ENTITY Sup    "&#38;#38;Sup;">    <!-- double superset -->
+<!ENTITY supE   "&#38;#38;supE;">   <!-- superset, double equals -->
+<!ENTITY thkap  "&#38;#38;thkap;">  <!-- thick approximate -->
+<!ENTITY thksim "&#38;#38;thksim;"> <!-- thick similar -->
+<!ENTITY trie   "&#38;#38;trie;">   <!-- triangle, equals -->
+<!ENTITY twixt  "&#38;#38;twixt;">  <!-- between -->
+<!ENTITY vdash  "&#38;#38;vdash;">  <!-- vertical, dash -->
+<!ENTITY Vdash  "&#38;#38;Vdash;">  <!-- double vertical, dash -->
+<!ENTITY vDash  "&#38;#38;vDash;">  <!-- vertical, double dash -->
+<!ENTITY veebar "&#38;#38;veebar;"> <!-- logical or, bar below -->
+<!ENTITY vltri  "&#38;#38;vltri;">  <!-- left triangle, open, variant -->
+<!ENTITY vprop  "&#38;#38;vprop;">  <!-- proportional, variant -->
+<!ENTITY vrtri  "&#38;#38;vrtri;">  <!-- right triangle, open, variant -->
+<!ENTITY Vvdash "&#38;#38;Vvdash;"> <!-- triple vertical, dash -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+ -->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Publishing//EN
+-->
+
+
+<!ENTITY emsp   "&#38;#38;emsp;">   <!-- em space -->
+<!ENTITY ensp   "&#38;#38;ensp;">   <!-- en space (1/2-em) -->
+<!ENTITY emsp13 "&#38;#38;emsp3;">  <!-- 1/3-em space -->
+<!ENTITY emsp14 "&#38;#38;emsp4;">  <!-- 1/4-em space -->
+<!ENTITY numsp  "&#38;#38;numsp;">  <!-- digit space (width of a number) -->
+<!ENTITY puncsp "&#38;#38;puncsp;"> <!-- punctuation space (width of comma) -->
+<!ENTITY thinsp "&#38;#38;thinsp;"> <!-- thin space (1/6-em) -->
+<!ENTITY hairsp "&#38;#38;hairsp;"> <!-- hair space -->
+<!ENTITY mdash  "&#38;#38;mdash;">  <!-- em dash -->
+<!ENTITY ndash  "&#38;#38;ndash;">  <!-- en dash -->
+<!ENTITY dash   "&#38;#38;dash;">   <!-- hyphen (true graphic) -->
+<!ENTITY blank  "&#38;#38;blank;">  <!-- significant blank symbol -->
+<!ENTITY hellip "&#38;#38;hellip;"> <!-- ellipsis (horizontal) -->
+<!ENTITY nldr   "&#38;#38;nldr;">   <!-- double baseline dot (en leader) -->
+<!ENTITY frac13 "&#38;#38;frac13;"> <!-- fraction one-third -->
+<!ENTITY frac23 "&#38;#38;frac23;"> <!-- fraction two-thirds -->
+<!ENTITY frac15 "&#38;#38;frac15;"> <!-- fraction one-fifth -->
+<!ENTITY frac25 "&#38;#38;frac25;"> <!-- fraction two-fifths -->
+<!ENTITY frac35 "&#38;#38;frac35;"> <!-- fraction three-fifths -->
+<!ENTITY frac45 "&#38;#38;frac45;"> <!-- fraction four-fifths -->
+<!ENTITY frac16 "&#38;#38;frac16;"> <!-- fraction one-sixth -->
+<!ENTITY frac56 "&#38;#38;frac56;"> <!-- fraction five-sixths -->
+<!ENTITY incare "&#38;#38;incare;"> <!-- in-care-of symbol -->
+<!ENTITY block  "&#38;#38;block;">  <!-- full block -->
+<!ENTITY uhblk  "&#38;#38;uhblk;">  <!-- upper half block -->
+<!ENTITY lhblk  "&#38;#38;lhblk;">  <!-- lower half block -->
+<!ENTITY blk14  "&#38;#38;blk14;">  <!-- 25% shaded block -->
+<!ENTITY blk12  "&#38;#38;blk12;">  <!-- 50% shaded block -->
+<!ENTITY blk34  "&#38;#38;blk34;">  <!-- 75% shaded block -->
+<!ENTITY marker "&#38;#38;marker;"> <!-- histogram marker -->
+<!ENTITY cir    "&#38;#38;cir;">    <!-- circle, open -->
+<!ENTITY squ    "&#38;#38;squ;">    <!-- square, open -->
+<!ENTITY rect   "&#38;#38;rect;">   <!-- rectangle, open -->
+<!ENTITY utri   "&#38;#38;utri;">   <!-- up triangle, open -->
+<!ENTITY dtri   "&#38;#38;dtri;">   <!-- down triangle, open -->
+<!ENTITY star   "&#38;#38;star;">   <!-- star, open -->
+<!ENTITY bull   "&#38;#38;bull;">   <!-- round bullet, filled -->
+<!ENTITY squf   "&#38;#38;squf;">   <!-- sq bullet, filled -->
+<!ENTITY utrif  "&#38;#38;utrif;">  <!-- up tri, filled -->
+<!ENTITY dtrif  "&#38;#38;dtrif;">  <!-- dn tri, filled -->
+<!ENTITY ltrif  "&#38;#38;ltrif;">  <!-- l tri, filled -->
+<!ENTITY rtrif  "&#38;#38;rtrif;">  <!-- r tri, filled -->
+<!ENTITY clubs  "&#38;#38;clubs;">  <!-- club suit symbol -->
+<!ENTITY diams  "&#38;#38;diams;">  <!-- diamond suit symbol -->
+<!ENTITY hearts "&#38;#38;hearts;"> <!-- heart suit symbol -->
+<!ENTITY spades "&#38;#38;spades;"> <!-- spades suit symbol -->
+<!ENTITY malt   "&#38;#38;malt;">   <!-- maltese cross -->
+<!ENTITY dagger "&#38;#38;dagger;"> <!-- dagger -->
+<!ENTITY Dagger "&#38;#38;Dagger;"> <!-- double dagger -->
+<!ENTITY check  "&#38;#38;check;">  <!-- tick, check mark -->
+<!ENTITY cross  "&#38;#38;ballot;"> <!-- ballot cross -->
+<!ENTITY sharp  "&#38;#38;sharp;">  <!-- musical sharp -->
+<!ENTITY flat   "&#38;#38;flat;">   <!-- musical flat -->
+<!ENTITY male   "&#38;#38;male;">   <!-- male symbol -->
+<!ENTITY female "&#38;#38;female;"> <!-- female symbol -->
+<!ENTITY phone  "&#38;#38;phone;">  <!-- telephone symbol -->
+<!ENTITY telrec "&#38;#38;telrec;"> <!-- telephone recorder symbol -->
+<!ENTITY copysr "&#38;#38;copysr;"> <!-- sound recording copyright sign -->
+<!ENTITY caret  "&#38;#38;caret;">  <!-- caret (insertion mark) -->
+<!ENTITY lsquor "&#38;#38;lsquor;"> <!-- rising single quote, left (low) -->
+<!ENTITY ldquor "&#38;#38;ldquor;"> <!-- rising dbl quote, left (low) -->
+
+<!ENTITY fflig  "&#38;#38;fflig;">  <!-- small ff ligature -->
+<!ENTITY filig  "&#38;#38;filig;">  <!-- small fi ligature -->
+<!ENTITY fjlig  "&#38;#38;fjlig;">  <!-- small fj ligature -->
+<!ENTITY ffilig "&#38;#38;ffilig;"> <!-- small ffi ligature -->
+<!ENTITY ffllig "&#38;#38;ffllig;"> <!-- small ffl ligature -->
+<!ENTITY fllig  "&#38;#38;fllig;">  <!-- small fl ligature -->
+
+<!ENTITY mldr   "&#38;#38;mldr;">   <!-- em leader -->
+<!ENTITY rdquor "&#38;#38;rdquor;"> <!-- rising dbl quote, right (high) -->
+<!ENTITY rsquor "&#38;#38;rsquor;"> <!-- rising single quote, right (high) -->
+<!ENTITY vellip "&#38;#38;vellip;"> <!-- vertical ellipsis -->
+
+<!ENTITY hybull "&#38;#38;hybull;"> <!-- rectangle, filled (hyphen bullet) -->
+<!ENTITY loz    "&#38;#38;loz;">    <!-- lozenge or total mark -->
+<!ENTITY lozf   "&#38;#38;lozf;">   <!-- lozenge, filled -->
+<!ENTITY ltri   "&#38;#38;ltri;">   <!-- l triangle, open -->
+<!ENTITY rtri   "&#38;#38;rtri;">   <!-- r triangle, open -->
+<!ENTITY starf  "&#38;#38;starf;">  <!-- star, filled -->
+
+<!ENTITY natur  "&#38;#38;natur;">  <!-- music natural -->
+<!ENTITY rx     "&#38;#38;rx;">     <!-- pharmaceutical prescription (Rx) -->
+<!ENTITY sext   "&#38;#38;sext;">   <!-- sextile (6-pointed star) -->
+
+<!ENTITY target "&#38;#38;target;"> <!-- register mark or target -->
+<!ENTITY dlcrop "&#38;#38;dlcrop;"> <!-- downward left crop mark  -->
+<!ENTITY drcrop "&#38;#38;drcrop;"> <!-- downward right crop mark  -->
+<!ENTITY ulcrop "&#38;#38;ulcrop;"> <!-- upward left crop mark  -->
+<!ENTITY urcrop "&#38;#38;urcrop;"> <!-- upward right crop mark  -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Added Math Symbols: Binary Operators//EN
+-->
+
+
+<!ENTITY amalg  "&#38;#38;amalg;">  <!-- amalgamation or coproduct -->
+<!ENTITY Barwed "&#38;#38;Barwed;"> <!-- logical and, double bar above -->
+<!ENTITY barwed "&#38;#38;barwed;"> <!-- logical and, bar above -->
+<!ENTITY Cap    "&#38;#38;Cap;">    <!-- double intersection -->
+<!ENTITY Cup    "&#38;#38;Cup;">    <!-- double union -->
+<!ENTITY cuvee  "&#38;#38;cuvee;">  <!-- curly logical or -->
+<!ENTITY cuwed  "&#38;#38;cuwed;">  <!-- curly logical and -->
+<!ENTITY diam   "&#38;#38;diam;">   <!-- open diamond -->
+<!ENTITY divonx "&#38;#38;divonx;"> <!-- division on times -->
+<!ENTITY intcal "&#38;#38;intcal;"> <!-- intercal -->
+<!ENTITY lthree "&#38;#38;lthree;"> <!-- left-three-times -->
+<!ENTITY ltimes "&#38;#38;ltimes;"> <!-- times sign, left closed -->
+<!ENTITY minusb "&#38;#38;minusb;"> <!-- minus sign in box -->
+<!ENTITY oast   "&#38;#38;oast;">   <!-- asterisk in circle -->
+<!ENTITY ocir   "&#38;#38;ocir;">   <!-- open dot in circle -->
+<!ENTITY odash  "&#38;#38;odash;">  <!-- hyphen in circle -->
+<!ENTITY odot   "&#38;#38;odot;">   <!-- middle dot in circle -->
+<!ENTITY ominus "&#38;#38;ominus;"> <!-- minus sign in circle -->
+<!ENTITY oplus  "&#38;#38;oplus;">  <!-- plus sign in circle -->
+<!ENTITY osol   "&#38;#38;osol;">   <!-- solidus in circle -->
+<!ENTITY otimes "&#38;#38;otimes;"> <!-- multiply sign in circle -->
+<!ENTITY plusb  "&#38;#38;plusb;">  <!-- plus sign in box -->
+<!ENTITY plusdo "&#38;#38;plusdo;"> <!-- plus sign, dot above -->
+<!ENTITY rthree "&#38;#38;rthree;"> <!-- right-three-times -->
+<!ENTITY rtimes "&#38;#38;rtimes;"> <!-- times sign, right closed -->
+<!ENTITY sdot   "&#38;#38;sdot;">   <!-- small middle dot -->
+<!ENTITY sdotb  "&#38;#38;sdotb;">  <!-- small dot in box -->
+<!ENTITY setmn  "&#38;#38;setmn;">  <!-- reverse solidus -->
+<!ENTITY sqcap  "&#38;#38;sqcap;">  <!-- square intersection -->
+<!ENTITY sqcup  "&#38;#38;sqcup;">  <!-- square union -->
+<!ENTITY ssetmn "&#38;#38;ssetmn;"> <!-- small reverse solidus -->
+<!ENTITY sstarf "&#38;#38;sstarf;"> <!-- small star, filled -->
+<!ENTITY timesb "&#38;#38;timesb;"> <!-- multiply sign in box -->
+<!ENTITY top    "&#38;#38;top;">    <!-- inverted perpendicular -->
+<!ENTITY uplus  "&#38;#38;uplus;">  <!-- plus sign in union -->
+<!ENTITY wreath "&#38;#38;wreath;"> <!-- wreath product -->
+<!ENTITY xcirc  "&#38;#38;xcirc;">  <!-- large circle -->
+<!ENTITY xdtri  "&#38;#38;xdtri;">  <!-- big down triangle, open -->
+<!ENTITY xutri  "&#38;#38;xutri;">  <!-- big up triangle, open -->
+<!ENTITY coprod "&#38;#38;coprod;"> <!-- coproduct operator -->
+<!ENTITY prod   "&#38;#38;prod;">   <!-- product operator -->
+<!ENTITY sum    "&#38;#38;sum;">    <!-- summation operator -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Added Math Symbols: Delimiters//EN
+-->
+
+ 
+<!ENTITY rceil  "&#38;#38;rceil;">  <!-- right ceiling -->
+<!ENTITY rfloor "&#38;#38;rfloor;"> <!-- right floor -->
+<!ENTITY rpargt "&#38;#38;rpargt;"> <!-- right parenthesis, greater-than -->
+<!ENTITY urcorn "&#38;#38;urcorn;"> <!-- upper right corner -->
+<!ENTITY drcorn "&#38;#38;drcorn;"> <!-- lower right corner -->
+<!ENTITY lceil  "&#38;#38;lceil;">  <!-- left ceiling -->
+<!ENTITY lfloor "&#38;#38;lfloor;"> <!-- left floor -->
+<!ENTITY lpargt "&#38;#38;lpargt;"> <!-- left parenthesis, greater-than -->
+<!ENTITY ulcorn "&#38;#38;ulcorn;"> <!-- upper left corner -->
+<!ENTITY dlcorn "&#38;#38;dlcorn;"> <!-- lower left corner -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//"ISO 8879:1986//ENTITIES Added Math Symbols: Negated Relations//EN
+-->
+
+
+<!ENTITY gnap   "&#38;#38;gnap;">   <!-- greater-than, not approximate -->
+<!ENTITY gne    "&#38;#38;gne;">    <!-- greater-than, not equals -->
+<!ENTITY gnE    "&#38;#38;gnE;">    <!-- greater-than, not double equals -->
+<!ENTITY gnsim  "&#38;#38;gnsim;">  <!-- greater-than, not similar -->
+<!ENTITY gvnE   "&#38;#38;gvnE;">   <!-- greater-than, vertical, not dbl eq -->
+<!ENTITY lnap   "&#38;#38;lnap;">   <!-- less-than, not approximate -->
+<!ENTITY lnE    "&#38;#38;lnE;">    <!-- less-than, not double equals -->
+<!ENTITY lne    "&#38;#38;lne;">    <!-- less-than, not equals -->
+<!ENTITY lnsim  "&#38;#38;lnsim;">  <!-- less-than, not similar -->
+<!ENTITY lvnE   "&#38;#38;lvnE;">   <!-- less-than, vertical, not dbl equals -->
+<!ENTITY nap    "&#38;#38;nap;">    <!-- not approximate -->
+<!ENTITY ncong  "&#38;#38;ncong;">  <!-- not congruent with -->
+<!ENTITY nequiv "&#38;#38;nequiv;"> <!-- not identical with -->
+<!ENTITY ngE    "&#38;#38;ngE;">    <!-- not greater-than, double equals -->
+<!ENTITY nge    "&#38;#38;nge;">    <!-- not greater-than-or-equal -->
+<!ENTITY nges   "&#38;#38;nges;">   <!-- not greater-than-or-equals, slanted -->
+<!ENTITY ngt    "&#38;#38;ngt;">    <!-- not greater-than -->
+<!ENTITY nle    "&#38;#38;nle;">    <!-- not less-than-or-equal -->
+<!ENTITY nlE    "&#38;#38;nlE;">    <!-- not less-than, double equals -->
+<!ENTITY nles   "&#38;#38;nles;">   <!-- not less-than-or-equals, slanted -->
+<!ENTITY nlt    "&#38;#38;nlt;">    <!-- not less-than -->
+<!ENTITY nltri  "&#38;#38;nltri;">  <!-- not left triangle -->
+<!ENTITY nltrie "&#38;#38;nltrie;"> <!-- not left triangle, equals -->
+<!ENTITY nmid   "&#38;#38;nmid;">   <!-- not vertical line as a relation -->
+<!ENTITY npar   "&#38;#38;npar;">   <!-- not parallel -->
+<!ENTITY npr    "&#38;#38;npr;">    <!-- not precedes -->
+<!ENTITY npre   "&#38;#38;npre;">   <!-- not precedes, equals -->
+<!ENTITY nrtri  "&#38;#38;nrtri;">  <!-- not right triangle -->
+<!ENTITY nrtrie "&#38;#38;nrtrie;"> <!-- not right triangle, equals -->
+<!ENTITY nsc    "&#38;#38;nsc;">    <!-- not succeeds -->
+<!ENTITY nsce   "&#38;#38;nsce;">   <!-- not succeeds, equals -->
+<!ENTITY nsim   "&#38;#38;nsim;">   <!-- not similar -->
+<!ENTITY nsime  "&#38;#38;nsime;">  <!-- not similar, equals -->
+<!ENTITY nsmid  "&#38;#38;nsmid;">  <!-- not short vertical line relation -->
+<!ENTITY nspar  "&#38;#38;nspar;">  <!-- not short parallel -->
+<!ENTITY nsub   "&#38;#38;nsub;">   <!-- not subset -->
+<!ENTITY nsube  "&#38;#38;nsube;">  <!-- not subset, equals -->
+<!ENTITY nsubE  "&#38;#38;nsubE;">  <!-- not subset, double equals -->
+<!ENTITY nsup   "&#38;#38;nsup;">   <!-- not superset -->
+<!ENTITY nsupe  "&#38;#38;nsupe;">  <!-- not superset, equals -->
+<!ENTITY nsupE  "&#38;#38;nsupE;">  <!-- not superset, double equals -->
+<!ENTITY nvdash "&#38;#38;nvdash;"> <!-- not vertical dash -->
+<!ENTITY nvDash "&#38;#38;nvDash;"> <!-- not vertical, double dash -->
+<!ENTITY nVDash "&#38;#38;nVDash;"> <!-- not double vertical, double dash -->
+<!ENTITY nVdash "&#38;#38;nVdash;"> <!-- not double vertical dash -->
+<!ENTITY prnap  "&#38;#38;prnap;">  <!-- precedes, not approx -->
+<!ENTITY prnE   "&#38;#38;prnE;">   <!-- precedes, not double equals -->
+<!ENTITY prnsim "&#38;#38;prnsim;"> <!-- precedes, not similar -->
+<!ENTITY scnap  "&#38;#38;scnap;">  <!-- succeeds, not approximate -->
+<!ENTITY scnE   "&#38;#38;scnE;">   <!-- succeeds, not double equals -->
+<!ENTITY scnsim "&#38;#38;scnsim;"> <!-- succeeds, not similar -->
+<!ENTITY subne  "&#38;#38;subne;">  <!-- subset, not equals -->
+<!ENTITY subnE  "&#38;#38;subnE;">  <!-- subset, not double equals -->
+<!ENTITY supne  "&#38;#38;supne;">  <!-- superset, not equals -->
+<!ENTITY supnE  "&#38;#38;supnE;">  <!-- superset, not double equals -->
+<!ENTITY vsubne "&#38;#38;vsubne;"> <!-- subset, not equals, variant -->
+<!ENTITY vsubnE "&#38;#38;vsubnE;"> <!-- subset not double equals, variant -->
+<!ENTITY vsupne "&#38;#38;vsupne;"> <!-- superset, not equals, variant -->
+<!ENTITY vsupnE "&#38;#38;vsupnE;"> <!-- superset not double equals, variant -->
+<!-- West Publishing Special Characters (Videocomp Pi Fonts) -->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//West Group//ENTITIES Special Characters:Videocomp Pi:v1.00//EN
+
+    Current version:  1.00
+-->
+
+
+<!-- Revision history:  Created 12 August 1997 (LHS)
+
+                        Version 1.00 released 30 September 1999.
+-->
+
+
+<!ENTITY pi0080 "&#38;#38;pi0080;"> <!-- pi character, font 500, cell hex 80 -->
+<!ENTITY pi0081 "&#38;#38;pi0081;"> <!-- pi character, font 500, cell hex 81 -->
+<!ENTITY pi0082 "&#38;#38;pi0082;"> <!-- pi character, font 500, cell hex 82 -->
+<!ENTITY pi0083 "&#38;#38;pi0083;"> <!-- pi character, font 500, cell hex 83 -->
+<!ENTITY pi0084 "&#38;#38;pi0084;"> <!-- pi character, font 500, cell hex 84 -->
+<!ENTITY pi0085 "&#38;#38;pi0085;"> <!-- pi character, font 500, cell hex 85 -->
+<!ENTITY pi0086 "&#38;#38;pi0086;"> <!-- pi character, font 500, cell hex 86 -->
+<!ENTITY pi0087 "&#38;#38;pi0087;"> <!-- pi character, font 500, cell hex 87 -->
+<!ENTITY pi0088 "&#38;#38;pi0088;"> <!-- pi character, font 500, cell hex 88 -->
+<!ENTITY pi0089 "&#38;#38;pi0089;"> <!-- pi character, font 500, cell hex 89 -->
+<!ENTITY pi008a "&#38;#38;pi008a;"> <!-- pi character, font 500, cell hex 8a -->
+<!ENTITY pi008b "&#38;#38;pi008b;"> <!-- pi character, font 500, cell hex 8b -->
+<!ENTITY pi008c "&#38;#38;pi008c;"> <!-- pi character, font 500, cell hex 8c -->
+<!ENTITY pi008d "&#38;#38;pi008d;"> <!-- pi character, font 500, cell hex 8d -->
+<!ENTITY pi008e "&#38;#38;pi008e;"> <!-- pi character, font 500, cell hex 8e -->
+<!ENTITY pi008f "&#38;#38;pi008f;"> <!-- pi character, font 500, cell hex 8f -->
+<!ENTITY pi0090 "&#38;#38;pi0090;"> <!-- pi character, font 500, cell hex 90 -->
+<!ENTITY pi0091 "&#38;#38;pi0091;"> <!-- pi character, font 500, cell hex 91 -->
+<!ENTITY pi0092 "&#38;#38;pi0092;"> <!-- pi character, font 500, cell hex 92 -->
+<!ENTITY pi0093 "&#38;#38;pi0093;"> <!-- pi character, font 500, cell hex 93 -->
+<!ENTITY pi0094 "&#38;#38;pi0094;"> <!-- pi character, font 500, cell hex 94 -->
+<!ENTITY pi0095 "&#38;#38;pi0095;"> <!-- pi character, font 500, cell hex 95 -->
+<!ENTITY pi0096 "&#38;#38;pi0096;"> <!-- pi character, font 500, cell hex 96 -->
+<!ENTITY pi0097 "&#38;#38;pi0097;"> <!-- pi character, font 500, cell hex 97 -->
+<!ENTITY pi0098 "&#38;#38;pi0098;"> <!-- pi character, font 500, cell hex 98 -->
+<!ENTITY pi0099 "&#38;#38;pi0099;"> <!-- pi character, font 500, cell hex 99 -->
+<!ENTITY pi009a "&#38;#38;pi009a;"> <!-- pi character, font 500, cell hex 9a -->
+<!ENTITY pi009b "&#38;#38;pi009b;"> <!-- pi character, font 500, cell hex 9b -->
+<!ENTITY pi009c "&#38;#38;pi009c;"> <!-- pi character, font 500, cell hex 9c -->
+<!ENTITY pi009d "&#38;#38;pi009d;"> <!-- pi character, font 500, cell hex 9d -->
+<!ENTITY pi009e "&#38;#38;pi009e;"> <!-- pi character, font 500, cell hex 9e -->
+<!ENTITY pi009f "&#38;#38;pi009f;"> <!-- pi character, font 500, cell hex 9f -->
+<!ENTITY pi00a0 "&#38;#38;pi00a0;"> <!-- pi character, font 500, cell hex a0 -->
+<!ENTITY pi00a1 "&#38;#38;pi00a1;"> <!-- pi character, font 500, cell hex a1 -->
+<!ENTITY pi00a2 "&#38;#38;pi00a2;"> <!-- pi character, font 500, cell hex a2 -->
+<!ENTITY pi00a3 "&#38;#38;pi00a3;"> <!-- pi character, font 500, cell hex a3 -->
+<!ENTITY pi00a4 "&#38;#38;pi00a4;"> <!-- pi character, font 500, cell hex a4 -->
+<!ENTITY pi00a5 "&#38;#38;pi00a5;"> <!-- pi character, font 500, cell hex a5 -->
+<!ENTITY pi00a6 "&#38;#38;pi00a6;"> <!-- pi character, font 500, cell hex a6 -->
+<!ENTITY pi00a7 "&#38;#38;pi00a7;"> <!-- pi character, font 500, cell hex a7 -->
+<!ENTITY pi00a8 "&#38;#38;pi00a8;"> <!-- pi character, font 500, cell hex a8 -->
+<!ENTITY pi00a9 "&#38;#38;pi00a9;"> <!-- pi character, font 500, cell hex a9 -->
+<!ENTITY pi00aa "&#38;#38;pi00aa;"> <!-- pi character, font 500, cell hex aa -->
+<!ENTITY pi00ab "&#38;#38;pi00ab;"> <!-- pi character, font 500, cell hex ab -->
+<!ENTITY pi00ac "&#38;#38;pi00ac;"> <!-- pi character, font 500, cell hex ac -->
+<!ENTITY pi00ad "&#38;#38;pi00ad;"> <!-- pi character, font 500, cell hex ad -->
+<!ENTITY pi00ae "&#38;#38;pi00ae;"> <!-- pi character, font 500, cell hex ae -->
+<!ENTITY pi00af "&#38;#38;pi00af;"> <!-- pi character, font 500, cell hex af -->
+<!ENTITY pi00b0 "&#38;#38;pi00b0;"> <!-- pi character, font 500, cell hex b0 -->
+<!ENTITY pi00b1 "&#38;#38;pi00b1;"> <!-- pi character, font 500, cell hex b1 -->
+<!ENTITY pi00b2 "&#38;#38;pi00b2;"> <!-- pi character, font 500, cell hex b2 -->
+<!ENTITY pi00b3 "&#38;#38;pi00b3;"> <!-- pi character, font 500, cell hex b3 -->
+<!ENTITY pi00b4 "&#38;#38;pi00b4;"> <!-- pi character, font 500, cell hex b4 -->
+<!ENTITY pi00b5 "&#38;#38;pi00b5;"> <!-- pi character, font 500, cell hex b5 -->
+<!ENTITY pi00b6 "&#38;#38;pi00b6;"> <!-- pi character, font 500, cell hex b6 -->
+<!ENTITY pi00b7 "&#38;#38;pi00b7;"> <!-- pi character, font 500, cell hex b7 -->
+<!ENTITY pi00b8 "&#38;#38;pi00b8;"> <!-- pi character, font 500, cell hex b8 -->
+<!ENTITY pi00b9 "&#38;#38;pi00b9;"> <!-- pi character, font 500, cell hex b9 -->
+<!ENTITY pi00ba "&#38;#38;pi00ba;"> <!-- pi character, font 500, cell hex ba -->
+<!ENTITY pi00bb "&#38;#38;pi00bb;"> <!-- pi character, font 500, cell hex bb -->
+<!ENTITY pi00bf "&#38;#38;pi00bf;"> <!-- pi character, font 500, cell hex bf -->
+<!ENTITY pi00c0 "&#38;#38;pi00c0;"> <!-- pi character, font 500, cell hex c0 -->
+<!ENTITY pi00c1 "&#38;#38;pi00c1;"> <!-- pi character, font 500, cell hex c1 -->
+<!ENTITY pi00c2 "&#38;#38;pi00c2;"> <!-- pi character, font 500, cell hex c2 -->
+<!ENTITY pi00c3 "&#38;#38;pi00c3;"> <!-- pi character, font 500, cell hex c3 -->
+<!ENTITY pi00c4 "&#38;#38;pi00c4;"> <!-- pi character, font 500, cell hex c4 -->
+<!ENTITY pi00c5 "&#38;#38;pi00c5;"> <!-- pi character, font 500, cell hex c5 -->
+<!ENTITY pi00c6 "&#38;#38;pi00c6;"> <!-- pi character, font 500, cell hex c6 -->
+<!ENTITY pi00c7 "&#38;#38;pi00c7;"> <!-- pi character, font 500, cell hex c7 -->
+<!ENTITY pi00c8 "&#38;#38;pi00c8;"> <!-- pi character, font 500, cell hex c8 -->
+<!ENTITY pi00c9 "&#38;#38;pi00c9;"> <!-- pi character, font 500, cell hex c9 -->
+<!ENTITY pi00ca "&#38;#38;pi00ca;"> <!-- pi character, font 500, cell hex ca -->
+<!ENTITY pi00cb "&#38;#38;pi00cb;"> <!-- pi character, font 500, cell hex cb -->
+<!ENTITY pi00cc "&#38;#38;pi00cc;"> <!-- pi character, font 500, cell hex cc -->
+<!ENTITY pi00cd "&#38;#38;pi00cd;"> <!-- pi character, font 500, cell hex cd -->
+<!ENTITY pi00ce "&#38;#38;pi00ce;"> <!-- pi character, font 500, cell hex ce -->
+<!ENTITY pi00cf "&#38;#38;pi00cf;"> <!-- pi character, font 500, cell hex cf -->
+<!ENTITY pi00d1 "&#38;#38;pi00d1;"> <!-- pi character, font 500, cell hex d1 -->
+<!ENTITY pi00d2 "&#38;#38;pi00d2;"> <!-- pi character, font 500, cell hex d2 -->
+<!ENTITY pi00d3 "&#38;#38;pi00d3;"> <!-- pi character, font 500, cell hex d3 -->
+<!ENTITY pi00d4 "&#38;#38;pi00d4;"> <!-- pi character, font 500, cell hex d4 -->
+<!ENTITY pi00d5 "&#38;#38;pi00d5;"> <!-- pi character, font 500, cell hex d5 -->
+<!ENTITY pi00d6 "&#38;#38;pi00d6;"> <!-- pi character, font 500, cell hex d6 -->
+<!ENTITY pi00d7 "&#38;#38;pi00d7;"> <!-- pi character, font 500, cell hex d7 -->
+<!ENTITY pi00d8 "&#38;#38;pi00d8;"> <!-- pi character, font 500, cell hex d8 -->
+<!ENTITY pi00d9 "&#38;#38;pi00d9;"> <!-- pi character, font 500, cell hex d9 -->
+<!ENTITY pi00da "&#38;#38;pi00da;"> <!-- pi character, font 500, cell hex da -->
+<!ENTITY pi00db "&#38;#38;pi00db;"> <!-- pi character, font 500, cell hex db -->
+<!ENTITY pi00dc "&#38;#38;pi00dc;"> <!-- pi character, font 500, cell hex dc -->
+<!ENTITY pi00dd "&#38;#38;pi00dd;"> <!-- pi character, font 500, cell hex dd -->
+<!ENTITY pi00de "&#38;#38;pi00de;"> <!-- pi character, font 500, cell hex de -->
+<!ENTITY pi00df "&#38;#38;pi00df;"> <!-- pi character, font 500, cell hex df -->
+<!ENTITY pi00e0 "&#38;#38;pi00e0;"> <!-- pi character, font 500, cell hex e0 -->
+<!ENTITY pi00e1 "&#38;#38;pi00e1;"> <!-- pi character, font 500, cell hex e1 -->
+<!ENTITY pi00e2 "&#38;#38;pi00e2;"> <!-- pi character, font 500, cell hex e2 -->
+<!ENTITY pi00e3 "&#38;#38;pi00e3;"> <!-- pi character, font 500, cell hex e3 -->
+<!ENTITY pi00e4 "&#38;#38;pi00e4;"> <!-- pi character, font 500, cell hex e4 -->
+<!ENTITY pi00e5 "&#38;#38;pi00e5;"> <!-- pi character, font 500, cell hex e5 -->
+<!ENTITY pi00e6 "&#38;#38;pi00e6;"> <!-- pi character, font 500, cell hex e6 -->
+<!ENTITY pi00e7 "&#38;#38;pi00e7;"> <!-- pi character, font 500, cell hex e7 -->
+<!ENTITY pi00e8 "&#38;#38;pi00e8;"> <!-- pi character, font 500, cell hex e8 -->
+<!ENTITY pi00e9 "&#38;#38;pi00e9;"> <!-- pi character, font 500, cell hex e9 -->
+<!ENTITY pi00ea "&#38;#38;pi00ea;"> <!-- pi character, font 500, cell hex ea -->
+<!ENTITY pi00eb "&#38;#38;pi00eb;"> <!-- pi character, font 500, cell hex eb -->
+<!ENTITY pi00ec "&#38;#38;pi00ec;"> <!-- pi character, font 500, cell hex ec -->
+<!ENTITY pi00ed "&#38;#38;pi00ed;"> <!-- pi character, font 500, cell hex ed -->
+<!ENTITY pi00ef "&#38;#38;pi00ef;"> <!-- pi character, font 500, cell hex ef -->
+<!ENTITY pi00f0 "&#38;#38;pi00f0;"> <!-- pi character, font 500, cell hex f0 -->
+<!ENTITY pi00f1 "&#38;#38;pi00f1;"> <!-- pi character, font 500, cell hex f1 -->
+<!ENTITY pi00f2 "&#38;#38;pi00f2;"> <!-- pi character, font 500, cell hex f2 -->
+<!ENTITY pi00f3 "&#38;#38;pi00f3;"> <!-- pi character, font 500, cell hex f3 -->
+<!ENTITY pi00f4 "&#38;#38;pi00f4;"> <!-- pi character, font 500, cell hex f4 -->
+<!ENTITY pi00f5 "&#38;#38;pi00f5;"> <!-- pi character, font 500, cell hex f5 -->
+<!ENTITY pi00f6 "&#38;#38;pi00f6;"> <!-- pi character, font 500, cell hex f6 -->
+<!ENTITY pi00f7 "&#38;#38;pi00f7;"> <!-- pi character, font 500, cell hex f7 -->
+<!ENTITY pi00f8 "&#38;#38;pi00f8;"> <!-- pi character, font 500, cell hex f8 -->
+<!ENTITY pi00f9 "&#38;#38;pi00f9;"> <!-- pi character, font 500, cell hex f9 -->
+<!ENTITY pi00fb "&#38;#38;pi00fb;"> <!-- pi character, font 500, cell hex fb -->
+<!ENTITY pi00fc "&#38;#38;pi00fc;"> <!-- pi character, font 500, cell hex fc -->
+<!ENTITY pi00fd "&#38;#38;pi00fd;"> <!-- pi character, font 500, cell hex fd -->
+<!ENTITY pi00fe "&#38;#38;pi00fe;"> <!-- pi character, font 500, cell hex fe -->
+<!ENTITY pi00ff "&#38;#38;pi00ff;"> <!-- pi character, font 500, cell hex ff -->
+<!ENTITY pi0181 "&#38;#38;pi0181;"> <!-- pi character, font 501, cell hex 81 -->
+<!ENTITY pi0182 "&#38;#38;pi0182;"> <!-- pi character, font 501, cell hex 82 -->
+<!ENTITY pi0183 "&#38;#38;pi0183;"> <!-- pi character, font 501, cell hex 83 -->
+<!ENTITY pi0184 "&#38;#38;pi0184;"> <!-- pi character, font 501, cell hex 84 -->
+<!ENTITY pi0185 "&#38;#38;pi0185;"> <!-- pi character, font 501, cell hex 85 -->
+<!ENTITY pi0186 "&#38;#38;pi0186;"> <!-- pi character, font 501, cell hex 86 -->
+<!ENTITY pi0187 "&#38;#38;pi0187;"> <!-- pi character, font 501, cell hex 87 -->
+<!ENTITY pi0188 "&#38;#38;pi0188;"> <!-- pi character, font 501, cell hex 88 -->
+<!ENTITY pi0189 "&#38;#38;pi0189;"> <!-- pi character, font 501, cell hex 89 -->
+<!ENTITY pi018a "&#38;#38;pi018a;"> <!-- pi character, font 501, cell hex 8a -->
+<!ENTITY pi018b "&#38;#38;pi018b;"> <!-- pi character, font 501, cell hex 8b -->
+<!ENTITY pi018c "&#38;#38;pi018c;"> <!-- pi character, font 501, cell hex 8c -->
+<!ENTITY pi018d "&#38;#38;pi018d;"> <!-- pi character, font 501, cell hex 8d -->
+<!ENTITY pi0190 "&#38;#38;pi0190;"> <!-- pi character, font 501, cell hex 90 -->
+<!ENTITY pi0191 "&#38;#38;pi0191;"> <!-- pi character, font 501, cell hex 91 -->
+<!ENTITY pi0192 "&#38;#38;pi0192;"> <!-- pi character, font 501, cell hex 92 -->
+<!ENTITY pi0194 "&#38;#38;pi0194;"> <!-- pi character, font 501, cell hex 94 -->
+<!ENTITY pi0195 "&#38;#38;pi0195;"> <!-- pi character, font 501, cell hex 95 -->
+<!ENTITY pi0196 "&#38;#38;pi0196;"> <!-- pi character, font 501, cell hex 96 -->
+<!ENTITY pi0197 "&#38;#38;pi0197;"> <!-- pi character, font 501, cell hex 97 -->
+<!ENTITY pi0198 "&#38;#38;pi0198;"> <!-- pi character, font 501, cell hex 98 -->
+<!ENTITY pi0199 "&#38;#38;pi0199;"> <!-- pi character, font 501, cell hex 99 -->
+<!ENTITY pi019a "&#38;#38;pi019a;"> <!-- pi character, font 501, cell hex 9a -->
+<!ENTITY pi01a0 "&#38;#38;pi01a0;"> <!-- pi character, font 501, cell hex a0 -->
+<!ENTITY pi01a1 "&#38;#38;pi01a1;"> <!-- pi character, font 501, cell hex a1 -->
+<!ENTITY pi01a2 "&#38;#38;pi01a2;"> <!-- pi character, font 501, cell hex a2 -->
+<!ENTITY pi01a3 "&#38;#38;pi01a3;"> <!-- pi character, font 501, cell hex a3 -->
+<!ENTITY pi01a4 "&#38;#38;pi01a4;"> <!-- pi character, font 501, cell hex a4 -->
+<!ENTITY pi01a5 "&#38;#38;pi01a5;"> <!-- pi character, font 501, cell hex a5 -->
+<!ENTITY pi01a6 "&#38;#38;pi01a6;"> <!-- pi character, font 501, cell hex a6 -->
+<!ENTITY pi01a7 "&#38;#38;pi01a7;"> <!-- pi character, font 501, cell hex a7 -->
+<!ENTITY pi01a8 "&#38;#38;pi01a8;"> <!-- pi character, font 501, cell hex a8 -->
+<!ENTITY pi01a9 "&#38;#38;pi01a9;"> <!-- pi character, font 501, cell hex a9 -->
+<!ENTITY pi01aa "&#38;#38;pi01aa;"> <!-- pi character, font 501, cell hex aa -->
+<!ENTITY pi01ab "&#38;#38;pi01ab;"> <!-- pi character, font 501, cell hex ab -->
+<!ENTITY pi01ac "&#38;#38;pi01ac;"> <!-- pi character, font 501, cell hex ac -->
+<!ENTITY pi01ad "&#38;#38;pi01ad;"> <!-- pi character, font 501, cell hex ad -->
+<!ENTITY pi01b0 "&#38;#38;pi01b0;"> <!-- pi character, font 501, cell hex b0 -->
+<!ENTITY pi01b1 "&#38;#38;pi01b1;"> <!-- pi character, font 501, cell hex b1 -->
+<!ENTITY pi01b2 "&#38;#38;pi01b2;"> <!-- pi character, font 501, cell hex b2 -->
+<!ENTITY pi01b3 "&#38;#38;pi01b3;"> <!-- pi character, font 501, cell hex b3 -->
+<!ENTITY pi01b4 "&#38;#38;pi01b4;"> <!-- pi character, font 501, cell hex b4 -->
+<!ENTITY pi01b5 "&#38;#38;pi01b5;"> <!-- pi character, font 501, cell hex b5 -->
+<!ENTITY pi01b6 "&#38;#38;pi01b6;"> <!-- pi character, font 501, cell hex b6 -->
+<!ENTITY pi01b7 "&#38;#38;pi01b7;"> <!-- pi character, font 501, cell hex b7 -->
+<!ENTITY pi01b8 "&#38;#38;pi01b8;"> <!-- pi character, font 501, cell hex b8 -->
+<!ENTITY pi01c0 "&#38;#38;pi01c0;"> <!-- pi character, font 501, cell hex c0 -->
+<!ENTITY pi01c1 "&#38;#38;pi01c1;"> <!-- pi character, font 501, cell hex c1 -->
+<!ENTITY pi01c2 "&#38;#38;pi01c2;"> <!-- pi character, font 501, cell hex c2 -->
+<!ENTITY pi01c3 "&#38;#38;pi01c3;"> <!-- pi character, font 501, cell hex c3 -->
+<!ENTITY pi01c4 "&#38;#38;pi01c4;"> <!-- pi character, font 501, cell hex c4 -->
+<!ENTITY pi01c5 "&#38;#38;pi01c5;"> <!-- pi character, font 501, cell hex c5 -->
+<!ENTITY pi01c6 "&#38;#38;pi01c6;"> <!-- pi character, font 501, cell hex c6 -->
+<!ENTITY pi01c7 "&#38;#38;pi01c7;"> <!-- pi character, font 501, cell hex c7 -->
+<!ENTITY pi01c8 "&#38;#38;pi01c8;"> <!-- pi character, font 501, cell hex c8 -->
+<!ENTITY pi01c9 "&#38;#38;pi01c9;"> <!-- pi character, font 501, cell hex c9 -->
+<!ENTITY pi01ca "&#38;#38;pi01ca;"> <!-- pi character, font 501, cell hex ca -->
+<!ENTITY pi01cb "&#38;#38;pi01cb;"> <!-- pi character, font 501, cell hex cb -->
+<!ENTITY pi01cc "&#38;#38;pi01cc;"> <!-- pi character, font 501, cell hex cc -->
+<!ENTITY pi01cd "&#38;#38;pi01cd;"> <!-- pi character, font 501, cell hex cd -->
+<!ENTITY pi01d0 "&#38;#38;pi01d0;"> <!-- pi character, font 501, cell hex d0 -->
+<!ENTITY pi01d1 "&#38;#38;pi01d1;"> <!-- pi character, font 501, cell hex d1 -->
+<!ENTITY pi01d2 "&#38;#38;pi01d2;"> <!-- pi character, font 501, cell hex d2 -->
+<!ENTITY pi01d5 "&#38;#38;pi01d5;"> <!-- pi character, font 501, cell hex d5 -->
+<!ENTITY pi01d8 "&#38;#38;pi01d8;"> <!-- pi character, font 501, cell hex d8 -->
+<!ENTITY pi01d9 "&#38;#38;pi01d9;"> <!-- pi character, font 501, cell hex d9 -->
+<!ENTITY pi01e2 "&#38;#38;pi01e2;"> <!-- pi character, font 501, cell hex e2 -->
+<!ENTITY pi01e3 "&#38;#38;pi01e3;"> <!-- pi character, font 501, cell hex e3 -->
+<!ENTITY pi01e4 "&#38;#38;pi01e4;"> <!-- pi character, font 501, cell hex e4 -->
+<!ENTITY pi01e5 "&#38;#38;pi01e5;"> <!-- pi character, font 501, cell hex e5 -->
+<!ENTITY pi01e6 "&#38;#38;pi01e6;"> <!-- pi character, font 501, cell hex e6 -->
+<!ENTITY pi01e7 "&#38;#38;pi01e7;"> <!-- pi character, font 501, cell hex e7 -->
+<!ENTITY pi01e8 "&#38;#38;pi01e8;"> <!-- pi character, font 501, cell hex e8 -->
+<!ENTITY pi01e9 "&#38;#38;pi01e9;"> <!-- pi character, font 501, cell hex e9 -->
+<!ENTITY pi01f0 "&#38;#38;pi01f0;"> <!-- pi character, font 501, cell hex f0 -->
+<!ENTITY pi01f1 "&#38;#38;pi01f1;"> <!-- pi character, font 501, cell hex f1 -->
+<!ENTITY pi01f3 "&#38;#38;pi01f3;"> <!-- pi character, font 501, cell hex f3 -->
+<!ENTITY pi01f4 "&#38;#38;pi01f4;"> <!-- pi character, font 501, cell hex f4 -->
+<!ENTITY pi01f6 "&#38;#38;pi01f6;"> <!-- pi character, font 501, cell hex f6 -->
+<!ENTITY pi01f7 "&#38;#38;pi01f7;"> <!-- pi character, font 501, cell hex f7 -->
+<!ENTITY pi01f8 "&#38;#38;pi01f8;"> <!-- pi character, font 501, cell hex f8 -->
+<!ENTITY pi01f9 "&#38;#38;pi01f9;"> <!-- pi character, font 501, cell hex f9 -->
+<!ENTITY pi0281 "&#38;#38;pi0281;"> <!-- pi character, font 502, cell hex 81 -->
+<!ENTITY pi0282 "&#38;#38;pi0282;"> <!-- pi character, font 502, cell hex 82 -->
+<!ENTITY pi0283 "&#38;#38;pi0283;"> <!-- pi character, font 502, cell hex 83 -->
+<!ENTITY pi0284 "&#38;#38;pi0284;"> <!-- pi character, font 502, cell hex 84 -->
+<!ENTITY pi0291 "&#38;#38;pi0291;"> <!-- pi character, font 502, cell hex 91 -->
+<!ENTITY pi0292 "&#38;#38;pi0292;"> <!-- pi character, font 502, cell hex 92 -->
+<!ENTITY pi0293 "&#38;#38;pi0293;"> <!-- pi character, font 502, cell hex 93 -->
+<!ENTITY pi029d "&#38;#38;pi029d;"> <!-- pi character, font 502, cell hex 9d -->
+<!ENTITY pi029e "&#38;#38;pi029e;"> <!-- pi character, font 502, cell hex 9e -->
+<!ENTITY pi029f "&#38;#38;pi029f;"> <!-- pi character, font 502, cell hex 9f -->
+<!ENTITY pi02a2 "&#38;#38;pi02a2;"> <!-- pi character, font 502, cell hex a2 -->
+<!ENTITY pi02ad "&#38;#38;pi02ad;"> <!-- pi character, font 502, cell hex ad -->
+<!ENTITY pi02b0 "&#38;#38;pi02b0;"> <!-- pi character, font 502, cell hex b0 -->
+<!ENTITY pi02c0 "&#38;#38;pi02c0;"> <!-- pi character, font 502, cell hex c0 -->
+<!ENTITY pi02cd "&#38;#38;pi02cd;"> <!-- pi character, font 502, cell hex cd -->
+<!ENTITY pi02ce "&#38;#38;pi02ce;"> <!-- pi character, font 502, cell hex ce -->
+<!ENTITY pi02cf "&#38;#38;pi02cf;"> <!-- pi character, font 502, cell hex cf -->
+<!ENTITY pi02e1 "&#38;#38;pi02e1;"> <!-- pi character, font 502, cell hex e1 -->
+<!ENTITY pi02eb "&#38;#38;pi02eb;"> <!-- pi character, font 502, cell hex eb -->
+<!ENTITY pi02ec "&#38;#38;pi02ec;"> <!-- pi character, font 502, cell hex ec -->
+<!ENTITY pi02ed "&#38;#38;pi02ed;"> <!-- pi character, font 502, cell hex ed -->
+<!ENTITY pi02ee "&#38;#38;pi02ee;"> <!-- pi character, font 502, cell hex ee -->
+<!ENTITY pi02ef "&#38;#38;pi02ef;"> <!-- pi character, font 502, cell hex ef -->
+<!ENTITY pi02fb "&#38;#38;pi02fb;"> <!-- pi character, font 502, cell hex fb -->
+<!ENTITY pi02fc "&#38;#38;pi02fc;"> <!-- pi character, font 502, cell hex fc -->
+<!ENTITY pi02fd "&#38;#38;pi02fd;"> <!-- pi character, font 502, cell hex fd -->
+<!ENTITY pi02fe "&#38;#38;pi02fe;"> <!-- pi character, font 502, cell hex fe -->
+<!ENTITY pi02ff "&#38;#38;pi02ff;"> <!-- pi character, font 502, cell hex ff -->
+<!ENTITY pi0382 "&#38;#38;pi0382;"> <!-- pi character, font 503, cell hex 82 -->
+<!ENTITY pi038c "&#38;#38;pi038c;"> <!-- pi character, font 503, cell hex 8c -->
+<!ENTITY pi0391 "&#38;#38;pi0391;"> <!-- pi character, font 503, cell hex 91 -->
+<!ENTITY pi0392 "&#38;#38;pi0392;"> <!-- pi character, font 503, cell hex 92 -->
+<!ENTITY pi0393 "&#38;#38;pi0393;"> <!-- pi character, font 503, cell hex 93 -->
+<!ENTITY pi0394 "&#38;#38;pi0394;"> <!-- pi character, font 503, cell hex 94 -->
+<!ENTITY pi0395 "&#38;#38;pi0395;"> <!-- pi character, font 503, cell hex 95 -->
+<!ENTITY pi0396 "&#38;#38;pi0396;"> <!-- pi character, font 503, cell hex 96 -->
+<!ENTITY pi0397 "&#38;#38;pi0397;"> <!-- pi character, font 503, cell hex 97 -->
+<!ENTITY pi0398 "&#38;#38;pi0398;"> <!-- pi character, font 503, cell hex 98 -->
+<!ENTITY pi0399 "&#38;#38;pi0399;"> <!-- pi character, font 503, cell hex 99 -->
+<!ENTITY pi039a "&#38;#38;pi039a;"> <!-- pi character, font 503, cell hex 9a -->
+<!ENTITY pi039b "&#38;#38;pi039b;"> <!-- pi character, font 503, cell hex 9b -->
+<!ENTITY pi039c "&#38;#38;pi039c;"> <!-- pi character, font 503, cell hex 9c -->
+<!ENTITY pi03c0 "&#38;#38;pi03c0;"> <!-- pi character, font 503, cell hex c0 -->
+<!ENTITY pi03c1 "&#38;#38;pi03c1;"> <!-- pi character, font 503, cell hex c1 -->
+<!ENTITY pi03c2 "&#38;#38;pi03c2;"> <!-- pi character, font 503, cell hex c2 -->
+<!ENTITY pi03c3 "&#38;#38;pi03c3;"> <!-- pi character, font 503, cell hex c3 -->
+<!ENTITY pi03c4 "&#38;#38;pi03c4;"> <!-- pi character, font 503, cell hex c4 -->
+<!ENTITY pi03c5 "&#38;#38;pi03c5;"> <!-- pi character, font 503, cell hex c5 -->
+<!ENTITY pi03c6 "&#38;#38;pi03c6;"> <!-- pi character, font 503, cell hex c6 -->
+<!ENTITY pi03c7 "&#38;#38;pi03c7;"> <!-- pi character, font 503, cell hex c7 -->
+<!ENTITY pi03c8 "&#38;#38;pi03c8;"> <!-- pi character, font 503, cell hex c8 -->
+<!ENTITY pi03e0 "&#38;#38;pi03e0;"> <!-- pi character, font 503, cell hex e0 -->
+<!ENTITY pi03e1 "&#38;#38;pi03e1;"> <!-- pi character, font 503, cell hex e1 -->
+<!ENTITY pi03e2 "&#38;#38;pi03e2;"> <!-- pi character, font 503, cell hex e2 -->
+<!ENTITY pi03e3 "&#38;#38;pi03e3;"> <!-- pi character, font 503, cell hex e3 -->
+<!ENTITY pi03e4 "&#38;#38;pi03e4;"> <!-- pi character, font 503, cell hex e4 -->
+<!ENTITY pi03e5 "&#38;#38;pi03e5;"> <!-- pi character, font 503, cell hex e5 -->
+<!ENTITY pi03e6 "&#38;#38;pi03e6;"> <!-- pi character, font 503, cell hex e6 -->
+<!ENTITY pi03e7 "&#38;#38;pi03e7;"> <!-- pi character, font 503, cell hex e7 -->
+<!ENTITY pi03e8 "&#38;#38;pi03e8;"> <!-- pi character, font 503, cell hex e8 -->
+<!ENTITY pi0880 "&#38;#38;pi0880;"> <!-- pi character, font 508, cell hex 80 -->
+<!ENTITY pi0881 "&#38;#38;pi0881;"> <!-- pi character, font 508, cell hex 81 -->
+<!ENTITY pi0882 "&#38;#38;pi0882;"> <!-- pi character, font 508, cell hex 82 -->
+<!ENTITY pi0883 "&#38;#38;pi0883;"> <!-- pi character, font 508, cell hex 83 -->
+<!ENTITY pi0887 "&#38;#38;pi0887;"> <!-- pi character, font 508, cell hex 87 -->
+<!ENTITY pi0888 "&#38;#38;pi0888;"> <!-- pi character, font 508, cell hex 88 -->
+<!ENTITY pi0889 "&#38;#38;pi0889;"> <!-- pi character, font 508, cell hex 89 -->
+<!ENTITY pi088a "&#38;#38;pi088a;"> <!-- pi character, font 508, cell hex 8a -->
+<!ENTITY pi088b "&#38;#38;pi088b;"> <!-- pi character, font 508, cell hex 8b -->
+<!ENTITY pi088c "&#38;#38;pi088c;"> <!-- pi character, font 508, cell hex 8c -->
+<!ENTITY pi0890 "&#38;#38;pi0890;"> <!-- pi character, font 508, cell hex 90 -->
+<!ENTITY pi0891 "&#38;#38;pi0891;"> <!-- pi character, font 508, cell hex 91 -->
+<!ENTITY pi0893 "&#38;#38;pi0893;"> <!-- pi character, font 508, cell hex 93 -->
+<!ENTITY pi0894 "&#38;#38;pi0894;"> <!-- pi character, font 508, cell hex 94 -->
+<!ENTITY pi0895 "&#38;#38;pi0895;"> <!-- pi character, font 508, cell hex 95 -->
+<!ENTITY pi0896 "&#38;#38;pi0896;"> <!-- pi character, font 508, cell hex 96 -->
+<!ENTITY pi0897 "&#38;#38;pi0897;"> <!-- pi character, font 508, cell hex 97 -->
+<!ENTITY pi0898 "&#38;#38;pi0898;"> <!-- pi character, font 508, cell hex 98 -->
+<!ENTITY pi0899 "&#38;#38;pi0899;"> <!-- pi character, font 508, cell hex 99 -->
+<!ENTITY pi08a2 "&#38;#38;pi08a2;"> <!-- pi character, font 508, cell hex a2 -->
+<!ENTITY pi08a4 "&#38;#38;pi08a4;"> <!-- pi character, font 508, cell hex a4 -->
+<!ENTITY pi08a5 "&#38;#38;pi08a5;"> <!-- pi character, font 508, cell hex a5 -->
+<!ENTITY pi08a6 "&#38;#38;pi08a6;"> <!-- pi character, font 508, cell hex a6 -->
+<!ENTITY pi08a7 "&#38;#38;pi08a7;"> <!-- pi character, font 508, cell hex a7 -->
+<!ENTITY pi08a8 "&#38;#38;pi08a8;"> <!-- pi character, font 508, cell hex a8 -->
+<!ENTITY pi08a9 "&#38;#38;pi08a9;"> <!-- pi character, font 508, cell hex a9 -->
+<!ENTITY pi08b0 "&#38;#38;pi08b0;"> <!-- pi character, font 508, cell hex b0 -->
+<!ENTITY pi08b1 "&#38;#38;pi08b1;"> <!-- pi character, font 508, cell hex b1 -->
+<!ENTITY pi08b2 "&#38;#38;pi08b2;"> <!-- pi character, font 508, cell hex b2 -->
+<!ENTITY pi08b3 "&#38;#38;pi08b3;"> <!-- pi character, font 508, cell hex b3 -->
+<!ENTITY pi08b4 "&#38;#38;pi08b4;"> <!-- pi character, font 508, cell hex b4 -->
+<!ENTITY pi08b5 "&#38;#38;pi08b5;"> <!-- pi character, font 508, cell hex b5 -->
+<!ENTITY pi08b6 "&#38;#38;pi08b6;"> <!-- pi character, font 508, cell hex b6 -->
+<!ENTITY pi08b7 "&#38;#38;pi08b7;"> <!-- pi character, font 508, cell hex b7 -->
+<!ENTITY pi08b8 "&#38;#38;pi08b8;"> <!-- pi character, font 508, cell hex b8 -->
+<!ENTITY pi08b9 "&#38;#38;pi08b9;"> <!-- pi character, font 508, cell hex b9 -->
+<!ENTITY pi08c1 "&#38;#38;pi08c1;"> <!-- pi character, font 508, cell hex c1 -->
+<!ENTITY pi08c2 "&#38;#38;pi08c2;"> <!-- pi character, font 508, cell hex c2 -->
+<!ENTITY pi08c3 "&#38;#38;pi08c3;"> <!-- pi character, font 508, cell hex c3 -->
+<!ENTITY pi08c4 "&#38;#38;pi08c4;"> <!-- pi character, font 508, cell hex c4 -->
+<!ENTITY pi08c5 "&#38;#38;pi08c5;"> <!-- pi character, font 508, cell hex c5 -->
+<!ENTITY pi08c6 "&#38;#38;pi08c6;"> <!-- pi character, font 508, cell hex c6 -->
+<!ENTITY pi08c7 "&#38;#38;pi08c7;"> <!-- pi character, font 508, cell hex c7 -->
+<!ENTITY pi08c8 "&#38;#38;pi08c8;"> <!-- pi character, font 508, cell hex c8 -->
+<!ENTITY pi08c9 "&#38;#38;pi08c9;"> <!-- pi character, font 508, cell hex c9 -->
+<!ENTITY pi08cc "&#38;#38;pi08cc;"> <!-- pi character, font 508, cell hex cc -->
+<!ENTITY pi08cd "&#38;#38;pi08cd;"> <!-- pi character, font 508, cell hex cd -->
+<!ENTITY pi08d1 "&#38;#38;pi08d1;"> <!-- pi character, font 508, cell hex d1 -->
+<!ENTITY pi08d2 "&#38;#38;pi08d2;"> <!-- pi character, font 508, cell hex d2 -->
+<!ENTITY pi08d3 "&#38;#38;pi08d3;"> <!-- pi character, font 508, cell hex d3 -->
+<!ENTITY pi08d4 "&#38;#38;pi08d4;"> <!-- pi character, font 508, cell hex d4 -->
+<!ENTITY pi08d5 "&#38;#38;pi08d5;"> <!-- pi character, font 508, cell hex d5 -->
+<!ENTITY pi08d6 "&#38;#38;pi08d6;"> <!-- pi character, font 508, cell hex d6 -->
+<!ENTITY pi08d7 "&#38;#38;pi08d7;"> <!-- pi character, font 508, cell hex d7 -->
+<!ENTITY pi08d8 "&#38;#38;pi08d8;"> <!-- pi character, font 508, cell hex d8 -->
+<!ENTITY pi08d9 "&#38;#38;pi08d9;"> <!-- pi character, font 508, cell hex d9 -->
+<!ENTITY pi08e1 "&#38;#38;pi08e1;"> <!-- pi character, font 508, cell hex e1 -->
+<!ENTITY pi08e2 "&#38;#38;pi08e2;"> <!-- pi character, font 508, cell hex e2 -->
+<!ENTITY pi08e3 "&#38;#38;pi08e3;"> <!-- pi character, font 508, cell hex e3 -->
+<!ENTITY pi08e4 "&#38;#38;pi08e4;"> <!-- pi character, font 508, cell hex e4 -->
+<!ENTITY pi08e5 "&#38;#38;pi08e5;"> <!-- pi character, font 508, cell hex e5 -->
+<!ENTITY pi08e6 "&#38;#38;pi08e6;"> <!-- pi character, font 508, cell hex e6 -->
+<!ENTITY pi08e7 "&#38;#38;pi08e7;"> <!-- pi character, font 508, cell hex e7 -->
+<!ENTITY pi08e8 "&#38;#38;pi08e8;"> <!-- pi character, font 508, cell hex e8 -->
+<!ENTITY pi08e9 "&#38;#38;pi08e9;"> <!-- pi character, font 508, cell hex e9 -->
+<!ENTITY pi08f0 "&#38;#38;pi08f0;"> <!-- pi character, font 508, cell hex f0 -->
+<!ENTITY pi08f1 "&#38;#38;pi08f1;"> <!-- pi character, font 508, cell hex f1 -->
+<!ENTITY pi08f2 "&#38;#38;pi08f2;"> <!-- pi character, font 508, cell hex f2 -->
+<!ENTITY pi08f3 "&#38;#38;pi08f3;"> <!-- pi character, font 508, cell hex f3 -->
+<!ENTITY pi08f4 "&#38;#38;pi08f4;"> <!-- pi character, font 508, cell hex f4 -->
+<!ENTITY pi08f6 "&#38;#38;pi08f6;"> <!-- pi character, font 508, cell hex f6 -->
+<!ENTITY pi08f7 "&#38;#38;pi08f7;"> <!-- pi character, font 508, cell hex f7 -->
+<!ENTITY pi10a2 "&#38;#38;pi10a2;"> <!-- pi character, font 510, cell hex a2 -->
+<!ENTITY pi10a5 "&#38;#38;pi10a5;"> <!-- pi character, font 510, cell hex a5 -->
+<!ENTITY pi10a7 "&#38;#38;pi10a7;"> <!-- pi character, font 510, cell hex a7 -->
+<!ENTITY pi10a9 "&#38;#38;pi10a9;"> <!-- pi character, font 510, cell hex a9 -->
+<!ENTITY pi10b0 "&#38;#38;pi10b0;"> <!-- pi character, font 510, cell hex b0 -->
+<!ENTITY pi10b1 "&#38;#38;pi10b1;"> <!-- pi character, font 510, cell hex b1 -->
+<!ENTITY pi10b2 "&#38;#38;pi10b2;"> <!-- pi character, font 510, cell hex b2 -->
+<!ENTITY pi10b3 "&#38;#38;pi10b3;"> <!-- pi character, font 510, cell hex b3 -->
+<!ENTITY pi10b4 "&#38;#38;pi10b4;"> <!-- pi character, font 510, cell hex b4 -->
+<!ENTITY pi10b5 "&#38;#38;pi10b5;"> <!-- pi character, font 510, cell hex b5 -->
+<!ENTITY pi10b6 "&#38;#38;pi10b6;"> <!-- pi character, font 510, cell hex b6 -->
+<!ENTITY pi10b7 "&#38;#38;pi10b7;"> <!-- pi character, font 510, cell hex b7 -->
+<!ENTITY pi10b8 "&#38;#38;pi10b8;"> <!-- pi character, font 510, cell hex b8 -->
+<!ENTITY pi10b9 "&#38;#38;pi10b9;"> <!-- pi character, font 510, cell hex b9 -->
+<!ENTITY pi10ba "&#38;#38;pi10ba;"> <!-- pi character, font 510, cell hex ba -->
+<!ENTITY pi10bb "&#38;#38;pi10bb;"> <!-- pi character, font 510, cell hex bb -->
+<!ENTITY pi10c0 "&#38;#38;pi10c0;"> <!-- pi character, font 510, cell hex c0 -->
+<!ENTITY pi10c1 "&#38;#38;pi10c1;"> <!-- pi character, font 510, cell hex c1 -->
+<!ENTITY pi10c2 "&#38;#38;pi10c2;"> <!-- pi character, font 510, cell hex c2 -->
+<!ENTITY pi10c3 "&#38;#38;pi10c3;"> <!-- pi character, font 510, cell hex c3 -->
+<!ENTITY pi10c4 "&#38;#38;pi10c4;"> <!-- pi character, font 510, cell hex c4 -->
+<!ENTITY pi10c5 "&#38;#38;pi10c5;"> <!-- pi character, font 510, cell hex c5 -->
+<!ENTITY pi10c6 "&#38;#38;pi10c6;"> <!-- pi character, font 510, cell hex c6 -->
+<!ENTITY pi10c7 "&#38;#38;pi10c7;"> <!-- pi character, font 510, cell hex c7 -->
+<!ENTITY pi10c8 "&#38;#38;pi10c8;"> <!-- pi character, font 510, cell hex c8 -->
+<!ENTITY pi10c9 "&#38;#38;pi10c9;"> <!-- pi character, font 510, cell hex c9 -->
+<!ENTITY pi10d1 "&#38;#38;pi10d1;"> <!-- pi character, font 510, cell hex d1 -->
+<!ENTITY pi10d2 "&#38;#38;pi10d2;"> <!-- pi character, font 510, cell hex d2 -->
+<!ENTITY pi10d3 "&#38;#38;pi10d3;"> <!-- pi character, font 510, cell hex d3 -->
+<!ENTITY pi10d4 "&#38;#38;pi10d4;"> <!-- pi character, font 510, cell hex d4 -->
+<!ENTITY pi10d5 "&#38;#38;pi10d5;"> <!-- pi character, font 510, cell hex d5 -->
+<!ENTITY pi10d6 "&#38;#38;pi10d6;"> <!-- pi character, font 510, cell hex d6 -->
+<!ENTITY pi10d7 "&#38;#38;pi10d7;"> <!-- pi character, font 510, cell hex d7 -->
+<!ENTITY pi10d8 "&#38;#38;pi10d8;"> <!-- pi character, font 510, cell hex d8 -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Added Math Symbols: Ordinary//EN
+-->
+
+
+<!ENTITY ang    "&#38;#38;ang;">    <!-- angle -->
+<!ENTITY angmsd "&#38;#38;angmsd;"> <!-- angle-measured -->
+<!ENTITY beth   "&#38;#38;beth;">   <!-- beth, Hebrew -->
+<!ENTITY bprime "&#38;#38;bprime;"> <!-- reverse prime -->
+<!ENTITY comp   "&#38;#38;comp;">   <!-- complement sign -->
+<!ENTITY daleth "&#38;#38;daleth;"> <!-- daleth, Hebrew -->
+<!ENTITY ell    "&#38;#38;ell;">    <!-- cursive small l -->
+<!ENTITY empty  "&#38;#38;empty;">  <!-- small o, slash -->
+<!ENTITY gimel  "&#38;#38;gimel;">  <!-- gimel, Hebrew -->
+<!ENTITY image  "&#38;#38;image;">  <!-- imaginary -->
+<!ENTITY inodot "&#38;#38;inodot;"> <!-- small i, no dot -->
+<!ENTITY jnodot "&#38;#38;jnodot;"> <!-- small j, no dot -->
+<!ENTITY nexist "&#38;#38;nexist;"> <!-- negated exists -->
+<!ENTITY oS     "&#38;#38;oS;">     <!-- capital S in circle -->
+<!ENTITY planck "&#38;#38;planck;"> <!-- Planck's over 2pi -->
+<!ENTITY real   "&#38;#38;real;">   <!-- real -->
+<!ENTITY sbsol  "&#38;#38;sbsol;">  <!-- short reverse solidus -->
+<!ENTITY vprime "&#38;#38;vprime;"> <!-- prime, variant -->
+<!ENTITY weierp "&#38;#38;weierp;"> <!-- Weierstrass p -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Russian Cyrillic//EN
+-->
+
+
+<!ENTITY acy    "&#38;#38;acy;">    <!-- small a, Cyrillic -->
+<!ENTITY Acy    "&#38;#38;Acy;">    <!-- capital A, Cyrillic -->
+<!ENTITY bcy    "&#38;#38;bcy;">    <!-- small be, Cyrillic -->
+<!ENTITY Bcy    "&#38;#38;Bcy;">    <!-- capital BE, Cyrillic -->
+<!ENTITY vcy    "&#38;#38;vcy;">    <!-- small ve, Cyrillic -->
+<!ENTITY Vcy    "&#38;#38;Vcy;">    <!-- capital VE, Cyrillic -->
+<!ENTITY gcy    "&#38;#38;gcy;">    <!-- small ghe, Cyrillic -->
+<!ENTITY Gcy    "&#38;#38;Gcy;">    <!-- capital GHE, Cyrillic -->
+<!ENTITY dcy    "&#38;#38;dcy;">    <!-- small de, Cyrillic -->
+<!ENTITY Dcy    "&#38;#38;Dcy;">    <!-- capital DE, Cyrillic -->
+<!ENTITY iecy   "&#38;#38;iecy;">   <!-- small ie, Cyrillic -->
+<!ENTITY IEcy   "&#38;#38;IEcy;">   <!-- capital IE, Cyrillic -->
+<!ENTITY iocy   "&#38;#38;iocy;">   <!-- small io, Russian -->
+<!ENTITY IOcy   "&#38;#38;IOcy;">   <!-- capital IO, Russian -->
+<!ENTITY zhcy   "&#38;#38;zhcy;">   <!-- small zhe, Cyrillic -->
+<!ENTITY ZHcy   "&#38;#38;ZHcy;">   <!-- capital ZHE, Cyrillic -->
+<!ENTITY zcy    "&#38;#38;zcy;">    <!-- small ze, Cyrillic -->
+<!ENTITY Zcy    "&#38;#38;Zcy;">    <!-- capital ZE, Cyrillic -->
+<!ENTITY icy    "&#38;#38;icy;">    <!-- small i, Cyrillic -->
+<!ENTITY Icy    "&#38;#38;Icy;">    <!-- capital I, Cyrillic -->
+<!ENTITY jcy    "&#38;#38;jcy;">    <!-- small short i, Cyrillic -->
+<!ENTITY Jcy    "&#38;#38;Jcy;">    <!-- capital short I, Cyrillic -->
+<!ENTITY kcy    "&#38;#38;kcy;">    <!-- small ka, Cyrillic -->
+<!ENTITY Kcy    "&#38;#38;Kcy;">    <!-- capital KA, Cyrillic -->
+<!ENTITY lcy    "&#38;#38;lcy;">    <!-- small el, Cyrillic -->
+<!ENTITY Lcy    "&#38;#38;Lcy;">    <!-- capital EL, Cyrillic -->
+<!ENTITY mcy    "&#38;#38;mcy;">    <!-- small em, Cyrillic -->
+<!ENTITY Mcy    "&#38;#38;Mcy;">    <!-- capital EM, Cyrillic -->
+<!ENTITY ncy    "&#38;#38;ncy;">    <!-- small en, Cyrillic -->
+<!ENTITY Ncy    "&#38;#38;Ncy;">    <!-- capital EN, Cyrillic -->
+<!ENTITY ocy    "&#38;#38;ocy;">    <!-- small o, Cyrillic -->
+<!ENTITY Ocy    "&#38;#38;Ocy;">    <!-- capital O, Cyrillic -->
+<!ENTITY pcy    "&#38;#38;pcy;">    <!-- small pe, Cyrillic -->
+<!ENTITY Pcy    "&#38;#38;Pcy;">    <!-- capital PE, Cyrillic -->
+<!ENTITY rcy    "&#38;#38;rcy;">    <!-- small er, Cyrillic -->
+<!ENTITY Rcy    "&#38;#38;Rcy;">    <!-- capital ER, Cyrillic -->
+<!ENTITY scy    "&#38;#38;scy;">    <!-- small es, Cyrillic -->
+<!ENTITY Scy    "&#38;#38;Scy;">    <!-- capital ES, Cyrillic -->
+<!ENTITY tcy    "&#38;#38;tcy;">    <!-- small te, Cyrillic -->
+<!ENTITY Tcy    "&#38;#38;Tcy;">    <!-- capital TE, Cyrillic -->
+<!ENTITY ucy    "&#38;#38;ucy;">    <!-- small u, Cyrillic -->
+<!ENTITY Ucy    "&#38;#38;Ucy;">    <!-- capital U, Cyrillic -->
+<!ENTITY fcy    "&#38;#38;fcy;">    <!-- small ef, Cyrillic -->
+<!ENTITY Fcy    "&#38;#38;Fcy;">    <!-- capital EF, Cyrillic -->
+<!ENTITY khcy   "&#38;#38;khcy;">   <!-- small ha, Cyrillic -->
+<!ENTITY KHcy   "&#38;#38;KHcy;">   <!-- capital HA, Cyrillic -->
+<!ENTITY tscy   "&#38;#38;tscy;">   <!-- small tse, Cyrillic -->
+<!ENTITY TScy   "&#38;#38;TScy;">   <!-- capital TSE, Cyrillic -->
+<!ENTITY chcy   "&#38;#38;chcy;">   <!-- small che, Cyrillic -->
+<!ENTITY CHcy   "&#38;#38;CHcy;">   <!-- capital CHE, Cyrillic -->
+<!ENTITY shcy   "&#38;#38;shcy;">   <!-- small sha, Cyrillic -->
+<!ENTITY SHcy   "&#38;#38;SHcy;">   <!-- capital SHA, Cyrillic -->
+<!ENTITY shchcy "&#38;#38;shchcy;"> <!-- small shcha, Cyrillic -->
+<!ENTITY SHCHcy "&#38;#38;SHCHcy;"> <!-- capital SHCHA, Cyrillic -->
+<!ENTITY hardcy "&#38;#38;hardcy;"> <!-- small hard sign, Cyrillic -->
+<!ENTITY HARDcy "&#38;#38;HARDcy;"> <!-- capital HARD sign, Cyrillic -->
+<!ENTITY ycy    "&#38;#38;ycy;">    <!-- small yeru, Cyrillic -->
+<!ENTITY Ycy    "&#38;#38;Ycy;">    <!-- capital YERU, Cyrillic -->
+<!ENTITY softcy "&#38;#38;softcy;"> <!-- small soft sign, Cyrillic -->
+<!ENTITY SOFTcy "&#38;#38;SOFTcy;"> <!-- capital SOFT sign, Cyrillic -->
+<!ENTITY ecy    "&#38;#38;ecy;">    <!-- small e, Cyrillic -->
+<!ENTITY Ecy    "&#38;#38;Ecy;">    <!-- capital E, Cyrillic -->
+<!ENTITY yucy   "&#38;#38;yucy;">   <!-- small yu, Cyrillic -->
+<!ENTITY YUcy   "&#38;#38;YUcy;">   <!-- capital YU, Cyrillic -->
+<!ENTITY yacy   "&#38;#38;yacy;">   <!-- small ya, Cyrillic -->
+<!ENTITY YAcy   "&#38;#38;YAcy;">   <!-- capital YA, Cyrillic -->
+<!ENTITY numero "&#38;#38;numero;"> <!-- numero sign -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Non-Russian Cyrillic//EN
+-->
+
+
+<!ENTITY djcy   "&#38;#38;djcy;">   <!-- small dje, Serbian -->
+<!ENTITY DJcy   "&#38;#38;DJcy;">   <!-- capital DJE, Serbian -->
+<!ENTITY gjcy   "&#38;#38;gjcy;">   <!-- small gje, Macedonian -->
+<!ENTITY GJcy   "&#38;#38;GJcy;">   <!-- capital GJE Macedonian -->
+<!ENTITY jukcy  "&#38;#38;jukcy;">  <!-- small je, Ukrainian -->
+<!ENTITY Jukcy  "&#38;#38;Jukcy;">  <!-- capital JE, Ukrainian -->
+<!ENTITY dscy   "&#38;#38;dscy;">   <!-- small dse, Macedonian -->
+<!ENTITY DScy   "&#38;#38;DScy;">   <!-- capital DSE, Macedonian -->
+<!ENTITY iukcy  "&#38;#38;iukcy;">  <!-- small i, Ukrainian -->
+<!ENTITY Iukcy  "&#38;#38;Iukcy;">  <!-- capital I, Ukrainian -->
+<!ENTITY yicy   "&#38;#38;yicy;">   <!-- small yi, Ukrainian -->
+<!ENTITY YIcy   "&#38;#38;YIcy;">   <!-- capital YI, Ukrainian -->
+<!ENTITY jsercy "&#38;#38;jsercy;"> <!-- small je, Serbian -->
+<!ENTITY Jsercy "&#38;#38;Jsercy;"> <!-- capital JE, Serbian -->
+<!ENTITY ljcy   "&#38;#38;ljcy;">   <!-- small lje, Serbian -->
+<!ENTITY LJcy   "&#38;#38;LJcy;">   <!-- capital LJE, Serbian -->
+<!ENTITY njcy   "&#38;#38;njcy;">   <!-- small nje, Serbian -->
+<!ENTITY NJcy   "&#38;#38;NJcy;">   <!-- capital NJE, Serbian -->
+<!ENTITY tshcy  "&#38;#38;tshcy;">  <!-- small tshe, Serbian -->
+<!ENTITY TSHcy  "&#38;#38;TSHcy;">  <!-- capital TSHE, Serbian -->
+<!ENTITY kjcy   "&#38;#38;kjcy;">   <!-- small kje Macedonian -->
+<!ENTITY KJcy   "&#38;#38;KJcy;">   <!-- capital KJE, Macedonian -->
+<!ENTITY ubrcy  "&#38;#38;ubrcy;">  <!-- small u, Byelorussian -->
+<!ENTITY Ubrcy  "&#38;#38;Ubrcy;">  <!-- capital U, Byelorussian -->
+<!ENTITY dzcy   "&#38;#38;dzcy;">   <!-- small dze, Serbian -->
+<!ENTITY DZcy   "&#38;#38;DZcy;">   <!-- capital dze, Serbian -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Monotoniko Greek//EN
+-->
+
+
+<!ENTITY aacgr  "&#38;#38;aacgr;">  <!-- small alpha, accent, Greek -->
+<!ENTITY Aacgr  "&#38;#38;Aacgr;">  <!-- capital Alpha, accent, Greek -->
+<!ENTITY eacgr  "&#38;#38;eacgr;">  <!-- small epsilon, accent, Greek -->
+<!ENTITY Eacgr  "&#38;#38;Eacgr;">  <!-- capital Epsilon, accent, Greek -->
+<!ENTITY eeacgr "&#38;#38;eeacgr;"> <!-- small eta, accent, Greek -->
+<!ENTITY EEacgr "&#38;#38;EEacgr;"> <!-- capital Eta, accent, Greek -->
+<!ENTITY idigr  "&#38;#38;idigr;">  <!-- small iota, dieresis, Greek -->
+<!ENTITY Idigr  "&#38;#38;Idigr;">  <!-- capital Iota, dieresis, Greek -->
+<!ENTITY iacgr  "&#38;#38;iacgr;">  <!-- small iota, accent, Greek -->
+<!ENTITY Iacgr  "&#38;#38;Iacgr;">  <!-- capital Iota, accent, Greek -->
+<!ENTITY idiagr "&#38;#38;idiagr;"> <!-- small iota, dieresis, accent, Greek -->
+<!ENTITY oacgr  "&#38;#38;oacgr;">  <!-- small omicron, accent, Greek -->
+<!ENTITY Oacgr  "&#38;#38;Oacgr;">  <!-- capital Omicron, accent, Greek -->
+<!ENTITY udigr  "&#38;#38;udigr;">  <!-- small upsilon, dieresis, Greek -->
+<!ENTITY Udigr  "&#38;#38;Udigr;">  <!-- capital Upsilon, dieresis, Greek -->
+<!ENTITY uacgr  "&#38;#38;uacgr;">  <!-- small upsilon, accent, Greek -->
+<!ENTITY Uacgr  "&#38;#38;Uacgr;">  <!-- capital Upsilon, accent, Greek -->
+<!ENTITY udiagr "&#38;#38;udiagr;"> <!-- small upsilon, dieresis, accent, Greek -->
+<!ENTITY ohacgr "&#38;#38;ohacgr;"> <!-- small omega, accent, Greek -->
+<!ENTITY OHacgr "&#38;#38;OHacgr;"> <!-- capital Omega, accent, Greek -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Greek Symbols//EN
+-->
+
+
+<!ENTITY alpha    "&#38;#38;alpha;">  <!-- small alpha, Greek -->
+<!ENTITY beta     "&#38;#38;beta;">   <!-- small beta, Greek -->
+<!ENTITY gamma    "&#38;#38;gamma;">  <!-- small gamma, Greek -->
+<!ENTITY Gamma    "&#38;#38;Gamma;">  <!-- capital Gamma, Greek -->
+<!ENTITY gammad   "&#38;#38;gammad;"> <!-- digamma -->
+<!ENTITY delta    "&#38;#38;delta;">  <!-- small delta, Greek -->
+<!ENTITY Delta    "&#38;#38;Delta;">  <!-- capital Delta, Greek -->
+<!ENTITY epsi     "&#38;#38;epsi;">   <!-- small epsilon, Greek -->
+<!ENTITY epsiv    "&#38;#38;epsiv;">  <!-- varepsilon -->
+<!ENTITY epsis    "&#38;#38;epsis;">  <!-- straight epsilon -->
+<!ENTITY zeta     "&#38;#38;zeta;">   <!-- small zeta, Greek -->
+<!ENTITY eta      "&#38;#38;eta;">    <!-- small eta, Greek -->
+<!ENTITY thetas   "&#38;#38;thetas;"> <!-- straight theta, Greek -->
+<!ENTITY Theta    "&#38;#38;Theta;">  <!-- capital Theta, Greek -->
+<!ENTITY thetav   "&#38;#38;thetav;"> <!-- curly or open theta -->
+<!ENTITY iota     "&#38;#38;iota;">   <!-- small iota, Greek -->
+<!ENTITY kappa    "&#38;#38;kappa;">  <!-- small kappa, Greek -->
+<!ENTITY kappav   "&#38;#38;kappav;"> <!-- varkappa -->
+<!ENTITY lambda   "&#38;#38;lambda;"> <!-- small lambda, Greek -->
+<!ENTITY Lambda   "&#38;#38;Lambda;"> <!-- capital Lambda, Greek -->
+<!ENTITY mu       "&#38;#38;mu;">     <!-- small mu, Greek -->
+<!ENTITY nu       "&#38;#38;nu;">     <!-- small nu, Greek -->
+<!ENTITY xi       "&#38;#38;xi;">     <!-- small xi, Greek -->
+<!ENTITY Xi       "&#38;#38;Xi;">     <!-- capital Xi, Greek -->
+<!ENTITY pi       "&#38;#38;pi;">     <!-- small pi, Greek -->
+<!ENTITY piv      "&#38;#38;piv;">    <!-- varpi -->
+<!ENTITY Pi       "&#38;#38;Pi;">     <!-- capital Pi, Greek -->
+<!ENTITY rho      "&#38;#38;rho;">    <!-- small rho, Greek -->
+<!ENTITY rhov     "&#38;#38;rhov;">   <!-- varrho -->
+<!ENTITY sigma    "&#38;#38;sigma;">  <!-- small sigma, Greek -->
+<!ENTITY Sigma    "&#38;#38;Sigma;">  <!-- capital Sigma, Greek -->
+<!ENTITY sigmav   "&#38;#38;sigmav;"> <!-- varsigma -->
+<!ENTITY tau      "&#38;#38;tau;">    <!-- small tau, Greek -->
+<!ENTITY upsi     "&#38;#38;upsi;">   <!-- small upsilon, Greek -->
+<!ENTITY Upsi     "&#38;#38;Upsi;">   <!-- capital Upsilon, Greek -->
+<!ENTITY phis     "&#38;#38;phis;">   <!-- straight phi -->
+<!ENTITY Phi      "&#38;#38;Phi;">    <!-- capital Phi, Greek -->
+<!ENTITY phiv     "&#38;#38;phiv;">   <!-- curly or open phi -->
+<!ENTITY chi      "&#38;#38;chi;">    <!-- small chi, Greek -->
+<!ENTITY psi      "&#38;#38;psi;">    <!-- small psi, Greek -->
+<!ENTITY Psi      "&#38;#38;Psi;">    <!-- capital Psi, Greek -->
+<!ENTITY omega    "&#38;#38;omega;">  <!-- small omega, Greek -->
+<!ENTITY Omega    "&#38;#38;Omega;">  <!-- capital Omega, Greek -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Alternative Greek Symbols//EN
+-->
+
+
+<!ENTITY b.alpha  "&#38;#38;b.alpha;">  <!-- small alpha, Greek -->
+<!ENTITY b.beta   "&#38;#38;b.beta;">   <!-- small beta, Greek -->
+<!ENTITY b.gamma  "&#38;#38;b.gamma;">  <!-- small gamma, Greek -->
+<!ENTITY b.Gamma  "&#38;#38;b.Gamma;">  <!-- capital Gamma, Greek -->
+<!ENTITY b.gammad "&#38;#38;b.gammad;"> <!-- digamma -->
+<!ENTITY b.delta  "&#38;#38;b.delta;">  <!-- small delta, Greek -->
+<!ENTITY b.Delta  "&#38;#38;b.Delta;">  <!-- capital Delta, Greek -->
+<!ENTITY b.epsi   "&#38;#38;b.epsi;">   <!-- small epsilon, Greek -->
+<!ENTITY b.epsiv  "&#38;#38;b.epsiv;">  <!-- varepsilon -->
+<!ENTITY b.epsis  "&#38;#38;b.epsis;">  <!-- straight epsilon -->
+<!ENTITY b.zeta   "&#38;#38;b.zeta;">   <!-- small zeta, Greek -->
+<!ENTITY b.eta    "&#38;#38;b.eta;">    <!-- small eta, Greek -->
+<!ENTITY b.thetas "&#38;#38;b.thetas;"> <!-- straight theta -->
+<!ENTITY b.Theta  "&#38;#38;b.Theta;">  <!-- capital Theta, Greek -->
+<!ENTITY b.thetav "&#38;#38;b.thetav;"> <!-- vartheta - curly or open theta -->
+<!ENTITY b.iota   "&#38;#38;b.iota;">   <!-- small iota, Greek -->
+<!ENTITY b.kappa  "&#38;#38;b.kappa;">  <!-- small kappa, Greek -->
+<!ENTITY b.kappav "&#38;#38;b.kappav;"> <!-- varkappa -->
+<!ENTITY b.lambda "&#38;#38;b.lambda;"> <!-- small lambda, Greek -->
+<!ENTITY b.Lambda "&#38;#38;b.Lambda;"> <!-- capital Lambda, Greek -->
+<!ENTITY b.mu     "&#38;#38;b.mu;">     <!-- small mu, Greek -->
+<!ENTITY b.nu     "&#38;#38;b.nu;">     <!-- small nu, Greek -->
+<!ENTITY b.xi     "&#38;#38;b.xi;">     <!-- small xi, Greek -->
+<!ENTITY b.Xi     "&#38;#38;b.Xi;">     <!-- capital Xi, Greek -->
+<!ENTITY b.pi     "&#38;#38;b.pi;">     <!-- small pi, Greek -->
+<!ENTITY b.Pi     "&#38;#38;b.Pi;">     <!-- capital Pi, Greek -->
+<!ENTITY b.piv    "&#38;#38;b.piv;">    <!-- varpi -->
+<!ENTITY b.rho    "&#38;#38;b.rho;">    <!-- small rho, Greek -->
+<!ENTITY b.rhov   "&#38;#38;b.rhov;">   <!-- varrho -->
+<!ENTITY b.sigma  "&#38;#38;b.sigma;">  <!-- small sigma, Greek -->
+<!ENTITY b.Sigma  "&#38;#38;b.Sigma;">  <!-- capital Sigma, Greek -->
+<!ENTITY b.sigmav "&#38;#38;b.sigmav;"> <!-- varsigma -->
+<!ENTITY b.tau    "&#38;#38;b.tau;">    <!-- small tau, Greek -->
+<!ENTITY b.upsi   "&#38;#38;b.upsi;">   <!-- small upsilon, Greek -->
+<!ENTITY b.Upsi   "&#38;#38;b.Upsi;">   <!-- capital Upsilon, Greek -->
+<!ENTITY b.phis   "&#38;#38;b.phis;">   <!-- straight phi -->
+<!ENTITY b.Phi    "&#38;#38;b.Phi;">    <!-- capital Phi, Greek -->
+<!ENTITY b.phiv   "&#38;#38;b.phiv;">   <!-- varphi - curly or open phi -->
+<!ENTITY b.chi    "&#38;#38;b.chi;">    <!-- small chi, Greek -->
+<!ENTITY b.psi    "&#38;#38;b.psi;">    <!-- small psi, Greek -->
+<!ENTITY b.Psi    "&#38;#38;b.Psi;">    <!-- capital Psi, Greek -->
+<!ENTITY b.omega  "&#38;#38;b.omega;">  <!-- small omega, Greek -->
+<!ENTITY b.Omega  "&#38;#38;b.Omega;">  <!-- capital Omega, Greek -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES Diacritical Marks//EN
+-->
+
+
+<!ENTITY acute  "&#38;#38;acute;">  <!-- acute accent -->
+<!ENTITY breve  "&#38;#38;breve;">  <!-- breve -->
+<!ENTITY caron  "&#38;#38;caron;">  <!-- caron -->
+<!ENTITY cedil  "&#38;#38;cedil;">  <!-- cedilla -->
+<!ENTITY circ   "&#38;#38;circ;">   <!-- circumflex accent -->
+<!ENTITY dblac  "&#38;#38;dblac;">  <!-- double acute accent -->
+<!ENTITY die    "&#38;#38;die;">    <!-- dieresis -->
+<!ENTITY dot    "&#38;#38;dot;">    <!-- dot above -->
+<!ENTITY grave  "&#38;#38;grave;">  <!-- grave accent -->
+<!ENTITY macr   "&#38;#38;macr;">   <!-- macron -->
+<!ENTITY ogon   "&#38;#38;ogon;">   <!-- ogonek -->
+<!ENTITY ring   "&#38;#38;ring;">   <!-- ring -->
+<!ENTITY tilde  "&#38;#38;tilde;">  <!-- tilde -->
+<!ENTITY uml    "&#38;#38;uml;">    <!-- umlaut mark -->
+<!-- (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+
+<!-- Entity set.
+     Public identifier:
+     -//ISO 8879:1986//ENTITIES General Technical//EN
+-->
+
+
+<!ENTITY aleph  "&#38;#38;aleph;">  <!-- aleph, Hebrew -->
+<!ENTITY and    "&#38;#38;and;">    <!-- logical and -->
+<!ENTITY ang90  "&#38;#38;ang90;">  <!-- right (90 degree) angle -->
+<!ENTITY angsph "&#38;#38;angsph;"> <!-- angle-spherical -->
+<!ENTITY ap     "&#38;#38;ap;">     <!-- approximate -->
+<!ENTITY becaus "&#38;#38;becaus;"> <!-- because -->
+<!ENTITY bottom "&#38;#38;bottom;"> <!-- perpendicular -->
+<!ENTITY cap    "&#38;#38;cap;">    <!-- intersection -->
+<!ENTITY cong   "&#38;#38;cong;">   <!-- congruent with -->
+<!ENTITY conint "&#38;#38;conint;"> <!-- contour integral operator -->
+<!ENTITY cup    "&#38;#38;cup;">    <!-- union or logical sum -->
+<!ENTITY equiv  "&#38;#38;equiv;">  <!-- identical with -->
+<!ENTITY exist  "&#38;#38;exist;">  <!-- at least one exists -->
+<!ENTITY forall "&#38;#38;forall;"> <!-- for all -->
+<!ENTITY fnof   "&#38;#38;fnof;">   <!-- function of (italic small f) -->
+<!ENTITY ge     "&#38;#38;ge;">     <!-- greater-than-or-equal -->
+<!ENTITY iff    "&#38;#38;iff;">    <!-- if and only if -->
+<!ENTITY infin  "&#38;#38;infin;">  <!-- infinity -->
+<!ENTITY int    "&#38;#38;int;">    <!-- integral operator -->
+<!ENTITY isin   "&#38;#38;isin;">   <!-- set membership -->
+<!ENTITY lang   "&#38;#38;lang;">   <!-- left angle bracket -->
+<!ENTITY lArr   "&#38;#38;lArr;">   <!-- is implied by -->
+<!ENTITY le     "&#38;#38;le;">     <!-- less-than-or-equal -->
+<!ENTITY minus  "&#38;#38;minus;">  <!-- minus sign -->
+<!ENTITY mnplus "&#38;#38;mnplus;"> <!-- minus-or-plus sign -->
+<!ENTITY nabla  "&#38;#38;nabla;">  <!-- del, Hamilton operator -->
+<!ENTITY ne     "&#38;#38;ne;">     <!-- not equal -->
+<!ENTITY ni     "&#38;#38;ni;">     <!-- contains -->
+<!ENTITY or     "&#38;#38;or;">     <!-- logical or -->
+<!ENTITY par    "&#38;#38;par;">    <!-- parallel -->
+<!ENTITY part   "&#38;#38;part;">   <!-- partial differential -->
+<!ENTITY permil "&#38;#38;permil;"> <!-- per thousand -->
+<!ENTITY perp   "&#38;#38;perp;">   <!-- perpendicular -->
+<!ENTITY prime  "&#38;#38;prime;">  <!-- prime or minute -->
+<!ENTITY Prime  "&#38;#38;Prime;">  <!-- double prime or second -->
+<!ENTITY prop   "&#38;#38;prop;">   <!-- is proportional to -->
+<!ENTITY radic  "&#38;#38;radic;">  <!-- radical -->
+<!ENTITY rang   "&#38;#38;rang;">   <!-- right angle bracket -->
+<!ENTITY rArr   "&#38;#38;rArr;">   <!-- implies -->
+<!ENTITY sim    "&#38;#38;sim;">    <!-- similar -->
+<!ENTITY sime   "&#38;#38;sime;">   <!-- similar, equals -->
+<!ENTITY square "&#38;#38;square;"> <!-- square -->
+<!ENTITY sub    "&#38;#38;sub;">    <!-- subset or is implied by -->
+<!ENTITY sube   "&#38;#38;sube;">   <!-- subset, equals -->
+<!ENTITY sup    "&#38;#38;sup;">    <!-- superset or implies -->
+<!ENTITY supe   "&#38;#38;supe;">   <!-- superset, equals -->
+<!ENTITY there4 "&#38;#38;there4;"> <!-- therefore -->
+<!ENTITY Verbar "&#38;#38;Verbar;"> <!-- dbl vertical bar -->
+
+<!ENTITY angst  "&#38;#38;angst;">  <!-- capital A, ring -->
+<!ENTITY bernou "&#38;#38;bernou;"> <!-- Bernoulli function (script cap B) -->
+<!ENTITY compfn "&#38;#38;compfn;"> <!-- composite function (small circle) -->
+<!ENTITY Dot    "&#38;#38;Dot;">    <!-- dieresis or umlaut mark -->
+<!ENTITY DotDot "&#38;#38;DotDot;"> <!-- four dots above -->
+<!ENTITY hamilt "&#38;#38;hamilt;"> <!-- Hamiltonian (script capital H) -->
+<!ENTITY lagran "&#38;#38;lagran;"> <!-- Lagrangian (script capital L) -->
+<!ENTITY lowast "&#38;#38;lowast;"> <!-- low asterisk -->
+<!ENTITY notin  "&#38;#38;notin;">  <!-- negated set membership -->
+<!ENTITY order  "&#38;#38;order;">  <!-- order of (script small o) -->
+<!ENTITY phmmat "&#38;#38;phmmat;"> <!-- physics M-matrix (script capital M) -->
+<!ENTITY tdot   "&#38;#38;tdot;">   <!-- three dots above -->
+<!ENTITY tprime "&#38;#38;tprime;"> <!-- triple prime -->
+<!ENTITY wedgeq "&#38;#38;wedgeq;"> <!-- corresponds to (wedge, equals) -->
+

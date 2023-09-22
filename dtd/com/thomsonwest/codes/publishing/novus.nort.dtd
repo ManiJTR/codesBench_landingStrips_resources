@@ -1,0 +1,6620 @@
+
+<!-- DTD: NORT TQL TOC of TOCs. -->
+<!-- DATE: May 08 2015 -->
+<!-- VERSION: 3.0 -->
+<!-- DTD Comments:  -->
+
+
+<!-- Revision notes
+
+Copyright 2007-2014: Thomson Reuters Global Resources.  All Rights Reserved.
+Proprietary and Confidential information of TRGR.  Disclosure, Use or Reproduction without the written authorization of TRGR is prohibited
+
+REVISIONS TO DRIVER DTD:
+Date        		By					version
+
+12/13/07		Todd Hayne		v1.0
+-	created
+
+12/28/07		Todd Hayne		v1.1
+- remove unneeded parens in n-nortmetadatacontent declaration.
+- alphabetize declares.
+
+2/7/08			Todd Hayne		v1.2
+- added new element, <graft-point-flag>.
+
+2/27/08			Todd Hayne		v1.3
+- change element name <head> to <heading>.
+- added <term> element.
+
+06/12/09	Patrick Kennedy	v1.4
+Added new elements for Compliance Advisor:
+-	published.date
+-	metadata.version.num
+-	search.signon
+-	window.signon
+-	citator.signon
+-	norm.guid
+-	non.selectable
+
+06/30/09	Patrick Kennedy	v1.5
+Added new elements for Big Regs:
+-	cluster.exp
+-	base.id
+
+01/11/10	Patrick Kennedy	v1.6
+Added new element for Compliance Advisor:
+-	<topiccode>, which corresponds to the <md.topiccode> stored in the Regulatory Guidance Summary Docs metadata.
+
+02/22/10	Patrick Kennedy	v1.7
+Added new elements for Smart Terms (ALLNEWS Taxonomy):
+-	<alt.topiccode>
+-	<market.segment>
+-	<sic.block> for storing multiple Standard Industrial Classification values
+-	<related.topics> for storing multiple related topics
+-	<nonpreferred.terms> for storing multiple related terms
+
+03/02/10	Patrick Kennedy	v1.8
+Added new element for Form Finder II:
+-	<query.term>
+
+01/28/11	Patrick Kennedy	v1.9
+Added new element for Smart Terms (ALLNEWS Taxonomy):
+-	<heading-first-word>
+
+04/13/11	Kathy Berg v2.0
+-	Added new elements <topic.designator> and <topic.name> to <n-label> for LRP Acquisitions project.
+	Updated references to common models:
+		typo_v4.9.dtd was updated to v5.1
+		allchars-novus_v2.2.ent was updated to v3.1
+		links-novus-xmlbridge.v1.5.dtd was updated to v1.7
+		novus-doc.v2009.01.12.dtd was updated to 2011.02.22
+
+06/10/11	Todd Hayne v2.1
+-	Updated references to most current allchars entity - allchars-novus_v3.4.ent.
+-	Added <doc.type.query.block>.
+
+10/20/11	Kathy Berg v2.2
+-	Updated references to most current allchars entity - allchars-novus_v3.5.ent.
+
+01/28/11	Patrick Kennedy	v2.3
+Added new elements for Smart Terms (ALLNEWS Taxonomy):
+-	<alt-heading> and <alt-heading-first-word>
+
+06/01/12	Todd Hayne	v2.4
+Added <prism-clipdate> to %n-nortmetadatacontent;.  This is needed for Napa.
+
+08/28/12	Todd Hayne	v2.5
+Added new <article.group.id> to %n-nortmetadatacontent;. This is needed for Napa and is the same idenfier for a group of articles 
+that is stored in the Napa document metadata element <md.doc.group.id>.
+
+08/28/12	Patrick Kennedy	v2.6
+-	Added new <xref-guid> element for WeslawNext Canada (Carsell). It acts as a "pointer node" cross-reference to another node.
+
+05/19/14	Todd Hayne	v2.7
+-	Added new <bill-section-heading> for Liger project.
+05/27/14	Todd Hayne	v2.8
+-	Added new <citation-heading> for Liger project.
+10/2/14	Todd Hayne	v2.9
+-	Replaced <bill-section-heading> with new <section-heading>.  For Liger project.
+05/08/15	Todd Hayne	v3.0
+-	Added new <heading-range> to <n-label>.  For Practice Point.
+-->
+
+<!ENTITY times "&#120;">
+<!ENTITY pi01e2 "&#120;">
+
+<!ENTITY TLRinvT "">
+
+<!ENTITY aacute "&#225;">
+
+<!ENTITY Aacute "&#193;">
+
+<!ENTITY acirc "&#226;">
+
+<!ENTITY Acirc "&#194;">
+
+<!ENTITY agrave "&#224;">
+
+<!ENTITY Agrave "&#192;">
+
+<!ENTITY aring "&#229;">
+
+<!ENTITY Aring "&#197;">
+
+<!ENTITY atilde "&#227;">
+
+<!ENTITY Atilde "&#195;">
+
+<!ENTITY auml "&#228;">
+
+<!ENTITY Auml "&#196;">
+
+<!ENTITY aelig "&#230;">
+
+<!ENTITY AElig "&#198;">
+
+<!ENTITY ccedil "&#231;">
+
+<!ENTITY Ccedil "&#199;">
+
+<!ENTITY eth "&#240;">
+
+<!ENTITY ETH "&#208;">
+
+<!ENTITY eacute "&#233;">
+
+<!ENTITY Eacute "&#201;">
+
+<!ENTITY ecirc "&#234;">
+
+<!ENTITY Ecirc "&#202;">
+
+<!ENTITY egrave "&#232;">
+
+<!ENTITY Egrave "&#200;">
+
+<!ENTITY euml "&#235;">
+
+<!ENTITY Euml "&#203;">
+
+<!ENTITY iacute "&#237;">
+
+<!ENTITY Iacute "&#205;">
+
+<!ENTITY icirc "&#238;">
+
+<!ENTITY Icirc "&#206;">
+
+<!ENTITY igrave "&#236;">
+
+<!ENTITY Igrave "&#204;">
+
+<!ENTITY iuml "&#239;">
+
+<!ENTITY Iuml "&#207;">
+
+<!ENTITY ntilde "&#241;">
+
+<!ENTITY Ntilde "&#209;">
+
+<!ENTITY oacute "&#243;">
+
+<!ENTITY Oacute "&#211;">
+
+<!ENTITY ocirc "&#244;">
+
+<!ENTITY Ocirc "&#212;">
+
+<!ENTITY ograve "&#242;">
+
+<!ENTITY Ograve "&#210;">
+
+<!ENTITY oslash "&#248;">
+
+<!ENTITY Oslash "&#216;">
+
+<!ENTITY otilde "&#245;">
+
+<!ENTITY Otilde "&#213;">
+
+<!ENTITY ouml "&#246;">
+
+<!ENTITY Ouml "&#214;">
+
+<!ENTITY szlig "&#223;">
+
+<!ENTITY thorn "&#254;">
+
+<!ENTITY THORN "&#222;">
+
+<!ENTITY uacute "&#250;">
+
+<!ENTITY Uacute "&#218;">
+
+<!ENTITY ucirc "&#251;">
+
+<!ENTITY Ucirc "&#219;">
+
+<!ENTITY ugrave "&#249;">
+
+<!ENTITY Ugrave "&#217;">
+
+<!ENTITY uuml "&#252;">
+
+<!ENTITY Uuml "&#220;">
+
+<!ENTITY yacute "&#253;">
+
+<!ENTITY Yacute "&#221;">
+
+<!ENTITY yuml "&#255;">
+
+<!ENTITY cularr "&#8630;">
+
+<!ENTITY curarr "&#8631;">
+
+<!ENTITY dArr "&#8659;">
+
+<!ENTITY darr2 "&#8650;">
+
+<!ENTITY rharacmb "&#8401;">
+
+<!ENTITY dharl "&#8643;">
+
+<!ENTITY dharr "&#8642;">
+
+<!ENTITY lAarr "&#8666;">
+
+<!ENTITY Larr "&#8606;">
+
+<!ENTITY larr2 "&#8647;">
+
+<!ENTITY larrhk "&#8617;">
+
+<!ENTITY larrlp "&#8619;">
+
+<!ENTITY larrtl "&#8610;">
+
+<!ENTITY lhard "&#8637;">
+
+<!ENTITY lharu "&#8636;">
+
+<!ENTITY hArr "&#8660;">
+
+<!ENTITY harr "&#8596;">
+
+<!ENTITY lrarr2 "&#8646;">
+
+<!ENTITY rlarr2 "&#8644;">
+
+<!ENTITY harrw "&#8621;">
+
+<!ENTITY rlhar2 "&#8652;">
+
+<!ENTITY lrhar2 "&#8651;">
+
+<!ENTITY lsh "&#8624;">
+
+<!ENTITY map "&#8614;">
+
+<!ENTITY mumap "&#8888;">
+
+<!ENTITY nearr "&#8599;">
+
+<!ENTITY nlArr "&#8653;">
+
+<!ENTITY nlarr "&#8602;">
+
+<!ENTITY nhArr "&#8654;">
+
+<!ENTITY nharr "&#8622;">
+
+<!ENTITY nrarr "&#8603;">
+
+<!ENTITY nrArr "&#8655;">
+
+<!ENTITY nwarr "&#8598;">
+
+<!ENTITY olarr "&#8634;">
+
+<!ENTITY orarr "&#8635;">
+
+<!ENTITY rAarr "&#8667;">
+
+<!ENTITY Rarr "&#8608;">
+
+<!ENTITY rarr2 "&#8649;">
+
+<!ENTITY rarrhk "&#8618;">
+
+<!ENTITY rarrlp "&#8620;">
+
+<!ENTITY rarrtl "&#8611;">
+
+<!ENTITY rarrw "&#8669;">
+
+<!ENTITY rhard "&#8641;">
+
+<!ENTITY rharu "&#8640;">
+
+<!ENTITY rsh "&#8625;">
+
+<!ENTITY drarr "&#8600;">
+
+<!ENTITY dlarr "&#8601;">
+
+<!ENTITY uArr "&#8657;">
+
+<!ENTITY uarr2 "&#8648;">
+
+<!ENTITY vArr "&#8661;">
+
+<!ENTITY varr "&#8597;">
+
+<!ENTITY varrbase "&#8616;">
+
+<!ENTITY uharl "&#8639;">
+
+<!ENTITY uharr "&#8638;">
+
+<!ENTITY xlArr "&#8656;">
+
+<!ENTITY xhArr "&#8596;">
+
+<!ENTITY xharr "&#8596;">
+
+<!ENTITY xrArr "&#8658;">
+
+<!ENTITY abreve "&#259;">
+
+<!ENTITY Abreve "&#258;">
+
+<!ENTITY amacr "&#257;">
+
+<!ENTITY Amacr "&#256;">
+
+<!ENTITY aogon "&#261;">
+
+<!ENTITY Aogon "&#260;">
+
+<!ENTITY cacute "&#263;">
+
+<!ENTITY Cacute "&#262;">
+
+<!ENTITY ccaron "&#269;">
+
+<!ENTITY Ccaron "&#268;">
+
+<!ENTITY ccirc "&#265;">
+
+<!ENTITY Ccirc "&#264;">
+
+<!ENTITY cdot "&#267;">
+
+<!ENTITY Cdot "&#266;">
+
+<!ENTITY dcaron "&#271;">
+
+<!ENTITY Dcaron "&#270;">
+
+<!ENTITY dstrok "&#273;">
+
+<!ENTITY Dstrok "&#272;">
+
+<!ENTITY ecaron "&#283;">
+
+<!ENTITY Ecaron "&#282;">
+
+<!ENTITY edot "&#279;">
+
+<!ENTITY Edot "&#278;">
+
+<!ENTITY emacr "&#275;">
+
+<!ENTITY Emacr "&#274;">
+
+<!ENTITY eogon "&#281;">
+
+<!ENTITY Eogon "&#280;">
+
+<!ENTITY gacute "&#501;">
+
+<!ENTITY gbreve "&#287;">
+
+<!ENTITY Gbreve "&#286;">
+
+<!ENTITY Gcedil "&#290;">
+
+<!ENTITY gcirc "&#285;">
+
+<!ENTITY Gcirc "&#284;">
+
+<!ENTITY gdot "&#289;">
+
+<!ENTITY Gdot "&#288;">
+
+<!ENTITY hcirc "&#293;">
+
+<!ENTITY Hcirc "&#292;">
+
+<!ENTITY hstrok "&#295;">
+
+<!ENTITY Hstrok "&#294;">
+
+<!ENTITY Idot "&#304;">
+
+<!ENTITY Imacr "&#298;">
+
+<!ENTITY imacr "&#299;">
+
+<!ENTITY ijlig "&#307;">
+
+<!ENTITY IJlig "&#306;">
+
+<!ENTITY inodot "&#305;">
+
+<!ENTITY iogon "&#303;">
+
+<!ENTITY Iogon "&#302;">
+
+<!ENTITY itilde "&#297;">
+
+<!ENTITY Itilde "&#296;">
+
+<!ENTITY jcirc "&#309;">
+
+<!ENTITY Jcirc "&#308;">
+
+<!ENTITY kcedil "&#311;">
+
+<!ENTITY Kcedil "&#310;">
+
+<!ENTITY kgreen "&#312;">
+
+<!ENTITY lacute "&#314;">
+
+<!ENTITY Lacute "&#313;">
+
+<!ENTITY lcaron "&#318;">
+
+<!ENTITY Lcaron "&#317;">
+
+<!ENTITY lcedil "&#316;">
+
+<!ENTITY Lcedil "&#315;">
+
+<!ENTITY lmidot "&#320;">
+
+<!ENTITY Lmidot "&#319;">
+
+<!ENTITY lstrok "&#322;">
+
+<!ENTITY Lstrok "&#321;">
+
+<!ENTITY nacute "&#324;">
+
+<!ENTITY Nacute "&#323;">
+
+<!ENTITY eng "&#331;">
+
+<!ENTITY ENG "&#330;">
+
+<!ENTITY napos "&#329;">
+
+<!ENTITY ncaron "&#328;">
+
+<!ENTITY Ncaron "&#327;">
+
+<!ENTITY ncedil "&#326;">
+
+<!ENTITY Ncedil "&#325;">
+
+<!ENTITY odblac "&#337;">
+
+<!ENTITY Odblac "&#336;">
+
+<!ENTITY Omacr "&#332;">
+
+<!ENTITY omacr "&#333;">
+
+<!ENTITY oelig "&#339;">
+
+<!ENTITY OElig "&#338;">
+
+<!ENTITY oogon "&#491;">
+
+<!ENTITY Oogon "&#490;">
+
+<!ENTITY oogonmacr "&#493;">
+
+<!ENTITY Oogonmacr "&#492;">
+
+<!ENTITY racute "&#341;">
+
+<!ENTITY Racute "&#340;">
+
+<!ENTITY rcaron "&#345;">
+
+<!ENTITY Rcaron "&#344;">
+
+<!ENTITY rcedil "&#343;">
+
+<!ENTITY Rcedil "&#342;">
+
+<!ENTITY sacute "&#347;">
+
+<!ENTITY Sacute "&#346;">
+
+<!ENTITY scaron "&#353;">
+
+<!ENTITY Scaron "&#352;">
+
+<!ENTITY scedil "&#351;">
+
+<!ENTITY Scedil "&#350;">
+
+<!ENTITY scirc "&#349;">
+
+<!ENTITY Scirc "&#348;">
+
+<!ENTITY tcaron "&#357;">
+
+<!ENTITY Tcaron "&#356;">
+
+<!ENTITY tcedil "&#355;">
+
+<!ENTITY Tcedil "&#354;">
+
+<!ENTITY tstrok "&#359;">
+
+<!ENTITY Tstrok "&#358;">
+
+<!ENTITY ubreve "&#365;">
+
+<!ENTITY Ubreve "&#364;">
+
+<!ENTITY udblac "&#369;">
+
+<!ENTITY Udblac "&#368;">
+
+<!ENTITY umacr "&#363;">
+
+<!ENTITY Umacr "&#362;">
+
+<!ENTITY uogon "&#371;">
+
+<!ENTITY Uogon "&#370;">
+
+<!ENTITY uring "&#367;">
+
+<!ENTITY Uring "&#366;">
+
+<!ENTITY utilde "&#361;">
+
+<!ENTITY Utilde "&#360;">
+
+<!ENTITY wcirc "&#373;">
+
+<!ENTITY Wcirc "&#372;">
+
+<!ENTITY ycirc "&#375;">
+
+<!ENTITY Ycirc "&#374;">
+
+<!ENTITY Yuml "&#376;">
+
+<!ENTITY zacute "&#378;">
+
+<!ENTITY Zacute "&#377;">
+
+<!ENTITY zcaron "&#382;">
+
+<!ENTITY Zcaron "&#381;">
+
+<!ENTITY zdot "&#380;">
+
+<!ENTITY Zdot "&#379;">
+
+<!ENTITY boxh "&#9472;">
+
+<!ENTITY boxv "&#9474;">
+
+<!ENTITY boxur "&#9492;">
+
+<!ENTITY boxul "&#9496;">
+
+<!ENTITY boxdl "&#9488;">
+
+<!ENTITY boxdr "&#9484;">
+
+<!ENTITY boxvr "&#9500;">
+
+<!ENTITY boxhu "&#9524;">
+
+<!ENTITY boxvl "&#9508;">
+
+<!ENTITY boxhd "&#9516;">
+
+<!ENTITY boxvh "&#9532;">
+
+<!ENTITY boxvR "&#9566;">
+
+<!ENTITY boxhU "&#9576;">
+
+<!ENTITY boxvL "&#9569;">
+
+<!ENTITY boxhD "&#9573;">
+
+<!ENTITY boxvH "&#9578;">
+
+<!ENTITY boxH "&#9552;">
+
+<!ENTITY boxV "&#9553;">
+
+<!ENTITY boxUR "&#9562;">
+
+<!ENTITY boxUL "&#9565;">
+
+<!ENTITY boxDL "&#9559;">
+
+<!ENTITY boxDR "&#9556;">
+
+<!ENTITY boxVR "&#9568;">
+
+<!ENTITY boxHU "&#9577;">
+
+<!ENTITY boxVL "&#9571;">
+
+<!ENTITY boxHD "&#9574;">
+
+<!ENTITY boxVH "&#9580;">
+
+<!ENTITY boxVr "&#9567;">
+
+<!ENTITY boxHu "&#9575;">
+
+<!ENTITY boxVl "&#9570;">
+
+<!ENTITY boxHd "&#9572;">
+
+<!ENTITY boxVh "&#9579;">
+
+<!ENTITY boxuR "&#9560;">
+
+<!ENTITY boxUl "&#9564;">
+
+<!ENTITY boxdL "&#9557;">
+
+<!ENTITY boxDr "&#9555;">
+
+<!ENTITY boxUr "&#9561;">
+
+<!ENTITY boxuL "&#9563;">
+
+<!ENTITY boxDl "&#9558;">
+
+<!ENTITY boxdR "&#9554;">
+
+<!ENTITY half "&#189;">
+
+<!ENTITY frac12 "&#189;">
+
+<!ENTITY frac14 "&#188;">
+
+<!ENTITY frac34 "&#190;">
+
+<!ENTITY frac18 "&#8539;">
+
+<!ENTITY frac38 "&#8540;">
+
+<!ENTITY frac58 "&#8541;">
+
+<!ENTITY frac78 "&#8542;">
+
+<!ENTITY sup1 "&#185;">
+
+<!ENTITY sup2 "&#178;">
+
+<!ENTITY sup3 "&#179;">
+
+<!ENTITY plus "&#43;">
+
+<!ENTITY plusmn "&#177;">
+
+<!ENTITY lt "&#38;#60;">
+
+<!ENTITY equals "&#61;">
+
+<!ENTITY gt "&#62;">
+
+<!ENTITY divide "&#247;">
+
+<!ENTITY times "&#215;">
+
+<!ENTITY curren "&#164;">
+
+<!ENTITY pound "&#163;">
+
+<!ENTITY dollar "&#36;">
+
+<!ENTITY cent "&#162;">
+
+<!ENTITY yen "&#165;">
+
+<!ENTITY num "&#35;">
+
+<!ENTITY percnt "&#37;">
+
+<!ENTITY amp "&#38;#38;">
+
+<!ENTITY ast "&#42;">
+
+<!ENTITY commat "&#64;">
+
+<!ENTITY lsqb "&#91;">
+
+<!ENTITY bsol "&#92;">
+
+<!ENTITY rsqb "&#93;">
+
+<!ENTITY lcub "&#123;">
+
+<!ENTITY horbar "&#8213;">
+
+<!ENTITY verbar "&#124;">
+
+<!ENTITY rcub "&#125;">
+
+<!ENTITY micro "&#181;">
+
+<!ENTITY ohm "&#8486;">
+
+<!ENTITY deg "&#176;">
+
+<!ENTITY ordm "&#186;">
+
+<!ENTITY ordf "&#170;">
+
+<!ENTITY sect "&#167;">
+
+<!ENTITY para "&#182;">
+
+<!ENTITY middot "&#183;">
+
+<!ENTITY larr "&#8592;">
+
+<!ENTITY rarr "&#8594;">
+
+<!ENTITY uarr "&#8593;">
+
+<!ENTITY darr "&#8595;">
+
+<!ENTITY copy "&#169;">
+
+<!ENTITY reg "&#174;">
+
+<!ENTITY trade "&#8482;">
+
+<!ENTITY brvbar "&#166;">
+
+<!ENTITY not "&#172;">
+
+<!ENTITY sung "&#65533;">
+
+<!ENTITY excl "&#33;">
+
+<!ENTITY iexcl "&#161;">
+
+<!ENTITY quot "&#34;">
+
+<!ENTITY apos "&#39;">
+
+<!ENTITY lpar "&#40;">
+
+<!ENTITY rpar "&#41;">
+
+<!ENTITY comma "&#44;">
+
+<!ENTITY lowbar "&#95;">
+
+<!ENTITY hyphen "&#45;">
+
+<!ENTITY period "&#46;">
+
+<!ENTITY sol "&#47;">
+
+<!ENTITY colon "&#58;">
+
+<!ENTITY semi "&#59;">
+
+<!ENTITY quest "&#63;">
+
+<!ENTITY iquest "&#191;">
+
+<!ENTITY laquo "&#171;">
+
+<!ENTITY raquo "&#187;">
+
+<!ENTITY lsquo "&#8216;">
+
+<!ENTITY rsquo "&#8217;">
+
+<!ENTITY ldquo "&#8220;">
+
+<!ENTITY rdquo "&#8221;">
+
+<!ENTITY nbsp "&#160;">
+
+<!ENTITY shy "&#173;">
+
+<!ENTITY agr "&#945;">
+
+<!ENTITY Agr "&#913;">
+
+<!ENTITY bgr "&#946;">
+
+<!ENTITY Bgr "&#914;">
+
+<!ENTITY ggr "&#947;">
+
+<!ENTITY Ggr "&#915;">
+
+<!ENTITY dgr "&#948;">
+
+<!ENTITY Dgr "&#916;">
+
+<!ENTITY egr "&#949;">
+
+<!ENTITY Egr "&#917;">
+
+<!ENTITY zgr "&#950;">
+
+<!ENTITY Zgr "&#918;">
+
+<!ENTITY eegr "&#951;">
+
+<!ENTITY EEgr "&#919;">
+
+<!ENTITY thgr "&#952;">
+
+<!ENTITY THgr "&#920;">
+
+<!ENTITY igr "&#953;">
+
+<!ENTITY Igr "&#921;">
+
+<!ENTITY kgr "&#954;">
+
+<!ENTITY Kgr "&#922;">
+
+<!ENTITY lgr "&#955;">
+
+<!ENTITY Lgr "&#923;">
+
+<!ENTITY mgr "&#956;">
+
+<!ENTITY Mgr "&#924;">
+
+<!ENTITY ngr "&#957;">
+
+<!ENTITY Ngr "&#925;">
+
+<!ENTITY xgr "&#958;">
+
+<!ENTITY Xgr "&#926;">
+
+<!ENTITY ogr "&#959;">
+
+<!ENTITY Ogr "&#927;">
+
+<!ENTITY pgr "&#960;">
+
+<!ENTITY Pgr "&#928;">
+
+<!ENTITY rgr "&#961;">
+
+<!ENTITY Rgr "&#929;">
+
+<!ENTITY sgr "&#963;">
+
+<!ENTITY Sgr "&#931;">
+
+<!ENTITY sfgr "&#962;">
+
+<!ENTITY tgr "&#964;">
+
+<!ENTITY Tgr "&#932;">
+
+<!ENTITY ugr "&#965;">
+
+<!ENTITY Ugr "&#933;">
+
+<!ENTITY phgr "&#966;">
+
+<!ENTITY PHgr "&#934;">
+
+<!ENTITY khgr "&#967;">
+
+<!ENTITY KHgr "&#935;">
+
+<!ENTITY psgr "&#968;">
+
+<!ENTITY PSgr "&#936;">
+
+<!ENTITY ohgr "&#969;">
+
+<!ENTITY OHgr "&#937;">
+
+<!ENTITY sface "&#9786;">
+<!ENTITY sface2 "&#9787;">
+<!ENTITY fface "&#9788;">
+<!ENTITY euro "&#8364;">
+
+<!ENTITY Ebreve "&#276;">
+
+<!ENTITY ebreve "&#277;">
+
+<!ENTITY Ibreve "&#300;">
+
+<!ENTITY ibreve "&#301;">
+
+<!ENTITY Obreve "&#334;">
+
+<!ENTITY obreve "&#335;">
+
+<!ENTITY Ymacr "&#562;">
+
+<!ENTITY ymacr "&#563;">
+
+<!ENTITY ezh "&#658;">
+<!ENTITY virgo "&#9805;">
+
+<!ENTITY TLR2ast "&#8273;">
+
+<!ENTITY TLRAEligscs "&#59022;">
+
+<!ENTITY TLRAEligscss "&#59028;">
+
+<!ENTITY TLRAEligss "&#59012;">
+
+<!ENTITY TLRaeligss "&#59014;">
+
+<!ENTITY TLRairpl "&#9992;">
+
+<!ENTITY TLRand "&#57371;">
+
+<!ENTITY TLRballot "&#9633;">
+
+<!ENTITY TLRbilateral "&#9399;">
+
+<!ENTITY TLRbkter "&#61000;">
+
+<!ENTITY TLRblbar "&#59102;">
+
+<!ENTITY TLRboxx "&#9746;">
+
+<!ENTITY TLRbrc "&#9130;">
+
+<!ENTITY TLRbrowse "&#61010;">
+
+<!ENTITY TLRbull1 "&#58500;">
+
+<!ENTITY TLRbull2 "&#9679;">
+
+<!ENTITY TLRbull7 "&#58506;">
+
+<!ENTITY TLRbxslr "&#10063;">
+
+<!ENTITY TLRbxsur "&#10064;">
+
+<!ENTITY TLRcb "&#596;">
+
+<!ENTITY TLRcents "&#59313;">
+
+<!ENTITY TLRcentsb "&#59301;">
+
+<!ENTITY TLRcentss "&#59300;">
+
+<!ENTITY TLRcentssb "&#59302;">
+
+<!ENTITY TLRcentssbR "&#59304;">
+
+<!ENTITY TLRckbox "&#9745;">
+
+<!ENTITY TLRcntrl "&#8452;">
+
+<!ENTITY TLRcopys "&#59004;">
+
+<!ENTITY TLRcopysrr "&#59075;">
+
+<!ENTITY TLRcopysw "&#9410;">
+
+<!ENTITY TLRcopyswr "&#59073;">
+
+<!ENTITY TLRdarr "&#58009;">
+
+<!ENTITY TLRdarr1 "&#58005;">
+
+<!ENTITY TLRdarr1f "&#58001;">
+
+<!ENTITY TLRdash "&#59021;">
+
+<!ENTITY TLRdashb "&#59011;">
+
+<!ENTITY TLRdashl "&#59101;">
+
+<!ENTITY TLRdeg "&#57378;">
+
+<!ENTITY TLRdiameb "&#57370;">
+
+<!ENTITY TLRdiamet "&#8960;">
+
+<!ENTITY TLRdiamo "&#9826;">
+
+<!ENTITY TLRdisk "&#61002;">
+
+<!ENTITY TLRdivide "&#57376;">
+
+<!ENTITY TLRdivsl "&#8725;">
+
+<!ENTITY TLRdollarssR "&#59303;">
+
+<!ENTITY TLRdotl "&#8228;">
+
+<!ENTITY TLRdotR "&#57345;">
+
+<!ENTITY TLRdram "&#439;">
+
+<!ENTITY TLRegrL "&#1013;">
+
+<!ENTITY TLRemp1c "&#57360;">
+
+<!ENTITY TLRemp1l "&#57361;">
+
+<!ENTITY TLRemp2c "&#57362;">
+
+<!ENTITY TLRemp2l "&#57363;">
+
+<!ENTITY TLRemp3c "&#57364;">
+
+<!ENTITY TLRemp3l "&#57365;">
+
+<!ENTITY TLRemptyb "&#57369;">
+
+<!ENTITY TLRenv1 "&#9993;">
+
+<!ENTITY TLRequals "&#57377;">
+
+<!ENTITY TLRflorin "&#59078;">
+
+<!ENTITY TLRflr0 "&#58700;">
+
+<!ENTITY TLRflr2 "&#58701;">
+
+<!ENTITY TLRflr3 "&#58702;">
+
+<!ENTITY TLRflr4 "&#58703;">
+
+<!ENTITY TLRflr5 "&#58704;">
+
+<!ENTITY TLRflr6 "&#58705;">
+
+<!ENTITY TLRflr7 "&#58706;">
+
+<!ENTITY TLRfrslab "&#57374;">
+
+<!ENTITY TLRgev "&#10906;">
+
+<!ENTITY TLRgreaG "&#10913;">
+
+<!ENTITY TLRgt "&#57368;">
+
+<!ENTITY TLRgtl "&#57356;">
+
+<!ENTITY TLRhandv "&#9996;">
+
+<!ENTITY TLRhandw "&#9997;">
+
+<!ENTITY TLRheartf "&#9829;">
+
+<!ENTITY TLRhouse "&#8962;">
+
+<!ENTITY TLRincare "&#59306;">
+
+<!ENTITY TLRintb "&#8253;">
+
+<!ENTITY TLRintbS "&#59076;">
+
+<!ENTITY TLRinvT "&#58720;">
+
+<!ENTITY TLRKey "&#62001;">
+
+<!ENTITY TLRkey "&#62000;">
+
+<!ENTITY TLRkeydecimal "&#57381;">
+
+<!ENTITY TLRlarr1 "&#58006;">
+
+<!ENTITY TLRlarr1f "&#58002;">
+
+<!ENTITY TLRlarrL "&#58010;">
+
+<!ENTITY TLRlcbp1 "&#9127;">
+
+<!ENTITY TLRlcbp3 "&#9128;">
+
+<!ENTITY TLRlcbp4 "&#9129;">
+
+<!ENTITY TLRlcub "&#59010;">
+
+<!ENTITY TLRlessL "&#10914;">
+
+<!ENTITY TLRletXb "&#10006;">
+
+<!ENTITY TLRlev "&#10905;">
+
+<!ENTITY TLRlhand "&#9756;">
+
+<!ENTITY TLRloz "&#8977;">
+
+<!ENTITY TLRlparL "&#8333;">
+
+<!ENTITY TLRlparR "&#8317;">
+
+<!ENTITY TLRlsesh "&#643;">
+
+<!ENTITY TLRlt "&#57367;">
+
+<!ENTITY TLRltl "&#57357;">
+
+<!ENTITY TLRltri "&#58543;">
+
+<!ENTITY TLRminus "&#57380;">
+
+<!ENTITY TLRnbemsp "&#8193;">
+
+<!ENTITY TLRnbensp "&#8192;">
+
+<!ENTITY TLRnbthsp "&#8197;">
+
+<!ENTITY TLRncss1 "&#10122;">
+
+<!ENTITY TLRncss10 "&#10131;">
+
+<!ENTITY TLRncss2 "&#10123;">
+
+<!ENTITY TLRncss3 "&#10124;">
+
+<!ENTITY TLRncss4 "&#10125;">
+
+<!ENTITY TLRncss5 "&#10126;">
+
+<!ENTITY TLRncss6 "&#10127;">
+
+<!ENTITY TLRncss7 "&#10128;">
+
+<!ENTITY TLRncss8 "&#10129;">
+
+<!ENTITY TLRncss9 "&#10130;">
+
+<!ENTITY TLRnev "&#57352;">
+
+<!ENTITY TLRngtV "&#57347;">
+
+<!ENTITY TLROEligscs "&#59023;">
+
+<!ENTITY TLROEligscss "&#59029;">
+
+<!ENTITY TLROEligss "&#59013;">
+
+<!ENTITY TLRoeligss "&#59015;">
+<!ENTITY TLRoptlb "&#8203;">
+<!ENTITY TLRoR "&#9415;">
+<!ENTITY TLRor "&#57372;">
+<!ENTITY TLRosqtp "&#9671;">
+<!ENTITY TLRosqu5 "&#58521;">
+<!ENTITY TLRpenc1 "&#9998;">
+<!ENTITY TLRpesos "&#8369;">
+<!ENTITY TLRpesoss "&#59312;">
+<!ENTITY TLRplus "&#57379;">
+<!ENTITY TLRplusmn "&#57366;">
+<!ENTITY TLRpoundssm "&#59305;">
+<!ENTITY TLRproprt "&#8759;">
+<!ENTITY TLRrarr1 "&#58004;">
+<!ENTITY TLRrarr1f "&#10151;">
+<!ENTITY TLRrarrL "&#58011;">
+<!ENTITY TLRratio "&#8758;">
+<!ENTITY TLRrcbp1 "&#9131;">
+<!ENTITY TLRrcbp3 "&#9132;">
+<!ENTITY TLRrcbp4 "&#9133;">
+<!ENTITY TLRrcub "&#59009;">
+<!ENTITY TLRregs "&#59005;">
+<!ENTITY TLRrhand "&#9758;">
+<!ENTITY TLRrhndf "&#9755;">
+
+<!ENTITY TLRrparrL "&#8334;">
+
+<!ENTITY TLRrparrR "&#8318;">
+
+<!ENTITY TLRrtri "&#58541;">
+
+<!ENTITY TLRschwa "&#601;">
+
+<!ENTITY TLRschwab "&#59026;">
+
+<!ENTITY TLRschwabi "&#59027;">
+
+<!ENTITY TLRschwai "&#59025;">
+
+<!ENTITY TLRschwar "&#59024;">
+
+<!ENTITY TLRscisl "&#58730;">
+
+<!ENTITY TLRscisr "&#9986;">
+
+<!ENTITY TLRservice "&#8480;">
+
+<!ENTITY TLRService "&#59072;">
+
+<!ENTITY TLRsetmn "&#57373;">
+
+<!ENTITY TLRsimev "&#57353;">
+
+<!ENTITY TLRsimv "&#8766;">
+
+<!ENTITY TLRsqtp "&#9670;">
+
+<!ENTITY TLRsqu3 "&#9724;">
+
+<!ENTITY TLRsquf "&#9632;">
+
+<!ENTITY TLRslaquo "&#8249;">
+
+<!ENTITY TLRsraquo "&#8250;">
+
+<!ENTITY TLRstarfb "&#58536;">
+
+<!ENTITY TLRstaro "&#9734;">
+
+<!ENTITY TLRstarod "&#10017;">
+
+<!ENTITY TLRszlig "&#59016;">
+
+<!ENTITY TLRtcirc "&#94;">
+
+<!ENTITY TLRter "&#61001;">
+
+<!ENTITY TLRTHgr "&#1012;">
+
+<!ENTITY TLRtimes "&#57375;">
+
+<!ENTITY TLRtrade "&#59200;">
+
+<!ENTITY TLRtradesc "&#59006;">
+
+<!ENTITY TLRtrlfb "&#9664;">
+
+<!ENTITY TLRtrrfb "&#9654;">
+
+<!ENTITY TLRttilde "&#126;">
+
+<!ENTITY TLRturnv "&#652;">
+
+<!ENTITY TLRuarr "&#58008;">
+
+<!ENTITY TLRuarr1 "&#58007;">
+<!ENTITY TLRuarr1f "&#58003;">
+<!ENTITY TLRvirgul "&#8260;">
+<!ENTITY TLRWP1 "&#62009;">
+<!ENTITY TLRWP2 "&#62010;">
+<!ENTITY TLRWP2tm "&#62011;">
+<!ENTITY TLRzwnb "&#8205;">
+<!ENTITY TLRdisp0E "&#58600;">
+<!ENTITY TLRdispB1 "&#58601;">
+<!ENTITY TLRdispB2 "&#58602;">
+<!ENTITY TLRdispB3 "&#58603;">
+<!ENTITY TLRdispB4 "&#58604;">
+<!ENTITY TLRdispB5 "&#58605;">
+<!ENTITY TLRdispB6 "&#58606;">
+<!ENTITY TLRdispBF "&#58607;">
+<!ENTITY TLRdisp5F "&#58608;">
+
+<!ENTITY ape "&#8778;">
+
+<!ENTITY asymp "&#8781;">
+
+<!ENTITY bcong "&#8780;">
+
+<!ENTITY bepsi "&#8717;">
+
+<!ENTITY bowtie "&#8904;">
+
+<!ENTITY bsim "&#8765;">
+
+<!ENTITY bsime "&#8909;">
+
+<!ENTITY bump "&#8782;">
+
+<!ENTITY bumpe "&#8783;">
+
+<!ENTITY cire "&#8791;">
+
+<!ENTITY colone "&#8788;">
+
+<!ENTITY cuepr "&#8926;">
+
+<!ENTITY cuesc "&#8927;">
+
+<!ENTITY cupre "&#8828;">
+
+<!ENTITY dashv "&#8867;">
+
+<!ENTITY ecir "&#8790;">
+
+<!ENTITY ecolon "&#8789;">
+
+<!ENTITY eDot "&#8785;">
+
+<!ENTITY esdot "&#8784;">
+
+<!ENTITY efDot "&#8786;">
+
+<!ENTITY egs "&#8925;">
+
+<!ENTITY els "&#8924;">
+
+<!ENTITY erDot "&#8787;">
+
+<!ENTITY fork "&#8916;">
+
+<!ENTITY frown "&#8994;">
+
+<!ENTITY gap "&#8819;">
+
+<!ENTITY gsdot "&#8919;">
+
+<!ENTITY gE "&#8807;">
+
+<!ENTITY gel "&#8923;">
+
+<!ENTITY gEl "&#8923;">
+
+<!ENTITY ges "&#8805;">
+
+<!ENTITY Gg "&#8921;">
+
+<!ENTITY gl "&#8823;">
+
+<!ENTITY gsim "&#8819;">
+
+<!ENTITY Gt "&#8811;">
+
+<!ENTITY lap "&#8818;">
+
+<!ENTITY ldot "&#8918;">
+
+<!ENTITY lE "&#8806;">
+
+<!ENTITY lEg "&#8922;">
+
+<!ENTITY leg "&#8922;">
+
+<!ENTITY les "&#8804;">
+
+<!ENTITY lg "&#8822;">
+
+<!ENTITY Ll "&#8920;">
+
+<!ENTITY lsim "&#8818;">
+
+<!ENTITY Lt "&#8810;">
+
+<!ENTITY ltrie "&#8884;">
+
+<!ENTITY mid "&#8739;">
+
+<!ENTITY models "&#8871;">
+
+<!ENTITY pr "&#8826;">
+
+<!ENTITY prap "&#8830;">
+
+<!ENTITY pre "&#8828;">
+
+<!ENTITY prsim "&#8830;">
+
+<!ENTITY rtrie "&#8885;">
+
+<!ENTITY samalg "&#8720;">
+
+<!ENTITY sc "&#8827;">
+
+<!ENTITY scap "&#8831;">
+
+<!ENTITY sccue "&#8829;">
+
+<!ENTITY sce "&#8829;">
+
+<!ENTITY scsim "&#8831;">
+
+<!ENTITY sfrown "&#8994;">
+
+<!ENTITY smid "&#65533;">
+
+<!ENTITY smile "&#8995;">
+
+<!ENTITY spar "&#8741;">
+
+<!ENTITY sqsub "&#8847;">
+
+<!ENTITY sqsube "&#8849;">
+
+<!ENTITY sqsup "&#8848;">
+
+<!ENTITY sqsupe "&#8850;">
+
+<!ENTITY ssmile "&#8995;">
+
+<!ENTITY Sub "&#8912;">
+
+<!ENTITY subE "&#8838;">
+
+<!ENTITY Sup "&#8913;">
+
+<!ENTITY supE "&#8839;">
+
+<!ENTITY thkap "&#8776;">
+
+<!ENTITY thksim "&#8764;">
+
+<!ENTITY trie "&#8796;">
+
+<!ENTITY twixt "&#8812;">
+
+<!ENTITY vdash "&#8866;">
+
+<!ENTITY Vdash "&#8873;">
+
+<!ENTITY vDash "&#8872;">
+
+<!ENTITY veebar "&#8891;">
+
+<!ENTITY vltri "&#8882;">
+
+<!ENTITY vprop "&#8733;">
+
+<!ENTITY vrtri "&#8883;">
+
+<!ENTITY Vvdash "&#8874;">
+
+<!ENTITY emsp "&#8195;">
+
+<!ENTITY ensp "&#8194;">
+
+<!ENTITY emsp13 "&#8196;">
+
+<!ENTITY emsp14 "&#8197;">
+
+<!ENTITY numsp "&#8199;">
+
+<!ENTITY puncsp "&#8200;">
+
+<!ENTITY thinsp "&#8201;">
+
+<!ENTITY hairsp "&#8202;">
+
+<!ENTITY mdash "&#8212;">
+
+<!ENTITY ndash "&#8211;">
+
+<!ENTITY dash "&#8208;">
+
+<!ENTITY blank "&#9251;">
+
+<!ENTITY hellip "&#8230;">
+
+<!ENTITY nldr "&#8229;">
+
+<!ENTITY frac13 "&#8531;">
+
+<!ENTITY frac23 "&#8532;">
+
+<!ENTITY frac15 "&#8533;">
+
+<!ENTITY frac25 "&#8534;">
+
+<!ENTITY frac35 "&#8535;">
+
+<!ENTITY frac45 "&#8536;">
+
+<!ENTITY frac16 "&#8537;">
+
+<!ENTITY frac56 "&#8538;">
+
+<!ENTITY incare "&#8453;">
+
+<!ENTITY block "&#9608;">
+
+<!ENTITY uhblk "&#9600;">
+
+<!ENTITY lhblk "&#9604;">
+
+<!ENTITY blk14 "&#9617;">
+
+<!ENTITY blk12 "&#9618;">
+
+<!ENTITY blk34 "&#9619;">
+
+<!ENTITY marker "&#9646;">
+
+<!ENTITY cir "&#9675;">
+
+<!ENTITY squ "&#9744;">
+
+<!ENTITY rect "&#9645;">
+
+<!ENTITY utri "&#9653;">
+
+<!ENTITY dtri "&#9663;">
+
+<!ENTITY star "&#8902;">
+
+<!ENTITY bull "&#8226;">
+
+<!ENTITY squf "&#9642;">
+
+<!ENTITY utrif "&#9650;"> 
+
+<!ENTITY dtrif "&#9660;">
+
+<!ENTITY ltrif "&#9666;">
+
+<!ENTITY rtrif "&#9656;">
+
+<!ENTITY clubs "&#9827;">
+
+<!ENTITY diams "&#9830;">
+
+<!ENTITY hearts "&#9825;">
+
+<!ENTITY spades "&#9824;">
+
+<!ENTITY malt "&#10016;">
+
+<!ENTITY dagger "&#8224;">
+
+<!ENTITY Dagger "&#8225;">
+
+<!ENTITY check "&#10003;">
+
+<!ENTITY cross "&#10007;">
+
+<!ENTITY sharp "&#9839;">
+
+<!ENTITY flat "&#9837;">
+
+<!ENTITY male "&#9794;">
+
+<!ENTITY female "&#9792;">
+
+<!ENTITY phone "&#9742;">
+
+<!ENTITY telrec "&#8981;">
+
+<!ENTITY copysr "&#8471;">
+
+<!ENTITY caret "&#8257;">
+
+<!ENTITY lsquor "&#8218;">
+
+<!ENTITY ldquor "&#8222;">
+
+<!ENTITY fflig "&#64256;">
+
+<!ENTITY filig "&#64257;">
+
+<!ENTITY fjlig "&#65533;">
+
+<!ENTITY ffilig "&#64259;">
+
+<!ENTITY ffllig "&#64260;">
+
+<!ENTITY fllig "&#64258;">
+
+<!ENTITY mldr "&#8230;">
+
+<!ENTITY rdquor "&#8221;">
+
+<!ENTITY rsquor "&#8217;">
+
+<!ENTITY vellip "&#8942;">
+
+<!ENTITY hybull "&#8259;">
+
+<!ENTITY loz "&#9674;">
+
+<!ENTITY lozf "&#10022;">
+
+<!ENTITY ltri "&#9667;">
+
+<!ENTITY rtri "&#9657;">
+
+<!ENTITY starf "&#9733;">
+
+<!ENTITY natur "&#9838;">
+
+<!ENTITY rx "&#8478;">
+
+<!ENTITY sext "&#10038;">
+
+<!ENTITY target "&#8982;">
+
+<!ENTITY dlcrop "&#8973;">
+
+<!ENTITY drcrop "&#8972;">
+
+<!ENTITY ulcrop "&#8975;">
+
+<!ENTITY urcrop "&#8974;">
+
+<!ENTITY amalg "&#8705;">
+
+<!ENTITY Barwed "&#8892;">
+
+<!ENTITY barwed "&#8892;">
+
+<!ENTITY Cap "&#8914;">
+
+<!ENTITY Cup "&#8915;">
+
+<!ENTITY cuvee "&#8910;">
+
+<!ENTITY cuwed "&#8911;">
+
+<!ENTITY diam "&#8900;">
+
+<!ENTITY divonx "&#8903;">
+
+<!ENTITY intcal "&#8890;">
+
+<!ENTITY lthree "&#8907;">
+
+<!ENTITY ltimes "&#8905;">
+
+<!ENTITY minusb "&#8863;">
+
+<!ENTITY oast "&#8859;">
+
+<!ENTITY ocir "&#8858;">
+
+<!ENTITY odash "&#8861;">
+
+<!ENTITY odot "&#8857;">
+
+<!ENTITY ominus "&#8854;">
+
+<!ENTITY oplus "&#8853;">
+
+<!ENTITY osol "&#8856;">
+
+<!ENTITY otimes "&#8855;">
+
+<!ENTITY plusb "&#8862;">
+
+<!ENTITY plusdo "&#8724;">
+
+<!ENTITY rthree "&#8908;">
+
+<!ENTITY rtimes "&#8906;">
+
+<!ENTITY sdot "&#8901;">
+
+<!ENTITY sdotb "&#8865;">
+
+<!ENTITY setmn "&#8726;">
+
+<!ENTITY sqcap "&#8851;">
+
+<!ENTITY sqcup "&#8852;">
+
+<!ENTITY ssetmn "&#8726;">
+
+<!ENTITY sstarf "&#8902;">
+
+<!ENTITY timesb "&#8864;">
+
+<!ENTITY top "&#8868;">
+
+<!ENTITY uplus "&#8846;">
+
+<!ENTITY wreath "&#8768;">
+
+<!ENTITY xcirc "&#9711;">
+
+<!ENTITY xdtri "&#9661;">
+
+<!ENTITY xutri "&#9651;">
+
+<!ENTITY coprod "&#8720;">
+
+<!ENTITY prod "&#8719;">
+
+<!ENTITY sum "&#8721;">
+
+<!ENTITY rceil "&#8969;">
+
+<!ENTITY rfloor "&#8971;">
+
+<!ENTITY rpargt "&#65533;">
+
+<!ENTITY urcorn "&#8989;">
+
+<!ENTITY drcorn "&#8991;">
+
+<!ENTITY lceil "&#8968;">
+
+<!ENTITY lfloor "&#8970;">
+
+<!ENTITY lpargt "&#65533;">
+
+<!ENTITY ulcorn "&#8988;">
+
+<!ENTITY dlcorn "&#8990;">
+
+<!ENTITY gnap "&#65533;">
+
+<!ENTITY gne "&#8809;">
+
+<!ENTITY gnE "&#8809;">
+
+<!ENTITY gnsim "&#8935;">
+
+<!ENTITY gvnE "&#8809;">
+
+<!ENTITY lnap "&#65533;">
+
+<!ENTITY lnE "&#8808;">
+
+<!ENTITY lne "&#8808;">
+
+<!ENTITY lnsim "&#8934;">
+
+<!ENTITY lvnE "&#8808;">
+
+<!ENTITY nap "&#8777;">
+
+<!ENTITY ncong "&#8775;">
+
+<!ENTITY nequiv "&#8802;">
+
+<!ENTITY ngE "&#8817;">
+
+<!ENTITY nge "&#8817;">
+
+<!ENTITY nges "&#8817;">
+
+<!ENTITY ngt "&#8815;">
+
+<!ENTITY nle "&#8816;">
+
+<!ENTITY nlE "&#8816;">
+
+<!ENTITY nles "&#8816;">
+
+<!ENTITY nlt "&#8814;">
+
+<!ENTITY nltri "&#8938;">
+
+<!ENTITY nltrie "&#8940;">
+
+<!ENTITY nmid "&#8740;">
+
+<!ENTITY npar "&#8742;">
+
+<!ENTITY npr "&#8832;">
+
+<!ENTITY npre "&#8928;">
+
+<!ENTITY nrtri "&#8939;">
+
+<!ENTITY nrtrie "&#8941;">
+
+<!ENTITY nsc "&#8833;">
+
+<!ENTITY nsce "&#8929;">
+
+<!ENTITY nsim "&#8769;">
+
+<!ENTITY nsime "&#8772;">
+
+<!ENTITY nsmid "&#65533;">
+
+<!ENTITY nspar "&#8742;">
+
+<!ENTITY nsub "&#8836;">
+
+<!ENTITY nsube "&#8840;">
+
+<!ENTITY nsubE "&#8840;">
+
+<!ENTITY nsup "&#8837;">
+
+<!ENTITY nsupe "&#8841;">
+
+<!ENTITY nsupE "&#8841;">
+
+<!ENTITY nvdash "&#8876;">
+
+<!ENTITY nvDash "&#8877;">
+
+<!ENTITY nVDash "&#8879;">
+
+<!ENTITY nVdash "&#8878;">
+
+<!ENTITY prnap "&#8936;">
+
+<!ENTITY prnE "&#65533;">
+
+<!ENTITY prnsim "&#8936;">
+
+<!ENTITY scnap "&#8937;">
+
+<!ENTITY scnE "&#65533;">
+
+<!ENTITY scnsim "&#8937;">
+
+<!ENTITY subne "&#8842;">
+
+<!ENTITY subnE "&#8842;">
+
+<!ENTITY supne "&#8843;">
+
+<!ENTITY supnE "&#8843;">
+
+<!ENTITY vsubne "&#8842;">
+
+<!ENTITY vsubnE "&#65533;">
+
+<!ENTITY vsupne "&#8843;">
+
+<!ENTITY vsupnE "&#8843;">
+
+<!ENTITY pi0080 "&#8644;">
+
+<!ENTITY pi0081 "&#58008;">
+
+<!ENTITY pi0082 "&#58009;">
+
+<!ENTITY pi0083 "&#8593;">
+
+<!ENTITY pi0084 "&#8595;">
+
+<!ENTITY pi0085 "&#8592;">
+
+<!ENTITY pi0086 "&#8594;">
+
+<!ENTITY pi0087 "&#10151;">
+
+<!ENTITY pi0088 "&#58002;">
+
+<!ENTITY pi0089 "&#58001;">
+
+<!ENTITY pi008a "&#9986;">
+
+<!ENTITY pi008b "&#58730;">
+
+<!ENTITY pi008c "&#8600;">
+
+<!ENTITY pi008d "&#8598;">
+
+<!ENTITY pi008e "&#58010;">
+
+<!ENTITY pi008f "&#58011;">
+
+<!ENTITY pi0090 "&#8601;">
+
+<!ENTITY pi0091 "&#9745;">
+
+<!ENTITY pi0092 "&#10003;">
+
+<!ENTITY pi0093 "&#8453;">
+
+<!ENTITY pi0094 "&#9756;">
+
+<!ENTITY pi0095 "&#9758;">
+
+<!ENTITY pi0096 "&#59004;">
+
+<!ENTITY pi0097 "&#59005;">
+
+<!ENTITY pi0098 "&#169;">
+
+<!ENTITY pi0099 "&#174;">
+
+<!ENTITY pi009a "&#9755;">
+
+<!ENTITY pi009b "&#9746;">
+
+<!ENTITY pi009c "&#58007;">
+
+<!ENTITY pi009d "&#58005;">
+
+<!ENTITY pi009e "&#58006;">
+
+<!ENTITY pi009f "&#58004;">
+
+<!ENTITY pi00a0 "&#9826;">
+
+<!ENTITY pi00a1 "&#59006;">
+
+<!ENTITY pi00a2 "&#59200;">
+
+<!ENTITY pi00a3 "&#8482;">
+
+<!ENTITY pi00a4 "&#9633;">
+
+<!ENTITY pi00a5 "&#9671;">
+
+<!ENTITY pi00a6 "&#9670;">
+
+<!ENTITY pi00a7 "&#9733;">
+
+<!ENTITY pi00a8 "&#9734;">
+
+<!ENTITY pi00a9 "&#9661;">
+
+<!ENTITY pi00aa "&#9651;">
+
+<!ENTITY pi00ab "&#58536;">
+
+<!ENTITY pi00ac "&#9664;">
+
+<!ENTITY pi00ad "&#9654;">
+
+<!ENTITY pi00ae "&#58543;">
+
+<!ENTITY pi00af "&#58541;">
+
+<!ENTITY pi00b0 "&#9724;">
+
+<!ENTITY pi00b1 "&#9675;">
+
+<!ENTITY pi00b2 "&#9650;">
+
+<!ENTITY pi00b3 "&#9651;">
+
+<!ENTITY pi00b4 "&#9679;">
+
+<!ENTITY pi00b5 "&#9660;">
+
+<!ENTITY pi00b6 "&#9744;">
+
+<!ENTITY pi00b7 "&#9711;">
+
+<!ENTITY pi00b8 "&#8226;">
+
+<!ENTITY pi00b9 "&#9650;">
+
+<!ENTITY pi00ba "&#9632;">
+
+<!ENTITY pi00bb "&#8478;">
+
+<!ENTITY pi00c0 "&#57360;">
+
+<!ENTITY pi00c1 "&#57361;">
+
+<!ENTITY pi00c2 "&#57362;">
+
+<!ENTITY pi00c3 "&#57363;">
+
+<!ENTITY pi00c4 "&#57364;">
+
+<!ENTITY pi00c5 "&#57365;">
+
+<!ENTITY pi00c6 "&#8709;">
+
+<!ENTITY pi00c7 "&#8960;">
+
+<!ENTITY pi00c8 "&#57369;">
+
+<!ENTITY pi00c9 "&#57370;">
+
+<!ENTITY pi00ca "&#58506;">
+
+<!ENTITY pi00ce "&#171;">
+
+<!ENTITY pi00cf "&#187;">
+
+<!ENTITY pi00e0 "&#10016;">
+
+<!ENTITY pi00e1 "&#59300;">
+
+<!ENTITY pi00e2 "&#59313;">
+
+<!ENTITY pi00e3 "&#59304;">
+
+<!ENTITY pi00e4 "&#59305;">
+
+<!ENTITY pi00e5 "&#163;">
+
+<!ENTITY pi00e6 "&#59306;">
+
+<!ENTITY pi00e7 "&#9679;">
+
+<!ENTITY pi00e8 "&#58003;">
+
+<!ENTITY pi00e9 "&#8599;">
+
+<!ENTITY pi00ea "&#59301;">
+
+<!ENTITY pi00ef "&#59302;">
+
+<!ENTITY pi00f0 "&#59303;">
+
+<!ENTITY pi00f1 "&#8630;">
+
+<!ENTITY pi00f2 "&#8631;">
+
+<!ENTITY pi00f3 "&#8853;">
+
+<!ENTITY pi00f4 "&#58521;">
+
+<!ENTITY pi00f5 "&#9711;">
+
+<!ENTITY pi00f6 "&#8857;">
+
+<!ENTITY pi00f7 "&#58500;">
+
+<!ENTITY pi0181 "&#8317;">
+
+<!ENTITY pi0182 "&#8333;">
+
+<!ENTITY pi0183 "&#8318;">
+
+<!ENTITY pi0184 "&#8334;">
+
+<!ENTITY pi0185 "&#123;">
+
+<!ENTITY pi0186 "&#125;">
+
+<!ENTITY pi0187 "&#9131;">
+
+<!ENTITY pi0188 "&#9132;">
+
+<!ENTITY pi0189 "&#9133;">
+
+<!ENTITY pi018a "&#59009;">
+
+<!ENTITY pi018b "&#59010;">
+
+<!ENTITY pi018c "&#9128;">
+
+<!ENTITY pi018d "&#9129;">
+
+<!ENTITY pi0190 "&#12296;">
+
+<!ENTITY pi0191 "&#12297;">
+
+<!ENTITY pi0192 "&#57366;">
+
+<!ENTITY pi0194 "&#8800;">
+
+<!ENTITY pi0195 "&#57352;">
+
+<!ENTITY pi0196 "&#8766;">
+
+<!ENTITY pi0197 "&#57353;">
+
+<!ENTITY pi0198 "&#8776;">
+
+<!ENTITY pi0199 "&#8747;">
+
+<!ENTITY pi019a "&#643;">
+
+<!ENTITY pi01a0 "&#60;">
+
+<!ENTITY pi01a1 "&#57367;">
+
+<!ENTITY pi01a2 "&#8758;">
+
+<!ENTITY pi01a3 "&#8759;">
+
+<!ENTITY pi01a4 "&#62;">
+
+<!ENTITY pi01a5 "&#57368;">
+
+<!ENTITY pi01a6 "&#8819;">
+
+<!ENTITY pi01a7 "&#8818;">
+
+<!ENTITY pi01a8 "&#10914;">
+
+<!ENTITY pi01a9 "&#10913;">
+
+<!ENTITY pi01aa "&#8743;">
+
+<!ENTITY pi01ab "&#8744;">
+
+<!ENTITY pi01ac "&#57371;">
+
+<!ENTITY pi01ad "&#57372;">
+
+<!ENTITY pi01b0 "&#57347;">
+
+<!ENTITY pi01b1 "&#8782;">
+
+<!ENTITY pi01b2 "&#8734;">
+
+<!ENTITY pi01b3 "&#8733;">
+
+<!ENTITY pi01b4 "&#8736;">
+
+<!ENTITY pi01b5 "&#8730;">
+
+<!ENTITY pi01b6 "&#8756;">
+
+<!ENTITY pi01b7 "&#8757;">
+
+<!ENTITY pi01b8 "&#57345;">
+
+<!ENTITY pi01c0 "&#8801;">
+
+<!ENTITY pi01c1 "&#8773;">
+
+<!ENTITY pi01c2 "&#8771;">
+
+<!ENTITY pi01c3 "&#8764;">
+
+<!ENTITY pi01c4 "&#57356;">
+
+<!ENTITY pi01c5 "&#57357;">
+
+<!ENTITY pi01c6 "&#8805;">
+
+<!ENTITY pi01c7 "&#8804;">
+
+<!ENTITY pi01c8 "&#8806;">
+
+<!ENTITY pi01c9 "&#8807;">
+
+<!ENTITY pi01ca "&#10906;">
+
+<!ENTITY pi01cb "&#10905;">
+
+<!ENTITY pi01cc "&#9130;">
+
+<!ENTITY pi01cd "&#9127;">
+
+<!ENTITY pi01d0 "&#57373;">
+
+<!ENTITY pi01d1 "&#57374;">
+
+<!ENTITY pi01d2 "&#8260;">
+
+<!ENTITY pi01d5 "&#59021;">
+
+<!ENTITY pi01d8 "&#8243;">
+
+<!ENTITY pi01d9 "&#8242;">
+
+<!ENTITY pi01e2 "&#215;">
+
+<!ENTITY pi01e3 "&#57375;">
+
+<!ENTITY pi01e4 "&#247;">
+
+<!ENTITY pi01e5 "&#57376;">
+
+<!ENTITY pi01e6 "&#61;">
+
+<!ENTITY pi01e7 "&#57377;">
+
+<!ENTITY pi01e8 "&#176;">
+
+<!ENTITY pi01e9 "&#57378;">
+
+<!ENTITY pi01f0 "&#9837;">
+
+<!ENTITY pi01f1 "&#8994;">
+
+<!ENTITY pi01f3 "&#8725;">
+
+<!ENTITY pi01f4 "&#59011;">
+
+<!ENTITY pi01f6 "&#43;">
+
+<!ENTITY pi01f7 "&#57379;">
+
+<!ENTITY pi01f8 "&#8722;">
+
+<!ENTITY pi01f9 "&#57380;">
+
+<!ENTITY pi0284 "&#8273;">
+
+<!ENTITY pi02b0 "&#177;">
+
+<!ENTITY pi02c0 "&#8470;">
+
+<!ENTITY pi02e1 "&#8977;">
+
+<!ENTITY pi02eb "&#10122;">
+
+<!ENTITY pi02ec "&#10123;">
+
+<!ENTITY pi02ed "&#10124;">
+
+<!ENTITY pi02ee "&#10125;">
+
+<!ENTITY pi02ef "&#10126;">
+
+<!ENTITY pi02fb "&#10127;">
+
+<!ENTITY pi02fc "&#10128;">
+
+<!ENTITY pi02fd "&#10129;">
+
+<!ENTITY pi02fe "&#10130;">
+
+<!ENTITY pi02ff "&#10131;">
+
+<!ENTITY pi0382 "&#58702;">
+
+<!ENTITY pi0383 "&#58703;">
+
+<!ENTITY pi0384 "&#58700;">
+
+<!ENTITY pi0385 "&#58701;">
+
+<!ENTITY pi0387 "&#58704;">
+
+<!ENTITY pi0388 "&#58706;">
+
+<!ENTITY pi0389 "&#58705;">
+
+<!ENTITY pi03c6 "&#931;">
+
+<!ENTITY pi0880 "&#198;">
+
+<!ENTITY pi0881 "&#338;">
+
+<!ENTITY pi0882 "&#230;">
+
+<!ENTITY pi0883 "&#339;">
+
+<!ENTITY pi0887 "&#59022;">
+
+<!ENTITY pi0888 "&#59023;">
+
+<!ENTITY pi0889 "&#601;">
+
+<!ENTITY pi088a "&#652;">
+
+<!ENTITY pi088b "&#331;">
+
+<!ENTITY pi088c "&#439;">
+
+<!ENTITY pi0890 "&#596;">
+
+<!ENTITY pi0891 "&#240;">
+
+<!ENTITY pi0892 "&#953;">
+
+<!ENTITY pi0893 "&#949;">
+
+<!ENTITY pi0894 "&#59012;">
+
+<!ENTITY pi0895 "&#59013;">
+
+<!ENTITY pi0896 "&#59014;">
+
+<!ENTITY pi0897 "&#59015;">
+
+<!ENTITY pi0898 "&#59028;">
+
+<!ENTITY pi0899 "&#59029;">
+
+<!ENTITY pi089a "&#59024;">
+
+<!ENTITY pi089b "&#59025;">
+
+<!ENTITY pi089c "&#59026;">
+
+<!ENTITY pi089d "&#59027;">
+
+<!ENTITY pi08a2 "&#59016;">
+
+<!ENTITY pi08a4 "&#9653;">
+
+<!ENTITY pi08a5 "&#913;">
+
+<!ENTITY pi08a6 "&#914;">
+
+<!ENTITY pi08a7 "&#915;">
+
+<!ENTITY pi08a8 "&#916;">
+
+<!ENTITY pi08a9 "&#917;">
+
+<!ENTITY pi08b0 "&#918;">
+
+<!ENTITY pi08b1 "&#919;">
+
+<!ENTITY pi08b2 "&#920;">
+
+<!ENTITY pi08b3 "&#1012;">
+
+<!ENTITY pi08b4 "&#921;">
+
+<!ENTITY pi08b5 "&#922;">
+
+<!ENTITY pi08b6 "&#923;">
+
+<!ENTITY pi08b7 "&#924;">
+
+<!ENTITY pi08b8 "&#925;">
+
+<!ENTITY pi08b9 "&#926;">
+
+<!ENTITY pi08c1 "&#927;">
+
+<!ENTITY pi08c2 "&#928;">
+
+<!ENTITY pi08c3 "&#929;">
+
+<!ENTITY pi08c4 "&#931;">
+
+<!ENTITY pi08c5 "&#932;">
+
+<!ENTITY pi08c6 "&#933;">
+
+<!ENTITY pi08c7 "&#934;">
+
+<!ENTITY pi08c8 "&#935;">
+
+<!ENTITY pi08c9 "&#936;">
+
+<!ENTITY pi08cc "&#937;">
+
+<!ENTITY pi08cd "&#945;">
+
+<!ENTITY pi08d1 "&#946;">
+
+<!ENTITY pi08d2 "&#947;">
+
+<!ENTITY pi08d3 "&#948;">
+
+<!ENTITY pi08d4 "&#1013;">
+
+<!ENTITY pi08d5 "&#950;">
+
+<!ENTITY pi08d6 "&#951;">
+
+<!ENTITY pi08d7 "&#952;">
+
+<!ENTITY pi08d8 "&#953;">
+
+<!ENTITY pi08d9 "&#954;">
+
+<!ENTITY pi08e1 "&#955;">
+
+<!ENTITY pi08e2 "&#956;">
+
+<!ENTITY pi08e3 "&#957;">
+
+<!ENTITY pi08e4 "&#958;">
+
+<!ENTITY pi08e5 "&#959;">
+
+<!ENTITY pi08e6 "&#960;">
+
+<!ENTITY pi08e7 "&#961;">
+
+<!ENTITY pi08e8 "&#963;">
+
+<!ENTITY pi08e9 "&#962;">
+
+<!ENTITY pi08f0 "&#964;">
+
+<!ENTITY pi08f1 "&#965;">
+
+<!ENTITY pi08f2 "&#966;">
+
+<!ENTITY pi08f3 "&#967;">
+
+<!ENTITY pi08f4 "&#968;">
+
+<!ENTITY pi08f6 "&#969;">
+
+<!ENTITY pi08f7 "&#977;">
+
+<!ENTITY pi094b "&#166;">   
+<!ENTITY pi094c "&#8369;">  
+<!ENTITY pi094d "&#59312;"> 
+<!ENTITY pi094e "&#8480;">  
+<!ENTITY pi094f "&#59072;"> 
+<!ENTITY pi0950 "&#59073;"> 
+<!ENTITY pi0951 "&#9410;">  
+<!ENTITY pi0952 "&#59075;"> 
+<!ENTITY pi0953 "&#8471;">  
+<!ENTITY pi0954 "&#8253;">  
+<!ENTITY pi0955 "&#59076;"> 
+<!ENTITY pi0956 "&#8962;">  
+<!ENTITY pi0957 "&#8452;">  
+<!ENTITY pi0958 "&#8970;">  
+<!ENTITY pi0959 "&#8971;">  
+
+<!ENTITY pi095a "&#9399;"> 
+<!ENTITY pi095b "&#9794;"> 
+<!ENTITY pi095c "&#9792;"> 
+<!ENTITY pi10a2 "&#62009;"> 
+<!ENTITY pi10b6 "&#62001;"> 
+<!ENTITY pi10bb "&#61000;"> 
+<!ENTITY pi10c7 "&#62010;">
+
+<!ENTITY pi10c8 "&#61001;">
+
+<!ENTITY pi10c9 "&#61002;">
+
+<!ENTITY pi10ca "&#62011;">
+
+<!ENTITY pi10d1 "&#9992;">
+
+<!ENTITY pi10d2 "&#9993;">
+
+<!ENTITY pi10d3 "&#9996;">
+
+<!ENTITY pi10d4 "&#9997;">
+
+<!ENTITY pi10d5 "&#9998;">
+
+<!ENTITY pi10d6 "&#10006;">
+
+<!ENTITY pi10d7 "&#10007;">
+
+<!ENTITY pi10d8 "&#10064;">
+
+<!ENTITY pi10d9 "&#10017;">
+
+<!ENTITY pi10da "&#9829;">
+
+<!ENTITY pi10dc "&#9824;">
+
+<!ENTITY pi10dd "&#9827;">
+
+<!ENTITY ang "&#8736;">
+
+<!ENTITY angmsd "&#8737;">
+
+<!ENTITY beth "&#8502;">
+
+<!ENTITY bprime "&#8245;">
+
+<!ENTITY comp "&#8705;">
+
+<!ENTITY daleth "&#8504;">
+
+<!ENTITY ell "&#8467;">
+
+<!ENTITY empty "&#8709;">
+
+<!ENTITY gimel "&#8503;">
+
+<!ENTITY image "&#8465;">
+
+<!ENTITY inodot "&#305;">
+
+<!ENTITY jnodot "&#65533;">
+
+<!ENTITY nexist "&#8708;">
+
+<!ENTITY oS "&#9416;">
+
+<!ENTITY planck "&#295;">
+
+<!ENTITY real "&#8476;">
+
+<!ENTITY sbsol "&#65128;">
+
+<!ENTITY vprime "&#8242;">
+
+<!ENTITY weierp "&#8472;">
+
+<!ENTITY acy "&#1072;">
+
+<!ENTITY Acy "&#1040;">
+
+<!ENTITY bcy "&#1073;">
+
+<!ENTITY Bcy "&#1041;">
+
+<!ENTITY vcy "&#1074;">
+
+<!ENTITY Vcy "&#1042;">
+
+<!ENTITY gcy "&#1075;">
+
+<!ENTITY Gcy "&#1043;">
+
+<!ENTITY dcy "&#1076;">
+
+<!ENTITY Dcy "&#1044;">
+
+<!ENTITY iecy "&#1077;">
+
+<!ENTITY IEcy "&#1045;">
+
+<!ENTITY iocy "&#1105;">
+
+<!ENTITY IOcy "&#1025;">
+
+<!ENTITY zhcy "&#1078;">
+
+<!ENTITY ZHcy "&#1046;">
+
+<!ENTITY zcy "&#1079;">
+
+<!ENTITY Zcy "&#1047;">
+
+<!ENTITY icy "&#1080;">
+
+<!ENTITY Icy "&#1048;">
+
+<!ENTITY jcy "&#1081;">
+
+<!ENTITY Jcy "&#1049;">
+
+<!ENTITY kcy "&#1082;">
+
+<!ENTITY Kcy "&#1050;">
+
+<!ENTITY lcy "&#1083;">
+
+<!ENTITY Lcy "&#1051;">
+
+<!ENTITY mcy "&#1084;">
+
+<!ENTITY Mcy "&#1052;">
+
+<!ENTITY ncy "&#1085;">
+
+<!ENTITY Ncy "&#1053;">
+
+<!ENTITY ocy "&#1086;">
+
+<!ENTITY Ocy "&#1054;">
+
+<!ENTITY pcy "&#1087;">
+
+<!ENTITY Pcy "&#1055;">
+
+<!ENTITY rcy "&#1088;">
+
+<!ENTITY Rcy "&#1056;">
+
+<!ENTITY scy "&#1089;">
+
+<!ENTITY Scy "&#1057;">
+
+<!ENTITY tcy "&#1090;">
+
+<!ENTITY Tcy "&#1058;">
+
+<!ENTITY ucy "&#1091;">
+
+<!ENTITY Ucy "&#1059;">
+
+<!ENTITY fcy "&#1092;">
+
+<!ENTITY Fcy "&#1060;">
+
+<!ENTITY khcy "&#1093;">
+
+<!ENTITY KHcy "&#1061;">
+
+<!ENTITY tscy "&#1094;">
+
+<!ENTITY TScy "&#1062;">
+
+<!ENTITY chcy "&#1095;">
+
+<!ENTITY CHcy "&#1063;">
+
+<!ENTITY shcy "&#1096;">
+
+<!ENTITY SHcy "&#1064;">
+
+<!ENTITY shchcy "&#1097;">
+
+<!ENTITY SHCHcy "&#1065;">
+
+<!ENTITY hardcy "&#1098;">
+
+<!ENTITY HARDcy "&#1066;">
+
+<!ENTITY ycy "&#1099;">
+
+<!ENTITY Ycy "&#1067;">
+
+<!ENTITY softcy "&#1100;">
+
+<!ENTITY SOFTcy "&#1068;">
+
+<!ENTITY ecy "&#1101;">
+
+<!ENTITY Ecy "&#1069;">
+
+<!ENTITY yucy "&#1102;">
+
+<!ENTITY YUcy "&#1070;">
+
+<!ENTITY yacy "&#1103;">
+
+<!ENTITY YAcy "&#1071;">
+
+<!ENTITY numero "&#8470;">
+
+<!ENTITY djcy "&#1106;">
+
+<!ENTITY DJcy "&#1026;">
+
+<!ENTITY gjcy "&#1107;">
+
+<!ENTITY GJcy "&#1027;">
+
+<!ENTITY jukcy "&#1108;">
+
+<!ENTITY Jukcy "&#1028;">
+
+<!ENTITY dscy "&#1109;">
+
+<!ENTITY DScy "&#1029;">
+
+<!ENTITY iukcy "&#1110;">
+
+<!ENTITY Iukcy "&#1030;">
+
+<!ENTITY yicy "&#1111;">
+
+<!ENTITY YIcy "&#1031;">
+
+<!ENTITY jsercy "&#1112;">
+
+<!ENTITY Jsercy "&#1032;">
+
+<!ENTITY ljcy "&#1113;">
+
+<!ENTITY LJcy "&#1033;">
+
+<!ENTITY njcy "&#1114;">
+
+<!ENTITY NJcy "&#1034;">
+
+<!ENTITY tshcy "&#1115;">
+
+<!ENTITY TSHcy "&#1035;">
+
+<!ENTITY kjcy "&#1116;">
+
+<!ENTITY KJcy "&#1036;">
+
+<!ENTITY ubrcy "&#1118;">
+
+<!ENTITY Ubrcy "&#1038;">
+
+<!ENTITY dzcy "&#1119;">
+
+<!ENTITY DZcy "&#1039;">
+
+<!ENTITY aacgr "&#940;">
+
+<!ENTITY Aacgr "&#902;">
+
+<!ENTITY eacgr "&#941;">
+
+<!ENTITY Eacgr "&#904;">
+
+<!ENTITY eeacgr "&#942;">
+
+<!ENTITY EEacgr "&#905;">
+
+<!ENTITY idigr "&#970;">
+
+<!ENTITY Idigr "&#938;">
+
+<!ENTITY iacgr "&#943;">
+
+<!ENTITY Iacgr "&#906;">
+
+<!ENTITY idiagr "&#912;">
+
+<!ENTITY oacgr "&#972;">
+
+<!ENTITY Oacgr "&#908;">
+
+<!ENTITY udigr "&#971;">
+
+<!ENTITY Udigr "&#939;">
+
+<!ENTITY uacgr "&#973;">
+
+<!ENTITY Uacgr "&#910;">
+
+<!ENTITY udiagr "&#944;">
+
+<!ENTITY ohacgr "&#974;">
+
+<!ENTITY OHacgr "&#911;">
+
+<!ENTITY alpha "&#945;">
+
+<!ENTITY beta "&#946;">
+
+<!ENTITY gamma "&#947;">
+
+<!ENTITY Gamma "&#915;">
+
+<!ENTITY gammad "&#988;">
+
+<!ENTITY delta "&#948;">
+
+<!ENTITY Delta "&#916;">
+
+<!ENTITY epsi "&#949;">
+
+<!ENTITY epsiv "&#603;">
+
+<!ENTITY epsis "&#949;">
+
+<!ENTITY zeta "&#950;">
+
+<!ENTITY eta "&#951;">
+
+<!ENTITY thetas "&#952;">
+
+<!ENTITY Theta "&#920;">
+
+<!ENTITY thetav "&#977;">
+
+<!ENTITY iota "&#953;">
+
+<!ENTITY kappa "&#954;">
+
+<!ENTITY kappav "&#1008;">
+
+<!ENTITY lambda "&#955;">
+
+<!ENTITY Lambda "&#923;">
+
+<!ENTITY mu "&#956;">
+
+<!ENTITY nu "&#957;">
+
+<!ENTITY xi "&#958;">
+
+<!ENTITY Xi "&#926;">
+
+<!ENTITY pi "&#960;">
+
+<!ENTITY piv "&#982;">
+
+<!ENTITY Pi "&#928;">
+
+<!ENTITY rho "&#961;">
+
+<!ENTITY rhov "&#1009;">
+
+<!ENTITY sigma "&#963;">
+
+<!ENTITY Sigma "&#931;">
+
+<!ENTITY sigmav "&#962;">
+
+<!ENTITY tau "&#964;">
+
+<!ENTITY upsi "&#965;">
+
+<!ENTITY Upsi "&#978;">
+
+<!ENTITY phis "&#966;">
+
+<!ENTITY Phi "&#934;">
+
+<!ENTITY phiv "&#981;">
+
+<!ENTITY chi "&#967;">
+
+<!ENTITY psi "&#968;">
+
+<!ENTITY Psi "&#936;">
+
+<!ENTITY omega "&#969;">
+
+<!ENTITY Omega "&#937;">
+
+<!ENTITY b.alpha "&#945;">
+
+<!ENTITY b.beta "&#946;">
+
+<!ENTITY b.gamma "&#947;">
+
+<!ENTITY b.Gamma "&#915;">
+
+<!ENTITY b.gammad "&#988;">
+
+<!ENTITY b.delta "&#948;">
+
+<!ENTITY b.Delta "&#916;">
+
+<!ENTITY b.epsi "&#949;">
+
+<!ENTITY b.epsiv "&#603;">
+
+<!ENTITY b.epsis "&#949;">
+
+<!ENTITY b.zeta "&#950;">
+
+<!ENTITY b.eta "&#951;">
+
+<!ENTITY b.thetas "&#952;">
+
+<!ENTITY b.Theta "&#920;">
+
+<!ENTITY b.thetav "&#977;">
+
+<!ENTITY b.iota "&#953;">
+
+<!ENTITY b.kappa "&#954;">
+
+<!ENTITY b.kappav "&#1008;">
+
+<!ENTITY b.lambda "&#955;">
+
+<!ENTITY b.Lambda "&#923;">
+
+<!ENTITY b.mu "&#956;">
+
+<!ENTITY b.nu "&#957;">
+
+<!ENTITY b.xi "&#958;">
+
+<!ENTITY b.Xi "&#926;">
+
+<!ENTITY b.pi "&#960;">
+
+<!ENTITY b.Pi "&#928;">
+
+<!ENTITY b.piv "&#982;">
+
+<!ENTITY b.rho "&#961;">
+
+<!ENTITY b.rhov "&#1009;">
+
+<!ENTITY b.sigma "&#963;">
+
+<!ENTITY b.Sigma "&#931;">
+
+<!ENTITY b.sigmav "&#962;">
+
+<!ENTITY b.tau "&#964;">
+
+<!ENTITY b.upsi "&#965;">
+
+<!ENTITY b.Upsi "&#978;">
+
+<!ENTITY b.phis "&#966;">
+
+<!ENTITY b.Phi "&#934;">
+
+<!ENTITY b.phiv "&#981;">
+
+<!ENTITY b.chi "&#967;">
+
+<!ENTITY b.psi "&#968;">
+
+<!ENTITY b.Psi "&#936;">
+
+<!ENTITY b.omega "&#969;">
+
+<!ENTITY b.Omega "&#937;">
+
+<!ENTITY acute "&#180;">
+
+<!ENTITY breve "&#728;">
+
+<!ENTITY caron "&#711;">
+
+<!ENTITY cedil "&#184;">
+
+<!ENTITY circ "&#770;">
+
+<!ENTITY dblac "&#733;">
+
+<!ENTITY die "&#168;">
+
+<!ENTITY dot "&#729;">
+
+<!ENTITY grave "&#96;">
+
+<!ENTITY macr "&#175;">
+
+<!ENTITY ogon "&#731;">
+
+<!ENTITY ring "&#730;">
+
+<!ENTITY tilde "&#732;">
+
+<!ENTITY uml "&#168;">
+
+<!ENTITY aleph "&#8501;">
+
+<!ENTITY and "&#8743;">
+
+<!ENTITY ang90 "&#8735;">
+
+<!ENTITY angsph "&#8738;">
+
+<!ENTITY ap "&#8776;">
+
+<!ENTITY becaus "&#8757;">
+
+<!ENTITY bottom "&#8869;">
+
+<!ENTITY cap "&#8745;">
+
+<!ENTITY cong "&#8773;">
+
+<!ENTITY conint "&#8750;">
+
+<!ENTITY cup "&#8746;">
+
+<!ENTITY equiv "&#8801;">
+
+<!ENTITY exist "&#8707;">
+
+<!ENTITY forall "&#8704;">
+
+<!ENTITY fnof "&#402;">
+
+<!ENTITY ge "&#8805;">
+
+<!ENTITY iff "&#8660;">
+
+<!ENTITY infin "&#8734;">
+
+<!ENTITY int "&#8747;">
+
+<!ENTITY isin "&#8712;">
+
+<!ENTITY lang "&#12296;">
+
+<!ENTITY lArr "&#8656;">
+
+<!ENTITY le "&#8804;">
+
+<!ENTITY minus "&#8722;">
+
+<!ENTITY mnplus "&#8723;">
+
+<!ENTITY nabla "&#8711;">
+
+<!ENTITY ne "&#8800;">
+
+<!ENTITY ni "&#8715;">
+
+<!ENTITY or "&#8744;">
+
+<!ENTITY par "&#8741;">
+
+<!ENTITY part "&#8706;">
+
+<!ENTITY permil "&#8240;">
+
+<!ENTITY perp "&#8869;">
+
+<!ENTITY prime "&#8242;">
+
+<!ENTITY Prime "&#8243;">
+
+<!ENTITY prop "&#8733;">
+
+<!ENTITY radic "&#8730;">
+
+<!ENTITY rang "&#12297;">
+
+<!ENTITY rArr "&#8658;">
+
+<!ENTITY sim "&#8764;">
+
+<!ENTITY sime "&#8771;">
+
+<!ENTITY square "&#9633;">
+
+<!ENTITY sub "&#8834;">
+
+<!ENTITY sube "&#8838;">
+
+<!ENTITY sup "&#8835;">
+
+<!ENTITY supe "&#8839;">
+
+<!ENTITY there4 "&#8756;">
+
+<!ENTITY Verbar "&#8214;">
+
+<!ENTITY angst "&#8491;">
+
+<!ENTITY bernou "&#8492;">
+
+<!ENTITY compfn "&#8728;">
+
+<!ENTITY Dot "&#168;">
+
+<!ENTITY DotDot "&#8412;">
+
+<!ENTITY hamilt "&#8459;">
+
+<!ENTITY lagran "&#8466;">
+
+<!ENTITY lowast "&#8727;">
+
+<!ENTITY notin "&#8713;">
+
+<!ENTITY order "&#8500;">
+
+<!ENTITY phmmat "&#8499;">
+
+<!ENTITY tdot "&#8411;">
+
+<!ENTITY tprime "&#8244;">
+
+<!ENTITY wedgeq "&#8793;">
+
+<!ENTITY WLX0a "">
+<!ENTITY WLX0b "">
+<!ENTITY WLX0c "">
+<!ENTITY WLX10 "">
+<!ENTITY WLX11 "">
+<!ENTITY WLX12 "">
+<!ENTITY WLX13 "">
+
+<!ENTITY dotbcmb "&#803;">
+<!ENTITY acutecmb "&#769;">
+<!ENTITY brevecmb "&#774;">
+<!ENTITY caroncmb "&#780;">
+<!ENTITY cedilcmb "&#807;">
+<!ENTITY circcmb "&#770;">
+<!ENTITY dblacutecmb "&#779;">
+<!ENTITY diecmb "&#776;">
+<!ENTITY gravecmb "&#768;">
+<!ENTITY macrcmb "&#772;">
+<!ENTITY ogoncmb "&#808;">
+<!ENTITY ringcmb "&#778;">
+<!ENTITY tildecmb "&#771;">
+<!ENTITY lomacrcmb "&#817;">
+<!ENTITY loringcmb "&#805;">
+<!ENTITY invbrevecmb "&#785;">
+
+<!ENTITY Ddotb "&#7692;">
+<!ENTITY ddotb "&#7693;">
+<!ENTITY Kdotb "&#7730;">
+<!ENTITY kdotb "&#7731;">
+<!ENTITY Rdotb "&#7770;">
+<!ENTITY rdotb "&#7771;">
+<!ENTITY Sdotb "&#7778;">
+<!ENTITY sdotbelow "&#7779;">
+<!ENTITY Tdotb "&#7788;">
+<!ENTITY tdotb "&#7789;">
+<!ENTITY Vdotb "&#7806;">
+<!ENTITY vdotb "&#7807;">
+<!ENTITY Zdotb "&#7826;">
+<!ENTITY zdotb "&#7827;">
+<!ENTITY Adotb "&#7840;">
+<!ENTITY adotb "&#7841;">
+<!ENTITY Edotb "&#7864;">
+<!ENTITY edotb "&#7865;">
+<!ENTITY Idotb "&#7882;">
+<!ENTITY idotb "&#7883;">
+<!ENTITY Odotb "&#7884;">
+<!ENTITY odotb "&#7885;">
+<!ENTITY Udotb "&#7908;">
+<!ENTITY udotb "&#7909;">
+<!ENTITY Ydotb "&#7924;">
+<!ENTITY ydotb "&#7925;">
+
+<!ENTITY ainvbreve "&#515;">
+<!ENTITY einvbreve "&#519;">
+<!ENTITY iinvbreve "&#523;">
+<!ENTITY oinvbreve "&#527;">
+<!ENTITY rinvbreve "&#531;">
+<!ENTITY uinvbreve "&#535;">
+<!ENTITY Ainvbreve "&#514;">
+<!ENTITY Einvbreve "&#518;">
+<!ENTITY Iinvbreve "&#522;">
+<!ENTITY Oinvbreve "&#526;">
+<!ENTITY Rinvbreve "&#530;">
+<!ENTITY Uinvbreve "&#534;">
+
+<!ENTITY aloring "&#7681;">
+<!ENTITY Aloring "&#7680;">
+
+<!ENTITY kacute "&#7729;">
+
+<!ENTITY macute "&#7743;">
+
+<!ENTITY pacute "&#7765;">
+
+<!ENTITY wacute "&#7811;">
+
+<!ENTITY Gacute "&#500;">
+
+<!ENTITY Kacute "&#7728;">
+
+<!ENTITY Macute "&#7742;">
+
+<!ENTITY Pacute "&#7764;">
+
+<!ENTITY Wacute "&#7810;">
+
+<!ENTITY acaron "&#462;">
+
+<!ENTITY gcaron "&#487;">
+
+<!ENTITY hcaron "&#543;">
+
+<!ENTITY icaron "&#464;">
+
+<!ENTITY jcaron "&#496;">
+
+<!ENTITY kcaron "&#489;">
+
+<!ENTITY ocaron "&#466;">
+
+<!ENTITY ucaron "&#468;">
+
+<!ENTITY Acaron "&#461;">
+
+<!ENTITY Gcaron "&#486;">
+
+<!ENTITY Hcaron "&#542;">
+
+<!ENTITY Icaron "&#463;">
+
+<!ENTITY Kcaron "&#488;">
+
+<!ENTITY Ocaron "&#465;">
+
+<!ENTITY Ucaron "&#467;">
+
+<!ENTITY dcedil "&#7697;">
+
+<!ENTITY ecedil "&#553;">
+
+<!ENTITY gcedil "&#291;">
+
+<!ENTITY hcedil "&#7721;">
+
+<!ENTITY Dcedil "&#7696;">
+
+<!ENTITY Ecedil "&#552;">
+
+<!ENTITY Hcedil "&#7720;">
+
+<!ENTITY zcirc "&#7825;">
+
+<!ENTITY Zcirc "&#7824;">
+
+<!ENTITY ngrave "&#505;">
+
+<!ENTITY wgrave "&#7809;">
+
+<!ENTITY ygrave "&#7923;">
+
+<!ENTITY Ngrave "&#504;">
+
+<!ENTITY Wgrave "&#7808;">
+
+<!ENTITY Ygrave "&#7922;">
+
+<!ENTITY gmacr "&#7713;">
+
+<!ENTITY Gmacr "&#7712;">
+
+<!ENTITY wring "&#7832;">
+
+<!ENTITY yring "&#7833;">
+
+<!ENTITY etilde "&#7869;">
+
+<!ENTITY ytilde "&#7929;">
+
+<!ENTITY Etilde "&#7868;">
+
+<!ENTITY Ytilde "&#7928;">
+
+<!ENTITY huml "&#7719;">
+
+<!ENTITY tuml "&#7831;">
+
+<!ENTITY wuml "&#7813;">
+
+<!ENTITY xuml "&#7821;">
+
+<!ENTITY Huml "&#7718;">
+
+<!ENTITY Wuml "&#7812;">
+
+<!ENTITY Xuml "&#7820;">
+
+<!ENTITY ctilde "c&#771;">
+
+<!ENTITY suml "s&#776;">
+
+<!ENTITY Vuml "V&#776;">
+
+
+<!--
+        ELEMENT: bop
+        DESCRIPTION: Begin-of-paragraph marker
+        COMMENTS: Used in Novus load models
+ -->
+
+<!ELEMENT bop EMPTY>
+
+
+<!--
+        ELEMENT: bos
+        DESCRIPTION: Begin-of-sentence marker
+        COMMENTS: 
+ -->
+
+<!ELEMENT bos EMPTY>
+
+
+<!--
+        ELEMENT: big
+        DESCRIPTION: Big font
+        COMMENTS: 
+ -->
+
+<!ELEMENT big (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: bold
+        DESCRIPTION: Bold font
+        COMMENTS: 
+ -->
+
+<!ELEMENT bold (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: charfill
+        DESCRIPTION: Character fill (fixed leader)
+        COMMENTS: 
+ -->
+
+<!ELEMENT charfill (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+<!ATTLIST charfill
+	numchar CDATA #IMPLIED
+	length CDATA #IMPLIED
+	position (baseline|midline|ascender|descender) #IMPLIED
+>
+
+
+<!--
+        ELEMENT: clear.indent
+        DESCRIPTION: Clear temporary margin (indent)
+        COMMENTS: 
+ -->
+
+<!ELEMENT clear.indent EMPTY>
+
+<!ATTLIST clear.indent
+	margin (left | right | both) #REQUIRED
+>
+
+
+<!--
+        ELEMENT: clear.tab
+        DESCRIPTION: Clear tab (default clears all tabs)
+        COMMENTS: 
+ -->
+
+<!ELEMENT clear.tab EMPTY>
+
+<!ATTLIST clear.tab
+	tabnos NMTOKENS #IMPLIED
+>
+
+
+<!--
+        ELEMENT: clear.text.indent
+        DESCRIPTION: Clear text indent (default clears all text indents)
+        COMMENTS: 
+ -->
+
+<!ELEMENT clear.text.indent EMPTY>
+
+<!ATTLIST clear.text.indent
+	hangnos NMTOKENS #IMPLIED
+>
+
+
+<!--
+        ELEMENT: color
+        DESCRIPTION: Color
+        COMMENTS: 
+ -->
+
+<!ELEMENT color (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+<!ATTLIST color
+	hue (red|blue|green|black) #REQUIRED
+>
+
+
+<!--
+        ELEMENT: crosshatch
+        DESCRIPTION: Crosshatch
+        COMMENTS: 
+ -->
+
+<!ELEMENT crosshatch (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: csc
+        DESCRIPTION: Caps/small caps
+        COMMENTS: 
+ -->
+
+<!ELEMENT csc (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: dbloverbar
+        DESCRIPTION: Double overbar
+        COMMENTS: 
+ -->
+
+<!ELEMENT dbloverbar (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: dblstrikethru
+        DESCRIPTION: Double strikethru
+        COMMENTS: 
+ -->
+
+<!ELEMENT dblstrikethru (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: dbluscore
+        DESCRIPTION: Double underscore
+        COMMENTS: 
+ -->
+
+<!ELEMENT dbluscore (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: dbreak
+        DESCRIPTION: Discretionary break (with optional insertion of character or string)
+        COMMENTS: 
+ -->
+
+<!ELEMENT dbreak EMPTY>
+
+<!ATTLIST dbreak
+	insert CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: denominator
+        DESCRIPTION: Denominator of fraction
+        COMMENTS: 
+ -->
+
+<!ELEMENT denominator (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: draw.rule
+        DESCRIPTION: Draw a straight line between two points
+        COMMENTS: 
+ -->
+
+<!ELEMENT draw.rule EMPTY>
+
+<!ATTLIST draw.rule
+	from.horizontal CDATA #IMPLIED
+	from.vertical CDATA #IMPLIED
+	to.horizontal CDATA #IMPLIED
+	to.vertical CDATA #IMPLIED
+	weight CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: emph
+        DESCRIPTION: Emphasis
+        COMMENTS: 
+ -->
+
+<!ELEMENT emph (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: endline
+        DESCRIPTION: Line termination and quadding
+        COMMENTS: 
+ -->
+
+<!ELEMENT endline EMPTY>
+
+<!ATTLIST endline
+	quadding (l | r | c | j) #IMPLIED
+>
+
+
+<!--
+        ELEMENT: eol
+        DESCRIPTION: End-of-print-line marker
+        COMMENTS: 
+ -->
+
+<!ELEMENT eol EMPTY>
+
+<!ATTLIST eol
+	source CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: eop
+        DESCRIPTION: End-of-paragraph marker
+        COMMENTS: Used in Novus load models
+ -->
+
+<!ELEMENT eop EMPTY>
+
+
+<!--
+        ELEMENT: eos
+        DESCRIPTION: End-of-sentence marker
+        COMMENTS: Used in Novus load models
+ -->
+
+<!ELEMENT eos EMPTY>
+
+
+<!--
+        ELEMENT: font
+        DESCRIPTION: Select font
+        COMMENTS: 
+ -->
+
+<!ELEMENT font EMPTY>
+
+<!ATTLIST font
+	fontname CDATA #REQUIRED
+>
+<!ELEMENT font.weight (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+<!ATTLIST font.weight
+	value (lighter | normal) #REQUIRED
+>
+
+
+<!--
+        ELEMENT: fraction
+        DESCRIPTION: Fraction
+        COMMENTS: 
+ -->
+
+<!ELEMENT fraction (normalized.fraction?, numerator, denominator)>
+
+<!ATTLIST fraction
+	style (shilling|builtup) #IMPLIED
+>
+
+
+<!--
+        ELEMENT: normalized.fraction
+        DESCRIPTION: Normalized Fraction is used for online indexing
+        COMMENTS: 
+ -->
+
+<!ELEMENT normalized.fraction (#PCDATA)>
+
+
+<!--
+        ELEMENT: hide
+        DESCRIPTION: Set tranparently; hide text
+        COMMENTS: 
+ -->
+
+<!ELEMENT hide (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: hsi
+        DESCRIPTION: Horizontal space immediate
+        COMMENTS: 
+ -->
+
+<!ELEMENT hsi EMPTY>
+
+<!ATTLIST hsi
+	value CDATA #REQUIRED
+>
+
+
+<!--
+        ELEMENT: ital
+        DESCRIPTION: Italic
+        COMMENTS: 
+ -->
+
+<!ELEMENT ital (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+<!ELEMENT justified.line (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+<!ATTLIST justified.line
+	quadding (l | r | c | j) #REQUIRED
+>
+
+<!ELEMENT justifying.space (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: layout.control.block
+        DESCRIPTION: Container for page-level controls
+        COMMENTS: 
+ -->
+
+<!ELEMENT layout.control.block (clear.indent | set.indent | set.measure | set.page.makeup)+>
+
+
+<!--
+        ELEMENT: lead
+        DESCRIPTION: Set leading
+        COMMENTS: 
+ -->
+
+<!ELEMENT lead EMPTY>
+
+<!ATTLIST lead
+	leading CDATA #REQUIRED
+>
+
+
+<!--
+        ELEMENT: leader
+        DESCRIPTION: Leader (leadered material set flush right with specified leadering)
+        COMMENTS: 
+ -->
+
+<!ELEMENT leader (leaderchar, leadercon?)>
+
+<!ATTLIST leader
+	source (pctw | dtbl) #IMPLIED
+>
+
+
+<!--
+        ELEMENT: leaderchar
+        DESCRIPTION: Leader character
+        COMMENTS: 
+ -->
+
+<!ELEMENT leaderchar (#PCDATA)>
+
+
+<!--
+        ELEMENT: leadercon
+        DESCRIPTION: Leadered material
+        COMMENTS: 
+ -->
+
+<!ELEMENT leadercon (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: null.op
+        DESCRIPTION: "Null operation" element used in default declaration of %inline.content;
+        COMMENTS: 
+ -->
+
+<!ELEMENT null.op EMPTY>
+
+
+<!--
+        ELEMENT: numerator
+        DESCRIPTION: Numerator of fraction
+        COMMENTS: 
+ -->
+
+<!ELEMENT numerator (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: overbar
+        DESCRIPTION: Overbar
+        COMMENTS: 
+ -->
+
+<!ELEMENT overbar (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: overunderbar
+        DESCRIPTION: Over- and underscore
+        COMMENTS: 
+ -->
+
+<!ELEMENT overunderbar (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: predefined.charstring
+        DESCRIPTION: Predefined character string
+        COMMENTS: 
+ -->
+
+<!ELEMENT predefined.charstring EMPTY>
+
+<!ATTLIST predefined.charstring
+	charcode CDATA #REQUIRED
+>
+
+
+<!--
+        ELEMENT: pubtag
+        DESCRIPTION: Handling specific to a product or rendering
+        COMMENTS: 
+ -->
+
+<!ELEMENT pubtag (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+<!ATTLIST pubtag
+	usage (caselaw_cent_6|caselaw_cent_8|caselaw_cent_9|caselaw_cent_c|
+   caselaw_cent_i|caselaw_cent_q|caselaw_cent_u|caselaw_cent_x|
+   caselaw_cent_at|caselaw_cent_amp) #REQUIRED
+>
+
+
+<!--
+        ELEMENT: restore
+        DESCRIPTION: Restore stored values of typesetting parameters
+        COMMENTS: 
+ -->
+
+<!ELEMENT restore EMPTY>
+
+<!ATTLIST restore
+	property (font|pointsize|setwidth|leading|measure) #REQUIRED
+>
+
+
+<!--
+        ELEMENT: return.to.mark
+        DESCRIPTION: Return to previously marked position
+        COMMENTS: 
+ -->
+
+<!ELEMENT return.to.mark EMPTY>
+
+<!ATTLIST return.to.mark
+	mark.number CDATA #REQUIRED
+	dimension (horizontal|vertical|both) #IMPLIED
+>
+
+
+<!--
+        ELEMENT: set.as.keyed
+        DESCRIPTION: Set as keyed (override head capitalization, etc.)
+        COMMENTS: 
+ -->
+
+<!ELEMENT set.as.keyed (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: set.character
+        DESCRIPTION: Set a character between two points
+        COMMENTS: 
+ -->
+
+<!ELEMENT set.character (#PCDATA)>
+
+<!ATTLIST set.character
+	from.horizontal CDATA #IMPLIED
+	from.vertical CDATA #IMPLIED
+	to.horizontal CDATA #IMPLIED
+	to.vertical CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: set.indent
+        DESCRIPTION: Set temporary margin (indent)
+        COMMENTS: 
+ -->
+
+<!ELEMENT set.indent EMPTY>
+
+<!ATTLIST set.indent
+	margin (left | right) #REQUIRED
+	tabno CDATA #REQUIRED
+>
+
+
+<!--
+        ELEMENT: set.line.indent
+        DESCRIPTION: Set line indents
+        COMMENTS: 
+ -->
+
+<!ELEMENT set.line.indent EMPTY>
+
+<!ATTLIST set.line.indent
+	li CDATA #IMPLIED
+	lroi CDATA #IMPLIED
+	ri CDATA #IMPLIED
+	rroi CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: set.mark
+        DESCRIPTION: Record current position
+        COMMENTS: 
+ -->
+
+<!ELEMENT set.mark EMPTY>
+
+<!ATTLIST set.mark
+	mark.number CDATA #REQUIRED
+>
+
+
+<!--
+        ELEMENT: set.measure
+        DESCRIPTION: Set measure
+        COMMENTS: 
+ -->
+
+<!ELEMENT set.measure EMPTY>
+
+<!ATTLIST set.measure
+	measure CDATA #REQUIRED
+>
+
+
+<!--
+        ELEMENT: set.page.makeup
+        DESCRIPTION: Set columnar page makeup
+        COMMENTS: 
+ -->
+
+<!ELEMENT set.page.makeup EMPTY>
+
+<!ATTLIST set.page.makeup
+	columns (1|2|3|4) #REQUIRED
+>
+
+
+<!--
+        ELEMENT: set.tab.fixed
+        DESCRIPTION: Set tab at fixed distance from current left margin
+        COMMENTS: 
+ -->
+
+<!ELEMENT set.tab.fixed EMPTY>
+
+<!ATTLIST set.tab.fixed
+	tabno CDATA #REQUIRED
+	tab.position CDATA #REQUIRED
+>
+
+
+<!--
+        ELEMENT: set.tab.here
+        DESCRIPTION: Set tab at current position
+        COMMENTS: 
+ -->
+
+<!ELEMENT set.tab.here EMPTY>
+
+<!ATTLIST set.tab.here
+	tabno CDATA #REQUIRED
+>
+
+
+<!--
+        ELEMENT: set.text.indent
+        DESCRIPTION: Set text indent (hanging indent)
+        COMMENTS: 
+ -->
+
+<!ELEMENT set.text.indent EMPTY>
+
+<!ATTLIST set.text.indent
+	margin (left | right) #REQUIRED
+	hangno CDATA #REQUIRED
+>
+<!ELEMENT small (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: store
+        DESCRIPTION: Store typesetting parameters
+        COMMENTS: 
+ -->
+
+<!ELEMENT store EMPTY>
+
+<!ATTLIST store
+	property (font|pointsize|setwidth|leading|measure) #REQUIRED
+>
+
+
+<!--
+        ELEMENT: strikethru
+        DESCRIPTION: Strikethrough
+        COMMENTS: 
+ -->
+
+<!ELEMENT strikethru (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+<!ELEMENT strong (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: sub
+        DESCRIPTION: Subscript
+        COMMENTS: 
+ -->
+
+<!ELEMENT sub (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+<!ATTLIST sub
+	style (percent_l|percent_ld|percent_ll) #IMPLIED
+>
+
+
+<!--
+        ELEMENT: super
+        DESCRIPTION: Superscript
+        COMMENTS: 
+ -->
+
+<!ELEMENT super (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+<!ATTLIST super
+	style (percent_g|percent_gd|percent_gl|percent_n|percent_nd|percent_nl|percent_r|percent_rd|percent_rl|percent_re) #IMPLIED
+>
+
+
+<!--
+        ELEMENT: tab
+        DESCRIPTION: Go to tab position
+        COMMENTS: 
+ -->
+
+<!ELEMENT tab EMPTY>
+
+<!ATTLIST tab
+	tabno CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: textrule
+        DESCRIPTION: Horizontal rule in text
+        COMMENTS: 
+ -->
+
+<!ELEMENT textrule EMPTY>
+
+<!ATTLIST textrule
+	position (baseline|midline|ascender|descender) #IMPLIED
+	weight CDATA #IMPLIED
+	length CDATA #REQUIRED
+>
+
+
+<!--
+        ELEMENT: typesize
+        DESCRIPTION: Select type size (pointsize and setwidth)
+        COMMENTS: 
+ -->
+
+<!ELEMENT typesize EMPTY>
+
+<!ATTLIST typesize
+	pointsize CDATA #IMPLIED
+	setwidth CDATA #IMPLIED
+	relative-size CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: typo
+        DESCRIPTION: Select font, type size, leading, and measure
+        COMMENTS: 
+ -->
+
+<!ELEMENT typo EMPTY>
+
+<!ATTLIST typo
+	fontname CDATA #IMPLIED
+	pointsize CDATA #IMPLIED
+	setwidth CDATA #IMPLIED
+	leading CDATA #IMPLIED
+	measure CDATA #IMPLIED
+	relative-size CDATA #IMPLIED
+	vertical-offset CDATA #IMPLIED
+>
+<!ELEMENT typo.format (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+<!ATTLIST typo.format
+	fontname CDATA #IMPLIED
+	pointsize CDATA #IMPLIED
+	setwidth CDATA #IMPLIED
+	leading CDATA #IMPLIED
+	measure CDATA #IMPLIED
+	relative-size CDATA #IMPLIED
+	vertical-offset CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: uc
+        DESCRIPTION: Upper case (all caps)
+        COMMENTS: 
+ -->
+
+<!ELEMENT uc (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: underscore
+        DESCRIPTION: Underscore
+        COMMENTS: 
+ -->
+
+<!ELEMENT underscore (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: vsi
+        DESCRIPTION: Vertical space immediate
+        COMMENTS: 
+ -->
+
+<!ELEMENT vsi EMPTY>
+
+<!ATTLIST vsi
+	value CDATA #REQUIRED
+>
+
+<!ELEMENT unused (#PCDATA)>
+
+
+<!--
+        ELEMENT: cite.query
+        DESCRIPTION: A resolved form of a cite instance, using attributes to pass
+   to the Westlaw FIND process for link resolution.
+        COMMENTS: 
+ -->
+
+<!ELEMENT cite.query (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)* >
+
+<!ATTLIST cite.query
+				w-src-number        CDATA     #IMPLIED
+				w-seq-number        CDATA     #IMPLIED
+				w-serial-number     CDATA     #IMPLIED
+				w-ref-type          CDATA     #IMPLIED
+				w-normalized-cite   CDATA     #IMPLIED
+				w-pub-number        CDATA     #IMPLIED
+				w-pinpoint-page     CDATA     #IMPLIED
+				w-docfamily-uuid	CDATA        #IMPLIED
+				w-target-preference      CDATA        #IMPLIED
+				format              (cent_r)	#IMPLIED
+				manual-edit      (true)        #IMPLIED
+				ID                  ID        #IMPLIED
+>
+
+
+<!--
+        ELEMENT: entity.link
+        DESCRIPTION: Used to mark an unverified entity reference.
+        COMMENTS: 
+ -->
+
+<!ELEMENT entity.link (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)* >
+
+<!ATTLIST entity.link entity.id CDATA        #REQUIRED
+				etype     CDATA        #REQUIRED
+				vrule     CDATA        #IMPLIED
+				pv        CDATA        #IMPLIED
+				rel.id    ID           #IMPLIED
+				tlrclass  (entitylink) #REQUIRED >
+
+
+<!--
+        ELEMENT: entity
+        DESCRIPTION: Used to mark an unverified entity reference.
+        COMMENTS: 
+ -->
+
+<!ELEMENT entity (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)* >
+
+<!ATTLIST entity etype     CDATA    #REQUIRED
+				nvreason  CDATA    #IMPLIED
+				rel.id    ID       #IMPLIED
+				tlrclass  (entity) #REQUIRED >
+
+<!ELEMENT cite.title (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+
+
+<!--
+        ELEMENT: n-load
+        DESCRIPTION: The root element for the file being loaded to Novus
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-load (n-document+ | n-node+ | n-vnode+ | n-relationship+ | n-view-set+ | n-nims+)>
+
+<!ATTLIST n-load
+	dataid CDATA #IMPLIED
+>
+
+<!ATTLIST n-load
+	verifycollection CDATA #IMPLIED
+>
+
+<!ATTLIST n-load
+	notify CDATA #IMPLIED
+>
+
+<!ATTLIST n-load
+	lang CDATA #IMPLIED
+>
+
+<!ATTLIST n-load
+	country CDATA #IMPLIED
+>
+
+<!ATTLIST n-load
+	loadcontenttype (ALL | METADOC | SECTIONAL) "ALL"
+>
+
+
+<!--
+        ELEMENT: n-document
+        DESCRIPTION: The n-document element must be used to signify the start of each input document.
+        COMMENTS: Document containing metadata, text, blob, an include fragment, or one or more partial updates.
+ -->
+
+<!ELEMENT n-document (((n-metadata?, (n-docbody | n-blobref | n-mmfile), n-metadoc?) | n-include | n-update+)?)>
+
+<!ATTLIST n-document
+	guid CDATA #REQUIRED
+	control (ADD | DEL | REINDEX | PARTIAL) "ADD"
+	alert (INHERIT | NEW | HIDE)  "INHERIT" >
+
+
+<!--
+        ELEMENT: n-node
+        DESCRIPTION: Table of contents data
+        COMMENTS: Table of contents data
+ -->
+
+<!ELEMENT n-node (n-parent-guid?, n-doc-guid?, n-anchor-guid?, n-label?, n-rank?, n-name?, n-value?, n-toc-metadata?)>
+
+<!ATTLIST n-node
+	guid CDATA #REQUIRED
+	control (ADD | DEL | DELBRANCH) "ADD"
+>
+<!--
+        ELEMENT: n-vnode
+        DESCRIPTION: A versioned node within the TOC. The n-vnode element replaces the n-node element in versioned TOC
+       collection load files.
+        COMMENTS: An n-vnode can be defined once per load, you cannot add a node twice or delete and then add a node within
+         the same load file.
+ -->
+
+<!ELEMENT n-vnode (n-parent-guid*, n-start-date, n-end-date, n-doc-guid?, n-anchor-guid?, n-label?, n-rank?, n-name?, n-value?, n-toc-metadata?)>
+
+<!ATTLIST n-vnode
+	guid CDATA #REQUIRED
+	control (ADD | DEL | DELBRANCH | CLONE) "ADD"
+>
+
+
+<!--
+        ELEMENT: n-label
+        DESCRIPTION: The n-label element provides a description of the Toc node and has a size limit of 598 bytes.  The contents of n-label can contain embedded XML data
+        COMMENTS: Define what can represent the contents of a label
+ -->
+
+<!ELEMENT n-label ((heading, heading-range?, section-heading?, head-designator?, heading-first-word?, (alt-heading, alt-heading-first-word?)*, head-depth?, head-findorig?, citation-heading?) | (topic.designator*, topic.name+))>
+<!--
+        ELEMENT: n-parent-guid
+        DESCRIPTION: The n-parent-guid element identifies this nodes immediate parent
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-parent-guid (#PCDATA)>
+
+<!ATTLIST n-parent-guid
+	start CDATA #IMPLIED
+	end CDATA #IMPLIED
+	rank CDATA #IMPLIED
+>
+<!--
+        ELEMENT: n-start-date
+        DESCRIPTION: The start date specification for TOC node versioning, YYYYMMDDHHMMSS format.
+        COMMENTS: The timestamp ranges given by the n-start-date and n-end-date elements of a n-vnode must not go
+         outside of the boundaries of its parent(s) min-max timestamp range (given in the n-parent-guid element(s)
+         'start' and 'end' attributes.
+ -->
+
+<!ELEMENT n-start-date (#PCDATA)>
+<!--
+        ELEMENT: n-end-date
+        DESCRIPTION: The end date specification for TOC node versioning, YYYYMMDDHHMMSS format.
+        COMMENTS: The timestamp ranges given by the n-start-date and n-end-date elements of a n-vnode must not go
+         outside of the boundaries of its parent(s) min-max timestamp range (given in the n-parent-guid element(s)
+         'start' and 'end' attributes.
+ -->
+
+<!ELEMENT n-end-date (#PCDATA)>
+<!--
+        ELEMENT: n-doc-guid
+        DESCRIPTION: The n-doc-guid value of a Toc node should match the guid of some n-document in a doc only collection
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-doc-guid (#PCDATA)>
+<!--
+        ELEMENT: n-anchor-guid
+        DESCRIPTION: An anchor node is used to give structure to a document (i.e. identifies sections 
+   within a document).  It is possible to define multiple levels of anchors for a document 
+   (i.e. identifies sections of a document, paragraphs of a section,...)
+        COMMENTS: Only Toc nodes that have a valid n-doc-guid can contain an n-anchor-guid.
+ -->
+
+<!ELEMENT n-anchor-guid (#PCDATA)>
+<!--
+        ELEMENT: n-rank
+        DESCRIPTION: The n-rank element provides order to Toc nodes of a common parent.
+        COMMENTS: The GetChildrenNodes request returns nodes in order of their rank value.  The TOC rank is a real number value
+ -->
+
+<!ELEMENT n-rank (#PCDATA)>
+<!--
+        ELEMENT: n-name
+        DESCRIPTION: The n-name and n-value elements can be used to store additional information 
+    in a Toc node, which can be retrieved by a user when the Toc nodes are returned to them.  
+    In addition, clients have the ability to search the entire Toc, via the FindNodes request, 
+    to retrieve a list of Toc nodes with a specific n-name value or optionally the n-value 
+    value, (see Toc API Documentation for details on FindNodes).  The maximum size of an n-name 
+    value is 20 bytes, and the n-value value may be up to 200 bytes
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-name (#PCDATA)>
+<!--
+        ELEMENT: n-value
+        DESCRIPTION: The n-name and n-value elements can be used to store additional information 
+    in a Toc node, which can be retrieved by a user when the Toc nodes are returned to them.  
+    In addition, clients have the ability to search the entire Toc, via the FindNodes request, 
+    to retrieve a list of Toc nodes with a specific n-name value or optionally the n-value 
+    value, (see Toc API Documentation for details on FindNodes).  The maximum size of an n-name 
+    value is 20 bytes, and the n-value value may be up to 200 bytes
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-value (#PCDATA)>
+<!--
+        ELEMENT: n-toc-metadata
+        DESCRIPTION: The n-toc-metadata element of a node contains metadata information about the 
+    TOC and has a maximum size limit of 200 bytes.  The contents of n-toc-metadata can contain 
+    embedded XML data
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-toc-metadata ((unused))>
+
+
+<!--
+        ELEMENT: n-relationship
+        DESCRIPTION: This element is used to load relationship data and signifies a new 
+        relationship.
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-relationship (n-relbase, n-reltarget?, n-reltype?, n-relpayload?)>
+
+<!ATTLIST n-relationship
+	guid CDATA #REQUIRED
+	control (ADD | DEL | DELBRANCH) "ADD"
+	alert (INHERIT | NEW | HIDE) "INHERIT" >
+<!--
+        ELEMENT: n-relbase
+        DESCRIPTION: This element represents an identifier for the source of the relationship.
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-relbase (#PCDATA)>
+<!--
+        ELEMENT: n-reltarget
+        DESCRIPTION: This element represents an identifier for the target of the relationship.
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-reltarget (#PCDATA)>
+<!--
+        ELEMENT: n-reltype
+        DESCRIPTION: This element represents an optional classifier of the relationship.
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-reltype (#PCDATA)>
+<!--
+        ELEMENT: n-relpayload
+        DESCRIPTION: This element contains xml that defines data that further helps define 
+          the relationship.  In the content, the valid xml must be wrapped in CDATA brackets
+          within this element to ensure that the parser does not try to validate the xml.
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-relpayload (n-nortpayload)>
+
+
+<!--
+        ELEMENT: n-metadata
+        DESCRIPTION: metadata for a document
+        COMMENTS: A n-metadata tag can be defined once per document
+    There has to be a n-docbody, n-blobref, or n-mmfile tag present before a n-metadata tag can 
+    be present.  The contents of n-metadata can contain embedded XML data
+ -->
+
+<!ELEMENT n-metadata ((unused), n-tocview*, n-view*, prism-stylesheet?, prism-clipdate?)>
+
+
+<!--
+        ELEMENT: prism-stylesheet
+        DESCRIPTION: The style sheet to use with the document
+        COMMENTS: If the guid is not mapped to a style sheet, the rendering component retrieves 
+   the style sheet developed by the publishing system from Novus
+ -->
+
+<!ELEMENT prism-stylesheet EMPTY>
+
+<!ATTLIST prism-stylesheet
+	guid CDATA #REQUIRED
+>
+
+
+<!--
+        ELEMENT: prism-clipdate
+        DESCRIPTION: The prism-clipdate element is the timestamp used for a clipping date
+        COMMENTS: The numerical date text for this element should be in the yyyymmddhhmmss format.
+   It must be the same for all documents occurring within the same load and must be increasing 
+   on subsequent loads.  The date and time does not necessarily have to match exactly any current
+   machine time stamp, but must remain close to the customer's initial date restriction.  
+   This element is required if the publisher would like to run clips/alerts against their 
+   content.  The prismclipdate indicates to the Prism clip/alert service whether the clip/alert 
+   should be run
+ -->
+
+<!ELEMENT prism-clipdate (#PCDATA)>
+
+
+<!--
+        ELEMENT: n-view
+        DESCRIPTION: used when it is necessary to search a portion of a collection.  In other 
+   words, a query can be limited to search documents that have been assigned a particular view
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-view (#PCDATA)>
+
+
+<!--
+        ELEMENT: n-tocview
+        DESCRIPTION: contain the Toc guids that a client wishes to associate with a document, and 
+   are used to support query view restrictions for Toc guids
+        COMMENTS: More than one n-tocview can be specified within a n-metadata, since a document 
+   may reside in multiple place within the Toc
+ -->
+
+<!ELEMENT n-tocview (#PCDATA)>
+
+
+<!--
+        ELEMENT: n-metadoc
+        DESCRIPTION: A list of key/value pairs related to a document.
+        COMMENTS: Keys are defined in CCI for a certain content type. The content type of a load 
+	is defined within the "contenttype" attribute. The load process will validate the keys and there
+	value types based on the contnettype attribute value and the CCI definitions. Multiple occurring
+	values are allowed as separate elements
+ -->
+
+<!ELEMENT n-metadoc (n-field+)>
+
+<!ATTLIST n-metadoc
+	contenttype CDATA #REQUIRED
+>
+<!--
+        ELEMENT: n-field
+        DESCRIPTION: An individual key/value pairing. The "name" attribute content is the KEY, the
+	PCDATA content of the element is the VALUE.
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-field (#PCDATA)>
+
+<!ATTLIST n-field
+	name CDATA #REQUIRED
+>
+
+
+<!--
+        ELEMENT: n-docbody
+        DESCRIPTION: The n-docbody tag signifies the start of the DOC data for the document
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-docbody ((unused))>
+
+
+<!--
+        ELEMENT: n-mmfile
+        DESCRIPTION: A link to the mm file to be loaded. A n-mmfile element contains information 
+   about a multimedia file to be loaded to a web/media server
+        COMMENTS: The n-mmfile element must contain filename, type and extension attributes
+ -->
+
+<!ELEMENT n-mmfile EMPTY>
+
+<!ATTLIST n-mmfile
+	filename CDATA #REQUIRED
+	extension CDATA #REQUIRED
+	type CDATA #REQUIRED
+>
+
+
+<!--
+        ELEMENT: n-blobref
+        DESCRIPTION: A n-blobref element contains information about a multimedia to load as a blob
+    within Novus
+        COMMENTS: This is used for multimedia such as images, pdf, excel worksheets, zips, etc.. 
+   where the multimedia is stored in a database in Novus and the bytes/multimedia data retrieved
+   upon a  request to Novus
+ -->
+
+<!ELEMENT n-blobref EMPTY>
+
+<!ATTLIST n-blobref
+	type CDATA #REQUIRED
+	filename CDATA #REQUIRED
+>
+
+
+<!--
+        ELEMENT: n-include
+        DESCRIPTION: A wrapper for an XML fragment, or plain text, to be treated as a Novus document
+   accessible by an "include" reference within another Novus document.
+        COMMENTS: The Novus document containing the n-include instance cannot have any other
+   parts, e.g. no n-metadata, n-docbody, n-blobref, or n-mmfile instances.  It can be referenced
+   within another Novus document from an element with the n-include_collection and 
+   n-include_guid attributes.  Use the n-includecontent parameter entity within the driver
+   DTD to set the allowable content of the "include" document.
+ -->
+
+<!ELEMENT n-include ((unused))*>
+
+
+<!--
+        ELEMENT: n-update
+        DESCRIPTION: A wrapper for an XML fragment to be updated by a partial update.  It can be
+   used multiple times per document if multiple fragments are being updated.  The parameter
+   entity n-partialupdatecontent must be declared by the calling DTD.
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-update ((unused))>
+
+<!ATTLIST n-update
+	path CDATA #REQUIRED
+>
+
+
+<!--
+        ELEMENT: n-view-set
+        DESCRIPTION: The n-view-set element is used to add, update, or delete subjective views.
+        COMMENTS: The n-view-set element must contain a view-name attribute, a control attribute, and may contain a collection-set-name attribute.
+ -->
+
+<!ELEMENT n-view-set (n-view-query)?>
+
+<!ATTLIST n-view-set
+	view-name CDATA #REQUIRED
+	control (ADD | DEL) #REQUIRED
+	collection-set-name CDATA #IMPLIED
+>
+
+
+<!--
+        ELEMENT: n-view-query
+        DESCRIPTION: The n-view-query element is a container for the search query
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-view-query (#PCDATA)>
+
+
+<!--
+        ELEMENT: n-nims
+        DESCRIPTION: Novus Indexed Metadata Service Data
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-nims (n-nimsdoc?, n-indexpayload+)>
+
+<!ATTLIST n-nims
+	guid CDATA #REQUIRED
+	control (ADD | DEL) "ADD"
+>
+
+
+<!--
+        ELEMENT: n-nimsdoc
+        DESCRIPTION: Novus Indexed Metadata Service Document
+        COMMENTS: The %n-nimsdoccontent; parameter entity is used in the IA DTD version and must be declared in the Novus driver DTDs
+ -->
+
+<!ELEMENT n-nimsdoc (unused)>
+<!--
+        ELEMENT: n-indexpayload
+        DESCRIPTION: Novus Indexed Metadata Service payload content
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-indexpayload (n-indexname, n-payload?)>
+
+
+<!--
+        ELEMENT: n-indexname
+        DESCRIPTION: Novus Indexed Metadata Service index name
+        COMMENTS: 
+ -->
+
+<!ELEMENT n-indexname (#PCDATA)>
+
+
+<!--
+        ELEMENT: n-payload
+        DESCRIPTION: NIMS payload content
+        COMMENTS: The %n-payloadcontent; parameter entity is used in the IA DTD version and must be declared in the Novus driver DTDs
+ -->
+
+<!ELEMENT n-payload (unused)>
+<!--
+        ELEMENT: n-nortpayload
+        DESCRIPTION: NORT content
+        COMMENTS: The %n-nortmetadatacontent; parameter entity is used in the IA DTD version and must be declared in the Novus driver DTDs
+ -->
+
+<!ELEMENT n-nortpayload (n-view*, (n-start-date, n-end-date)?, n-doc-guid?, n-anchor-guid?, n-rank?, n-label?, ancestor-info*, node-type?, xref-guid?, keycite-flag-info?, graft-point-flag?, term?, published.date?, metadata.version.num?, search.signon?, window.signon?, citator.signon?, norm.guid?, topiccode?, alt.topiccode?, market.segment?, non.selectable?, cluster.exp?, sic.block?, related.topics?, nonpreferred.terms?, query.term?, doc.type.query.block?, prism-clipdate?, article.group.id?)>
+
+<!ELEMENT heading (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+<!ELEMENT heading-range (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+<!ELEMENT section-heading (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query|section-designator)*>
+
+<!ATTLIST section-heading
+	type (bill | statute | uspl | sec_rule | rule) #REQUIRED
+>
+<!ELEMENT section-designator (#PCDATA|
+big | 
+bold |
+charfill |
+clear.tab |
+clear.text.indent |
+color |
+crosshatch |
+csc |
+dbloverbar |
+dblstrikethru |
+dbluscore |
+dbreak |
+draw.rule |
+emph |
+endline |
+eol |
+font |
+font.weight |
+fraction |
+hide |
+hsi |
+ital |
+justified.line |
+justifying.space |
+lead |
+leader |
+overbar |
+overunderbar |
+predefined.charstring |
+pubtag |
+restore |
+return.to.mark |
+set.as.keyed |
+set.character |
+set.line.indent |
+set.mark |
+set.tab.fixed |
+set.tab.here |
+set.text.indent |
+small |
+store |
+strikethru |
+strong |
+sub |
+super |
+tab |
+textrule |
+typesize |
+typo |
+typo.format |
+uc |
+underscore |
+vsi
+|cite.query)*>
+<!ELEMENT head-designator (#PCDATA)>
+<!ELEMENT heading-first-word (#PCDATA)>
+<!ELEMENT alt-heading (#PCDATA)>
+
+<!ATTLIST alt-heading
+	iso-country-code CDATA #IMPLIED
+>
+<!ELEMENT alt-heading-first-word (#PCDATA)>
+
+<!ATTLIST alt-heading-first-word
+	iso-country-code CDATA #IMPLIED
+>
+<!ELEMENT head-depth (#PCDATA)>
+<!ELEMENT head-findorig (#PCDATA)>
+<!ELEMENT citation-heading (#PCDATA)>
+
+<!ELEMENT ancestor-info (ancestor-toc-guid+, ancestor-head?)>
+<!ELEMENT ancestor-toc-guid (#PCDATA)>
+<!ELEMENT ancestor-head (#PCDATA)>
+<!ELEMENT node-type (#PCDATA)>
+<!ELEMENT xref-guid (#PCDATA)>
+<!ELEMENT keycite-flag-info (kf-serial-number?, kf-hid?, kf-findorig?, kf-pub-number)>
+<!ELEMENT kf-serial-number (#PCDATA)>
+<!ELEMENT kf-hid (#PCDATA)>
+<!ELEMENT kf-findorig (#PCDATA)>
+<!ELEMENT kf-pub-number (#PCDATA)>
+<!ELEMENT graft-point-flag (#PCDATA)>
+<!ELEMENT term (#PCDATA)>
+<!ELEMENT published.date (#PCDATA)>
+<!ELEMENT metadata.version.num (#PCDATA)>
+<!ELEMENT search.signon (#PCDATA)>
+<!ELEMENT window.signon (#PCDATA)>
+<!ELEMENT citator.signon (#PCDATA)>
+<!ELEMENT norm.guid (#PCDATA)>
+<!ELEMENT topiccode (#PCDATA)>
+<!ELEMENT alt.topiccode (#PCDATA)>
+<!ELEMENT market.segment (#PCDATA)>
+<!ELEMENT non.selectable EMPTY>
+<!ELEMENT cluster.exp ((base.id, base.id) | (base.id, cluster.exp) | (cluster.exp, cluster.exp))>
+
+<!ATTLIST cluster.exp
+	operator (union | intersection | butnot) #REQUIRED
+>
+<!ELEMENT base.id (#PCDATA)>
+<!ELEMENT sic.block (sic+)>
+<!ELEMENT sic (#PCDATA)>
+<!ELEMENT related.topics (topic+)>
+<!ELEMENT topic (#PCDATA)>
+<!ELEMENT nonpreferred.terms (term+)>
+<!ELEMENT query.term (#PCDATA)>
+
+<!ELEMENT topic.designator (#PCDATA)>
+<!ELEMENT topic.name (#PCDATA)>
+<!ELEMENT doc.type.query.block (doc.type.query)+>
+<!ELEMENT doc.type.query (#PCDATA)>
+
+<!ATTLIST doc.type.query
+	type (filings | dockets | orders) #REQUIRED
+>
+<!ELEMENT article.group.id (#PCDATA)>

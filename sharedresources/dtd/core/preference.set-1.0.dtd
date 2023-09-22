@@ -1,0 +1,123 @@
+<!-- Version 2.1 Date 03/24/2004 -->
+
+<!-- Note: the extend.default attribute is used to allow
+     any default preference to be made available for the environment
+     where extend.default is set to yes. This eliminates having
+     redundancy in the file.  -->
+
+<!ELEMENT preference.set (environment*, default.environment)>
+
+<!ELEMENT environment (preference*)>
+<!ATTLIST environment
+          name CDATA #REQUIRED
+          extend.default (yes|no) #IMPLIED>
+
+<!-- Note: since DTD syntax doesnt allow enforcement of constraints on mixed content;
+     the parser's PreferenceSetHandler implementation is set up to enforce
+     the constaint (i.e.; only one array or a set of PCDATA is allowed in a preference
+     element.
+-->
+
+<!ELEMENT preference (#PCDATA|array|map)*>
+<!ATTLIST preference
+          name CDATA #REQUIRED
+          type (string|int|float|xml|url|string.array|float.array|int.array|string.map) #REQUIRED
+          value CDATA #IMPLIED>
+
+<!ELEMENT default.environment (preference)*>
+
+<!ELEMENT array (item)+>
+<!ELEMENT item EMPTY>
+<!ATTLIST item
+          value CDATA #REQUIRED>
+
+<!ELEMENT map (entry)+>
+<!ELEMENT entry EMPTY>
+<!ATTLIST entry
+          key CDATA #REQUIRED
+          value CDATA #REQUIRED>
+
+
+<!-- example preference.set and usage
+
+<preference.set>
+
+   <environment name="dev" extend.default="no">
+      <preference name="atlas" type="xml">
+          <![CDATA[
+          <neighborhood.set>
+             <neighborhood name="WestHeadnoteService" pid="headnotes.west.int.westgroup.com" url="http://dev.crosswalk.int.westgroup.com/WestHeadnoteService/servlet"/>
+          </neighborhood.set>
+          ]]>
+      </preference>
+      <preference name="preferenceOne" type="string" value="qaPreferenceOneValue"/>
+    </environment>
+
+   <environment name="qa" extend.default="yes">
+      <preference name="preferenceOne" type="string" value="qaPreferenceOneValue"/>
+      <preference name="preferenceArrayInt" type="int.array">
+         <array>
+           <item value="2"/>
+           <item value="4"/>
+         </array>
+      </preference>
+   </environment>
+
+   <environment name="prod" extend.default="no">
+      <preference name="preferenceOne" type="string" value="prodPreferenceOneValue"/>
+   </environment>
+
+   <default.environment>
+      <preference name="preferenceOne" type="string" value="defaultPreferenceOneValue"/>
+      <preference name="preferenceTwo" type="string">defaultPreferenceTwoValue</preference>
+      <preference name="aMapExample" type="string.map">
+         <map>
+           <entry key="keyOne" value="2"/>
+           <entry key="anotherKey" value="4"/>
+         </map>
+      </preference>
+
+   </default.environment>
+
+</preference.set>
+
+  Usage:
+   
+     All preference sets must live in the conf directory in the Resources project in CVS. 
+  
+     Preferences are loaded and cached the first time they are requested. 
+  
+     Preferences are uniquely identified by their name and path in the system conf
+       directory e.g.; /apps/Codes/MP2/conf. Preferences are requested relative to this directory.
+    
+     
+     Code Example:
+     
+        Preferences pref = PreferenceSet.getPreferences("com/thomsonwest/codes/utilities/config/preferenceSetTest.xml");
+  
+        String testValue = pref.getString("testStringValue"):
+        
+     Notes:
+     
+        The Preferences object has the following methods for retieving preferences (configurations).
+         (Note that a preference is returned as the object that was defined int the xml):
+        
+         public String getString(String preferenceName)
+   
+         public int getInt(String preferenceName)
+
+         public float getFloat(String preferenceName)
+
+         public URL getUrl(String preferenceName)
+
+         public String getXml(String preferenceName)
+
+         public String[] getStringArray(String preferenceName)
+
+         public int[] getIntArray(String preferenceName)
+
+         public float[] getFloatArray(String preferenceName)
+    
+         public Map getMap(String preferenceName)
+      
+-->

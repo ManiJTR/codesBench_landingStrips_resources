@@ -1,0 +1,1266 @@
+<!-- Revision history
+
+Date        	By	Description
+1/9/04			TMH
+-	added <xampex.table> to content of subsection and subrule.
+1/12/04			TMH
+-	added <xampex.table> to content of dev.ignore.block.
+1/14/04			TMH	(v3.6.6.3)
+-	********* Temporary Change ********** 
+	Removed requirement for a library reference following a heading.  
+	This was made to allow the loading of test Calif data.  If will be removed for production.
+-	********* Temporary Change ********** 
+	Allow cornerpieces in the body and annotations of a document.  This is because of New York errors.
+1/15/04			TMH	(v3.6.6.3)
+-	********* Temporary Change ********** 
+	allow damn near anything in content of <footnote.reference>.
+1/16/04			TMH	(v3.6.6.3)
+-	Updated fonts.
+1/20/04			TMH	(v3.6.6.3)
+-	Allow <official.note.block> in <body>.
+1/27/04			TMH	(v3.6.7)
+-	Added <deleted.novus.id.block>
+2/3/04			TMH	(v3.6.8)
+-	Allow cornerpieces within official notes.
+2/4/04			TMH	(v3.6.9)
+-	allow runheads in sections and rules.	
+2/5/04			TMH	(v3.6.9.1)
+-	remove credits and footnotes from content of anything but <body>. specifically, removed from <rule>, <section> and <subsection>.
+2/10/04			TMH
+-	removed "Temporary Change" status from v3.6.9 (2/4/04) modification.
+2/10/04			TMH	(v3.6.9.2)
+-	added <para> to the content of 1st part of <official.note.body>.  Also changed the occurence modifier from '*' to '+'.
+2/11/04			TMH	(v3.6.9.3)
+-	allow heads and placeholders between runheads and CPs in sections and rules.
+-	add heads to body for CLPP paragrapghs which may be undesignated heads within body.
+-	"Elevated.Note" added to %hist.note.type
+2/12/04			TMH	(v3.6.9.4)
+-	added declarations for <ceqbch> and <ceqech>.
+2/13/04			TMH	
+-	change occurence modifier in official.note.body
+3/8/04			TMH	(v3.6.10)
+-	add "null" to valid fonts.
+3/19/04			TMH	(v3.6.11)
+-	add new <custom.pub> element to all annotations.
+3/23/04			TMH	(v3.6.12)
+-	add new <custom.pub> element to content of <annotations>.
+4/6/04			TMH	(v3.6.13)
+-	Changed occurence modifier for <subsection> and <refs.annos.block> declaration from "*" to "+". 
+-	Added <credit> to content of <refs.annos.block> and <grade.content>.
+4/8/04			TMH	(v3.6.14)
+-	Modify occurrence modifiers for <md.head.info>.
+4/12/04			TMH	(v3.6.14)
+-	made <runhead.block> optional and allowed it in any order in content of <rule> and <section>.
+4/16/04			TMH	(v3.6.15)
+-	Allow analysis in author notes.
+4/21/04			TMH	(v3.6.16)
+-	Added "Comment" to %official.note.type;
+-	Added "FSG.Amendment" to %hist.note.type;
+4/23/04			Ambati	(v3.6.17)
+-	Added "Ballot.Note" to %hist.note.type;
+-	Added "Complimentary.Legislation" to %hist.note.type;
+-	Added "Delegation.of.Functions" to %hist.note.type;
+-	Added "Governor.Note" to %hist.note.type;
+-	Added "Legislative.Counsel.Note" to %hist.note.type;
+-	Added "Letter.of.Intent.Note" to %hist.note.type;
+-	Added "Miscellaneous.Note" to %hist.note.type;
+-	Added "Separability" to %hist.note.type;
+-	Added "Termination" to %hist.note.type;
+-	Added "Uncodified.Note" to %hist.note.type;
+4/30/04			TMH	(v3.6.18)
+-	Added <internal.reference> and <anchor>.
+5/5/04			TMH	(v3.6.19)
+- 	Added <frap.reference.block>
+- 	Added <fel.reference.block>
+-	Added <fjp.reference.block>
+5/18/04			TMH
+-	added comments for <case.history> model that record that the current model is obsolete.
+5/20/04			TMH	(v3.6.20)
+-	Updated <case.history> model.
+6/17/04			TMH	(v3.7)
+-	Utilize ampexfonts.ent.
+-	updated allchars entity to current version (v1.09).
+7/27/04			TMH
+-	Add <grade.content.section>.
+-->
+<!--
+*********************
+fonts
+********************* -->
+<!ENTITY % ampex.fonts.ent SYSTEM "common\ampexfonts.ent">
+%ampex.fonts.ent;
+<!ENTITY % fonts "(%ampex.fonts;)">
+<!ENTITY % inline.content "author | xampex.table | cite | subcite | target | 
+                           date | words.and.phrases | footnote.reference |
+                           cent1|cent2|cent3|cent4|cent5|cent6|cent8|cent9|
+                           centa|centb|centc|centd|cente|centf|centg|
+                           centh|centi|centk|centn|cento|centp|centq|
+                           centr|centt|centu|centw|centx|centy|centz|
+                           centexc|centat|centlb|centoparen|ceqbwpt|ceqewpt|
+                           ceqxfrq|centdol|pctamp|pctat|pctdol|pctg|pcth|pcti|pctj|pctk|pctl|pctlb|
+                           pctm|pctn|pcto|pctoparen|pctp|pctq|pctr|pcts|pctsec|pctt|
+                           pctu|pctv|pctw|pctx|pcty|pctz|char.anomaly|
+                           added.material|deleted.material|wip.flag|conditional|
+                           vendor.extract|vetoed.text|serial.number|pasteup|ctab|topic.key.ref|case.history|wordphrase|percent.anomaly|
+                           internal.reference|anchor">
+<!--
+*********************
+%plain.text; is not used.  declared only because current common models include
+********************* -->
+<!ENTITY % plain.text "#PCDATA">
+<!--
+***************************************************************************************
+                              Common Model Declarations
+*************************************************************************************** -->
+<!--
+*********************
+Typographic Model
+********************* -->
+<!ENTITY % typographic.model SYSTEM	"common\typo_v2.7.dtd">
+%typographic.model;
+<!--
+*********************
+inline.text
+********************* -->
+<!ENTITY % inline.text "%inline.typographic;|%inline.content;">
+<!--
+*********************
+Citation Model
+********************* -->
+<!ENTITY % citation.entity SYSTEM	"common\citation.ent">
+%citation.entity;
+<!ENTITY % citation.model SYSTEM	"common\citation_v2.0.dtd">
+%citation.model;
+<!--
+*********************
+Metadata Model
+********************* -->
+<!ENTITY % paragraph.types "(multiple.subsections | undesignated.paragraph | undesignated.codes.head)">
+<!ELEMENT metadata.block (md.mnem?, md.text.id?, md.nod.info?, md.headnote.no?, md.reporter.info?, (md.pub.tag.info? | md.pub.tag+), md.source.tag?, md.head.info*, md.para?, md.conversion.warning*, md.sn.info?)>
+<!ATTLIST metadata.block
+	owner IDREF #REQUIRED
+>
+<!ELEMENT md.conversion.warning (#PCDATA)>
+<!ELEMENT md.head.info (md.level | md.label.name | md.label.designator)+>
+<!ELEMENT md.headnote.no (#PCDATA)>
+<!ELEMENT md.label.designator (#PCDATA)>
+<!ELEMENT md.label.name (#PCDATA)>
+<!ELEMENT md.level (#PCDATA)>
+<!ELEMENT md.mnem (#PCDATA)>
+<!-- parser can't handle more rigorous declare: <!ELEMENT md.nod.info ((md.nod.type, md.nod.punc?, md.serial.no) | md.nod.type | md.serial.no)> -->
+<!ELEMENT md.nod.info (md.nod.type?, md.nod.punc?, md.serial.no?)>
+<!ELEMENT md.nod.type (#PCDATA)>
+<!ELEMENT md.nod.punc (#PCDATA)>
+<!ELEMENT md.para EMPTY>
+<!ATTLIST md.para
+	type %paragraph.types; #REQUIRED
+>
+<!ELEMENT md.pub.tag (#PCDATA)>
+<!ELEMENT md.pub.tag.info (md.pub.tag)+>
+<!-- reporter information -->
+<!ELEMENT md.reporter.info (md.reporter.volume, md.reporter.number, md.reporter.page)>
+<!ELEMENT md.reporter.volume (#PCDATA)>
+<!ELEMENT md.reporter.number (#PCDATA)>
+<!ELEMENT md.reporter.page (#PCDATA)>
+<!ELEMENT md.serial.no (#PCDATA)>
+<!-- sticky notes -->
+<!ELEMENT md.sn.info (md.sn.query.date | md.sn.query.comment | md.sn.query.issue | md.sn.query.revisor | md.sn.query.table | md.sn.query.issue.resolved | md.sn.query.table.resolved)+>
+<!ELEMENT md.sn.query.date (#PCDATA)>
+<!ATTLIST md.sn.query.date
+	action.date CDATA #REQUIRED
+>
+<!ELEMENT md.sn.query.comment (#PCDATA)>
+<!ELEMENT md.sn.query.issue (#PCDATA)>
+<!ELEMENT md.sn.query.revisor (#PCDATA)>
+<!ATTLIST md.sn.query.revisor
+	year CDATA #REQUIRED
+>
+<!ELEMENT md.sn.query.table (#PCDATA)>
+<!ELEMENT md.sn.query.issue.resolved (#PCDATA)>
+<!ELEMENT md.sn.query.table.resolved (#PCDATA)>
+<!ELEMENT md.source.tag (#PCDATA)>
+<!ELEMENT md.text.id (#PCDATA)>
+<!--
+*********************
+Image Model
+********************* -->
+<!ENTITY % image.model SYSTEM	"common\images_v2.1.dtd">
+%image.model;
+<!--
+*********************
+Relationship Model
+********************* -->
+<!ENTITY % relationship.types "(citation | star_page | classification)">
+<!ENTITY % relationships.model SYSTEM	"common\relationship_v2.2.dtd">
+%relationships.model;
+<!--
+*********************
+characters
+********************* -->
+<!ENTITY % west.characters SYSTEM "common\allchars-named_v1.09.ent">
+%west.characters;
+<!ENTITY tempamp "&#38;#38;tempamp;">
+<!ENTITY wgamp "&#38;#38;wgamp;">
+<!--
+***************************************************************************************
+                                   Element Declarations
+*************************************************************************************** -->
+<!--
+*********************
+added.material
+********************* -->
+<!ELEMENT added.material (%inline.text;)*>
+<!--
+*********************
+admin.code.reference.block
+********************* -->
+<!ELEMENT admin.code.reference.block (codes.head*, (admin.code.reference | custom.pub)+)>
+<!ELEMENT admin.code.reference (metadata.block?, relationships.block?, (sub.reference | reference.text)+)>
+<!ATTLIST admin.code.reference
+	ID ID #IMPLIED
+>
+<!--
+*********************
+alr.reference.block
+********************* -->
+<!ENTITY % alr.reference.type "(ALR | ALR.2d | ALR.3d | ALR.4th | ALR.Fed | ALR.5th)">
+<!ELEMENT alr.reference.block (codes.head*, (alr.reference | custom.pub)+)>
+<!ELEMENT alr.reference (metadata.block?, relationships.block?, reference.text)>
+<!ATTLIST alr.reference
+	type %alr.reference.type; #IMPLIED
+	ID ID #IMPLIED
+>
+<!--
+*********************
+analysis
+********************* -->
+<!ELEMENT analysis (metadata.block?, relationships.block?, (codes.head | analysis.entry | placeholder | dev.ignore.block | xampex.table)+)>
+<!ATTLIST analysis
+	ID ID #IMPLIED
+>
+<!ELEMENT analysis.entry (metadata.block?, relationships.block?, (analysis.line | analysis.text)+)>
+<!ATTLIST analysis.entry
+	ID ID #REQUIRED
+>
+<!ELEMENT analysis.line (%inline.text; | label.designator | analysis.text)*>
+<!ELEMENT analysis.text (%inline.text;)*>
+<!--
+*********************
+anchor
+********************* -->
+<!ELEMENT anchor EMPTY>
+<!ATTLIST anchor
+	ID ID #REQUIRED
+>
+<!--
+*********************
+anno.prior.law
+********************* -->
+<!ELEMENT anno.prior.law (nod.block)>
+<!--
+*********************
+annotations
+********************* -->
+<!ENTITY % annotation.content "(admin.code.reference.block | 
+alr.reference.block |
+anno.prior.law |
+author.note.block | 
+author.reference.block | 
+codes.head |
+const.prov |
+cross.reference.block | 
+custom.pub |
+dev.ignore.block | 
+ed.note |
+fel.reference.block |
+fjp.reference.block | 
+frap.reference.block | 
+fsg.reference.block |
+hist.note.block |
+law.review.reference.block | 
+legislation.reference.block |
+library.reference.block |
+nod.block |
+official.note.block | 
+placeholder |
+repealed.block | 
+research.reference.block | 
+uniform.law.reference.block | 
+us.sup.ct.reference.block |
+usca.reference.block |
+west.forms.reference.block | 
+wlr.note |
+xampex.table)">
+<!ELEMENT annotations (cornerpiece | %annotation.content;)*>
+<!--
+*********************
+annotation.repealed.law
+********************* -->
+<!ELEMENT annotation.repealed.law (%annotation.content;)*>
+<!--
+*********************
+author
+********************* -->
+<!ELEMENT author (%inline.text;)*>
+<!--
+*********************
+author.note.block
+********************* -->
+<!ELEMENT author.note.block ((codes.head | author.line | custom.pub)+, author.note.body+)>
+<!ELEMENT author.note.body (codes.head*, (para | xampex.table | analysis)+)>
+<!ELEMENT author.line (para)+>
+<!--
+*********************
+author.reference.block
+********************* -->
+<!ELEMENT author.reference.block (codes.head*, (author.reference.body | custom.pub)+)>
+<!ELEMENT author.reference.body (codes.head*, (author.reference | author.reference.body)+)>
+<!ELEMENT author.reference (metadata.block?, relationships.block?, reference.text+)>
+<!ATTLIST author.reference
+	ID ID #IMPLIED
+>
+<!--
+*********************
+body
+********************* -->
+<!ELEMENT body (codes.head | para | credit | placeholder | dev.ignore.block | xampex.table | figure | unit | subrule | subsection | footnote | ed.note | cornerpiece | official.note.block)*>
+<!--
+*********************
+bov
+********************* -->
+<!ELEMENT bov (metadata.block?, relationships.block?, (codes.head | dev.ignore.block | xampex.table | analysis | date.line | annotations | placeholder | cornerpiece | runhead.block | body | footnote | head.block)*)>
+<!ATTLIST bov
+	legacy.identifier CDATA #REQUIRED
+	ID ID #REQUIRED
+>
+<!--
+*********************
+case.history
+********************* -->
+<!ELEMENT case.history (%inline.text;)*>
+<!ATTLIST case.history
+	type (original | modified) #IMPLIED
+>
+<!-- 
+*********************
+codes.head
+********************* -->
+<!ELEMENT codes.head (metadata.block?, relationships.block?, (headtext | head.info))>
+<!ATTLIST codes.head
+	ID ID #REQUIRED
+>
+<!ELEMENT head.info (%inline.text; | label.designator | label.name | headtext)*>
+<!ELEMENT headtext (%inline.text;)*>
+<!--
+*********************
+conditional
+********************* -->
+<!ELEMENT conditional (%inline.text;)*>
+<!ATTLIST conditional
+	content.type (custom.pub.material | defendant | plaintiff | title) #IMPLIED
+	product.type (advance.sheet | analytical.toc | annotated.set | leg.service | ne.reporter | ohio.official | pocket.part | print | supplement | unpublished.opinion.table | westlaw | westlaw.legacy) #IMPLIED
+	action (add.note | identification | include | percent_q | propogate | suppress) #REQUIRED
+>
+<!--
+*********************
+const.prov
+********************* -->
+<!ELEMENT const.prov (codes.head*, para+)>
+<!--
+*********************  
+cornerpiece 
+********************* -->
+<!ENTITY % cornerpiece.type "(cp | cp.add | cp.inside.left | cp.secondary.classif | cp.note | 
+                              cp.secondary.status.law | cp.inside.right |
+                              cp.secondary.status)">
+<!ELEMENT cornerpiece (metadata.block?, relationships.block?, cornerpiece.text)>
+<!ATTLIST cornerpiece
+	type %cornerpiece.type; #REQUIRED
+	ID ID #REQUIRED
+>
+<!ELEMENT cornerpiece.text (%inline.text;)*>
+<!--
+*********************
+credit
+********************* -->
+<!ELEMENT credit (para+)>
+<!--
+*********************
+cross.reference.block
+********************* -->
+<!ELEMENT cross.reference.block (codes.head*, (cross.reference.body | custom.pub)+)>
+<!ELEMENT cross.reference.body (codes.head*, (cross.reference | cross.reference.body)+)>
+<!ELEMENT cross.reference (metadata.block?, relationships.block?, (sub.reference | reference.text)+)>
+<!ATTLIST cross.reference
+	ID ID #IMPLIED
+>
+<!--
+*********************
+ctab
+********************* -->
+<!ELEMENT ctab EMPTY>
+<!--
+*********************
+custom.pub
+********************* -->
+<!ELEMENT custom.pub (para)+>
+<!--
+*********************
+date.line
+********************* -->
+<!ELEMENT date.line (para)+>
+<!--
+*********************
+date
+********************* -->
+<!ENTITY % date.types "(effective | received | begin | end | operational | approval | filed | 
+register | issued | proposed | expiration)">
+<!ELEMENT date (#PCDATA)>
+<!ATTLIST date
+	type %date.types; #IMPLIED
+	iso.d CDATA #REQUIRED
+>
+<!--
+*********************
+deleted.material
+********************* -->
+<!ELEMENT deleted.material (%inline.text;)*>
+<!ATTLIST deleted.material
+	style (percent_x | percent_op) #IMPLIED
+>
+<!--
+*********************
+deleted.novus.id.block
+********************* -->
+<!ELEMENT deleted.novus.id.block (novus.content.id, novus.toc.id)+>
+<!ELEMENT novus.content.id (#PCDATA)>
+<!ELEMENT novus.toc.id (#PCDATA)>
+<!--
+*********************
+ed.note
+********************* -->
+<!ENTITY % ed.note.type "(
+Deferred | 
+Derivation.Table | 
+Disposition.Table |
+Grade |
+Historical | 
+KITN | 
+Reference | 
+Repeal | 
+Text | 
+Unknown
+)">
+<!ELEMENT ed.note (codes.head*, (para | xampex.table | custom.pub)+)>
+<!ATTLIST ed.note
+	type %ed.note.type; #REQUIRED
+>
+<!--
+*********************
+eov
+********************* -->
+<!ELEMENT eov (metadata.block?, relationships.block?, (codes.head | dev.ignore.block | xampex.table | analysis | date.line | annotations | placeholder | cornerpiece | runhead.block | body | footnote)*)>
+<!ATTLIST eov
+	ID ID #REQUIRED
+>
+<!--
+*********************
+fel.reference.block
+********************* -->
+<!ELEMENT fel.reference.block (codes.head*, (fel.reference.body | custom.pub)+)>
+<!ELEMENT fel.reference.body (codes.head*, fel.reference+)>
+<!ELEMENT fel.reference (metadata.block?, relationships.block?, reference.text+)>
+<!ATTLIST fel.reference
+	ID ID #IMPLIED
+>
+<!--
+*********************
+figure
+********************* -->
+<!ELEMENT figure (metadata.block?, relationships.block?, codes.head*, image.block+)>
+<!ATTLIST figure
+	ID ID #REQUIRED
+>
+<!--
+*********************
+fjp.reference.block
+********************* -->
+<!ELEMENT fjp.reference.block (codes.head*, (fjp.reference.body | custom.pub)+)>
+<!ELEMENT fjp.reference.body (codes.head*, (fjp.reference | fjp.reference.body)+)>
+<!ELEMENT fjp.reference (metadata.block?, relationships.block?, (sub.reference | reference.text)+)>
+<!ATTLIST fjp.reference
+	ID ID #IMPLIED
+>
+<!--
+*********************
+footnote
+********************* -->
+<!ELEMENT footnote (label.designator?, para+)>
+<!ATTLIST footnote
+	ID ID #REQUIRED
+>
+<!--
+*********************
+footnote.reference
+<!ELEMENT footnote.reference (#PCDATA)*>
+********************* -->
+<!ELEMENT footnote.reference (%inline.text;)*>
+<!ATTLIST footnote.reference
+	refid IDREF #REQUIRED
+>
+<!--
+*********************
+frap.reference.block
+********************* -->
+<!ELEMENT frap.reference.block (codes.head*, (frap.reference | custom.pub)+)>
+<!ELEMENT frap.reference (metadata.block?, relationships.block?, (sub.reference | reference.text)+)>
+<!ATTLIST frap.reference
+	ID ID #IMPLIED
+>
+<!--
+*********************
+fsg.reference.block
+********************* -->
+<!ELEMENT fsg.reference.block (codes.head*, (fsg.reference | custom.pub)+)>
+<!ELEMENT fsg.reference (metadata.block?, relationships.block?, (sub.reference | reference.text)+)>
+<!ATTLIST fsg.reference
+	ID ID #IMPLIED
+>
+<!--
+********************* 
+grade
+********************* -->
+<!ENTITY % grade.types "(
+Act | 
+Article | 
+Canon | 
+Chapter | 
+Division | 
+Part | 
+Rule |
+Section | 
+Subchapter | 
+Subpart | 
+Subtitle |
+Title | 
+Undesignated | 
+Unknown
+)">
+<!ELEMENT grade (metadata.block?, relationships.block?, grade.content, (section | rule | grade)*)>
+<!ATTLIST grade
+	type %grade.types; #REQUIRED
+	ID ID #REQUIRED
+>
+<!--
+********************* 
+grade.content
+********************* -->
+<!ELEMENT grade.content (metadata.block?, relationships.block?, (head.block | codes.head | dev.ignore.block | xampex.table | analysis | date.line | annotations | placeholder | cornerpiece | runhead.block | body | footnote | refs.annos.block | deleted.novus.id.block | credit | grade.content.section)*)>
+<!ATTLIST grade.content
+	legacy.identifier CDATA #REQUIRED
+	ID ID #REQUIRED
+>
+<!-- 
+********************* 
+grade.content.section 
+********************* -->
+<!ELEMENT grade.content.section (metadata.block?, relationships.block?, placeholder?, (runhead.block | cornerpiece | codes.head | placeholder)+, (body | placeholder)*)>
+<!ATTLIST grade.content.section
+	ID ID #REQUIRED
+>
+<!--
+*********************
+grade.note
+********************* -->
+<!ENTITY % grade.note.type "(TOA | Analysis)">
+<!ELEMENT grade.note (metadata.block?, relationships.block?, (placeholder | para)+)>
+<!ATTLIST grade.note
+	type %grade.note.type; #REQUIRED
+	ID ID #IMPLIED
+>
+<!-- 
+*********************
+head.block
+********************* -->
+<!ELEMENT head.block (codes.head+)>
+<!ATTLIST head.block
+	ID ID #REQUIRED
+>
+<!--
+*********************
+hierarchical.content
+********************* -->
+<!ELEMENT hierarchical.content (metadata.block?, relationships.block?, (grade | section | rule | vol))>
+<!--
+*********************
+hist.note.block
+********************* -->
+<!ENTITY % hist.note.type "(
+Add.Fail.Note |
+Amendment |
+Another.Law |
+Ballot.Note |
+Change.of.Name |
+Codifications |
+Comparative.Law |
+Complimentary.Legislation |
+Contingency.Note |
+Delegation.of.Functions |
+Derivation |
+Effective.Date.App.Provision |
+Effective.Date.App.Rules |
+Effective.Date.of.Repeal |
+Effective.Date.Transfer.Function |
+Effective.Law |
+Elevated.Note |
+Former.Law |
+FSG.Amendment |
+Governor.Message |
+Governor.Note |
+Governor.Reorg.Law |
+Identical.Add.Note |
+Law.Note |
+Law.Note.Reference |
+Legislative.Counsel.Opinion |
+Legislative.Counsel.Note |
+Legislative.Intent.Letter |
+Legislative.Reports |
+Letter.of.Intent.Note |
+Maintenance.Law |
+Miscellaneous.Note |
+Multiple.Activity.Note |
+Prior.Law |
+Prior.Provisions |
+References.in.Text |
+Repealed.Law |
+Savings.Provision |
+See.Deriving.Law |
+Separability |
+Severability |
+Short.Title |
+Similar.Provisions |
+Subordination.Note |
+Sunset |
+Termination |
+Transfer.of.Functions |
+Uniform.Law |
+Unknown |
+Uncodified.Note |
+Voter.Approval
+)">
+<!ELEMENT hist.note.block (codes.head*, (hist.note.body | custom.pub)+)>
+<!ELEMENT hist.note.body (codes.head*, (hist.note | hist.note.body)+)>
+<!ELEMENT hist.note (codes.head*, (xampex.table | para)+)>
+<!ATTLIST hist.note
+	type %hist.note.type; #REQUIRED
+	elevated (yes) #IMPLIED
+>
+<!--
+*********************
+index
+********************* -->
+<!ELEMENT index (codes.head*, (para | index.division | footnote | index.entry)+)>
+<!ELEMENT index.division (%inline.typographic; | footnote.reference)*>
+<!ELEMENT index.entry (subject, (cite | index.xref | index.entry | footnote)+)>
+<!ATTLIST index.entry
+	ID ID #IMPLIED
+>
+<!ELEMENT index.xref (%inline.typographic; | footnote.reference | cite)*>
+<!ATTLIST index.xref
+	refid IDREF #IMPLIED
+>
+<!--
+*********************
+internal.reference
+********************* -->
+<!ELEMENT internal.reference (%inline.text;)*>
+<!ATTLIST internal.reference
+	refid IDREF #IMPLIED
+>
+<!--
+*********************
+label.designator
+********************* -->
+<!ELEMENT label.designator (%inline.text;)*>
+<!--
+*********************
+label.name
+********************* -->
+<!ELEMENT label.name (%inline.text;)*>
+<!--
+*********************
+law.review.reference.block
+********************* -->
+<!ELEMENT law.review.reference.block (codes.head*, (law.review.reference | custom.pub)+)>
+<!ELEMENT law.review.reference (metadata.block?, relationships.block?, (sub.reference | reference.text)+)>
+<!ATTLIST law.review.reference
+	ID ID #IMPLIED
+>
+<!--
+*********************
+legislation.reference.block
+********************* -->
+<!ELEMENT legislation.reference.block (codes.head*, (legislation.reference | custom.pub)+)>
+<!ELEMENT legislation.reference (metadata.block?, relationships.block?, codes.head*, reference.text)>
+<!ATTLIST legislation.reference
+	ID ID #IMPLIED
+>
+<!--
+*********************
+library.reference.block
+********************* -->
+<!ENTITY % library.reference.type "(
+Acret | 
+Advisory.Committee | 
+ALR | 
+ALR.2d | 
+ALR.3d | 
+ALR.4th |
+ALR.5th | 
+ALR.Fed | 
+Am.Disab | 
+Am.Law.Prod.Liability |									
+Am.Law.Prod.Liability.2d | 
+Am.Law.Prod.Liability.3d | 
+AmJur.Legal.Form | 
+AmJur.Legal.Form.2d | 
+AmJur.Plead.Practice |			
+AmJur.POF | 
+AmJur.POF.2d | 
+AmJur.POF.3d | 
+AmJur.Trials | 
+AmJur2d | 
+Assembly.Journal | 
+Bailey.Rothblatt |
+Bkrptcy |
+Bkrptcy.Law.Ed | 
+Bus.Com.Lit | 
+CFR | 
+Civil.Practice | 
+CJS | 
+Cont.Ed | 
+Couch.Insurance | 
+Crim.Law.Def | 
+Crim.Proc | 
+Digest | 
+Employ.Coord | 
+Employ.Discrim.Coord | 
+Fed.Admin.Practice | 
+Fed.Practice.Forms | 
+Fed.Practice.Proc | 
+Fed.Proc.Forms |
+Fed.Proc.Lawyers.Ed | 
+Forms | 
+FRD | 
+Harrison | 
+Immig.Law.Serv | 
+Jury.Instruction | 
+Key.Number | 
+Koch | 
+Law.Ed.2d | 
+Law.Review.Comment | 
+Milich | 
+Miller.Starr | 
+Modjeska.Ad.Law | 
+Other | 
+Practice.Series | 
+RIA | 
+Rutter | 
+Soc.Sec.LP | 
+State.Jur | 
+Tax.Coord | 
+Unknown | 
+Wait2d |
+WGL | 
+Witkin.Criminal | 
+Witkin.Evidence |
+Witkin.Procedure | 
+Witkin.Summary | 
+WL.Topic.Number
+)">
+<!ENTITY % library.reference.category "(Key.Number | Encyclopedias | Treatises | Forms | Trial.Strategy | ALR | Practice | Law.Rev.Commission | 
+									Other | Unknown)">
+<!ELEMENT library.reference.block (codes.head*, (library.reference.body | custom.pub)*)>
+<!ELEMENT library.reference.body (codes.head*, library.reference*)>
+<!-- Production version
+<!ELEMENT library.reference.block (codes.head*, library.reference.body+)>
+<!ELEMENT library.reference.body (codes.head*, library.reference+)>
+-->
+<!ELEMENT library.reference (metadata.block?, relationships.block?, reference.text+)>
+<!ATTLIST library.reference
+	ID ID #IMPLIED
+	type %library.reference.type; #REQUIRED
+	category %library.reference.category; #REQUIRED
+>
+<!--
+*********************
+nod.block
+********************* -->
+<!ELEMENT nod.block (metadata.block?, relationships.block?, (analysis | ed.note | codes.head | placeholder | custom.pub)+, nod.body+)>
+<!ATTLIST nod.block
+	ID ID #IMPLIED
+>
+<!ELEMENT nod.body ((codes.head | analysis)+, (nod.body | annotations | nod.note | nod.skeleton)*)>
+<!ELEMENT nod.note (para | ubr.headnote)+>
+<!ELEMENT nod.skeleton (para)+>
+<!--
+*********************
+official.note.block
+********************* -->
+<!ENTITY % official.note.type "(
+Administrative.Departmental | 
+Advisory.Committee |
+Comment | 
+Compacts | 
+Executive | 
+Judicial | 
+Legislative | 
+Revisor | 
+Treaties | 
+Uniform.Comment | 
+Unknown
+)">
+<!ELEMENT official.note.block (codes.head*, (official.note.body | custom.pub)+)>
+<!ATTLIST official.note.block
+	ID ID #IMPLIED
+	type %official.note.type; #REQUIRED
+>
+<!ELEMENT official.note.body ((codes.head | date.line | cornerpiece | para)+, (official.note.body | para | signature | xampex.table)*)>
+<!--
+*********************
+para
+********************* -->
+<!ELEMENT para (metadata.block?, relationships.block?, (para | paratext)+)>
+<!ATTLIST para
+	ID ID #REQUIRED
+>
+<!ELEMENT paratext (%inline.text;)*>
+<!--
+*********************
+pasteup
+********************* -->
+<!ELEMENT pasteup (#PCDATA)>
+<!--
+*********************
+percent.anomaly
+********************* -->
+<!ELEMENT percent.anomaly EMPTY>
+<!ATTLIST percent.anomaly
+	arg (pctk | pctlb | pctm.close | pctm.open | pctp.close | pctp.open | pctt | pctv | pctv.close | pctv.open | pctw | pcty | pctz) #IMPLIED
+>
+<!--
+*********************
+placeholder
+********************* -->
+<!ELEMENT placeholder (metadata.block?, relationships.block?, placeholder.text)>
+<!ATTLIST placeholder
+	ID ID #REQUIRED
+>
+<!ELEMENT placeholder.text (%inline.text;)*>
+<!--
+*********************
+reference.text
+********************* -->
+<!ELEMENT reference.text (subject?, ref.verb?, ref.cite?, target?)>
+<!ELEMENT ref.verb (%inline.text;)*>
+<!ELEMENT ref.cite (%inline.text;)*>
+<!--
+********************* 
+refs.annos.block
+********************* -->
+<!ELEMENT refs.annos.block (metadata.block?, relationships.block?, (head.block | codes.head | dev.ignore.block | xampex.table | analysis | date.line | annotations | placeholder | cornerpiece | runhead.block | body | footnote | credit)+)>
+<!ATTLIST refs.annos.block
+	novus.content.id CDATA #REQUIRED
+	novus.toc.id CDATA #REQUIRED
+>
+<!--
+*********************
+repealed.block
+********************* -->
+<!ELEMENT repealed.block (codes.head*, (annotation.repealed.law | custom.pub)+)>
+<!--
+*********************
+research.reference.block
+********************* -->
+<!ENTITY % research.reference.type "(ALR | ALR.2d | ALR.3d | ALR.4th | ALR.Fed | ALR.5th)">
+<!ELEMENT research.reference.block (codes.head*, (research.reference.body | custom.pub)+)>
+<!ELEMENT research.reference.body (codes.head*, research.reference+)>
+<!ELEMENT research.reference (metadata.block?, relationships.block?, reference.text+)>
+<!ATTLIST research.reference
+	ID ID #IMPLIED
+	type %research.reference.type; #IMPLIED
+	category %library.reference.category; #IMPLIED
+>
+<!--
+********************* 
+rule
+********************* -->
+<!ELEMENT rule (metadata.block?, relationships.block?, placeholder?, (runhead.block | cornerpiece | codes.head | placeholder)+, (body | placeholder | annotations)*)>
+<!ATTLIST rule
+	legacy.identifier CDATA #IMPLIED
+	ID ID #REQUIRED
+>
+<!-- 
+*********************
+runhead.block
+********************* -->
+<!ELEMENT runhead.block (legend.odd | legend.even | runhead | runhead.odd | runhead.even | runfoot.odd | runfoot.even)*>
+<!ELEMENT legend.odd (metadata.block?, relationships.block?, legend.odd.text)>
+<!ATTLIST legend.odd
+	ID ID #REQUIRED
+>
+<!ELEMENT legend.odd.text (%inline.text;)*>
+<!ELEMENT legend.even (metadata.block?, relationships.block?, legend.even.text)>
+<!ATTLIST legend.even
+	ID ID #REQUIRED
+>
+<!ELEMENT legend.even.text (%inline.text;)*>
+<!ELEMENT runhead (metadata.block?, relationships.block?, runhead.text)>
+<!ATTLIST runhead
+	ID ID #REQUIRED
+>
+<!ELEMENT runhead.text (%inline.text;)*>
+<!ELEMENT runhead.odd (metadata.block?, relationships.block?, runhead.odd.text)>
+<!ATTLIST runhead.odd
+	ID ID #REQUIRED
+>
+<!ELEMENT runhead.odd.text (%inline.text;)*>
+<!ELEMENT runhead.even (metadata.block?, relationships.block?, runhead.even.text)>
+<!ATTLIST runhead.even
+	ID ID #REQUIRED
+>
+<!ELEMENT runhead.even.text (%inline.text;)*>
+<!ELEMENT runfoot.odd (metadata.block?, relationships.block?, runfoot.odd.text)>
+<!ATTLIST runfoot.odd
+	ID ID #REQUIRED
+>
+<!ELEMENT runfoot.odd.text (%inline.text;)*>
+<!ELEMENT runfoot.even (metadata.block?, relationships.block?, runfoot.even.text)>
+<!ATTLIST runfoot.even
+	ID ID #REQUIRED
+>
+<!ELEMENT runfoot.even.text (%inline.text;)*>
+<!-- 
+********************* 
+section 
+********************* -->
+<!ENTITY % law.types "(
+Non.Positive |
+Positive 
+)">
+<!ENTITY % section.type "(
+Blank | 
+Inoperative | 
+Live |
+Rejected |
+Renumbered | 
+Repealed | 
+Rescinded | 
+Reserved 
+)">
+<!ELEMENT section (metadata.block?, relationships.block?, placeholder?, (runhead.block | cornerpiece | codes.head | placeholder)+, (body | placeholder | annotations)*)>
+<!ATTLIST section
+	legacy.identifier CDATA #IMPLIED
+	ID ID #REQUIRED
+	type %section.type; #REQUIRED
+	law.type %law.types; #IMPLIED
+>
+<!--
+*********************
+serial.number
+********************* -->
+<!ELEMENT serial.number (%inline.text;)*>
+<!--
+*********************
+signature
+********************* -->
+<!ELEMENT signature (para)*>
+<!--
+*********************
+statute
+********************* -->
+<!ELEMENT statute (hierarchical.content | (grade.content | section | rule | bov | eov)+)>
+<!ATTLIST statute
+	ID ID #REQUIRED
+>
+<!--
+*********************
+sub.reference
+********************* -->
+<!ELEMENT sub.reference (metadata.block?, relationships.block?, (sub.reference | reference.text)+)>
+<!ATTLIST sub.reference
+	ID ID #IMPLIED
+>
+<!--
+*********************
+subject
+********************* -->
+<!ELEMENT subject (%inline.text; | subject)*>
+<!--
+*********************  
+subrule 
+********************* -->
+<!ELEMENT subrule (metadata.block?, relationships.block?, codes.head+, (body | placeholder | annotations | xampex.table)*)>
+<!ATTLIST subrule
+	ID ID #REQUIRED
+>
+<!-- 
+********************* 
+subsection
+********************* -->
+<!ELEMENT subsection (metadata.block?, relationships.block?, (codes.head | body | placeholder | annotations | subsection | para | xampex.table)+)>
+<!ATTLIST subsection
+	ID ID #REQUIRED
+>
+<!--
+*********************
+topic.key.ref
+********************* -->
+<!ELEMENT topic.key.ref (%inline.text;)*>
+<!--
+*********************
+ubr.headnote
+********************* -->
+<!ENTITY % UBR.attributes "refid			IDREF 	#REQUIRED
+                           title		  	CDATA  	#REQUIRED">
+<!ELEMENT ubr.headnote EMPTY>
+<!ATTLIST ubr.headnote
+	%UBR.attributes; 
+>
+<!--
+*********************
+unit
+********************* -->
+<!ELEMENT unit (metadata.block?, relationships.block?, subsection+)>
+<!ATTLIST unit
+	ID ID #REQUIRED
+>
+<!--
+*********************
+uniform.law.reference.block
+********************* -->
+<!ELEMENT uniform.law.reference.block (codes.head*, (xampex.table | uniform.law.reference | custom.pub)+)>
+<!ELEMENT uniform.law.reference (metadata.block?, relationships.block?, (sub.reference | reference.text)+)>
+<!ATTLIST uniform.law.reference
+	ID ID #IMPLIED
+>
+<!--
+*********************
+usca.reference.block
+********************* -->
+<!ELEMENT usca.reference.block (codes.head*, (usca.reference | custom.pub)+)>
+<!ELEMENT usca.reference (metadata.block?, relationships.block?, (sub.reference | reference.text)+)>
+<!ATTLIST usca.reference
+	ID ID #IMPLIED
+>
+<!--
+*********************
+us.sup.ct.reference.block
+********************* -->
+<!ELEMENT us.sup.ct.reference.block (codes.head*, (us.sup.ct.reference | custom.pub)+)>
+<!ELEMENT us.sup.ct.reference (metadata.block?, relationships.block?, (sub.reference | reference.text)+)>
+<!ATTLIST us.sup.ct.reference
+	ID ID #IMPLIED
+>
+<!--
+*********************
+vendor.extract
+********************* -->
+<!ELEMENT vendor.extract (%inline.text;)*>
+<!ATTLIST vendor.extract
+	override (include | exclude) #IMPLIED
+>
+<!--
+*********************
+vetoed.text
+********************* -->
+<!ELEMENT vetoed.text (%inline.text;)*>
+<!--
+*********************
+vol
+********************* -->
+<!ELEMENT vol (metadata.block?, relationships.block?, (runhead.block | body | placeholder | annotations)*)>
+<!ATTLIST vol
+	ID ID #REQUIRED
+>
+<!--
+*********************
+west.forms.reference.block
+********************* -->
+<!ELEMENT west.forms.reference.block (codes.head*, (west.forms.reference.body | custom.pub)+)>
+<!ELEMENT west.forms.reference.body (codes.head*, west.forms.reference+)>
+<!ELEMENT west.forms.reference (metadata.block?, relationships.block?, (sub.reference | reference.text)+)>
+<!ATTLIST west.forms.reference
+	ID ID #IMPLIED
+>
+<!--
+*********************
+wip.flag
+********************* -->
+<!ELEMENT wip.flag (%inline.text;)*>
+<!ATTLIST wip.flag
+	legacy.markup (centexc | centamp | ceqxfrq | cent1 | cent9 | centb | centc | centf | centh | centq | cents | centt | centx | centdol | cent8) #REQUIRED
+>
+<!--
+*********************
+wlr.note
+********************* -->
+<!ENTITY % wlr.note.type "(large | small)">
+<!ELEMENT wlr.note (codes.head, para+)>
+<!ATTLIST wlr.note
+	type %wlr.note.type; #REQUIRED
+>
+<!--
+*********************
+wordphrase
+********************* -->
+<!ELEMENT wordphrase (%inline.text;)*>
+<!--
+*********************
+Words and Phrases
+********************* -->
+<!ELEMENT words.and.phrases (%inline.text;)*>
+<!--
+*********************
+XAmpex character anomaly
+********************* -->
+<!ENTITY % char.anomaly.args "(hex00 | hex01 | hex02 | hex03 | hex04 | hex05 | hex06 | hex07 |
+                               hex08 | hex09 | hex0D | hex0E | hex0F | hex14 | hex15 |
+                               hex16 | hex18 | hex1A | hex1B | hex1C | hex1D | hex1E | hex1F |
+                               hex30 | hex31 | hex32 | hex33 | hex34 | hex35 | hex36 | hex37 |
+                               hex38 | hex39 | hex3A | hex3D | hex51 | hex3E | hex54 | hex55 |
+                               hex66 | hex6A | hex8D | hex8E | hex9D | hex9F | hexAC | hexAF |
+                               hexA0 | hexB0 | hexB8 | hexFA | hexFB | hexFC | hexFD | hexFE |
+                               hexFF)">
+<!ELEMENT char.anomaly EMPTY>
+<!ATTLIST char.anomaly
+	arg %char.anomaly.args; #REQUIRED
+>
+<!--
+*********************
+dev.ignore.block
+********************* -->
+<!ELEMENT dev.ignore.block (xampex.table | para)+>
+<!--
+*********************
+XAmpex.table
+********************* -->
+<!ELEMENT xampex.table (para)+>
+<!ATTLIST xampex.table
+	ID ID #IMPLIED
+>
+<!--
+*********************
+XAmpex cent language
+********************* -->
+<!ELEMENT cent1 (%inline.text;)*>
+<!ELEMENT cent2 (%inline.text;)*>
+<!ELEMENT cent3 (%inline.text;)*>
+<!ELEMENT cent4 (%inline.text;)*>
+<!ELEMENT cent5 (%inline.text;)*>
+<!ELEMENT cent6 (%inline.text;)*>
+<!ELEMENT cent8 (%inline.text;)*>
+<!ELEMENT cent9 (%inline.text;)*>
+<!ELEMENT centa (%inline.text;)*>
+<!ELEMENT centb (%inline.text;)*>
+<!ELEMENT centc (%inline.text;)*>
+<!ELEMENT centd (%inline.text;)*>
+<!ELEMENT cente (%inline.text;)*>
+<!ELEMENT centf (%inline.text;)*>
+<!ELEMENT centg (%inline.text;)*>
+<!ELEMENT centh (%inline.text;)*>
+<!ELEMENT centi (%inline.text;)*>
+<!ELEMENT centk (%inline.text;)*>
+<!ELEMENT centn (%inline.text;)*>
+<!ELEMENT cento (%inline.text;)*>
+<!ELEMENT centp (%inline.text;)*>
+<!ELEMENT centq (%inline.text;)*>
+<!ELEMENT centr (%inline.text;)*>
+<!ELEMENT centt (%inline.text;)*>
+<!ELEMENT centu (%inline.text;)*>
+<!ELEMENT centw (%inline.text;)*>
+<!ELEMENT centx (%inline.text;)*>
+<!ELEMENT centy (%inline.text;)*>
+<!ELEMENT centz (%inline.text;)*>
+<!ELEMENT centdol (%inline.text;)*>
+<!ELEMENT centexc (%inline.text;)*>
+<!ELEMENT centat (%inline.text;)*>
+<!ELEMENT centlb (%inline.text;)*>
+<!ELEMENT centoparen (%inline.text;)*>
+<!ELEMENT ceqbwpt EMPTY>
+<!ELEMENT ceqewpt EMPTY>
+<!ELEMENT ceqbch EMPTY>
+<!ELEMENT ceqech EMPTY>
+<!ELEMENT ceqxfrq (%inline.text;)*>
+<!--
+*********************
+XAmpex percent language
+********************* -->
+<!ELEMENT pctamp (%inline.text;)*>
+<!ELEMENT pctat (%inline.text;)*>
+<!ELEMENT pctdol (%inline.text;)*>
+<!ELEMENT pctg (%inline.text;)*>
+<!ATTLIST pctg
+	arg (0 | l | d) #REQUIRED
+>
+<!ELEMENT pcth (%inline.text;)*>
+<!ELEMENT pcti (%inline.text;)*>
+<!ELEMENT pctj (%inline.text;)*>
+<!ELEMENT pctk EMPTY>
+<!ATTLIST pctk
+	arg NMTOKEN #REQUIRED
+>
+<!ELEMENT pctl (%inline.text;)*>
+<!ATTLIST pctl
+	arg (0 | l | d) #REQUIRED
+>
+<!ELEMENT pctlb EMPTY>
+<!ATTLIST pctlb
+	arg CDATA #REQUIRED
+>
+<!ELEMENT pctm EMPTY>
+<!ATTLIST pctm
+	li CDATA #REQUIRED
+	lroi CDATA #REQUIRED
+	ri CDATA #REQUIRED
+	rroi CDATA #REQUIRED
+>
+<!ELEMENT pctn (%inline.text;)*>
+<!ATTLIST pctn
+	arg (0 | l | d) #REQUIRED
+>
+<!ELEMENT pcto (%inline.text;)*>
+<!ELEMENT pctp (numerator, denominator)>
+<!ELEMENT pctoparen (%inline.text;)*>
+<!ELEMENT pctq (%inline.text;)*>
+<!ELEMENT pctr (%inline.text;)*>
+<!ATTLIST pctr
+	arg (0 | l | d | e) #REQUIRED
+>
+<!ELEMENT pcts (%inline.text;)*>
+<!ELEMENT pctsec (%inline.text;)*>
+<!ELEMENT pctt EMPTY>
+<!ATTLIST pctt
+	arg (c | j | l | r) #REQUIRED
+>
+<!ELEMENT pctu (%inline.text;)*>
+<!ELEMENT pctv (%inline.text;)*>
+<!ATTLIST pctv
+	fff CDATA #REQUIRED
+	s CDATA #IMPLIED
+	pp CDATA #IMPLIED
+>
+<!ELEMENT pctw EMPTY>
+<!ATTLIST pctw
+	arg CDATA #REQUIRED
+>
+<!ELEMENT pctx (%inline.text;)*>
+<!ELEMENT pcty EMPTY>
+<!ATTLIST pcty
+	num CDATA #REQUIRED
+	arg CDATA #REQUIRED
+>
+<!ELEMENT pctz EMPTY>
+<!ATTLIST pctz
+	arg NMTOKEN #REQUIRED
+>
